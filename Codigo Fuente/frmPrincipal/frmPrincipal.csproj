@@ -34,12 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,231 +47,231 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\frm_CxC_CxP_CatalogoProveedores.cs">
+    <Compile Include="frm_CxC_CxP_CatalogoProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_CatalogoProveedores.Designer.cs">
+    <Compile Include="frm_CxC_CxP_CatalogoProveedores.Designer.cs">
       <DependentUpon>frm_CxC_CxP_CatalogoProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_EnvioEstadosCuenta.cs">
+    <Compile Include="frm_CxC_CxP_EnvioEstadosCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_EnvioEstadosCuenta.Designer.cs">
+    <Compile Include="frm_CxC_CxP_EnvioEstadosCuenta.Designer.cs">
       <DependentUpon>frm_CxC_CxP_EnvioEstadosCuenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_NuevaOrdenCompra.cs">
+    <Compile Include="frm_CxC_CxP_NuevaOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_NuevaOrdenCompra.Designer.cs">
+    <Compile Include="frm_CxC_CxP_NuevaOrdenCompra.Designer.cs">
       <DependentUpon>frm_CxC_CxP_NuevaOrdenCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_NuevoProveedor.cs">
+    <Compile Include="frm_CxC_CxP_NuevoProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_NuevoProveedor.Designer.cs">
+    <Compile Include="frm_CxC_CxP_NuevoProveedor.Designer.cs">
       <DependentUpon>frm_CxC_CxP_NuevoProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_CatalogoOrdenesDeCompra.cs">
+    <Compile Include="frm_CxC_CxP_CatalogoOrdenesDeCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_CatalogoOrdenesDeCompra.Designer.cs">
+    <Compile Include="frm_CxC_CxP_CatalogoOrdenesDeCompra.Designer.cs">
       <DependentUpon>frm_CxC_CxP_CatalogoOrdenesDeCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_R_Alertas_MantenimientoComunicacion.cs">
+    <Compile Include="frm_ReporteAlertas_MantenimientoComunicacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_R_Alertas_MantenimientoComunicacion.Designer.cs">
-      <DependentUpon>frm_R_Alertas_MantenimientoComunicacion.cs</DependentUpon>
+    <Compile Include="frm_ReporteAlertas_MantenimientoComunicacion.Designer.cs">
+      <DependentUpon>frm_ReporteAlertas_MantenimientoComunicacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_ReportesAlertas_GenerarGrafico.cs">
+    <Compile Include="frm_ReportesAlertas_GenerarGrafico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_ReportesAlertas_GenerarGrafico.Designer.cs">
+    <Compile Include="frm_ReportesAlertas_GenerarGrafico.Designer.cs">
       <DependentUpon>frm_ReportesAlertas_GenerarGrafico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_R_Alertas_MantenimientoAlertasNotificaciones.cs">
+    <Compile Include="frm_ReportesAlertas_MantenimientoAlertasNotificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_R_Alertas_MantenimientoAlertasNotificaciones.Designer.cs">
-      <DependentUpon>frm_R_Alertas_MantenimientoAlertasNotificaciones.cs</DependentUpon>
+    <Compile Include="frm_ReportesAlertas_MantenimientoAlertasNotificaciones.Designer.cs">
+      <DependentUpon>frm_ReportesAlertas_MantenimientoAlertasNotificaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_ControlIncapacidades.cs">
+    <Compile Include="frm_RRHH_ControlIncapacidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_ControlIncapacidades.Designer.cs">
+    <Compile Include="frm_RRHH_ControlIncapacidades.Designer.cs">
       <DependentUpon>frm_RRHH_ControlIncapacidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_ControlVacaciones.cs">
+    <Compile Include="frm_RRHH_ControlVacaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_ControlVacaciones.Designer.cs">
+    <Compile Include="frm_RRHH_ControlVacaciones.Designer.cs">
       <DependentUpon>frm_RRHH_ControlVacaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_NuevaIncapacidad.cs">
+    <Compile Include="frm_RRHH_NuevaIncapacidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_NuevaIncapacidad.Designer.cs">
+    <Compile Include="frm_RRHH_NuevaIncapacidad.Designer.cs">
       <DependentUpon>frm_RRHH_NuevaIncapacidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Seguridad_AdministracionCuentasUsuario.cs">
+    <Compile Include="frm_Seguridad_AdministracionCuentasUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Seguridad_AdministracionCuentasUsuario.Designer.cs">
+    <Compile Include="frm_Seguridad_AdministracionCuentasUsuario.Designer.cs">
       <DependentUpon>frm_Seguridad_AdministracionCuentasUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Seguridad_AdministracionPerfiles.cs">
+    <Compile Include="frm_Seguridad_AdministracionPerfiles.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Seguridad_AdministracionPerfiles.Designer.cs">
+    <Compile Include="frm_Seguridad_AdministracionPerfiles.Designer.cs">
       <DependentUpon>frm_Seguridad_AdministracionPerfiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Seguridad_NuevoUsuarioFinal.cs">
+    <Compile Include="frm_Seguridad_NuevoUsuarioFinal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Seguridad_NuevoUsuarioFinal.Designer.cs">
+    <Compile Include="frm_Seguridad_NuevoUsuarioFinal.Designer.cs">
       <DependentUpon>frm_Seguridad_NuevoUsuarioFinal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Ticket_CatalogoAsignacionTicket.cs">
+    <Compile Include="frm_Ticket_CatalogoAsignacionTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Ticket_CatalogoAsignacionTicket.Designer.cs">
+    <Compile Include="frm_Ticket_CatalogoAsignacionTicket.Designer.cs">
       <DependentUpon>frm_Ticket_CatalogoAsignacionTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Ticket_BitacoraTicket.cs">
+    <Compile Include="frm_Ticket_BitacoraTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Ticket_BitacoraTicket.Designer.cs">
+    <Compile Include="frm_Ticket_BitacoraTicket.Designer.cs">
       <DependentUpon>frm_Ticket_BitacoraTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Seguridad_Login.cs">
+    <Compile Include="frm_Seguridad_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Seguridad_Login.Designer.cs">
+    <Compile Include="frm_Seguridad_Login.Designer.cs">
       <DependentUpon>frm_Seguridad_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Ticket_AtencionTicket.cs">
+    <Compile Include="frm_Ticket_AtencionTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Ticket_AtencionTicket.Designer.cs">
+    <Compile Include="frm_Ticket_AtencionTicket.Designer.cs">
       <DependentUpon>frm_Ticket_AtencionTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_NuevoEmpleado.cs">
+    <Compile Include="frm_RRHH_NuevoEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_NuevoEmpleado.Designer.cs">
+    <Compile Include="frm_RRHH_NuevoEmpleado.Designer.cs">
       <DependentUpon>frm_RRHH_NuevoEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Ticket_CatalogoSeleccionTicket.cs">
+    <Compile Include="frm_Ticket_CatalogoSeleccionTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Ticket_CatalogoSeleccionTicket.Designer.cs">
+    <Compile Include="frm_Ticket_CatalogoSeleccionTicket.Designer.cs">
       <DependentUpon>frm_Ticket_CatalogoSeleccionTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_NuevaFactura.cs">
+    <Compile Include="frm_CxC_CxP_NuevaFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_CxC_CxP_NuevaFactura.Designer.cs">
+    <Compile Include="frm_CxC_CxP_NuevaFactura.Designer.cs">
       <DependentUpon>frm_CxC_CxP_NuevaFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_ControlNomina.cs">
+    <Compile Include="frm_RRHH_ControlNomina.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_ControlNomina.Designer.cs">
+    <Compile Include="frm_RRHH_ControlNomina.Designer.cs">
       <DependentUpon>frm_RRHH_ControlNomina.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_0MenuPrincipal.cs">
+    <Compile Include="frm_0MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_0MenuPrincipal.Designer.cs">
+    <Compile Include="frm_0MenuPrincipal.Designer.cs">
       <DependentUpon>frm_0MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_Ticket_NuevoTicket.cs">
+    <Compile Include="frm_Ticket_NuevoTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_Ticket_NuevoTicket.Designer.cs">
+    <Compile Include="frm_Ticket_NuevoTicket.Designer.cs">
       <DependentUpon>frm_Ticket_NuevoTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_NuevaSolicitudVacaciones.cs">
+    <Compile Include="frm_RRHH_NuevaSolicitudVacaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\frm_RRHH_NuevaSolicitudVacaciones.Designer.cs">
+    <Compile Include="frm_RRHH_NuevaSolicitudVacaciones.Designer.cs">
       <DependentUpon>frm_RRHH_NuevaSolicitudVacaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\frm_CxC_CxP_CatalogoProveedores.resx">
+    <EmbeddedResource Include="frm_CxC_CxP_CatalogoProveedores.resx">
       <DependentUpon>frm_CxC_CxP_CatalogoProveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_CxC_CxP_EnvioEstadosCuenta.resx">
+    <EmbeddedResource Include="frm_CxC_CxP_EnvioEstadosCuenta.resx">
       <DependentUpon>frm_CxC_CxP_EnvioEstadosCuenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_CxC_CxP_NuevaOrdenCompra.resx">
+    <EmbeddedResource Include="frm_CxC_CxP_NuevaOrdenCompra.resx">
       <DependentUpon>frm_CxC_CxP_NuevaOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_CxC_CxP_NuevoProveedor.resx">
+    <EmbeddedResource Include="frm_CxC_CxP_NuevoProveedor.resx">
       <DependentUpon>frm_CxC_CxP_NuevoProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_CxC_CxP_CatalogoOrdenesDeCompra.resx">
+    <EmbeddedResource Include="frm_CxC_CxP_CatalogoOrdenesDeCompra.resx">
       <DependentUpon>frm_CxC_CxP_CatalogoOrdenesDeCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_R_Alertas_MantenimientoComunicacion.resx">
-      <DependentUpon>frm_R_Alertas_MantenimientoComunicacion.cs</DependentUpon>
+    <EmbeddedResource Include="frm_ReporteAlertas_MantenimientoComunicacion.resx">
+      <DependentUpon>frm_ReporteAlertas_MantenimientoComunicacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_ReportesAlertas_GenerarGrafico.resx">
+    <EmbeddedResource Include="frm_ReportesAlertas_GenerarGrafico.resx">
       <DependentUpon>frm_ReportesAlertas_GenerarGrafico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_R_Alertas_MantenimientoAlertasNotificaciones.resx">
-      <DependentUpon>frm_R_Alertas_MantenimientoAlertasNotificaciones.cs</DependentUpon>
+    <EmbeddedResource Include="frm_ReportesAlertas_MantenimientoAlertasNotificaciones.resx">
+      <DependentUpon>frm_ReportesAlertas_MantenimientoAlertasNotificaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_RRHH_ControlIncapacidades.resx">
+    <EmbeddedResource Include="frm_RRHH_ControlIncapacidades.resx">
       <DependentUpon>frm_RRHH_ControlIncapacidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_RRHH_ControlVacaciones.resx">
+    <EmbeddedResource Include="frm_RRHH_ControlVacaciones.resx">
       <DependentUpon>frm_RRHH_ControlVacaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_RRHH_NuevaIncapacidad.resx">
+    <EmbeddedResource Include="frm_RRHH_NuevaIncapacidad.resx">
       <DependentUpon>frm_RRHH_NuevaIncapacidad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Seguridad_AdministracionCuentasUsuario.resx">
+    <EmbeddedResource Include="frm_Seguridad_AdministracionCuentasUsuario.resx">
       <DependentUpon>frm_Seguridad_AdministracionCuentasUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Seguridad_AdministracionPerfiles.resx">
+    <EmbeddedResource Include="frm_Seguridad_AdministracionPerfiles.resx">
       <DependentUpon>frm_Seguridad_AdministracionPerfiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Seguridad_NuevoUsuarioFinal.resx">
+    <EmbeddedResource Include="frm_Seguridad_NuevoUsuarioFinal.resx">
       <DependentUpon>frm_Seguridad_NuevoUsuarioFinal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Ticket_CatalogoAsignacionTicket.resx">
+    <EmbeddedResource Include="frm_Ticket_CatalogoAsignacionTicket.resx">
       <DependentUpon>frm_Ticket_CatalogoAsignacionTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Ticket_BitacoraTicket.resx">
+    <EmbeddedResource Include="frm_Ticket_BitacoraTicket.resx">
       <DependentUpon>frm_Ticket_BitacoraTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Seguridad_Login.resx">
+    <EmbeddedResource Include="frm_Seguridad_Login.resx">
       <DependentUpon>frm_Seguridad_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Ticket_AtencionTicket.resx">
+    <EmbeddedResource Include="frm_Ticket_AtencionTicket.resx">
       <DependentUpon>frm_Ticket_AtencionTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_RRHH_NuevoEmpleado.resx">
+    <EmbeddedResource Include="frm_RRHH_NuevoEmpleado.resx">
       <DependentUpon>frm_RRHH_NuevoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Ticket_CatalogoSeleccionTicket.resx">
+    <EmbeddedResource Include="frm_Ticket_CatalogoSeleccionTicket.resx">
       <DependentUpon>frm_Ticket_CatalogoSeleccionTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_CxC_CxP_NuevaFactura.resx">
+    <EmbeddedResource Include="frm_CxC_CxP_NuevaFactura.resx">
       <DependentUpon>frm_CxC_CxP_NuevaFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_RRHH_ControlNomina.resx">
+    <EmbeddedResource Include="frm_RRHH_ControlNomina.resx">
       <DependentUpon>frm_RRHH_ControlNomina.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_0MenuPrincipal.resx">
+    <EmbeddedResource Include="frm_0MenuPrincipal.resx">
       <DependentUpon>frm_0MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_Ticket_NuevoTicket.resx">
+    <EmbeddedResource Include="frm_Ticket_NuevoTicket.resx">
       <DependentUpon>frm_Ticket_NuevoTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\frm_RRHH_NuevaSolicitudVacaciones.resx">
+    <EmbeddedResource Include="frm_RRHH_NuevaSolicitudVacaciones.resx">
       <DependentUpon>frm_RRHH_NuevaSolicitudVacaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
