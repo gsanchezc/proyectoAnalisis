@@ -316,5 +316,12 @@ namespace frmPrincipal
             }
         }
 
+        private void btn_ConfiguracionSistema_Click(object sender, EventArgs e)
+        {
+            frm_Mantenimiento_0Menu ventanaMenuMantenimiento = new frm_Mantenimiento_0Menu();
+            this.Hide();
+            ventanaMenuMantenimiento.ShowDialog();
+        }
+
     }
 }

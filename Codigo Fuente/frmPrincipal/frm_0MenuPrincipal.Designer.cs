@@ -440,6 +440,7 @@
             this.btn_ConfiguracionSistema.Text = "Configuracion de Sistema";
             this.btn_ConfiguracionSistema.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ConfiguracionSistema.UseVisualStyleBackColor = true;
+            this.btn_ConfiguracionSistema.Click += new System.EventHandler(this.btn_ConfiguracionSistema_Click);
             // 
             // pictureBox4
             // 

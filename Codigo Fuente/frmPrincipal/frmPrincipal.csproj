@@ -77,23 +77,47 @@
     <Compile Include="frm_CxC_CxP_CatalogoOrdenesDeCompra.Designer.cs">
       <DependentUpon>frm_CxC_CxP_CatalogoOrdenesDeCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Mantenimiento_ClienteProveedor.cs">
+    <Compile Include="frm_MantenimientoDescripcionRoles1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Mantenimiento_ClienteProveedor.Designer.cs">
-      <DependentUpon>frm_Mantenimiento_ClienteProveedor.cs</DependentUpon>
+    <Compile Include="frm_MantenimientoDescripcionRoles1.Designer.cs">
+      <DependentUpon>frm_MantenimientoDescripcionRoles1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Mantenimiento_Descripcion_Departamento.cs">
+    <Compile Include="frm_MantenimientoDescripcionRolesNuevoEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Mantenimiento_Descripcion_Departamento.Designer.cs">
-      <DependentUpon>frm_Mantenimiento_Descripcion_Departamento.cs</DependentUpon>
+    <Compile Include="frm_MantenimientoDescripcionRolesNuevoEditar.Designer.cs">
+      <DependentUpon>frm_MantenimientoDescripcionRolesNuevoEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Mantenimiento_Tipo_Identificacion.cs">
+    <Compile Include="frm_MantenimientoEstadoFacturaNuevoEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Mantenimiento_Tipo_Identificacion.Designer.cs">
-      <DependentUpon>frm_Mantenimiento_Tipo_Identificacion.cs</DependentUpon>
+    <Compile Include="frm_MantenimientoEstadoFacturaNuevoEditar.Designer.cs">
+      <DependentUpon>frm_MantenimientoEstadoFacturaNuevoEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoTipoPuestoNuevoEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoTipoPuestoNuevoEditar.Designer.cs">
+      <DependentUpon>frm_MantenimientoTipoPuestoNuevoEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoTipoPuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoTipoPuestos.Designer.cs">
+      <DependentUpon>frm_MantenimientoTipoPuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Mantenimiento_0Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Mantenimiento_0Menu.Designer.cs">
+      <DependentUpon>frm_Mantenimiento_0Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Mantenimiento_estadoFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Mantenimiento_estadoFacturas.Designer.cs">
+      <DependentUpon>frm_Mantenimiento_estadoFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_ReporteAlertas_MantenimientoComunicacion.cs">
       <SubType>Form</SubType>
@@ -232,14 +256,26 @@
     <EmbeddedResource Include="frm_CxC_CxP_CatalogoOrdenesDeCompra.resx">
       <DependentUpon>frm_CxC_CxP_CatalogoOrdenesDeCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Mantenimiento_ClienteProveedor.resx">
-      <DependentUpon>frm_Mantenimiento_ClienteProveedor.cs</DependentUpon>
+    <EmbeddedResource Include="frm_MantenimientoDescripcionRoles1.resx">
+      <DependentUpon>frm_MantenimientoDescripcionRoles1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Mantenimiento_Descripcion_Departamento.resx">
-      <DependentUpon>frm_Mantenimiento_Descripcion_Departamento.cs</DependentUpon>
+    <EmbeddedResource Include="frm_MantenimientoDescripcionRolesNuevoEditar.resx">
+      <DependentUpon>frm_MantenimientoDescripcionRolesNuevoEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Mantenimiento_Tipo_Identificacion.resx">
-      <DependentUpon>frm_Mantenimiento_Tipo_Identificacion.cs</DependentUpon>
+    <EmbeddedResource Include="frm_MantenimientoEstadoFacturaNuevoEditar.resx">
+      <DependentUpon>frm_MantenimientoEstadoFacturaNuevoEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoTipoPuestoNuevoEditar.resx">
+      <DependentUpon>frm_MantenimientoTipoPuestoNuevoEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoTipoPuestos.resx">
+      <DependentUpon>frm_MantenimientoTipoPuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Mantenimiento_0Menu.resx">
+      <DependentUpon>frm_Mantenimiento_0Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Mantenimiento_estadoFacturas.resx">
+      <DependentUpon>frm_Mantenimiento_estadoFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ReporteAlertas_MantenimientoComunicacion.resx">
       <DependentUpon>frm_ReporteAlertas_MantenimientoComunicacion.cs</DependentUpon>
@@ -311,6 +347,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -362,6 +399,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Fixing-mixing-or-corrupt-System-32-file1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\clases\BLL.csproj">
+      <Project>{734A12E3-A2F9-437E-92BE-C2D1B933E4B8}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
