@@ -1,17 +1,37 @@
 USE master
 GO
 
+-------------------------------------------------------------------------
+------------CREACION DE LA BASE DE DATOS---------------------------------
 CREATE DATABASE db_soportic
 GO
 
---USE db_soportic
---GO
+-----------------CREACION DE USUARIO Y LOGIN------------------------------
+USE [master]
+GO
+CREATE LOGIN [udb_soportic] WITH PASSWORD=N'Abc123$', DEFAULT_DATABASE=[db_soportic], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE [db_soportic]
+GO
+CREATE USER [udb_soportic] FOR LOGIN [udb_soportic]
+GO
+USE [db_soportic]
+GO
+ALTER USER [udb_soportic] WITH DEFAULT_SCHEMA=[dbo]
+GO
+USE [db_soportic]
+GO
+EXEC sp_addrolemember N'db_owner', N'udb_soportic'
+GO
 
+------------------------------------------------------------------------
+------------------------CREACION DE LAS TABLAS--------------------------
 
 CREATE TABLE db_soportic.dbo.tbl_tipoIdentificaciones
 (
 	idTipoIdentificacion INT NOT NULL IDENTITY (1,1),
-	descripcion VARCHAR(50)
+	descripcion VARCHAR(50) NOT NULL,
+	isDeleted BIT DEFAULT(0)
 	
 	CONSTRAINT pk_idTipoIdentificacion PRIMARY KEY CLUSTERED
 	(
@@ -24,7 +44,9 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_tipoClientesProveedores
 (
 	idTipoClienteProveedor INT NOT NULL IDENTITY (1,1),
-	descripcion VARCHAR(50)
+	descripcion VARCHAR(50) NOT NULL,
+	isDeleted BIT NOT NULL DEFAULT(0)
+	
 	
 	CONSTRAINT pk_idTipoClienteProveedor PRIMARY KEY CLUSTERED
 	(
@@ -37,7 +59,8 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_estatusFacturas
 (
 	idEstatus INT NOT NULL IDENTITY (1,1),
-	descripcion VARCHAR(50)
+	descripcion VARCHAR(50) NOT NULL,
+	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idEstatus PRIMARY KEY CLUSTERED
 	(
@@ -50,7 +73,8 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_tipoPuestos
 (
 	idPuesto INT NOT NULL IDENTITY (1,1),
-	descripcion VARCHAR(50)
+	descripcion VARCHAR(50) NOT NULL,
+	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idPuesto PRIMARY KEY CLUSTERED
 	(
@@ -63,7 +87,8 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_descripcionRoles
 (
 	idRol INT NOT NULL IDENTITY (1,1),
-	descripcion VARCHAR(50)
+	descripcion VARCHAR(50) NOT NULL,
+	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idRol PRIMARY KEY CLUSTERED
 	(
@@ -76,7 +101,8 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_descripcionDepartamentos
 (
 	idDepartamento INT NOT NULL IDENTITY (1,1),
-	descripcion VARCHAR(50)
+	descripcion VARCHAR(50) NOT NULL,
+	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idTipoDepartamento PRIMARY KEY CLUSTERED
 	(
@@ -89,7 +115,8 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_datosAdjuntos
 (
 	idArchivo INT NOT NULL IDENTITY (1,1),
-	archivo VARBINARY(MAX)
+	archivo VARBINARY(MAX) NOT NULL,
+	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idArchivo PRIMARY KEY CLUSTERED
 	(
@@ -247,7 +274,8 @@ CREATE TABLE db_soportic.dbo.tbl_empleados
 	idRol INT NOT NULL,
 	idDepartamento INT NOT NULL,
 	idPuesto INT NOT NULL,
-	vacacionesDisponibles INT NOT NULL DEFAULT(0)
+	vacacionesDisponibles INT NOT NULL DEFAULT(0),
+	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idEmpleado PRIMARY KEY CLUSTERED
 	(
@@ -264,7 +292,8 @@ CREATE TABLE db_soportic.dbo.tbl_incapacidades
 	idSupervisor INT NOT NULL,
 	diaInicio DATE NOT NULL,
 	diaFin DATE NOT NULL,
-	totalDias INT NOT NULL
+	totalDias INT NOT NULL,
+	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idIncapacidad PRIMARY KEY CLUSTERED
 	(
@@ -296,7 +325,8 @@ CREATE TABLE db_soportic.dbo.tbl_parametros
 (
 	idParametro INT NOT NULL IDENTITY(1,1),
 	descripcion VARCHAR(50) NOT NULL,
-	valor VARCHAR(15) NOT NULL
+	valor VARCHAR(15) NOT NULL,
+	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idParametro PRIMARY KEY CLUSTERED
 	(
@@ -333,14 +363,8 @@ CREATE TABLE db_soportic.dbo.tbl_tipoPrioridades
 
 GO
 
-/*
-ALTER TABLE db_soportic.dbo.tbl_ WITH CHECK ADD CONSTRAINT fk_  FOREIGN KEY()
-REFERENCES  db_soportic.dbo.tbl_()
-GO
-
-ALTER TABLE db_soportic.dbo.tbl_ CHECK CONSTRAINT fk_
-GO
-*/
+----------------------------------------------------------------------
+--------------------CREACIÓN DE LLAVES FORÁNEAS-----------------------
 
 -------TABLA BITACORA----------
 --Usuario de la bitácora
@@ -370,8 +394,6 @@ GO
 
 
 ---------TABLA CLIENTESPROVEEDORES---------------------
-
-
 --Tipo identificacion del cliente proveedor
 ALTER TABLE db_soportic.dbo.tbl_clientesProveedores WITH CHECK ADD CONSTRAINT fk_clienteProveedor_idTipoIdentificacion  FOREIGN KEY(idTipoIdentificacion)
 REFERENCES  db_soportic.dbo.tbl_tipoClientesProveedores(idTipoClienteProveedor)
@@ -409,7 +431,6 @@ GO
 
 
 ------------TABLA FACTURAS----------
-
 --Cliente de la facutra
 ALTER TABLE db_soportic.dbo.tbl_facturas WITH CHECK ADD CONSTRAINT fk_facturas_idCliente  FOREIGN KEY(idCliente)
 REFERENCES  db_soportic.dbo.tbl_clientesProveedores(idCliente)
@@ -427,7 +448,6 @@ ALTER TABLE db_soportic.dbo.tbl_facturas CHECK CONSTRAINT fk_facturas_estadoFact
 GO
 
 ----------------TABLA INCAPACIDADES---------------------
-
 --Empleado de la incapacidad
 ALTER TABLE db_soportic.dbo.tbl_incapacidades WITH CHECK ADD CONSTRAINT fk_incapacidades_idEmpleado  FOREIGN KEY(idEmpleado)
 REFERENCES  db_soportic.dbo.tbl_empleados(idEmpleado)
@@ -447,7 +467,6 @@ GO
 
 
 --------------------TABLA EMPLEADOS-----------------------------------------------------------------
-
 --Tipo identificacion del empleado
 ALTER TABLE db_soportic.dbo.tbl_empleados WITH CHECK ADD CONSTRAINT fk_empleados_idTipoIdentificacion FOREIGN KEY(idTipoIdentificacion)
 REFERENCES db_soportic.dbo.tbl_tipoIdentificaciones(idTipoIdentificacion)
@@ -481,7 +500,6 @@ ALTER TABLE db_soportic.dbo.tbl_empleados CHECK CONSTRAINT fk_empleados_idPuesto
 GO
 
 -------------TABLA ORDEN DE COMPRAS---------------------
-
 --Cliente en la orden de compra
 ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH CHECK ADD CONSTRAINT fk_ordenCompras_idCliente  FOREIGN KEY(idCliente)
 REFERENCES  db_soportic.dbo.tbl_clientesProveedores(idCliente)
@@ -573,7 +591,6 @@ GO
 
 
 ------------------TABLA VACACIONES----------------
-
 --Empledo que solicita
 ALTER TABLE db_soportic.dbo.tbl_vacaciones WITH CHECK ADD CONSTRAINT fk_vacaciones_idEmpleado  FOREIGN KEY(idEmpleado)
 REFERENCES  db_soportic.dbo.tbl_empleados(idEmpleado)
@@ -592,7 +609,6 @@ GO
 
 
 --------TABLA USUARIOS DE SISTEMA--------------
-
 --idEmpleado
 ALTER TABLE db_soportic.dbo.tbl_usuariosSistema WITH CHECK ADD CONSTRAINT fk_usuariosSistema_idEmpleado  FOREIGN KEY(idEmpleado)
 REFERENCES  db_soportic.dbo.tbl_empleados(idEmpleado)
@@ -608,3 +624,5 @@ GO
 
 ALTER TABLE db_soportic.dbo.tbl_usuariosSistema CHECK CONSTRAINT fk_usuariosSistema_idRol
 GO
+
+--------------------------------------------------------------------------
