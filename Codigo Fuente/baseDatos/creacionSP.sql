@@ -1,11 +1,147 @@
+
 use db_soportic
 
 go
 
----------------------------Procedure de almacenamiento para la tabla tipoIdentificaciones-------------
-------------------------------------------------------------------------------------------------------
+--Procedimientos almacenados para la tabla estadoFactura------------------------------------
+create procedure stp_insertaEstadoFactura
+(
+@id int,
+@descripcion varchar(50)
+)
+as
+begin
+insert into tbl_estatusFacturas(descripcion) values(@descripcion)
+end
 
---------------------Procedure que inserta datos en la tabla tbl_tipoIdentificaciones------------------
+go
+
+create procedure stp_modificarEstadosFactura
+(
+@id int,
+@descripcion varchar(50)
+)
+as
+begin
+update tbl_estatusFacturas
+set descripcion = @descripcion
+where idEstatus = @id
+end
+
+go
+
+create procedure stp_traeInfoEstadosFactura
+(
+@id int
+)
+as
+begin
+select *from tbl_estatusFacturas where idEstatus = @id
+end
+
+go
+
+create procedure stp_traeListaEstadosFactura
+as
+begin
+select idEstatus, descripcion from tbl_estatusFacturas
+end
+
+go
+-----------------------------------------------------------------------------------------
+---Procedimientos almacenados para la tabla Descripcion Roles----------------------------
+create procedure stp_insertarDescripcionRol
+(
+@id int,
+@descripcion varchar(50)
+)
+as
+begin
+insert into tbl_descripcionRoles(descripcion) values(@descripcion)
+end
+
+go
+
+create procedure stp_modificarDescripcionRol
+(
+@id int,
+@descripcion varchar(50)
+)
+as
+begin
+update tbl_descripcionRoles
+set descripcion = @descripcion
+where idRol = @id
+end
+
+go
+
+create procedure stp_traeInfoDescripcionRol
+(
+@id int
+)
+as
+begin
+select *from tbl_descripcionRoles where idRol = @id
+end
+
+go
+
+create procedure stp_traeDescripcionRol
+as
+begin
+select idRol, descripcion from tbl_descripcionRoles
+end
+go
+------------------------------------------------------------------------------------------
+-----Procedimientos almacenados para la tabla tipo Puestos---------------------------
+
+create procedure stp_insertarTipoPuestos
+(
+@id int,
+@descripcion varchar(50)
+)
+as
+begin
+insert into tbl_tipoPuestos(descripcion) values(@descripcion)
+end
+
+go
+
+create procedure stp_modificarTipoPuestos
+(
+@id int,
+@descripcion varchar(50)
+)
+as
+begin
+update tbl_tipoPuestos
+set descripcion = @descripcion
+where idPuesto = @id
+end
+
+go
+
+create procedure stp_traeInfoTipoPuestos
+(
+@id int
+)
+as
+begin
+select *from tbl_tipoPuestos where idPuesto = @id
+end
+
+go
+
+create procedure stp_traeTipoPuestos
+as
+begin
+select idPuesto, descripcion from tbl_tipoPuestos
+end
+GO
+
+----------------------------------------------------------------------------------------
+
 create procedure stp_insertaTipoIdentificacion
 (
 		@id int, ---->este id pertenece al idTipoIdentificacion---- 
@@ -22,7 +158,7 @@ end
 
 go
 
---------Procedure que actualiza y modifica los datos de la tabla tbl_tipoIdentificacion-----
+
 create procedure stp_modificarTipoIdentificacion
 (
 		@id int,
@@ -51,6 +187,8 @@ end
 
 go
 
+
+
 ----------Procedure de borrado---------
 create procedure stp_borrarTipoIdentificacion
 (
@@ -64,6 +202,7 @@ where  idTipoIdentificacion = @id
 end
 
 go
+
 
 ---------------------------Procedure de almacenamiento para la tabla tipoClientesProveedores-------------
 ---------------------------------------------------------------------------------------------------------
@@ -130,21 +269,6 @@ begin
 end
 go
 
----------------Procedure de borrado----------------------
---create procedure stp_borrarTipoIdentificacion
---(
---		@id int,
---		@descripcion varchar(50)
---)
-
---as
---begin
---	delete tbl_tipoClientesProveedores  --TENGO PROBLEMAS CON ÉSTA,SI ALGUIEN ME PUEDE ECHAR UNA MANO, CON GUSTO ACEPTO LA AYUDA--
---	where idTipoClienteProveedor = @id
---end
-
---go
-
 
 ---------------------------Procedure de almacenamiento para la tabla estatusTickets-------------------
 ------------------------------------------------------------------------------------------------------
@@ -201,21 +325,6 @@ begin
 	select idEstatus, descripcion 
 	from tbl_estatusTickets
 end
-go
-
----------------Procedure de borrado----------------------
-create procedure stp_borrarEstatusTickets
-(
-		@id int,
-		@descripcion varchar(50)
-)
-
-as
-begin
-	delete db_soportic.dbo.tbl_estatusTickets  --TENGO PROBLEMAS CON ÉSTA,SI ALGUIEN ME PUEDE ECHAR UNA MANO, CON GUSTO ACEPTO LA AYUDA--
-	where idEstatus = @id
-end
-
 go
 
 
@@ -277,22 +386,6 @@ begin
 end
 
 go
-
-----------------Procedure de borrado------------------------------
-create procedure stp_borrarDescripcionDepartamentos
-(
-		@id int,
-		@descripcion varchar(50)
-)
-
-as
-begin
-	delete tbl_descripcionDepartamentos  --TENGO PROBLEMAS CON ÉSTA,SI ALGUIEN ME PUEDE ECHAR UNA MANO, CON GUSTO ACEPTO LA AYUDA--
-	where  idDepartamento  = @id
-end
-
-go
-
 ---------------------------Procedure de almacenamiento para la tabla datosAdjuntos--------------------
 ------------------------------------------------------------------------------------------------------
 
@@ -350,15 +443,3 @@ begin
 end
 go
 
-----------------Procedure de borrado---------------------
-create procedure stp_borrarDatosAdjuntos
-(
-	@id int,
-	@archivo varbinary(max)
-)
-as
-begin
-	delete tbl_datosAdjuntos  --TENGO PROBLEMAS CON ÉSTA,SI ALGUIEN ME PUEDE ECHAR UNA MANO, CON GUSTO ACEPTO LA AYUDA--
-	where  idArchivo = @id
-end
-go

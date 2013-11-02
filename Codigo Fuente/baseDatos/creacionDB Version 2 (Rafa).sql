@@ -360,13 +360,26 @@ CREATE TABLE db_soportic.dbo.tbl_tipoPrioridades
 )
 
 GO
+CREATE TABLE db_soportic.dbo.tbl_salarios
+(
+	idSalario INT NOT NULL IDENTITY(1,1),
+	idEmpleado INT NOT NULL,
+	monto DECIMAL(18,2) NOT NULL
+	
+	CONSTRAINT pk_idSalario PRIMARY KEY CLUSTERED
+	(
+		idSalario ASC
+	)
+)
+GO
+
 
 ----------------------------------------------------------------------
 --------------------CREACIÓN DE LLAVES FORÁNEAS-----------------------
 
 -------TABLA BITACORA----------
 --Usuario de la bitácora
-ALTER TABLE db_soportic.dbo.tbl_bitacoras WITH CHECK ADD CONSTRAINT fk_bitacoras_idEmpleado FOREIGN KEY (idEmpleado)
+ALTER TABLE db_soportic.dbo.tbl_bitacoras WITH NOCHECK ADD CONSTRAINT fk_bitacoras_idEmpleado FOREIGN KEY (idEmpleado)
 REFERENCES db_soportic.dbo.tbl_empleados(idEmpleado)
 GO
 
@@ -374,7 +387,7 @@ ALTER TABLE db_soportic.dbo.tbl_bitacoras CHECK CONSTRAINT fk_bitacoras_idEmplea
 GO
 
 --ticket de la bitácora
-ALTER TABLE db_soportic.dbo.tbl_bitacoras WITH CHECK ADD CONSTRAINT fk_bitacoras_idTicket  FOREIGN KEY(idTicket)
+ALTER TABLE db_soportic.dbo.tbl_bitacoras WITH NOCHECK ADD CONSTRAINT fk_bitacoras_idTicket  FOREIGN KEY(idTicket)
 REFERENCES  db_soportic.dbo.tbl_tickets(idTicket)
 GO
 
@@ -382,7 +395,7 @@ ALTER TABLE db_soportic.dbo.tbl_bitacoras CHECK CONSTRAINT fk_bitacoras_idTicket
 GO
 
 --Adjunto de la bitácora
-ALTER TABLE db_soportic.dbo.tbl_bitacoras WITH CHECK ADD CONSTRAINT FK_bitacoras_idAdjunto FOREIGN KEY(idAdjunto)
+ALTER TABLE db_soportic.dbo.tbl_bitacoras WITH NOCHECK ADD CONSTRAINT FK_bitacoras_idAdjunto FOREIGN KEY(idAdjunto)
 REFERENCES  db_soportic.dbo.tbl_datosAdjuntos(idArchivo)
 GO
 
@@ -393,7 +406,7 @@ GO
 
 ---------TABLA CLIENTESPROVEEDORES---------------------
 --Tipo identificacion del cliente proveedor
-ALTER TABLE db_soportic.dbo.tbl_clientesProveedores WITH CHECK ADD CONSTRAINT fk_clienteProveedor_idTipoIdentificacion  FOREIGN KEY(idTipoIdentificacion)
+ALTER TABLE db_soportic.dbo.tbl_clientesProveedores WITH NOCHECK ADD CONSTRAINT fk_clienteProveedor_idTipoIdentificacion  FOREIGN KEY(idTipoIdentificacion)
 REFERENCES  db_soportic.dbo.tbl_tipoClientesProveedores(idTipoClienteProveedor)
 GO
 
@@ -401,7 +414,7 @@ ALTER TABLE db_soportic.dbo.tbl_clientesProveedores CHECK CONSTRAINT fk_clientep
 GO
 
 --Tipo de clienteProveedor
-ALTER TABLE db_soportic.dbo.tbl_clientesProveedores WITH CHECK ADD CONSTRAINT fk_clienteProveedor_idTipoClienteProveedor  FOREIGN KEY(idTipoClienteProveedor)
+ALTER TABLE db_soportic.dbo.tbl_clientesProveedores WITH NOCHECK ADD CONSTRAINT fk_clienteProveedor_idTipoClienteProveedor  FOREIGN KEY(idTipoClienteProveedor)
 REFERENCES  db_soportic.dbo.tbl_tipoClientesProveedores(idTipoClienteProveedor)
 GO
 
@@ -412,7 +425,7 @@ GO
 -----------TABLA CONTACTOS POR CLIENTE (contactosClientesProveedores)------------------
 
 --id Cliente/Proveedor
-ALTER TABLE db_soportic.dbo.tbl_contactosClientesProveedores WITH CHECK ADD CONSTRAINT fk_contactosClientesProveedores_idClienteProveedor  FOREIGN KEY(idClienteProveedor)
+ALTER TABLE db_soportic.dbo.tbl_contactosClientesProveedores WITH NOCHECK ADD CONSTRAINT fk_contactosClientesProveedores_idClienteProveedor  FOREIGN KEY(idClienteProveedor)
 REFERENCES  db_soportic.dbo.tbl_clientesProveedores(idCliente)
 GO
 
@@ -420,7 +433,7 @@ ALTER TABLE db_soportic.dbo.tbl_contactosClientesProveedores CHECK CONSTRAINT fk
 GO
 
 --Tipo identificacion
-ALTER TABLE db_soportic.dbo.tbl_contactosClientesProveedores WITH CHECK ADD CONSTRAINT fk_contactosClientesProveedores_idTipoIdentificacion  FOREIGN KEY(idTipoIdentificacion)
+ALTER TABLE db_soportic.dbo.tbl_contactosClientesProveedores WITH NOCHECK ADD CONSTRAINT fk_contactosClientesProveedores_idTipoIdentificacion  FOREIGN KEY(idTipoIdentificacion)
 REFERENCES  db_soportic.dbo.tbl_tipoIdentificaciones(idTipoIdentificacion)
 GO
 
@@ -430,7 +443,7 @@ GO
 
 ------------TABLA FACTURAS----------
 --Cliente de la facutra
-ALTER TABLE db_soportic.dbo.tbl_facturas WITH CHECK ADD CONSTRAINT fk_facturas_idCliente  FOREIGN KEY(idCliente)
+ALTER TABLE db_soportic.dbo.tbl_facturas WITH NOCHECK ADD CONSTRAINT fk_facturas_idCliente  FOREIGN KEY(idCliente)
 REFERENCES  db_soportic.dbo.tbl_clientesProveedores(idCliente)
 GO
 
@@ -438,7 +451,7 @@ ALTER TABLE db_soportic.dbo.tbl_facturas CHECK CONSTRAINT fk_facturas_idCliente
 GO
 
 --Estado de la factura
-ALTER TABLE db_soportic.dbo.tbl_facturas WITH CHECK ADD CONSTRAINT fk_facturas_estadoFactura  FOREIGN KEY(estadoFactura)
+ALTER TABLE db_soportic.dbo.tbl_facturas WITH NOCHECK ADD CONSTRAINT fk_facturas_estadoFactura  FOREIGN KEY(estadoFactura)
 REFERENCES  db_soportic.dbo.tbl_estatusFacturas(idEstatus)
 GO
 
@@ -447,7 +460,7 @@ GO
 
 ----------------TABLA INCAPACIDADES---------------------
 --Empleado de la incapacidad
-ALTER TABLE db_soportic.dbo.tbl_incapacidades WITH CHECK ADD CONSTRAINT fk_incapacidades_idEmpleado  FOREIGN KEY(idEmpleado)
+ALTER TABLE db_soportic.dbo.tbl_incapacidades WITH NOCHECK ADD CONSTRAINT fk_incapacidades_idEmpleado  FOREIGN KEY(idEmpleado)
 REFERENCES  db_soportic.dbo.tbl_empleados(idEmpleado)
 GO
 
@@ -455,7 +468,7 @@ ALTER TABLE db_soportic.dbo.tbl_incapacidades CHECK CONSTRAINT fk_incapacidades_
 GO
 
 --Supervisor que digito la incapacidad
-ALTER TABLE db_soportic.dbo.tbl_incapacidades WITH CHECK ADD CONSTRAINT fk_incapacidades_idSupervisor  FOREIGN KEY(idEmpleado)
+ALTER TABLE db_soportic.dbo.tbl_incapacidades WITH NOCHECK ADD CONSTRAINT fk_incapacidades_idSupervisor  FOREIGN KEY(idEmpleado)
 REFERENCES  db_soportic.dbo.tbl_empleados(idEmpleado)
 GO
 
@@ -466,7 +479,7 @@ GO
 
 --------------------TABLA EMPLEADOS-----------------------------------------------------------------
 --Tipo identificacion del empleado
-ALTER TABLE db_soportic.dbo.tbl_empleados WITH CHECK ADD CONSTRAINT fk_empleados_idTipoIdentificacion FOREIGN KEY(idTipoIdentificacion)
+ALTER TABLE db_soportic.dbo.tbl_empleados WITH NOCHECK ADD CONSTRAINT fk_empleados_idTipoIdentificacion FOREIGN KEY(idTipoIdentificacion)
 REFERENCES db_soportic.dbo.tbl_tipoIdentificaciones(idTipoIdentificacion)
 GO
 
@@ -474,7 +487,7 @@ ALTER TABLE db_soportic.dbo.tbl_empleados CHECK CONSTRAINT fk_empleados_idTipoId
 GO
 
 --Rol del empleado
-ALTER TABLE db_soportic.dbo.tbl_empleados WITH CHECK ADD CONSTRAINT fk_empleados_idRol  FOREIGN KEY(idRol)
+ALTER TABLE db_soportic.dbo.tbl_empleados WITH NOCHECK ADD CONSTRAINT fk_empleados_idRol  FOREIGN KEY(idRol)
 REFERENCES  db_soportic.dbo.tbl_descripcionRoles(idRol)
 GO
 
@@ -482,7 +495,7 @@ ALTER TABLE db_soportic.dbo.tbl_empleados CHECK CONSTRAINT fk_empleados_idRol
 GO
 
 --departamento del empleado
-ALTER TABLE db_soportic.dbo.tbl_empleados WITH CHECK ADD CONSTRAINT fk_empleados_idDepartamentos  FOREIGN KEY(idDepartamento)
+ALTER TABLE db_soportic.dbo.tbl_empleados WITH NOCHECK ADD CONSTRAINT fk_empleados_idDepartamentos  FOREIGN KEY(idDepartamento)
 REFERENCES  db_soportic.dbo.tbl_descripcionDepartamentos(idDepartamento)
 GO
 
@@ -490,7 +503,7 @@ ALTER TABLE db_soportic.dbo.tbl_empleados CHECK CONSTRAINT fk_empleados_idDepart
 GO
 
 --Descripcion puesto
-ALTER TABLE db_soportic.dbo.tbl_empleados WITH CHECK ADD CONSTRAINT fk_empleados_idPuesto  FOREIGN KEY(idPuesto)
+ALTER TABLE db_soportic.dbo.tbl_empleados WITH NOCHECK ADD CONSTRAINT fk_empleados_idPuesto  FOREIGN KEY(idPuesto)
 REFERENCES  db_soportic.dbo.tbl_tipoPuestos(idPuesto)
 GO
 
@@ -499,7 +512,7 @@ GO
 
 -------------TABLA ORDEN DE COMPRAS---------------------
 --Cliente en la orden de compra
-ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH CHECK ADD CONSTRAINT fk_ordenCompras_idCliente  FOREIGN KEY(idCliente)
+ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH NOCHECK ADD CONSTRAINT fk_ordenCompras_idCliente  FOREIGN KEY(idCliente)
 REFERENCES  db_soportic.dbo.tbl_clientesProveedores(idCliente)
 GO
 
@@ -507,7 +520,7 @@ ALTER TABLE db_soportic.dbo.tbl_ordenCompras CHECK CONSTRAINT fk_ordenCompras_id
 GO
 
 --Factura asociada a la orden de compra
-ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH CHECK ADD CONSTRAINT fk_ordenCompras_idFacturas  FOREIGN KEY(idFactura)
+ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH NOCHECK ADD CONSTRAINT fk_ordenCompras_idFacturas  FOREIGN KEY(idFactura)
 REFERENCES  db_soportic.dbo.tbl_facturas(idFactura)
 GO
 
@@ -515,7 +528,7 @@ ALTER TABLE db_soportic.dbo.tbl_ordenCompras CHECK CONSTRAINT fk_ordenCompras_id
 GO
 
 --Supervisor digitador
-ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH CHECK ADD CONSTRAINT fk_ordenCompras_idSupervisor  FOREIGN KEY(idSupervisor)
+ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH NOCHECK ADD CONSTRAINT fk_ordenCompras_idSupervisor  FOREIGN KEY(idSupervisor)
 REFERENCES  db_soportic.dbo.tbl_empleados(idEmpleado)
 GO
 
@@ -523,7 +536,7 @@ ALTER TABLE db_soportic.dbo.tbl_ordenCompras CHECK CONSTRAINT fk_ordenCompras_id
 GO
 
 --Proveedor asociado
-ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH CHECK ADD CONSTRAINT fk_ordenCompras_idProveedor  FOREIGN KEY(idProveedor)
+ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH NOCHECK ADD CONSTRAINT fk_ordenCompras_idProveedor  FOREIGN KEY(idProveedor)
 REFERENCES  db_soportic.dbo.tbl_clientesProveedores(idCliente)
 GO
 
@@ -531,7 +544,7 @@ ALTER TABLE db_soportic.dbo.tbl_ordenCompras CHECK CONSTRAINT fk_ordenCompras_id
 GO
 
 --Adjunto Asociado
-ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH CHECK ADD CONSTRAINT fk_ordenCompras_idAdjunto  FOREIGN KEY(idAdjunto)
+ALTER TABLE db_soportic.dbo.tbl_ordenCompras WITH NOCHECK ADD CONSTRAINT fk_ordenCompras_idAdjunto  FOREIGN KEY(idAdjunto)
 REFERENCES  db_soportic.dbo.tbl_datosAdjuntos(idArchivo)
 GO
 
@@ -540,7 +553,7 @@ GO
 
 --------------------TICKETS----------------
 --Cliente del ticket
-ALTER TABLE db_soportic.dbo.tbl_tickets WITH CHECK ADD CONSTRAINT fk_tickets_idCliente  FOREIGN KEY(idCliente)
+ALTER TABLE db_soportic.dbo.tbl_tickets WITH NOCHECK ADD CONSTRAINT fk_tickets_idCliente  FOREIGN KEY(idCliente)
 REFERENCES  db_soportic.dbo.tbl_clientesProveedores(idCliente)
 GO
 
@@ -548,7 +561,7 @@ ALTER TABLE db_soportic.dbo.tbl_tickets CHECK CONSTRAINT fk_tickets_idCliente
 GO
 
 --Empleado asociado
-ALTER TABLE db_soportic.dbo.tbl_tickets WITH CHECK ADD CONSTRAINT fk_tickets_idEmpleado  FOREIGN KEY(idEmpleado)
+ALTER TABLE db_soportic.dbo.tbl_tickets WITH NOCHECK ADD CONSTRAINT fk_tickets_idEmpleado  FOREIGN KEY(idEmpleado)
 REFERENCES  db_soportic.dbo.tbl_empleados(idEmpleado)
 GO
 
@@ -556,7 +569,7 @@ ALTER TABLE db_soportic.dbo.tbl_tickets CHECK CONSTRAINT fk_tickets_idEmpleado
 GO
 
 --Estatus del ticket
-ALTER TABLE db_soportic.dbo.tbl_tickets WITH CHECK ADD CONSTRAINT fk_tickets_estatus  FOREIGN KEY(idEstatus)
+ALTER TABLE db_soportic.dbo.tbl_tickets WITH NOCHECK ADD CONSTRAINT fk_tickets_estatus  FOREIGN KEY(idEstatus)
 REFERENCES  db_soportic.dbo.tbl_estatusTickets(idEstatus)
 GO
 
@@ -564,7 +577,7 @@ ALTER TABLE db_soportic.dbo.tbl_tickets CHECK CONSTRAINT fk_tickets_estatus
 GO
 
 --Departamento asignado
-ALTER TABLE db_soportic.dbo.tbl_tickets WITH CHECK ADD CONSTRAINT fk_tickets_idDepartamento  FOREIGN KEY(idDepartamento)
+ALTER TABLE db_soportic.dbo.tbl_tickets WITH NOCHECK ADD CONSTRAINT fk_tickets_idDepartamento  FOREIGN KEY(idDepartamento)
 REFERENCES  db_soportic.dbo.tbl_descripcionDepartamentos(idDepartamento)
 GO
 
@@ -572,7 +585,7 @@ ALTER TABLE db_soportic.dbo.tbl_tickets CHECK CONSTRAINT fk_tickets_idDepartamen
 GO
 
 --Datos adjuntos
-ALTER TABLE db_soportic.dbo.tbl_tickets WITH CHECK ADD CONSTRAINT fk_tickets_idAdjunto  FOREIGN KEY(idAdjunto)
+ALTER TABLE db_soportic.dbo.tbl_tickets WITH NOCHECK ADD CONSTRAINT fk_tickets_idAdjunto  FOREIGN KEY(idAdjunto)
 REFERENCES  db_soportic.dbo.tbl_datosAdjuntos(idArchivo)
 GO
 
@@ -580,7 +593,7 @@ ALTER TABLE db_soportic.dbo.tbl_tickets CHECK CONSTRAINT fk_tickets_idAdjunto
 GO
 
 --Prioridad
-ALTER TABLE db_soportic.dbo.tbl_tickets WITH CHECK ADD CONSTRAINT fk_tickets_idPrioridad  FOREIGN KEY(idPrioridad)
+ALTER TABLE db_soportic.dbo.tbl_tickets WITH NOCHECK ADD CONSTRAINT fk_tickets_idPrioridad  FOREIGN KEY(idPrioridad)
 REFERENCES  db_soportic.dbo.tbl_tipoPrioridades(idPrioridad)
 GO
 
@@ -590,7 +603,7 @@ GO
 
 ------------------TABLA VACACIONES----------------
 --Empledo que solicita
-ALTER TABLE db_soportic.dbo.tbl_vacaciones WITH CHECK ADD CONSTRAINT fk_vacaciones_idEmpleado  FOREIGN KEY(idEmpleado)
+ALTER TABLE db_soportic.dbo.tbl_vacaciones WITH NOCHECK ADD CONSTRAINT fk_vacaciones_idEmpleado  FOREIGN KEY(idEmpleado)
 REFERENCES  db_soportic.dbo.tbl_empleados(idEmpleado)
 GO
 
@@ -598,7 +611,7 @@ ALTER TABLE db_soportic.dbo.tbl_vacaciones CHECK CONSTRAINT fk_vacaciones_idEmpl
 GO
 
 --Supervisor que solicita
-ALTER TABLE db_soportic.dbo.tbl_vacaciones WITH CHECK ADD CONSTRAINT fk_vacaciones_idSupervisor  FOREIGN KEY(idEmpleado)
+ALTER TABLE db_soportic.dbo.tbl_vacaciones WITH NOCHECK ADD CONSTRAINT fk_vacaciones_idSupervisor  FOREIGN KEY(idEmpleado)
 REFERENCES  db_soportic.dbo.tbl_empleados(idEmpleado)
 GO
 
@@ -608,7 +621,7 @@ GO
 
 --------TABLA USUARIOS DE SISTEMA--------------
 --idEmpleado
-ALTER TABLE db_soportic.dbo.tbl_usuariosSistema WITH CHECK ADD CONSTRAINT fk_usuariosSistema_idEmpleado  FOREIGN KEY(idEmpleado)
+ALTER TABLE db_soportic.dbo.tbl_usuariosSistema WITH NOCHECK ADD CONSTRAINT fk_usuariosSistema_idEmpleado  FOREIGN KEY(idEmpleado)
 REFERENCES  db_soportic.dbo.tbl_empleados(idEmpleado)
 GO
 
@@ -616,11 +629,19 @@ ALTER TABLE db_soportic.dbo.tbl_usuariosSistema CHECK CONSTRAINT fk_usuariosSist
 GO
 
 --idRol
-ALTER TABLE db_soportic.dbo.tbl_usuariosSistema WITH CHECK ADD CONSTRAINT fk_usuariosSistema_idRol  FOREIGN KEY(idRol)
+ALTER TABLE db_soportic.dbo.tbl_usuariosSistema WITH NOCHECK ADD CONSTRAINT fk_usuariosSistema_idRol  FOREIGN KEY(idRol)
 REFERENCES  db_soportic.dbo.tbl_descripcionRoles(idRol)
 GO
 
 ALTER TABLE db_soportic.dbo.tbl_usuariosSistema CHECK CONSTRAINT fk_usuariosSistema_idRol
+GO
+
+---------------------TABLA SALARIOS--------------------------
+ALTER TABLE db_soportic.dbo.tbl_salarios WITH NOCHECK ADD CONSTRAINT fk_salarios_idEmpleado FOREIGN KEY (idEmpleado)
+REFERENCES db_soportic.dbo.tbl_empleados(idEmpleado)
+GO
+
+ALTER TABLE db_soportic.dbo.tbl_salarios CHECK CONSTRAINT fk_salarios_idEmpleado
 GO
 
 -----------------------INSERT PARA PRUEBAS-----------
