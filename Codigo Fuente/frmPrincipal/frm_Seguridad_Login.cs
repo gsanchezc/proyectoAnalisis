@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
+using System.Text.RegularExpressions;
 
 namespace frmPrincipal
 {
     public partial class frm_Seguridad_Login : Form
     {
+       
         Seguridad objSeguridad = new Seguridad();
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
 
@@ -22,6 +24,12 @@ namespace frmPrincipal
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (validarUsuario(txt_Usuario) == false)
+            {
+                MessageBox.Show("Ingrese Unicamente Numeros en el Usuario", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Usuario.Focus();
+                return;
+            }
             if (!Validaciones.validar(txt_Usuario))
             {
                 MessageBox.Show("No ingresaste Usuario", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -52,7 +60,7 @@ namespace frmPrincipal
                 this.Hide();
                 ventana.Show();
                 ventanaReportes.Show();
-            }
+           }
             else
             {
                 MessageBox.Show("CONTACTE ADMINISTRADOR DE SISTEMA", "ERROR");
@@ -70,6 +78,13 @@ namespace frmPrincipal
             {
                 return;
             }
+        }
+
+        private static bool validarUsuario(Control mitextbox)
+        {
+
+            Regex regex = new Regex("^[0-9]*$");
+            return regex.IsMatch(mitextbox.Text);
         }
     }
 }

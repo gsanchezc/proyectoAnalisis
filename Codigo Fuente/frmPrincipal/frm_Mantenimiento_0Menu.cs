@@ -37,5 +37,33 @@ namespace frmPrincipal
             this.Hide();
             ventanaTipoPuesto.ShowDialog();
         }
+
+        private void btn_MantenimientoClienteProveedor_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoClienteProveedor ventana = new frm_MantenimientoClienteProveedor();
+            this.Hide();
+            ventana.ShowDialog();
+        }
+
+        private void btn_ManteniminetoTipoIdentificacion_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoTipoIdentificacion ventana = new frm_MantenimientoTipoIdentificacion();
+            this.Hide();
+            ventana.ShowDialog();
+        }
+
+        private void btn_MantenimientoDescripcionDepartamento_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoDescripcionDepartamento ventana = new frm_MantenimientoDescripcionDepartamento();
+            this.Hide();
+            ventana.ShowDialog();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

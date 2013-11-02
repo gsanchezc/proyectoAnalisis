@@ -11,15 +11,12 @@ USE [master]
 GO
 USE [db_soportic]
 GO
-CREATE USER [udb_soportic] FOR LOGIN [udb_soportic]
-GO
+
 USE [db_soportic]
 GO
 ALTER USER [udb_soportic] WITH DEFAULT_SCHEMA=[dbo]
 GO
 USE [db_soportic]
-GO
-EXEC sp_addrolemember N'db_owner', N'udb_soportic'
 GO
 
 ------------------------------------------------------------------------
