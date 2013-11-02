@@ -42,7 +42,7 @@
             // 
             this.btn_guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_guardar.Location = new System.Drawing.Point(19, 224);
+            this.btn_guardar.Location = new System.Drawing.Point(826, 46);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(118, 33);
             this.btn_guardar.TabIndex = 21;
@@ -54,7 +54,7 @@
             // 
             this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Cancelar.Location = new System.Drawing.Point(178, 224);
+            this.btn_Cancelar.Location = new System.Drawing.Point(826, 118);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(118, 33);
             this.btn_Cancelar.TabIndex = 20;
@@ -72,7 +72,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(19, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 201);
+            this.groupBox1.Size = new System.Drawing.Size(777, 468);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso Descripcion Rol";
@@ -80,7 +80,7 @@
             // lbl_id
             // 
             this.lbl_id.AutoSize = true;
-            this.lbl_id.Location = new System.Drawing.Point(42, 53);
+            this.lbl_id.Location = new System.Drawing.Point(93, 56);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(62, 20);
             this.lbl_id.TabIndex = 56;
@@ -88,25 +88,25 @@
             // 
             // txt_Descripcion
             // 
-            this.txt_Descripcion.Location = new System.Drawing.Point(143, 107);
+            this.txt_Descripcion.Location = new System.Drawing.Point(182, 107);
             this.txt_Descripcion.MaxLength = 50;
             this.txt_Descripcion.Multiline = true;
             this.txt_Descripcion.Name = "txt_Descripcion";
-            this.txt_Descripcion.Size = new System.Drawing.Size(292, 78);
+            this.txt_Descripcion.Size = new System.Drawing.Size(548, 180);
             this.txt_Descripcion.TabIndex = 55;
             // 
             // txt_Id
             // 
-            this.txt_Id.Location = new System.Drawing.Point(143, 50);
+            this.txt_Id.Location = new System.Drawing.Point(182, 50);
             this.txt_Id.Name = "txt_Id";
             this.txt_Id.ReadOnly = true;
-            this.txt_Id.Size = new System.Drawing.Size(292, 26);
+            this.txt_Id.Size = new System.Drawing.Size(278, 26);
             this.txt_Id.TabIndex = 54;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 107);
+            this.label2.Location = new System.Drawing.Point(42, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 20);
             this.label2.TabIndex = 53;
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 274);
+            this.ClientSize = new System.Drawing.Size(999, 497);
             this.ControlBox = false;
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.btn_Cancelar);

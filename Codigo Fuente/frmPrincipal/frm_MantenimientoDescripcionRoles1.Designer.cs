@@ -46,12 +46,14 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.btn_cerrar);
             this.groupBox1.Controls.Add(this.dtg_ListaDescripcionRol);
+            this.groupBox1.Controls.Add(this.btn_agregar);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(3, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(975, 473);
+            this.groupBox1.Size = new System.Drawing.Size(984, 473);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Descripcion Roles";
@@ -63,7 +65,7 @@
             this.groupBox2.Controls.Add(this.btn_eliminar);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Location = new System.Drawing.Point(15, 407);
+            this.groupBox2.Location = new System.Drawing.Point(15, 366);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(718, 60);
             this.groupBox2.TabIndex = 7;
@@ -121,7 +123,7 @@
             this.dtg_ListaDescripcionRol.Name = "dtg_ListaDescripcionRol";
             this.dtg_ListaDescripcionRol.ReadOnly = true;
             this.dtg_ListaDescripcionRol.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_ListaDescripcionRol.Size = new System.Drawing.Size(945, 368);
+            this.dtg_ListaDescripcionRol.Size = new System.Drawing.Size(954, 327);
             this.dtg_ListaDescripcionRol.TabIndex = 0;
             // 
             // Id_estado
@@ -144,7 +146,7 @@
             // 
             this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_cerrar.Location = new System.Drawing.Point(268, 500);
+            this.btn_cerrar.Location = new System.Drawing.Point(265, 441);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(187, 23);
             this.btn_cerrar.TabIndex = 6;
@@ -156,7 +158,7 @@
             // 
             this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_agregar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_agregar.Location = new System.Drawing.Point(18, 500);
+            this.btn_agregar.Location = new System.Drawing.Point(39, 441);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(211, 23);
             this.btn_agregar.TabIndex = 4;
@@ -168,11 +170,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 535);
+            this.ClientSize = new System.Drawing.Size(999, 497);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btn_cerrar);
-            this.Controls.Add(this.btn_agregar);
             this.Name = "frm_MantenimientoDescripcionRoles1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Mantenimiento Descripcion Roles";

@@ -46,7 +46,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.btn_cerrar);
             this.groupBox1.Controls.Add(this.dtg_ListaEstadoFactura);
+            this.groupBox1.Controls.Add(this.btn_agregar);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -63,7 +65,7 @@
             this.groupBox2.Controls.Add(this.btn_eliminar);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Location = new System.Drawing.Point(15, 407);
+            this.groupBox2.Location = new System.Drawing.Point(15, 365);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(718, 60);
             this.groupBox2.TabIndex = 7;
@@ -121,7 +123,7 @@
             this.dtg_ListaEstadoFactura.Name = "dtg_ListaEstadoFactura";
             this.dtg_ListaEstadoFactura.ReadOnly = true;
             this.dtg_ListaEstadoFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_ListaEstadoFactura.Size = new System.Drawing.Size(945, 368);
+            this.dtg_ListaEstadoFactura.Size = new System.Drawing.Size(954, 326);
             this.dtg_ListaEstadoFactura.TabIndex = 0;
             // 
             // Id_estado
@@ -144,7 +146,7 @@
             // 
             this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_cerrar.Location = new System.Drawing.Point(277, 500);
+            this.btn_cerrar.Location = new System.Drawing.Point(265, 441);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(187, 23);
             this.btn_cerrar.TabIndex = 3;
@@ -156,7 +158,7 @@
             // 
             this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_agregar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_agregar.Location = new System.Drawing.Point(27, 500);
+            this.btn_agregar.Location = new System.Drawing.Point(39, 441);
             this.btn_agregar.Name = "btn_agregar";
             this.btn_agregar.Size = new System.Drawing.Size(211, 23);
             this.btn_agregar.TabIndex = 1;
@@ -168,11 +170,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 535);
+            this.ClientSize = new System.Drawing.Size(999, 497);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btn_cerrar);
-            this.Controls.Add(this.btn_agregar);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frm_Mantenimiento_estatusFacturas";
