@@ -220,7 +220,7 @@ create procedure stp_traeEstatusTickets
 as
 begin
 	select idEstatus, descripcion 
-	from tbl_estatusTickets
+	from tbl_estatusTickets where isDeleted=0
 end
 go
 
@@ -233,7 +233,7 @@ create procedure stp_borrarEstatusTickets
 
 as
 begin
-	delete db_soportic.dbo.tbl_estatusTickets  --TENGO PROBLEMAS CON ÉSTA,SI ALGUIEN ME PUEDE ECHAR UNA MANO, CON GUSTO ACEPTO LA AYUDA--
+	update db_soportic.dbo.tbl_estatusTickets set isDeleted = 1
 	where idEstatus = @id
 end
 

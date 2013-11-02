@@ -59,11 +59,19 @@ namespace frmPrincipal
             ventana.ShowDialog();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btn_MantenimientoEstatusTickets_Click(object sender, EventArgs e)
         {
-
+            frm_MantenimientoEstatusTickets ventanaEstatusTickets = new frm_MantenimientoEstatusTickets();
+            this.Hide();
+            ventanaEstatusTickets.ShowDialog();
         }
 
+        private void btn_MantenimientoTipoPrioridades_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoTipoPrioridad ventana = new frm_MantenimientoTipoPrioridad();
+            this.Hide();
+            ventana.ShowDialog();
+        }
 
     }
 }

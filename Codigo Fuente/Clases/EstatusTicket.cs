@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Clases
 {
-    public class DescripcionDepartamento
+    public class EstatusTicket
     {
-        #region Propiedades
+        #region propiedades
         private int _id;
 
         public int Id
@@ -27,6 +27,7 @@ namespace Clases
             get { return _descripcion; }
             set { _descripcion = value; }
         }
+
         #endregion
 
         #region variables
@@ -38,7 +39,7 @@ namespace Clases
         #endregion
 
         #region Metodos
-        public DataSet cargarDescripcionDepartamentos()
+        public DataSet cargarEstatusTicket()
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -50,7 +51,7 @@ namespace Clases
 
             else
             {
-                sql = "stp_traeDescripcionDepartamentos";
+                sql = "stp_traeEstatusTickets";
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
@@ -62,9 +63,10 @@ namespace Clases
                     return ds;
                 }
             }
+
         }
 
-        public bool agregarActualiazarDescripcionDepartamentos(string accion)
+        public bool agregarActualiazarEstatusTickets(string accion)
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -78,11 +80,11 @@ namespace Clases
             {
                 if (accion.Equals("Insertar"))
                 {
-                    sql = "stp_insertarDescripcionDepartamentos";
+                    sql = "stp_insertarEstatusTickets";
                 }
                 else
                 {
-                    sql = "stp_modificarDescripcionDepartamentos";
+                    sql = "stp_modificarEstatusTickets";
                 }
                 ParamStruct[] parametros = new ParamStruct[2];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@id", SqlDbType.Int, _id);
@@ -91,7 +93,7 @@ namespace Clases
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-                    MessageBox.Show(mensaje_error, "Error al guardar o actualizar la descripcion del departamento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al guardar o actualizar el estatus del ticket", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return false;
                 }
@@ -103,7 +105,7 @@ namespace Clases
             }
         }
 
-        public bool eliminarDescripcionDepartamento()
+        public bool eliminarEstatusTickets()
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
             if (conexion == null)
@@ -114,7 +116,7 @@ namespace Clases
             }
             else
             {
-                sql = "stp_borrarDescripcionDepartamentos";
+                sql = "stp_borrarEstatusTickets";
                 ParamStruct[] parametros = new ParamStruct[1];
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@id", SqlDbType.Int, _id);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
@@ -130,7 +132,8 @@ namespace Clases
                 }
             }
         }
-        #endregion
 
+        #endregion
     }
 }
+

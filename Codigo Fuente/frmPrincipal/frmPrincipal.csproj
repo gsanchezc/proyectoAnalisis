@@ -107,11 +107,23 @@
     <Compile Include="frm_MantenimientoEstadoFacturaNuevoEditar.Designer.cs">
       <DependentUpon>frm_MantenimientoEstadoFacturaNuevoEditar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_MantenimientoEstatusTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoEstatusTickets.Designer.cs">
+      <DependentUpon>frm_MantenimientoEstatusTickets.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_MantenimientoTipoIdentificacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_MantenimientoTipoIdentificacion.Designer.cs">
       <DependentUpon>frm_MantenimientoTipoIdentificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoTipoPrioridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoTipoPrioridad.Designer.cs">
+      <DependentUpon>frm_MantenimientoTipoPrioridad.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_MantenimientoTipoPuestoNuevoEditar.cs">
       <SubType>Form</SubType>
@@ -289,8 +301,14 @@
     <EmbeddedResource Include="frm_MantenimientoEstadoFacturaNuevoEditar.resx">
       <DependentUpon>frm_MantenimientoEstadoFacturaNuevoEditar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoEstatusTickets.resx">
+      <DependentUpon>frm_MantenimientoEstatusTickets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_MantenimientoTipoIdentificacion.resx">
       <DependentUpon>frm_MantenimientoTipoIdentificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoTipoPrioridad.resx">
+      <DependentUpon>frm_MantenimientoTipoPrioridad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MantenimientoTipoPuestoNuevoEditar.resx">
       <DependentUpon>frm_MantenimientoTipoPuestoNuevoEditar.cs</DependentUpon>

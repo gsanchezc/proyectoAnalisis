@@ -32,6 +32,8 @@
             this.btn_descripcionRoles = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_MantenimientoTipoPrioridades = new System.Windows.Forms.Button();
+            this.btn_MantenimientoEstatusTickets = new System.Windows.Forms.Button();
             this.btn_MantenimientoClienteProveedor = new System.Windows.Forms.Button();
             this.btn_ManteniminetoTipoIdentificacion = new System.Windows.Forms.Button();
             this.btn_MantenimientoDescripcionDepartamento = new System.Windows.Forms.Button();
@@ -55,7 +57,7 @@
             // 
             this.btn_descripcionRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_descripcionRoles.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_descripcionRoles.Location = new System.Drawing.Point(84, 315);
+            this.btn_descripcionRoles.Location = new System.Drawing.Point(84, 260);
             this.btn_descripcionRoles.Name = "btn_descripcionRoles";
             this.btn_descripcionRoles.Size = new System.Drawing.Size(278, 44);
             this.btn_descripcionRoles.TabIndex = 1;
@@ -68,7 +70,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button1.Location = new System.Drawing.Point(84, 188);
+            this.button1.Location = new System.Drawing.Point(84, 162);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(278, 44);
             this.button1.TabIndex = 2;
@@ -79,6 +81,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_MantenimientoTipoPrioridades);
+            this.groupBox1.Controls.Add(this.btn_MantenimientoEstatusTickets);
             this.groupBox1.Controls.Add(this.btn_MantenimientoClienteProveedor);
             this.groupBox1.Controls.Add(this.btn_ManteniminetoTipoIdentificacion);
             this.groupBox1.Controls.Add(this.btn_MantenimientoDescripcionDepartamento);
@@ -93,7 +97,32 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mantenimientos";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btn_MantenimientoTipoPrioridades
+            // 
+            this.btn_MantenimientoTipoPrioridades.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MantenimientoTipoPrioridades.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_MantenimientoTipoPrioridades.Location = new System.Drawing.Point(552, 371);
+            this.btn_MantenimientoTipoPrioridades.Name = "btn_MantenimientoTipoPrioridades";
+            this.btn_MantenimientoTipoPrioridades.Size = new System.Drawing.Size(278, 44);
+            this.btn_MantenimientoTipoPrioridades.TabIndex = 7;
+            this.btn_MantenimientoTipoPrioridades.Text = "Mantenimiento Tipo de Prioridades";
+            this.btn_MantenimientoTipoPrioridades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_MantenimientoTipoPrioridades.UseVisualStyleBackColor = true;
+            this.btn_MantenimientoTipoPrioridades.Click += new System.EventHandler(this.btn_MantenimientoTipoPrioridades_Click);
+            // 
+            // btn_MantenimientoEstatusTickets
+            // 
+            this.btn_MantenimientoEstatusTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MantenimientoEstatusTickets.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_MantenimientoEstatusTickets.Location = new System.Drawing.Point(84, 371);
+            this.btn_MantenimientoEstatusTickets.Name = "btn_MantenimientoEstatusTickets";
+            this.btn_MantenimientoEstatusTickets.Size = new System.Drawing.Size(278, 44);
+            this.btn_MantenimientoEstatusTickets.TabIndex = 6;
+            this.btn_MantenimientoEstatusTickets.Text = "Mantenimiento Estatus de Tickets";
+            this.btn_MantenimientoEstatusTickets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_MantenimientoEstatusTickets.UseVisualStyleBackColor = true;
+            this.btn_MantenimientoEstatusTickets.Click += new System.EventHandler(this.btn_MantenimientoEstatusTickets_Click);
             // 
             // btn_MantenimientoClienteProveedor
             // 
@@ -112,7 +141,7 @@
             // 
             this.btn_ManteniminetoTipoIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ManteniminetoTipoIdentificacion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_ManteniminetoTipoIdentificacion.Location = new System.Drawing.Point(552, 188);
+            this.btn_ManteniminetoTipoIdentificacion.Location = new System.Drawing.Point(552, 162);
             this.btn_ManteniminetoTipoIdentificacion.Name = "btn_ManteniminetoTipoIdentificacion";
             this.btn_ManteniminetoTipoIdentificacion.Size = new System.Drawing.Size(278, 44);
             this.btn_ManteniminetoTipoIdentificacion.TabIndex = 5;
@@ -125,7 +154,7 @@
             // 
             this.btn_MantenimientoDescripcionDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_MantenimientoDescripcionDepartamento.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_MantenimientoDescripcionDepartamento.Location = new System.Drawing.Point(552, 315);
+            this.btn_MantenimientoDescripcionDepartamento.Location = new System.Drawing.Point(552, 260);
             this.btn_MantenimientoDescripcionDepartamento.Name = "btn_MantenimientoDescripcionDepartamento";
             this.btn_MantenimientoDescripcionDepartamento.Size = new System.Drawing.Size(278, 44);
             this.btn_MantenimientoDescripcionDepartamento.TabIndex = 4;
@@ -159,5 +188,7 @@
         private System.Windows.Forms.Button btn_MantenimientoClienteProveedor;
         private System.Windows.Forms.Button btn_ManteniminetoTipoIdentificacion;
         private System.Windows.Forms.Button btn_MantenimientoDescripcionDepartamento;
+        private System.Windows.Forms.Button btn_MantenimientoTipoPrioridades;
+        private System.Windows.Forms.Button btn_MantenimientoEstatusTickets;
     }
 }
