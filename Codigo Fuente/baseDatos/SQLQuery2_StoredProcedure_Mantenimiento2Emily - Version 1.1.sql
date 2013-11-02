@@ -190,7 +190,7 @@ go
 create procedure stp_modificarEstatusTickets
 (
 		@id int,
-		@descripcion int
+		@descripcion varchar(50)
 )
 
  as
@@ -227,8 +227,7 @@ go
 ---------------Procedure de borrado----------------------
 create procedure stp_borrarEstatusTickets
 (
-		@id int,
-		@descripcion varchar(50)
+		@id int
 )
 
 as
@@ -381,4 +380,76 @@ begin
 	delete tbl_datosAdjuntos  --TENGO PROBLEMAS CON ÉSTA,SI ALGUIEN ME PUEDE ECHAR UNA MANO, CON GUSTO ACEPTO LA AYUDA--
 	where  idArchivo = @id
 end
+go
+
+
+---------------------------Procedure de almacenamiento para la tabla Tipo de Prioridad-------------------
+------------------------------------------------------------------------------------------------------
+
+---------------Procedure que inserta datos en la tabla tbl_tipoPrioridades-----------------------------
+create procedure stp_insertarTipoPrioridad
+(
+	@id int,
+	@descripcion varchar (50)
+)
+
+as
+begin
+		insert into db_soportic.dbo.tbl_tipoPrioridades(descripcion) 
+		values(@descripcion)
+end
+
+go
+
+
+----------------------Procedure que modifica y actualiza los datos tbl_tipoPrioridades-----------------------------
+create procedure stp_modificarTipoPrioridada
+(
+		@id int,
+		@descripcion varchar(50)
+)
+
+ as
+ begin
+	update db_soportic.dbo.tbl_tipoPrioridades set descripcion = @descripcion
+	where idPrioridad = @id
+ end
+
+go
+
+---------------------Procedure que trae/jala la informacion tbl_tipoPrioridades-------------------
+create procedure stp_traeInfoTipoPrioridad
+(
+    @id int
+)
+
+ as
+ begin
+	select *
+	from db_soportic.dbo.tbl_tipoPrioridades where idPrioridad = @id
+ end
+
+go
+
+-----------Procedure que trae tbl_tipoPrioridades-----------------------
+create procedure stp_traeTipoPrioridad
+as
+begin
+	select idPrioridad, descripcion 
+	from tbl_tipoPrioridades where isDeleted=0
+end
+go
+
+---------------Procedure de borrado de tipo de prioridad----------------------
+create procedure stp_borrarTipoPrioridad
+(
+		@id int
+)
+
+as
+begin
+	update db_soportic.dbo.tbl_tipoPrioridades set isDeleted = 1
+	where idPrioridad = @id
+end
+
 go
