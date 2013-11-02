@@ -64,7 +64,7 @@ namespace Clases
                     return ds;
                 }
             }
-        #endregion
+       
         }
 
         public bool agregarActualiazarClienteProveedor(string accion)
@@ -105,6 +105,35 @@ namespace Clases
                 }
             }
         }
+
+        public bool eliminarClienteProveedor()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                sql = "stp_borrarTipoClienteProveedor"; 
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@id", SqlDbType.Int, _id);
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+        #endregion
     }
 }
 

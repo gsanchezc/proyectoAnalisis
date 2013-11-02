@@ -101,17 +101,41 @@ namespace frmPrincipal
             {
                 if (objClienteProveedor.agregarActualiazarClienteProveedor("Actualizar"))
                 {
-                    MessageBox.Show("La descripcion del rol se agrego con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El cliente Proveedor se actualizó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
                 if (objClienteProveedor.agregarActualiazarClienteProveedor("Insertar"))
                 {
-                    MessageBox.Show("La descripcion del rol se agrego con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El cliente Proveedor se agrego con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
+            this.cargar_lista_cliente_proveedores();
+            this.limpia();
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (!Validaciones.esentero(txt_idClienteProveedor))
+            {
+                MessageBox.Show("El ID debe ser de tipo entero", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_idClienteProveedor.Focus();
+                return;
+            }
+
+            if (!Validaciones.validar(txt_nombreClienteProveedor))
+            {
+                MessageBox.Show("Por favor ingrese una descripcion", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_nombreClienteProveedor.Focus();
+                return;
+            }
+            objClienteProveedor.Id = Convert.ToInt32(txt_idClienteProveedor.Text);
+            objClienteProveedor.Descripcion = txt_nombreClienteProveedor.Text;
+
+            objClienteProveedor.eliminarClienteProveedor();
+            MessageBox.Show("El cliente Proveedor se eliminó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.cargar_lista_cliente_proveedores();
             this.limpia();
         }

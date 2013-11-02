@@ -41,6 +41,27 @@ namespace frmPrincipal
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
 
+            if (!Validaciones.esentero(txt_idDepartamento))
+            {
+                MessageBox.Show("El ID debe ser de tipo entero", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_idDepartamento.Focus();
+                return;
+            }
+
+            if (!Validaciones.validar(txt_descripcion))
+            {
+                MessageBox.Show("Por favor ingrese una descripcion", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_descripcion.Focus();
+                return;
+            }
+
+            objDescripcionDepartamentos.Id = Convert.ToInt32(txt_idDepartamento.Text);
+            objDescripcionDepartamentos.Descripcion = txt_descripcion.Text;
+
+            objDescripcionDepartamentos.eliminarDescripcionDepartamento();
+            MessageBox.Show("La Descripcion del Departamento se eliminó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.cargar_Lista_Descripcion_Departamentos();
+            this.limpia();
         }
 
         private void btn_limpiar_Click(object sender, EventArgs e)
@@ -80,14 +101,14 @@ namespace frmPrincipal
             {
                 if (objDescripcionDepartamentos.agregarActualiazarDescripcionDepartamentos("Actualizar"))
                 {
-                    MessageBox.Show("La descripcion del rol se agrego con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La descripcion del Departamento se actualizó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
                 if (objDescripcionDepartamentos.agregarActualiazarDescripcionDepartamentos("Insertar"))
                 {
-                    MessageBox.Show("La descripcion del rol se agrego con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("La descripcion del departamento se agrego con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 

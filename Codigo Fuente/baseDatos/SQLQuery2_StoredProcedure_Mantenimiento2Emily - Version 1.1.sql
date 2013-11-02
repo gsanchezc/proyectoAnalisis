@@ -50,17 +50,25 @@ begin
 end
 
 go
+--------Procedure que trae/jala la informacion de la tabla tbl_tipoIdentificacion--------
+alter procedure stp_traeTipoIdentificacion
+as
+begin
+	select *
+	from tbl_tipoIdentificaciones where isDeleted=0
+end
+go
 
-----------Procedure de borrado---------
-create procedure stp_borrarTipoIdentificacion
+----------Procedure de borrado de Tipo de Identificacion---------
+alter procedure stp_borrarTipoIdentificacion
 (
    @id int
 )
 
 as
 begin
-delete db_soportic.dbo.tbl_tipoIdentificaciones  --TENGO PROBLEMAS CON ÉSTA,SI ALGUIEN ME PUEDE ECHAR UNA MANO, CON GUSTO ACEPTO LA AYUDA--
-where  idTipoIdentificacion = @id
+	update db_soportic.dbo.tbl_tipoIdentificaciones set isDeleted = 1
+    where idTipoIdentificacion = @id
 end
 
 go
@@ -111,14 +119,15 @@ end
 go
 
 ----------Procedure que sólo trae datos de la tabla tbl_tipoClienteProveedor---------------
-create procedure stp_traeTipoClienteProveedor
+alter procedure stp_traeTipoClienteProveedor
 
 as
 begin
 		select idTipoClienteProveedor, descripcion 
-		from db_soportic.dbo.tbl_tipoClientesProveedores
+		from db_soportic.dbo.tbl_tipoClientesProveedores where isDeleted=0
 end
 go
+
 
 -------------Procedure que trae la lista de clientes proveedores de la tabla tbl_tipoClientesProveedores-------------
 create procedure stp_traeListaTipoClienteProveedor
@@ -127,6 +136,18 @@ as
 begin
 		select idTipoClienteProveedor, descripcion 
 		from tbl_tipoClientesProveedores
+end
+go
+
+-------------Procedure que realiza borrado logico de un Cliente proveedor de la tabla tbl_tipoClientesProveedores------
+create procedure stp_borrarTipoClienteProveedor
+(
+	@id int
+)
+as
+begin
+	update db_soportic.dbo.tbl_tipoClientesProveedores set isDeleted = 1
+	where idTipoClienteProveedor = @id
 end
 go
 
@@ -268,27 +289,26 @@ end
 go
 
 ---------------Procedure que trae la Descripcion de Departamentos-----------------
-create procedure stp_traeDescripcionDepartamentos
+alter procedure stp_traeDescripcionDepartamentos
 
 as
 begin
 	select idDepartamento, descripcion 
-	from tbl_descripcionDepartamentos
+	from tbl_descripcionDepartamentos where isDeleted=0
 end
 
 go
 
 ----------------Procedure de borrado------------------------------
-create procedure stp_borrarDescripcionDepartamentos
+alter procedure stp_borrarDescripcionDepartamentos
 (
-		@id int,
-		@descripcion varchar(50)
+		@id int
 )
 
 as
 begin
-	delete tbl_descripcionDepartamentos  --TENGO PROBLEMAS CON ÉSTA,SI ALGUIEN ME PUEDE ECHAR UNA MANO, CON GUSTO ACEPTO LA AYUDA--
-	where  idDepartamento  = @id
+	update db_soportic.dbo.tbl_descripcionDepartamentos set isDeleted = 1
+	where idDepartamento  = @id
 end
 
 go

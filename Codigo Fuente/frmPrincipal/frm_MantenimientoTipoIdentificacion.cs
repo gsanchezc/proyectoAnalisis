@@ -78,14 +78,14 @@ namespace frmPrincipal
             {
                 if (objTipoIdentificacion.agregarActualiazarTipoIdentificacion("Actualizar"))
                 {
-                    MessageBox.Show("La descripcion del rol se agrego con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El tipo de identificacion se actualizó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
                 if (objTipoIdentificacion.agregarActualiazarTipoIdentificacion("Insertar"))
                 {
-                    MessageBox.Show("La descripcion del rol se agrego con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El tipo de identificacion se agrego con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 
@@ -112,6 +112,31 @@ namespace frmPrincipal
             {
                 return;
             }
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (!Validaciones.esentero(txt_idTipoIdentifiacion))
+            {
+                MessageBox.Show("El ID debe ser de tipo entero", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_idTipoIdentifiacion.Focus();
+                return;
+            }
+
+            if (!Validaciones.validar(txt_descrpcionIdentificacion))
+            {
+                MessageBox.Show("Por favor ingrese una descripcion", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_descrpcionIdentificacion.Focus();
+                return;
+                
+            }
+            objTipoIdentificacion.Id = Convert.ToInt32(txt_idTipoIdentifiacion.Text);
+            objTipoIdentificacion.Descripcion = txt_descrpcionIdentificacion.Text;
+
+            objTipoIdentificacion.eliminarTipoIdentificacion();
+            MessageBox.Show("El Tipo de Identificacion se eliminó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.cargar_lista_tipos_identificacion();
+            this.limpia();
         }
     }
 }
