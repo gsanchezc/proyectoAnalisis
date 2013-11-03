@@ -45,6 +45,20 @@ create procedure stp_traeListaEstadosFactura
 as
 begin
 select idEstatus, descripcion from tbl_estatusFacturas
+where isDeleted = 0
+end
+
+go
+
+create procedure stp_eliminarEstadoFactura
+(
+@id int
+)
+as
+begin
+update tbl_estatusFacturas
+set isDeleted = 1
+where idEstatus = @id
 end
 
 go
@@ -91,7 +105,22 @@ create procedure stp_traeDescripcionRol
 as
 begin
 select idRol, descripcion from tbl_descripcionRoles
+where isDeleted = 0
 end
+go
+
+
+create procedure stp_eliminarDescripcionRol
+(
+@id int
+)
+as
+begin
+update tbl_descripcionRoles
+set isDeleted = 1
+where idRol = @id
+end
+
 go
 ------------------------------------------------------------------------------------------
 -----Procedimientos almacenados para la tabla tipo Puestos---------------------------
@@ -137,6 +166,21 @@ create procedure stp_traeTipoPuestos
 as
 begin
 select idPuesto, descripcion from tbl_tipoPuestos
+where isDeleted = 0
+end
+go
+
+create procedure stp_eliminarTipoPuestos
+(
+@id int
+)
+as
+begin
+update tbl_tipoPuestos
+set isDeleted = 1
+where idPuesto = @id
 end
 
+
+go
 ----------------------------------------------------------------------------------------
