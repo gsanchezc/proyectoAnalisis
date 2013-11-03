@@ -62,58 +62,58 @@
             this.ingresoDeIncapacidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionDeSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btn_SalirSistema = new System.Windows.Forms.Button();
-            this.btn_CerrarSesion = new System.Windows.Forms.Button();
-            this.btn_ConfiguracionSistema = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.btn_IngresoIncapacidad = new System.Windows.Forms.Button();
-            this.btn_NuevoEmpleado = new System.Windows.Forms.Button();
-            this.btn_ControlNomina = new System.Windows.Forms.Button();
-            this.btn_SolicitudVacaciones = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btn_ControlVacaciones = new System.Windows.Forms.Button();
-            this.btn_ControlIncapacidades = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btn_NuevoProveedor = new System.Windows.Forms.Button();
-            this.btn_nuevaOrdenCompra = new System.Windows.Forms.Button();
-            this.btn_CatalogoProveedores = new System.Windows.Forms.Button();
-            this.btn_SolictudOrdenesCompra = new System.Windows.Forms.Button();
-            this.btn_EnvioEstadosCuenta = new System.Windows.Forms.Button();
-            this.btn_NuevaFactura = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_MantenimientoComunicacion = new System.Windows.Forms.Button();
-            this.btn_MantenimientoAlertasNotificaciones = new System.Windows.Forms.Button();
-            this.btn_GenerarGrafico = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_AdministracionCuentasUsuario = new System.Windows.Forms.Button();
-            this.btn_AdministracionPerfiles = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_BitacoraTicket = new System.Windows.Forms.Button();
-            this.btn_AtencionTicket = new System.Windows.Forms.Button();
-            this.btn_AsignarTicket = new System.Windows.Forms.Button();
-            this.btn_NuevoTicket = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_NuevoTicket = new System.Windows.Forms.Button();
+            this.btn_AsignarTicket = new System.Windows.Forms.Button();
+            this.btn_AtencionTicket = new System.Windows.Forms.Button();
+            this.btn_BitacoraTicket = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_AdministracionPerfiles = new System.Windows.Forms.Button();
+            this.btn_AdministracionCuentasUsuario = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_MantenimientoAlertasNotificaciones = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btn_GenerarGrafico = new System.Windows.Forms.Button();
+            this.btn_MantenimientoComunicacion = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btn_NuevaFactura = new System.Windows.Forms.Button();
+            this.btn_EnvioEstadosCuenta = new System.Windows.Forms.Button();
+            this.btn_SolictudOrdenesCompra = new System.Windows.Forms.Button();
+            this.btn_CatalogoProveedores = new System.Windows.Forms.Button();
+            this.btn_nuevaOrdenCompra = new System.Windows.Forms.Button();
+            this.btn_NuevoProveedor = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btn_ControlIncapacidades = new System.Windows.Forms.Button();
+            this.btn_ControlVacaciones = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.btn_SolicitudVacaciones = new System.Windows.Forms.Button();
+            this.btn_ControlNomina = new System.Windows.Forms.Button();
+            this.btn_NuevoEmpleado = new System.Windows.Forms.Button();
+            this.btn_IngresoIncapacidad = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btn_ConfiguracionSistema = new System.Windows.Forms.Button();
+            this.btn_CerrarSesion = new System.Windows.Forms.Button();
+            this.btn_SalirSistema = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -129,7 +129,7 @@
             this.mantenimientoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(999, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1013, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -241,18 +241,21 @@
             this.generarGraficoReporteToolStripMenuItem.Name = "generarGraficoReporteToolStripMenuItem";
             this.generarGraficoReporteToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
             this.generarGraficoReporteToolStripMenuItem.Text = "Generar Grafico o Reporte";
+            this.generarGraficoReporteToolStripMenuItem.Click += new System.EventHandler(this.generarGraficoReporteToolStripMenuItem_Click);
             // 
             // mantenimientoAlertasNotificacionesToolStripMenuItem
             // 
             this.mantenimientoAlertasNotificacionesToolStripMenuItem.Name = "mantenimientoAlertasNotificacionesToolStripMenuItem";
             this.mantenimientoAlertasNotificacionesToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
             this.mantenimientoAlertasNotificacionesToolStripMenuItem.Text = "Mantenimiento Alertas y Notificaciones";
+            this.mantenimientoAlertasNotificacionesToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoAlertasNotificacionesToolStripMenuItem_Click);
             // 
             // mantenimientoComunicacionToolStripMenuItem
             // 
             this.mantenimientoComunicacionToolStripMenuItem.Name = "mantenimientoComunicacionToolStripMenuItem";
             this.mantenimientoComunicacionToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
             this.mantenimientoComunicacionToolStripMenuItem.Text = "Mantenimiento Comunicacion";
+            this.mantenimientoComunicacionToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoComunicacionToolStripMenuItem_Click);
             // 
             // contabilidadToolStripMenuItem
             // 
@@ -377,174 +380,193 @@
             this.configuracionDeSistemaToolStripMenuItem.Name = "configuracionDeSistemaToolStripMenuItem";
             this.configuracionDeSistemaToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.configuracionDeSistemaToolStripMenuItem.Text = "Configuracion de Sistema";
+            this.configuracionDeSistemaToolStripMenuItem.Click += new System.EventHandler(this.configuracionDeSistemaToolStripMenuItem_Click);
             // 
-            // groupBox1
+            // groupBox2
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox6);
-            this.groupBox1.Controls.Add(this.groupBox7);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(0, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(997, 468);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Modulos";
+            this.groupBox2.Controls.Add(this.btn_BitacoraTicket);
+            this.groupBox2.Controls.Add(this.btn_AtencionTicket);
+            this.groupBox2.Controls.Add(this.btn_AsignarTicket);
+            this.groupBox2.Controls.Add(this.btn_NuevoTicket);
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox2.Location = new System.Drawing.Point(12, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(476, 200);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Mantenimiento de Tickets";
             // 
-            // groupBox5
+            // pictureBox1
             // 
-            this.groupBox5.Controls.Add(this.btn_SalirSistema);
-            this.groupBox5.Controls.Add(this.btn_CerrarSesion);
-            this.groupBox5.Controls.Add(this.btn_ConfiguracionSistema);
-            this.groupBox5.Controls.Add(this.pictureBox4);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox5.Location = new System.Drawing.Point(505, 315);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(476, 142);
-            this.groupBox5.TabIndex = 10;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Mantenimiento del Sistema";
+            this.pictureBox1.BackgroundImage = global::frmPrincipal.Properties.Resources.ist2_8758228_support_service;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 175);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // btn_SalirSistema
+            // btn_NuevoTicket
             // 
-            this.btn_SalirSistema.Location = new System.Drawing.Point(160, 77);
-            this.btn_SalirSistema.Name = "btn_SalirSistema";
-            this.btn_SalirSistema.Size = new System.Drawing.Size(306, 23);
-            this.btn_SalirSistema.TabIndex = 6;
-            this.btn_SalirSistema.Text = "Salir del Sistema";
-            this.btn_SalirSistema.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SalirSistema.UseVisualStyleBackColor = true;
-            this.btn_SalirSistema.Click += new System.EventHandler(this.btn_SalirSistema_Click);
+            this.btn_NuevoTicket.Location = new System.Drawing.Point(203, 20);
+            this.btn_NuevoTicket.Name = "btn_NuevoTicket";
+            this.btn_NuevoTicket.Size = new System.Drawing.Size(267, 32);
+            this.btn_NuevoTicket.TabIndex = 1;
+            this.btn_NuevoTicket.Text = "Nuevo Ticket";
+            this.btn_NuevoTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_NuevoTicket.UseVisualStyleBackColor = true;
+            this.btn_NuevoTicket.Click += new System.EventHandler(this.btn_NuevoTicket_Click);
             // 
-            // btn_CerrarSesion
+            // btn_AsignarTicket
             // 
-            this.btn_CerrarSesion.Location = new System.Drawing.Point(161, 48);
-            this.btn_CerrarSesion.Name = "btn_CerrarSesion";
-            this.btn_CerrarSesion.Size = new System.Drawing.Size(306, 23);
-            this.btn_CerrarSesion.TabIndex = 5;
-            this.btn_CerrarSesion.Text = "Cerrar Sesion";
-            this.btn_CerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CerrarSesion.UseVisualStyleBackColor = true;
-            this.btn_CerrarSesion.Click += new System.EventHandler(this.btn_CerrarSesion_Click);
+            this.btn_AsignarTicket.Location = new System.Drawing.Point(203, 69);
+            this.btn_AsignarTicket.Name = "btn_AsignarTicket";
+            this.btn_AsignarTicket.Size = new System.Drawing.Size(267, 32);
+            this.btn_AsignarTicket.TabIndex = 2;
+            this.btn_AsignarTicket.Text = "Catalogo Asignacion de Ticket";
+            this.btn_AsignarTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_AsignarTicket.UseVisualStyleBackColor = true;
+            this.btn_AsignarTicket.Click += new System.EventHandler(this.btn_AsignarTicket_Click);
             // 
-            // btn_ConfiguracionSistema
+            // btn_AtencionTicket
             // 
-            this.btn_ConfiguracionSistema.Location = new System.Drawing.Point(161, 19);
-            this.btn_ConfiguracionSistema.Name = "btn_ConfiguracionSistema";
-            this.btn_ConfiguracionSistema.Size = new System.Drawing.Size(306, 23);
-            this.btn_ConfiguracionSistema.TabIndex = 4;
-            this.btn_ConfiguracionSistema.Text = "Configuracion de Sistema";
-            this.btn_ConfiguracionSistema.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ConfiguracionSistema.UseVisualStyleBackColor = true;
-            this.btn_ConfiguracionSistema.Click += new System.EventHandler(this.btn_ConfiguracionSistema_Click);
+            this.btn_AtencionTicket.Location = new System.Drawing.Point(203, 117);
+            this.btn_AtencionTicket.Name = "btn_AtencionTicket";
+            this.btn_AtencionTicket.Size = new System.Drawing.Size(267, 30);
+            this.btn_AtencionTicket.TabIndex = 3;
+            this.btn_AtencionTicket.Text = "Catalogo Atencion de Ticket";
+            this.btn_AtencionTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_AtencionTicket.UseVisualStyleBackColor = true;
+            this.btn_AtencionTicket.Click += new System.EventHandler(this.btn_AtencionTicket_Click);
             // 
-            // pictureBox4
+            // btn_BitacoraTicket
             // 
-            this.pictureBox4.BackgroundImage = global::frmPrincipal.Properties.Resources.Fixing_mixing_or_corrupt_System_32_file1;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(149, 117);
-            this.pictureBox4.TabIndex = 1;
-            this.pictureBox4.TabStop = false;
+            this.btn_BitacoraTicket.Location = new System.Drawing.Point(203, 164);
+            this.btn_BitacoraTicket.Name = "btn_BitacoraTicket";
+            this.btn_BitacoraTicket.Size = new System.Drawing.Size(267, 30);
+            this.btn_BitacoraTicket.TabIndex = 4;
+            this.btn_BitacoraTicket.Text = "Bitacora de Ticket";
+            this.btn_BitacoraTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_BitacoraTicket.UseVisualStyleBackColor = true;
+            this.btn_BitacoraTicket.Click += new System.EventHandler(this.btn_BitacoraTicket_Click);
             // 
-            // groupBox6
+            // groupBox3
             // 
-            this.groupBox6.Controls.Add(this.btn_IngresoIncapacidad);
-            this.groupBox6.Controls.Add(this.btn_NuevoEmpleado);
-            this.groupBox6.Controls.Add(this.btn_ControlNomina);
-            this.groupBox6.Controls.Add(this.btn_SolicitudVacaciones);
-            this.groupBox6.Controls.Add(this.pictureBox5);
-            this.groupBox6.Controls.Add(this.btn_ControlVacaciones);
-            this.groupBox6.Controls.Add(this.btn_ControlIncapacidades);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox6.Location = new System.Drawing.Point(505, 167);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(476, 142);
-            this.groupBox6.TabIndex = 9;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Mantenimiento de RRHH";
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btn_AdministracionCuentasUsuario);
+            this.groupBox3.Controls.Add(this.btn_AdministracionPerfiles);
+            this.groupBox3.Controls.Add(this.pictureBox2);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox3.Location = new System.Drawing.Point(12, 253);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(476, 200);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Mantenimiento de Seguridad";
             // 
-            // btn_IngresoIncapacidad
+            // pictureBox2
             // 
-            this.btn_IngresoIncapacidad.Location = new System.Drawing.Point(162, 106);
-            this.btn_IngresoIncapacidad.Name = "btn_IngresoIncapacidad";
-            this.btn_IngresoIncapacidad.Size = new System.Drawing.Size(304, 23);
-            this.btn_IngresoIncapacidad.TabIndex = 9;
-            this.btn_IngresoIncapacidad.Text = "Ingreso Incapacidad";
-            this.btn_IngresoIncapacidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_IngresoIncapacidad.UseVisualStyleBackColor = true;
-            this.btn_IngresoIncapacidad.Click += new System.EventHandler(this.btn_IngresoIncapacidad_Click);
+            this.pictureBox2.BackgroundImage = global::frmPrincipal.Properties.Resources.it_photo_124543;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(179, 175);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
-            // btn_NuevoEmpleado
+            // btn_AdministracionPerfiles
             // 
-            this.btn_NuevoEmpleado.Location = new System.Drawing.Point(327, 20);
-            this.btn_NuevoEmpleado.Name = "btn_NuevoEmpleado";
-            this.btn_NuevoEmpleado.Size = new System.Drawing.Size(139, 23);
-            this.btn_NuevoEmpleado.TabIndex = 7;
-            this.btn_NuevoEmpleado.Text = "Nuevo Empleado";
-            this.btn_NuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_NuevoEmpleado.UseVisualStyleBackColor = true;
-            this.btn_NuevoEmpleado.Click += new System.EventHandler(this.btn_NuevoEmpleado_Click);
+            this.btn_AdministracionPerfiles.Location = new System.Drawing.Point(203, 20);
+            this.btn_AdministracionPerfiles.Name = "btn_AdministracionPerfiles";
+            this.btn_AdministracionPerfiles.Size = new System.Drawing.Size(267, 38);
+            this.btn_AdministracionPerfiles.TabIndex = 4;
+            this.btn_AdministracionPerfiles.Text = "Administracion de Perfiles";
+            this.btn_AdministracionPerfiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_AdministracionPerfiles.UseVisualStyleBackColor = true;
+            this.btn_AdministracionPerfiles.Click += new System.EventHandler(this.btn_AdministracionPerfiles_Click);
             // 
-            // btn_ControlNomina
+            // btn_AdministracionCuentasUsuario
             // 
-            this.btn_ControlNomina.Location = new System.Drawing.Point(162, 19);
-            this.btn_ControlNomina.Name = "btn_ControlNomina";
-            this.btn_ControlNomina.Size = new System.Drawing.Size(159, 23);
-            this.btn_ControlNomina.TabIndex = 5;
-            this.btn_ControlNomina.Text = "Control Nomina";
-            this.btn_ControlNomina.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ControlNomina.UseVisualStyleBackColor = true;
-            this.btn_ControlNomina.Click += new System.EventHandler(this.btn_ControlNomina_Click);
+            this.btn_AdministracionCuentasUsuario.Location = new System.Drawing.Point(203, 89);
+            this.btn_AdministracionCuentasUsuario.Name = "btn_AdministracionCuentasUsuario";
+            this.btn_AdministracionCuentasUsuario.Size = new System.Drawing.Size(267, 40);
+            this.btn_AdministracionCuentasUsuario.TabIndex = 6;
+            this.btn_AdministracionCuentasUsuario.Text = "Administracion Cuentas Usuario";
+            this.btn_AdministracionCuentasUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_AdministracionCuentasUsuario.UseVisualStyleBackColor = true;
+            this.btn_AdministracionCuentasUsuario.Click += new System.EventHandler(this.btn_AdministracionCuentasUsuario_Click);
             // 
-            // btn_SolicitudVacaciones
+            // button1
             // 
-            this.btn_SolicitudVacaciones.Location = new System.Drawing.Point(162, 49);
-            this.btn_SolicitudVacaciones.Name = "btn_SolicitudVacaciones";
-            this.btn_SolicitudVacaciones.Size = new System.Drawing.Size(159, 23);
-            this.btn_SolicitudVacaciones.TabIndex = 8;
-            this.btn_SolicitudVacaciones.Text = "Solicitud Vacaciones";
-            this.btn_SolicitudVacaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SolicitudVacaciones.UseVisualStyleBackColor = true;
-            this.btn_SolicitudVacaciones.Click += new System.EventHandler(this.btn_SolicitudVacaciones_Click);
+            this.button1.Location = new System.Drawing.Point(203, 156);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(267, 38);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Nuevo Usuario Final";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox5
+            // groupBox4
             // 
-            this.pictureBox5.BackgroundImage = global::frmPrincipal.Properties.Resources.Software_02;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(149, 117);
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
+            this.groupBox4.Controls.Add(this.btn_MantenimientoComunicacion);
+            this.groupBox4.Controls.Add(this.btn_GenerarGrafico);
+            this.groupBox4.Controls.Add(this.pictureBox3);
+            this.groupBox4.Controls.Add(this.btn_MantenimientoAlertasNotificaciones);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox4.Location = new System.Drawing.Point(12, 480);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(476, 180);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Mantenimiento Reportes y Alertas";
             // 
-            // btn_ControlVacaciones
+            // btn_MantenimientoAlertasNotificaciones
             // 
-            this.btn_ControlVacaciones.Location = new System.Drawing.Point(327, 49);
-            this.btn_ControlVacaciones.Name = "btn_ControlVacaciones";
-            this.btn_ControlVacaciones.Size = new System.Drawing.Size(139, 23);
-            this.btn_ControlVacaciones.TabIndex = 4;
-            this.btn_ControlVacaciones.Text = "Control Vacaciones";
-            this.btn_ControlVacaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ControlVacaciones.UseVisualStyleBackColor = true;
-            this.btn_ControlVacaciones.Click += new System.EventHandler(this.btn_ControlVacaciones_Click);
+            this.btn_MantenimientoAlertasNotificaciones.Location = new System.Drawing.Point(203, 73);
+            this.btn_MantenimientoAlertasNotificaciones.Name = "btn_MantenimientoAlertasNotificaciones";
+            this.btn_MantenimientoAlertasNotificaciones.Size = new System.Drawing.Size(267, 35);
+            this.btn_MantenimientoAlertasNotificaciones.TabIndex = 5;
+            this.btn_MantenimientoAlertasNotificaciones.Text = "Mantenimiento Alertas y Notificaciones";
+            this.btn_MantenimientoAlertasNotificaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_MantenimientoAlertasNotificaciones.UseVisualStyleBackColor = true;
+            this.btn_MantenimientoAlertasNotificaciones.Click += new System.EventHandler(this.btn_MantenimientoAlertasNotificaciones_Click);
             // 
-            // btn_ControlIncapacidades
+            // pictureBox3
             // 
-            this.btn_ControlIncapacidades.Location = new System.Drawing.Point(162, 77);
-            this.btn_ControlIncapacidades.Name = "btn_ControlIncapacidades";
-            this.btn_ControlIncapacidades.Size = new System.Drawing.Size(304, 23);
-            this.btn_ControlIncapacidades.TabIndex = 6;
-            this.btn_ControlIncapacidades.Text = "Control Incapacidades";
-            this.btn_ControlIncapacidades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ControlIncapacidades.UseVisualStyleBackColor = true;
-            this.btn_ControlIncapacidades.Click += new System.EventHandler(this.btn_ControlIncapacidades_Click);
+            this.pictureBox3.BackgroundImage = global::frmPrincipal.Properties.Resources.reports;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(6, 20);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(179, 148);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // btn_GenerarGrafico
+            // 
+            this.btn_GenerarGrafico.Location = new System.Drawing.Point(203, 20);
+            this.btn_GenerarGrafico.Name = "btn_GenerarGrafico";
+            this.btn_GenerarGrafico.Size = new System.Drawing.Size(267, 35);
+            this.btn_GenerarGrafico.TabIndex = 4;
+            this.btn_GenerarGrafico.Text = "Generar Grafico o Reporte";
+            this.btn_GenerarGrafico.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_GenerarGrafico.UseVisualStyleBackColor = true;
+            this.btn_GenerarGrafico.Click += new System.EventHandler(this.btn_GenerarGrafico_Click);
+            // 
+            // btn_MantenimientoComunicacion
+            // 
+            this.btn_MantenimientoComunicacion.Location = new System.Drawing.Point(203, 133);
+            this.btn_MantenimientoComunicacion.Name = "btn_MantenimientoComunicacion";
+            this.btn_MantenimientoComunicacion.Size = new System.Drawing.Size(267, 35);
+            this.btn_MantenimientoComunicacion.TabIndex = 6;
+            this.btn_MantenimientoComunicacion.Text = "Mantenimiento Comunicacion";
+            this.btn_MantenimientoComunicacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_MantenimientoComunicacion.UseVisualStyleBackColor = true;
+            this.btn_MantenimientoComunicacion.Click += new System.EventHandler(this.btn_MantenimientoComunicacion_Click);
             // 
             // groupBox7
             // 
@@ -557,278 +579,263 @@
             this.groupBox7.Controls.Add(this.pictureBox6);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox7.Location = new System.Drawing.Point(505, 19);
+            this.groupBox7.Location = new System.Drawing.Point(526, 19);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(476, 142);
+            this.groupBox7.Size = new System.Drawing.Size(470, 200);
             this.groupBox7.TabIndex = 8;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Cuentas por Cobrar y por Pagar";
             // 
-            // btn_NuevoProveedor
+            // pictureBox6
             // 
-            this.btn_NuevoProveedor.Location = new System.Drawing.Point(327, 107);
-            this.btn_NuevoProveedor.Name = "btn_NuevoProveedor";
-            this.btn_NuevoProveedor.Size = new System.Drawing.Size(139, 23);
-            this.btn_NuevoProveedor.TabIndex = 10;
-            this.btn_NuevoProveedor.Text = "Nuevo Proveedor";
-            this.btn_NuevoProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_NuevoProveedor.UseVisualStyleBackColor = true;
-            this.btn_NuevoProveedor.Click += new System.EventHandler(this.btn_NuevoProveedor_Click);
-            // 
-            // btn_nuevaOrdenCompra
-            // 
-            this.btn_nuevaOrdenCompra.Location = new System.Drawing.Point(162, 107);
-            this.btn_nuevaOrdenCompra.Name = "btn_nuevaOrdenCompra";
-            this.btn_nuevaOrdenCompra.Size = new System.Drawing.Size(159, 23);
-            this.btn_nuevaOrdenCompra.TabIndex = 9;
-            this.btn_nuevaOrdenCompra.Text = "Nueva Orden Compra";
-            this.btn_nuevaOrdenCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nuevaOrdenCompra.UseVisualStyleBackColor = true;
-            this.btn_nuevaOrdenCompra.Click += new System.EventHandler(this.btn_nuevaOrdenCompra_Click);
-            // 
-            // btn_CatalogoProveedores
-            // 
-            this.btn_CatalogoProveedores.Location = new System.Drawing.Point(162, 78);
-            this.btn_CatalogoProveedores.Name = "btn_CatalogoProveedores";
-            this.btn_CatalogoProveedores.Size = new System.Drawing.Size(304, 23);
-            this.btn_CatalogoProveedores.TabIndex = 7;
-            this.btn_CatalogoProveedores.Text = "Catalogo Proveedores";
-            this.btn_CatalogoProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CatalogoProveedores.UseVisualStyleBackColor = true;
-            this.btn_CatalogoProveedores.Click += new System.EventHandler(this.btn_CatalogoProveedores_Click);
-            // 
-            // btn_SolictudOrdenesCompra
-            // 
-            this.btn_SolictudOrdenesCompra.Location = new System.Drawing.Point(162, 49);
-            this.btn_SolictudOrdenesCompra.Name = "btn_SolictudOrdenesCompra";
-            this.btn_SolictudOrdenesCompra.Size = new System.Drawing.Size(304, 23);
-            this.btn_SolictudOrdenesCompra.TabIndex = 6;
-            this.btn_SolictudOrdenesCompra.Text = "Catalogo Orden Compra";
-            this.btn_SolictudOrdenesCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_SolictudOrdenesCompra.UseVisualStyleBackColor = true;
-            this.btn_SolictudOrdenesCompra.Click += new System.EventHandler(this.btn_SolictudOrdenesCompra_Click);
-            // 
-            // btn_EnvioEstadosCuenta
-            // 
-            this.btn_EnvioEstadosCuenta.Location = new System.Drawing.Point(327, 19);
-            this.btn_EnvioEstadosCuenta.Name = "btn_EnvioEstadosCuenta";
-            this.btn_EnvioEstadosCuenta.Size = new System.Drawing.Size(139, 23);
-            this.btn_EnvioEstadosCuenta.TabIndex = 5;
-            this.btn_EnvioEstadosCuenta.Text = "Estados de Cuenta";
-            this.btn_EnvioEstadosCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_EnvioEstadosCuenta.UseVisualStyleBackColor = true;
-            this.btn_EnvioEstadosCuenta.Click += new System.EventHandler(this.btn_EnvioEstadosCuenta_Click);
+            this.pictureBox6.BackgroundImage = global::frmPrincipal.Properties.Resources.unlimited_liability;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Location = new System.Drawing.Point(6, 20);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(181, 174);
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
             // 
             // btn_NuevaFactura
             // 
-            this.btn_NuevaFactura.Location = new System.Drawing.Point(160, 20);
+            this.btn_NuevaFactura.Location = new System.Drawing.Point(208, 20);
             this.btn_NuevaFactura.Name = "btn_NuevaFactura";
-            this.btn_NuevaFactura.Size = new System.Drawing.Size(161, 23);
+            this.btn_NuevaFactura.Size = new System.Drawing.Size(252, 23);
             this.btn_NuevaFactura.TabIndex = 4;
             this.btn_NuevaFactura.Text = "Nueva Factura";
             this.btn_NuevaFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NuevaFactura.UseVisualStyleBackColor = true;
             this.btn_NuevaFactura.Click += new System.EventHandler(this.btn_NuevaFactura_Click);
             // 
-            // pictureBox6
+            // btn_EnvioEstadosCuenta
             // 
-            this.pictureBox6.BackgroundImage = global::frmPrincipal.Properties.Resources.unlimited_liability;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(149, 117);
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
+            this.btn_EnvioEstadosCuenta.Location = new System.Drawing.Point(208, 49);
+            this.btn_EnvioEstadosCuenta.Name = "btn_EnvioEstadosCuenta";
+            this.btn_EnvioEstadosCuenta.Size = new System.Drawing.Size(252, 23);
+            this.btn_EnvioEstadosCuenta.TabIndex = 5;
+            this.btn_EnvioEstadosCuenta.Text = "Estados de Cuenta";
+            this.btn_EnvioEstadosCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_EnvioEstadosCuenta.UseVisualStyleBackColor = true;
+            this.btn_EnvioEstadosCuenta.Click += new System.EventHandler(this.btn_EnvioEstadosCuenta_Click);
             // 
-            // groupBox4
+            // btn_SolictudOrdenesCompra
             // 
-            this.groupBox4.Controls.Add(this.btn_MantenimientoComunicacion);
-            this.groupBox4.Controls.Add(this.btn_MantenimientoAlertasNotificaciones);
-            this.groupBox4.Controls.Add(this.btn_GenerarGrafico);
-            this.groupBox4.Controls.Add(this.pictureBox3);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox4.Location = new System.Drawing.Point(17, 315);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(482, 142);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Mantenimiento Reportes y Alertas";
+            this.btn_SolictudOrdenesCompra.Location = new System.Drawing.Point(208, 78);
+            this.btn_SolictudOrdenesCompra.Name = "btn_SolictudOrdenesCompra";
+            this.btn_SolictudOrdenesCompra.Size = new System.Drawing.Size(252, 23);
+            this.btn_SolictudOrdenesCompra.TabIndex = 6;
+            this.btn_SolictudOrdenesCompra.Text = "Catalogo Orden Compra";
+            this.btn_SolictudOrdenesCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_SolictudOrdenesCompra.UseVisualStyleBackColor = true;
+            this.btn_SolictudOrdenesCompra.Click += new System.EventHandler(this.btn_SolictudOrdenesCompra_Click);
             // 
-            // btn_MantenimientoComunicacion
+            // btn_CatalogoProveedores
             // 
-            this.btn_MantenimientoComunicacion.Location = new System.Drawing.Point(163, 77);
-            this.btn_MantenimientoComunicacion.Name = "btn_MantenimientoComunicacion";
-            this.btn_MantenimientoComunicacion.Size = new System.Drawing.Size(304, 23);
-            this.btn_MantenimientoComunicacion.TabIndex = 6;
-            this.btn_MantenimientoComunicacion.Text = "Mantenimiento Comunicacion";
-            this.btn_MantenimientoComunicacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_MantenimientoComunicacion.UseVisualStyleBackColor = true;
+            this.btn_CatalogoProveedores.Location = new System.Drawing.Point(208, 107);
+            this.btn_CatalogoProveedores.Name = "btn_CatalogoProveedores";
+            this.btn_CatalogoProveedores.Size = new System.Drawing.Size(252, 23);
+            this.btn_CatalogoProveedores.TabIndex = 7;
+            this.btn_CatalogoProveedores.Text = "Catalogo Proveedores";
+            this.btn_CatalogoProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_CatalogoProveedores.UseVisualStyleBackColor = true;
+            this.btn_CatalogoProveedores.Click += new System.EventHandler(this.btn_CatalogoProveedores_Click);
             // 
-            // btn_MantenimientoAlertasNotificaciones
+            // btn_nuevaOrdenCompra
             // 
-            this.btn_MantenimientoAlertasNotificaciones.Location = new System.Drawing.Point(161, 48);
-            this.btn_MantenimientoAlertasNotificaciones.Name = "btn_MantenimientoAlertasNotificaciones";
-            this.btn_MantenimientoAlertasNotificaciones.Size = new System.Drawing.Size(304, 23);
-            this.btn_MantenimientoAlertasNotificaciones.TabIndex = 5;
-            this.btn_MantenimientoAlertasNotificaciones.Text = "Mantenimiento Alertas y Notificaciones";
-            this.btn_MantenimientoAlertasNotificaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_MantenimientoAlertasNotificaciones.UseVisualStyleBackColor = true;
+            this.btn_nuevaOrdenCompra.Location = new System.Drawing.Point(208, 136);
+            this.btn_nuevaOrdenCompra.Name = "btn_nuevaOrdenCompra";
+            this.btn_nuevaOrdenCompra.Size = new System.Drawing.Size(252, 23);
+            this.btn_nuevaOrdenCompra.TabIndex = 9;
+            this.btn_nuevaOrdenCompra.Text = "Nueva Orden Compra";
+            this.btn_nuevaOrdenCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nuevaOrdenCompra.UseVisualStyleBackColor = true;
+            this.btn_nuevaOrdenCompra.Click += new System.EventHandler(this.btn_nuevaOrdenCompra_Click);
             // 
-            // btn_GenerarGrafico
+            // btn_NuevoProveedor
             // 
-            this.btn_GenerarGrafico.Location = new System.Drawing.Point(163, 19);
-            this.btn_GenerarGrafico.Name = "btn_GenerarGrafico";
-            this.btn_GenerarGrafico.Size = new System.Drawing.Size(304, 23);
-            this.btn_GenerarGrafico.TabIndex = 4;
-            this.btn_GenerarGrafico.Text = "Generar Grafico o Reporte";
-            this.btn_GenerarGrafico.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_GenerarGrafico.UseVisualStyleBackColor = true;
+            this.btn_NuevoProveedor.Location = new System.Drawing.Point(208, 165);
+            this.btn_NuevoProveedor.Name = "btn_NuevoProveedor";
+            this.btn_NuevoProveedor.Size = new System.Drawing.Size(252, 23);
+            this.btn_NuevoProveedor.TabIndex = 10;
+            this.btn_NuevoProveedor.Text = "Nuevo Proveedor";
+            this.btn_NuevoProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_NuevoProveedor.UseVisualStyleBackColor = true;
+            this.btn_NuevoProveedor.Click += new System.EventHandler(this.btn_NuevoProveedor_Click);
             // 
-            // pictureBox3
+            // groupBox6
             // 
-            this.pictureBox3.BackgroundImage = global::frmPrincipal.Properties.Resources.reports;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(149, 117);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
+            this.groupBox6.Controls.Add(this.btn_IngresoIncapacidad);
+            this.groupBox6.Controls.Add(this.btn_NuevoEmpleado);
+            this.groupBox6.Controls.Add(this.btn_ControlNomina);
+            this.groupBox6.Controls.Add(this.btn_SolicitudVacaciones);
+            this.groupBox6.Controls.Add(this.pictureBox5);
+            this.groupBox6.Controls.Add(this.btn_ControlVacaciones);
+            this.groupBox6.Controls.Add(this.btn_ControlIncapacidades);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox6.Location = new System.Drawing.Point(526, 253);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(476, 200);
+            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Mantenimiento de RRHH";
             // 
-            // groupBox3
+            // btn_ControlIncapacidades
             // 
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.btn_AdministracionCuentasUsuario);
-            this.groupBox3.Controls.Add(this.btn_AdministracionPerfiles);
-            this.groupBox3.Controls.Add(this.pictureBox2);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox3.Location = new System.Drawing.Point(17, 167);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(482, 142);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Mantenimiento de Seguridad";
+            this.btn_ControlIncapacidades.Location = new System.Drawing.Point(208, 106);
+            this.btn_ControlIncapacidades.Name = "btn_ControlIncapacidades";
+            this.btn_ControlIncapacidades.Size = new System.Drawing.Size(252, 23);
+            this.btn_ControlIncapacidades.TabIndex = 6;
+            this.btn_ControlIncapacidades.Text = "Control Incapacidades";
+            this.btn_ControlIncapacidades.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ControlIncapacidades.UseVisualStyleBackColor = true;
+            this.btn_ControlIncapacidades.Click += new System.EventHandler(this.btn_ControlIncapacidades_Click);
             // 
-            // button1
+            // btn_ControlVacaciones
             // 
-            this.button1.Location = new System.Drawing.Point(161, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(304, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Nuevo Usuario Final";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_ControlVacaciones.Location = new System.Drawing.Point(208, 77);
+            this.btn_ControlVacaciones.Name = "btn_ControlVacaciones";
+            this.btn_ControlVacaciones.Size = new System.Drawing.Size(252, 23);
+            this.btn_ControlVacaciones.TabIndex = 4;
+            this.btn_ControlVacaciones.Text = "Control Vacaciones";
+            this.btn_ControlVacaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ControlVacaciones.UseVisualStyleBackColor = true;
+            this.btn_ControlVacaciones.Click += new System.EventHandler(this.btn_ControlVacaciones_Click);
             // 
-            // btn_AdministracionCuentasUsuario
+            // pictureBox5
             // 
-            this.btn_AdministracionCuentasUsuario.Location = new System.Drawing.Point(161, 48);
-            this.btn_AdministracionCuentasUsuario.Name = "btn_AdministracionCuentasUsuario";
-            this.btn_AdministracionCuentasUsuario.Size = new System.Drawing.Size(304, 23);
-            this.btn_AdministracionCuentasUsuario.TabIndex = 6;
-            this.btn_AdministracionCuentasUsuario.Text = "Administracion Cuentas Usuario";
-            this.btn_AdministracionCuentasUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_AdministracionCuentasUsuario.UseVisualStyleBackColor = true;
-            this.btn_AdministracionCuentasUsuario.Click += new System.EventHandler(this.btn_AdministracionCuentasUsuario_Click);
+            this.pictureBox5.BackgroundImage = global::frmPrincipal.Properties.Resources.Software_02;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(181, 175);
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
             // 
-            // btn_AdministracionPerfiles
+            // btn_SolicitudVacaciones
             // 
-            this.btn_AdministracionPerfiles.Location = new System.Drawing.Point(163, 19);
-            this.btn_AdministracionPerfiles.Name = "btn_AdministracionPerfiles";
-            this.btn_AdministracionPerfiles.Size = new System.Drawing.Size(304, 23);
-            this.btn_AdministracionPerfiles.TabIndex = 4;
-            this.btn_AdministracionPerfiles.Text = "Administracion de Perfiles";
-            this.btn_AdministracionPerfiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_AdministracionPerfiles.UseVisualStyleBackColor = true;
-            this.btn_AdministracionPerfiles.Click += new System.EventHandler(this.btn_AdministracionPerfiles_Click);
+            this.btn_SolicitudVacaciones.Location = new System.Drawing.Point(208, 135);
+            this.btn_SolicitudVacaciones.Name = "btn_SolicitudVacaciones";
+            this.btn_SolicitudVacaciones.Size = new System.Drawing.Size(252, 23);
+            this.btn_SolicitudVacaciones.TabIndex = 8;
+            this.btn_SolicitudVacaciones.Text = "Solicitud Vacaciones";
+            this.btn_SolicitudVacaciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_SolicitudVacaciones.UseVisualStyleBackColor = true;
+            this.btn_SolicitudVacaciones.Click += new System.EventHandler(this.btn_SolicitudVacaciones_Click);
             // 
-            // pictureBox2
+            // btn_ControlNomina
             // 
-            this.pictureBox2.BackgroundImage = global::frmPrincipal.Properties.Resources.it_photo_124543;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(149, 117);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.btn_ControlNomina.Location = new System.Drawing.Point(208, 49);
+            this.btn_ControlNomina.Name = "btn_ControlNomina";
+            this.btn_ControlNomina.Size = new System.Drawing.Size(252, 23);
+            this.btn_ControlNomina.TabIndex = 5;
+            this.btn_ControlNomina.Text = "Control Nomina";
+            this.btn_ControlNomina.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ControlNomina.UseVisualStyleBackColor = true;
+            this.btn_ControlNomina.Click += new System.EventHandler(this.btn_ControlNomina_Click);
             // 
-            // groupBox2
+            // btn_NuevoEmpleado
             // 
-            this.groupBox2.Controls.Add(this.btn_BitacoraTicket);
-            this.groupBox2.Controls.Add(this.btn_AtencionTicket);
-            this.groupBox2.Controls.Add(this.btn_AsignarTicket);
-            this.groupBox2.Controls.Add(this.btn_NuevoTicket);
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Location = new System.Drawing.Point(17, 19);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(482, 142);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Mantenimiento de Tickets";
+            this.btn_NuevoEmpleado.Location = new System.Drawing.Point(208, 20);
+            this.btn_NuevoEmpleado.Name = "btn_NuevoEmpleado";
+            this.btn_NuevoEmpleado.Size = new System.Drawing.Size(252, 23);
+            this.btn_NuevoEmpleado.TabIndex = 7;
+            this.btn_NuevoEmpleado.Text = "Nuevo Empleado";
+            this.btn_NuevoEmpleado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_NuevoEmpleado.UseVisualStyleBackColor = true;
+            this.btn_NuevoEmpleado.Click += new System.EventHandler(this.btn_NuevoEmpleado_Click);
             // 
-            // btn_BitacoraTicket
+            // btn_IngresoIncapacidad
             // 
-            this.btn_BitacoraTicket.Location = new System.Drawing.Point(161, 107);
-            this.btn_BitacoraTicket.Name = "btn_BitacoraTicket";
-            this.btn_BitacoraTicket.Size = new System.Drawing.Size(304, 23);
-            this.btn_BitacoraTicket.TabIndex = 4;
-            this.btn_BitacoraTicket.Text = "Bitacora de Ticket";
-            this.btn_BitacoraTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_BitacoraTicket.UseVisualStyleBackColor = true;
-            this.btn_BitacoraTicket.Click += new System.EventHandler(this.btn_BitacoraTicket_Click);
+            this.btn_IngresoIncapacidad.Location = new System.Drawing.Point(208, 164);
+            this.btn_IngresoIncapacidad.Name = "btn_IngresoIncapacidad";
+            this.btn_IngresoIncapacidad.Size = new System.Drawing.Size(252, 23);
+            this.btn_IngresoIncapacidad.TabIndex = 9;
+            this.btn_IngresoIncapacidad.Text = "Ingreso Incapacidad";
+            this.btn_IngresoIncapacidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_IngresoIncapacidad.UseVisualStyleBackColor = true;
+            this.btn_IngresoIncapacidad.Click += new System.EventHandler(this.btn_IngresoIncapacidad_Click);
             // 
-            // btn_AtencionTicket
+            // groupBox5
             // 
-            this.btn_AtencionTicket.Location = new System.Drawing.Point(161, 78);
-            this.btn_AtencionTicket.Name = "btn_AtencionTicket";
-            this.btn_AtencionTicket.Size = new System.Drawing.Size(304, 23);
-            this.btn_AtencionTicket.TabIndex = 3;
-            this.btn_AtencionTicket.Text = "Catalogo Atencion de Ticket";
-            this.btn_AtencionTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_AtencionTicket.UseVisualStyleBackColor = true;
-            this.btn_AtencionTicket.Click += new System.EventHandler(this.btn_AtencionTicket_Click);
+            this.groupBox5.Controls.Add(this.btn_SalirSistema);
+            this.groupBox5.Controls.Add(this.btn_CerrarSesion);
+            this.groupBox5.Controls.Add(this.btn_ConfiguracionSistema);
+            this.groupBox5.Controls.Add(this.pictureBox4);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox5.Location = new System.Drawing.Point(526, 480);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(476, 180);
+            this.groupBox5.TabIndex = 10;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Mantenimiento del Sistema";
             // 
-            // btn_AsignarTicket
+            // pictureBox4
             // 
-            this.btn_AsignarTicket.Location = new System.Drawing.Point(161, 49);
-            this.btn_AsignarTicket.Name = "btn_AsignarTicket";
-            this.btn_AsignarTicket.Size = new System.Drawing.Size(304, 23);
-            this.btn_AsignarTicket.TabIndex = 2;
-            this.btn_AsignarTicket.Text = "Catalogo Asignacion de Ticket";
-            this.btn_AsignarTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_AsignarTicket.UseVisualStyleBackColor = true;
-            this.btn_AsignarTicket.Click += new System.EventHandler(this.btn_AsignarTicket_Click);
+            this.pictureBox4.BackgroundImage = global::frmPrincipal.Properties.Resources.Fixing_mixing_or_corrupt_System_32_file1;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(6, 20);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(181, 147);
+            this.pictureBox4.TabIndex = 1;
+            this.pictureBox4.TabStop = false;
             // 
-            // btn_NuevoTicket
+            // btn_ConfiguracionSistema
             // 
-            this.btn_NuevoTicket.Location = new System.Drawing.Point(162, 20);
-            this.btn_NuevoTicket.Name = "btn_NuevoTicket";
-            this.btn_NuevoTicket.Size = new System.Drawing.Size(304, 23);
-            this.btn_NuevoTicket.TabIndex = 1;
-            this.btn_NuevoTicket.Text = "Nuevo Ticket";
-            this.btn_NuevoTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_NuevoTicket.UseVisualStyleBackColor = true;
-            this.btn_NuevoTicket.Click += new System.EventHandler(this.btn_NuevoTicket_Click);
+            this.btn_ConfiguracionSistema.Location = new System.Drawing.Point(208, 20);
+            this.btn_ConfiguracionSistema.Name = "btn_ConfiguracionSistema";
+            this.btn_ConfiguracionSistema.Size = new System.Drawing.Size(252, 35);
+            this.btn_ConfiguracionSistema.TabIndex = 4;
+            this.btn_ConfiguracionSistema.Text = "Configuracion de Sistema";
+            this.btn_ConfiguracionSistema.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ConfiguracionSistema.UseVisualStyleBackColor = true;
+            this.btn_ConfiguracionSistema.Click += new System.EventHandler(this.btn_ConfiguracionSistema_Click);
             // 
-            // pictureBox1
+            // btn_CerrarSesion
             // 
-            this.pictureBox1.BackgroundImage = global::frmPrincipal.Properties.Resources.ist2_8758228_support_service;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 117);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btn_CerrarSesion.Location = new System.Drawing.Point(208, 73);
+            this.btn_CerrarSesion.Name = "btn_CerrarSesion";
+            this.btn_CerrarSesion.Size = new System.Drawing.Size(252, 35);
+            this.btn_CerrarSesion.TabIndex = 5;
+            this.btn_CerrarSesion.Text = "Cerrar Sesion";
+            this.btn_CerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_CerrarSesion.UseVisualStyleBackColor = true;
+            this.btn_CerrarSesion.Click += new System.EventHandler(this.btn_CerrarSesion_Click);
+            // 
+            // btn_SalirSistema
+            // 
+            this.btn_SalirSistema.Location = new System.Drawing.Point(208, 132);
+            this.btn_SalirSistema.Name = "btn_SalirSistema";
+            this.btn_SalirSistema.Size = new System.Drawing.Size(252, 35);
+            this.btn_SalirSistema.TabIndex = 6;
+            this.btn_SalirSistema.Text = "Salir del Sistema";
+            this.btn_SalirSistema.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_SalirSistema.UseVisualStyleBackColor = true;
+            this.btn_SalirSistema.Click += new System.EventHandler(this.btn_SalirSistema_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.groupBox5);
+            this.groupBox1.Controls.Add(this.groupBox6);
+            this.groupBox1.Controls.Add(this.groupBox7);
+            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Location = new System.Drawing.Point(0, 27);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1008, 666);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Modulos";
             // 
             // frm_0MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(999, 497);
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientSize = new System.Drawing.Size(1013, 692);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -839,19 +846,19 @@
             this.Text = "Menu Principal";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -866,7 +873,6 @@
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administracionPerfilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesYAlertasToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripMenuItem BitacoraTicketToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoAlertasNotificacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generarGraficoReporteToolStripMenuItem;
@@ -883,53 +889,54 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoEmpleadoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nuevaFacturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CatalogoAsignacionDeTicketToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_ConfiguracionSistema;
-        private System.Windows.Forms.Button btn_ControlIncapacidades;
-        private System.Windows.Forms.Button btn_ControlNomina;
-        private System.Windows.Forms.Button btn_ControlVacaciones;
-        private System.Windows.Forms.Button btn_SolictudOrdenesCompra;
-        private System.Windows.Forms.Button btn_EnvioEstadosCuenta;
-        private System.Windows.Forms.Button btn_NuevaFactura;
-        private System.Windows.Forms.Button btn_MantenimientoComunicacion;
-        private System.Windows.Forms.Button btn_MantenimientoAlertasNotificaciones;
-        private System.Windows.Forms.Button btn_GenerarGrafico;
-        private System.Windows.Forms.Button btn_AdministracionCuentasUsuario;
-        private System.Windows.Forms.Button btn_AdministracionPerfiles;
-        private System.Windows.Forms.Button btn_AtencionTicket;
-        private System.Windows.Forms.Button btn_AsignarTicket;
-        private System.Windows.Forms.Button btn_NuevoTicket;
-        private System.Windows.Forms.Button btn_CatalogoProveedores;
-        private System.Windows.Forms.Button btn_BitacoraTicket;
-        private System.Windows.Forms.Button btn_NuevoEmpleado;
         private System.Windows.Forms.ToolStripMenuItem catalgoProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuracionDeSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirDelSistemaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioFinalToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_IngresoIncapacidad;
-        private System.Windows.Forms.Button btn_SolicitudVacaciones;
         private System.Windows.Forms.ToolStripMenuItem nuevaOrdenDeCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoProveedorToolStripMenuItem;
-        private System.Windows.Forms.Button btn_NuevoProveedor;
-        private System.Windows.Forms.Button btn_nuevaOrdenCompra;
         private System.Windows.Forms.ToolStripMenuItem solicitudDeVacacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresoDeIncapacidadToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_BitacoraTicket;
+        private System.Windows.Forms.Button btn_AtencionTicket;
+        private System.Windows.Forms.Button btn_AsignarTicket;
+        private System.Windows.Forms.Button btn_NuevoTicket;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_AdministracionCuentasUsuario;
+        private System.Windows.Forms.Button btn_AdministracionPerfiles;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btn_MantenimientoComunicacion;
+        private System.Windows.Forms.Button btn_GenerarGrafico;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btn_MantenimientoAlertasNotificaciones;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btn_NuevoProveedor;
+        private System.Windows.Forms.Button btn_nuevaOrdenCompra;
+        private System.Windows.Forms.Button btn_CatalogoProveedores;
+        private System.Windows.Forms.Button btn_SolictudOrdenesCompra;
+        private System.Windows.Forms.Button btn_EnvioEstadosCuenta;
+        private System.Windows.Forms.Button btn_NuevaFactura;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btn_IngresoIncapacidad;
+        private System.Windows.Forms.Button btn_NuevoEmpleado;
+        private System.Windows.Forms.Button btn_ControlNomina;
+        private System.Windows.Forms.Button btn_SolicitudVacaciones;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button btn_ControlVacaciones;
+        private System.Windows.Forms.Button btn_ControlIncapacidades;
+        private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btn_SalirSistema;
         private System.Windows.Forms.Button btn_CerrarSesion;
+        private System.Windows.Forms.Button btn_ConfiguracionSistema;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.GroupBox groupBox1;
 
     }
 }

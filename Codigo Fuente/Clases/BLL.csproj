@@ -46,6 +46,7 @@
     <Compile Include="descripcionRol.cs" />
     <Compile Include="estatusFactura.cs" />
     <Compile Include="EstatusTicket.cs" />
+    <Compile Include="Limpieza.cs" />
     <Compile Include="Seguridad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoIdentificacion.cs" />

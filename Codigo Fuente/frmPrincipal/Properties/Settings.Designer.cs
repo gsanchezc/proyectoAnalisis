@@ -26,7 +26,7 @@ namespace frmPrincipal.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Dylan-pc;Initial Catalog=db_soportic;User ID=sa;Password=123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=db_soportic;Integrated Security=True")]
         public string Soportic {
             get {
                 return ((string)(this["Soportic"]));

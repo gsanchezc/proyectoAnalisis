@@ -323,5 +323,42 @@ namespace frmPrincipal
             ventanaMenuMantenimiento.ShowDialog();
         }
 
+        private void generarGraficoReporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mantenimientoAlertasNotificacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mantenimientoComunicacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Mantenimiento_0Menu ventanaMenuMantenimiento = new frm_Mantenimiento_0Menu();
+            this.Hide();
+            ventanaMenuMantenimiento.ShowDialog();
+        }
+
+        private void configuracionDeSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_GenerarGrafico_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_MantenimientoAlertasNotificaciones_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_MantenimientoComunicacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

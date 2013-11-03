@@ -49,6 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmb_proveedor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -182,6 +184,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.txt_detalle);
             this.groupBox4.Controls.Add(this.label4);
@@ -214,17 +218,17 @@
             // 
             // txt_detalle
             // 
-            this.txt_detalle.Location = new System.Drawing.Point(264, 149);
+            this.txt_detalle.Location = new System.Drawing.Point(272, 193);
             this.txt_detalle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_detalle.Name = "txt_detalle";
-            this.txt_detalle.Size = new System.Drawing.Size(461, 109);
+            this.txt_detalle.Size = new System.Drawing.Size(461, 69);
             this.txt_detalle.TabIndex = 7;
             this.txt_detalle.Text = "";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(190, 153);
+            this.label4.Location = new System.Drawing.Point(198, 197);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 15);
@@ -252,7 +256,7 @@
             // 
             // txt_numeroCotizacion
             // 
-            this.txt_numeroCotizacion.Location = new System.Drawing.Point(264, 106);
+            this.txt_numeroCotizacion.Location = new System.Drawing.Point(272, 150);
             this.txt_numeroCotizacion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_numeroCotizacion.Name = "txt_numeroCotizacion";
             this.txt_numeroCotizacion.Size = new System.Drawing.Size(299, 21);
@@ -261,7 +265,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(116, 109);
+            this.label2.Location = new System.Drawing.Point(124, 153);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 15);
@@ -271,7 +275,7 @@
             // cmb_proveedor
             // 
             this.cmb_proveedor.FormattingEnabled = true;
-            this.cmb_proveedor.Location = new System.Drawing.Point(264, 66);
+            this.cmb_proveedor.Location = new System.Drawing.Point(274, 103);
             this.cmb_proveedor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cmb_proveedor.Name = "cmb_proveedor";
             this.cmb_proveedor.Size = new System.Drawing.Size(299, 23);
@@ -280,12 +284,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(169, 70);
+            this.label1.Location = new System.Drawing.Point(179, 107);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Proveedor";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(173, 71);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 15);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Ticket";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(638, 71);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 15);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Monto";
             // 
             // frm_CxC_CxP_NuevaOrdenCompra
             // 
@@ -335,5 +359,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmb_proveedor;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
     }
 }

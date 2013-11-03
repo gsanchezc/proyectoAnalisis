@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Seguridad_AdministracionCuentasUsuario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btn_establecer = new System.Windows.Forms.Button();
+            this.btn_cerrar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rbt_activo = new System.Windows.Forms.RadioButton();
             this.rbt_inactivo = new System.Windows.Forms.RadioButton();
-            this.btn_cerrar = new System.Windows.Forms.Button();
             this.txt_confirmaContraseña = new System.Windows.Forms.TextBox();
-            this.btn_establecer = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Contraseña = new System.Windows.Forms.TextBox();
             this.txt_Usuario = new System.Windows.Forms.TextBox();
@@ -44,12 +45,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lst_ListaUsuario = new System.Windows.Forms.ListBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -65,6 +65,39 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asignacion de Usuario y Contrasena";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btn_establecer);
+            this.groupBox5.Controls.Add(this.btn_cerrar);
+            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox5.Location = new System.Drawing.Point(716, 25);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(240, 427);
+            this.groupBox5.TabIndex = 9;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Opciones";
+            // 
+            // btn_establecer
+            // 
+            this.btn_establecer.Location = new System.Drawing.Point(60, 55);
+            this.btn_establecer.Name = "btn_establecer";
+            this.btn_establecer.Size = new System.Drawing.Size(128, 27);
+            this.btn_establecer.TabIndex = 7;
+            this.btn_establecer.Text = "Establecer";
+            this.btn_establecer.UseVisualStyleBackColor = true;
+            this.btn_establecer.Click += new System.EventHandler(this.btn_establecer_Click);
+            // 
+            // btn_cerrar
+            // 
+            this.btn_cerrar.Location = new System.Drawing.Point(60, 119);
+            this.btn_cerrar.Name = "btn_cerrar";
+            this.btn_cerrar.Size = new System.Drawing.Size(128, 30);
+            this.btn_cerrar.TabIndex = 8;
+            this.btn_cerrar.Text = "Cerrar";
+            this.btn_cerrar.UseVisualStyleBackColor = true;
+            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // groupBox3
             // 
@@ -119,16 +152,6 @@
             this.rbt_inactivo.Text = "Inactivo";
             this.rbt_inactivo.UseVisualStyleBackColor = true;
             // 
-            // btn_cerrar
-            // 
-            this.btn_cerrar.Location = new System.Drawing.Point(60, 119);
-            this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(128, 30);
-            this.btn_cerrar.TabIndex = 8;
-            this.btn_cerrar.Text = "Cerrar";
-            this.btn_cerrar.UseVisualStyleBackColor = true;
-            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
-            // 
             // txt_confirmaContraseña
             // 
             this.txt_confirmaContraseña.Location = new System.Drawing.Point(22, 249);
@@ -136,16 +159,6 @@
             this.txt_confirmaContraseña.PasswordChar = '*';
             this.txt_confirmaContraseña.Size = new System.Drawing.Size(352, 26);
             this.txt_confirmaContraseña.TabIndex = 9;
-            // 
-            // btn_establecer
-            // 
-            this.btn_establecer.Location = new System.Drawing.Point(60, 55);
-            this.btn_establecer.Name = "btn_establecer";
-            this.btn_establecer.Size = new System.Drawing.Size(128, 27);
-            this.btn_establecer.TabIndex = 7;
-            this.btn_establecer.Text = "Establecer";
-            this.btn_establecer.UseVisualStyleBackColor = true;
-            this.btn_establecer.Click += new System.EventHandler(this.btn_establecer_Click);
             // 
             // label3
             // 
@@ -212,19 +225,6 @@
             this.lst_ListaUsuario.Size = new System.Drawing.Size(223, 372);
             this.lst_ListaUsuario.TabIndex = 0;
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.btn_establecer);
-            this.groupBox5.Controls.Add(this.btn_cerrar);
-            this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox5.Location = new System.Drawing.Point(716, 25);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(240, 427);
-            this.groupBox5.TabIndex = 9;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Opciones";
-            // 
             // frm_Seguridad_AdministracionCuentasUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,13 +236,14 @@
             this.Name = "frm_Seguridad_AdministracionCuentasUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Administracion Cuentas Usuario";
+            this.Load += new System.EventHandler(this.frm_Seguridad_AdministracionCuentasUsuario_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

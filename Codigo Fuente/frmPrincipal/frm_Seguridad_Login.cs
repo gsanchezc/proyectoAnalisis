@@ -13,9 +13,10 @@ namespace frmPrincipal
 {
     public partial class frm_Seguridad_Login : Form
     {
-       
         Seguridad objSeguridad = new Seguridad();
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+
+        int intentosFallidos = 0;
 
         public frm_Seguridad_Login()
         {
@@ -24,9 +25,12 @@ namespace frmPrincipal
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //VALIDACIONES LOGIN
             if (validarUsuario(txt_Usuario) == false)
             {
                 MessageBox.Show("Ingrese Unicamente Numeros en el Usuario", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpieza.limpiar(txt_Usuario);
+                Limpieza.limpiar(txt_Contraseña);
                 txt_Usuario.Focus();
                 return;
             }
@@ -43,32 +47,25 @@ namespace frmPrincipal
                 return;
             }
 
-            int id = Convert.ToInt32(txt_Usuario.Text);
-            string contrasenna = objSeguridad.MD5Hash(txt_Contraseña.Text);
-            objUsuariosSistema.login_usuariosSistema(id, contrasenna);
-
-            if (objUsuariosSistema.validacion == false)
-            {
-                MessageBox.Show("Intento de login fallido", "CUIDADO!");
-                return;
-            }
-            if (objUsuariosSistema.validacion == true)
-            {
-                MessageBox.Show("BIENVENIDO", "LOGIN EXITOSO");
-                frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
-                frm_ReportesAlertas_MantenimientoAlertasNotificaciones ventanaReportes = new frm_ReportesAlertas_MantenimientoAlertasNotificaciones();
-                this.Hide();
-                ventana.Show();
-                ventanaReportes.Show();
-           }
-            else
-            {
-                MessageBox.Show("CONTACTE ADMINISTRADOR DE SISTEMA", "ERROR");
-                return;
-            }
+            this.login();
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.salirSistema();
+        }
+
+        //METODO VALIDAR USUARIO
+        //DYLAN CALDERON
+        private static bool validarUsuario(Control mitextbox)
+        {
+            Regex regex = new Regex("^[0-9]*$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        //METODO PARA SALIR DEL SISTEMA
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void salirSistema()
         {
             if ((MessageBox.Show("Desea salir del Sistema", "Cierre del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -80,11 +77,36 @@ namespace frmPrincipal
             }
         }
 
-        private static bool validarUsuario(Control mitextbox)
+        //METODO LOGIN DEL SISTEMA
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void login()
         {
+            int id = Convert.ToInt32(txt_Usuario.Text);
+            string contrasenna = objSeguridad.MD5Hash(txt_Contraseña.Text);
+            objUsuariosSistema.login_usuariosSistema(id, contrasenna);
 
-            Regex regex = new Regex("^[0-9]*$");
-            return regex.IsMatch(mitextbox.Text);
+            if (objUsuariosSistema.validacion == false)
+            {
+                intentosFallidos++;
+                MessageBox.Show("Intento de login fallido, Cantidad de Intentos: "+intentosFallidos, "CUIDADO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Limpieza.limpiar(txt_Usuario);
+                Limpieza.limpiar(txt_Contraseña);
+                return;
+            }
+            if (objUsuariosSistema.validacion == true)
+            {
+                MessageBox.Show("BIENVENIDO AL SISTEMA", "DATOS CORRECTOS",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+                frm_ReportesAlertas_MantenimientoAlertasNotificaciones ventanaReportes = new frm_ReportesAlertas_MantenimientoAlertasNotificaciones(id);
+                this.Hide();
+                ventana.Show();
+                ventanaReportes.Show();
+            }
+            else
+            {
+                MessageBox.Show("CONTACTE ADMINISTRADOR DE SISTEMA", "ERROR");
+                return;
+            }
         }
     }
 }

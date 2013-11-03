@@ -47,6 +47,8 @@
             this.txt_temaTicket = new System.Windows.Forms.TextBox();
             this.txt_TipoTicket = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txt_NumeroBitacora = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.btn_ver = new System.Windows.Forms.Button();
@@ -68,8 +70,6 @@
             this.msk_fechaInicio = new System.Windows.Forms.MaskedTextBox();
             this.msk_fechaAsignacion = new System.Windows.Forms.MaskedTextBox();
             this.msk_fechaEntrega = new System.Windows.Forms.MaskedTextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txt_NumeroBitacora = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -299,6 +299,27 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bitacora";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label16.Location = new System.Drawing.Point(17, 19);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(101, 13);
+            this.label16.TabIndex = 45;
+            this.label16.Text = "Numero Bitacora";
+            // 
+            // txt_NumeroBitacora
+            // 
+            this.txt_NumeroBitacora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NumeroBitacora.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_NumeroBitacora.Location = new System.Drawing.Point(140, 16);
+            this.txt_NumeroBitacora.Name = "txt_NumeroBitacora";
+            this.txt_NumeroBitacora.ReadOnly = true;
+            this.txt_NumeroBitacora.Size = new System.Drawing.Size(141, 20);
+            this.txt_NumeroBitacora.TabIndex = 46;
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.btn_agregar);
@@ -392,12 +413,12 @@
             this.groupBox2.Controls.Add(this.cb_status);
             this.groupBox2.Controls.Add(this.cb_tecnico);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.msk_fechaInicio);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.msk_fechaInicio);
             this.groupBox2.Controls.Add(this.msk_fechaAsignacion);
             this.groupBox2.Controls.Add(this.msk_fechaEntrega);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -461,7 +482,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(38, 192);
+            this.label5.Location = new System.Drawing.Point(38, 232);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 13);
             this.label5.TabIndex = 26;
@@ -472,7 +493,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(51, 151);
+            this.label6.Location = new System.Drawing.Point(49, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 25;
@@ -505,7 +526,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(21, 235);
+            this.label13.Location = new System.Drawing.Point(19, 147);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(111, 13);
             this.label13.TabIndex = 33;
@@ -515,7 +536,7 @@
             // 
             this.msk_fechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msk_fechaInicio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.msk_fechaInicio.Location = new System.Drawing.Point(145, 148);
+            this.msk_fechaInicio.Location = new System.Drawing.Point(145, 185);
             this.msk_fechaInicio.Mask = "00/00/0000";
             this.msk_fechaInicio.Name = "msk_fechaInicio";
             this.msk_fechaInicio.ReadOnly = true;
@@ -527,7 +548,7 @@
             // 
             this.msk_fechaAsignacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msk_fechaAsignacion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.msk_fechaAsignacion.Location = new System.Drawing.Point(145, 232);
+            this.msk_fechaAsignacion.Location = new System.Drawing.Point(143, 144);
             this.msk_fechaAsignacion.Mask = "00/00/0000";
             this.msk_fechaAsignacion.Name = "msk_fechaAsignacion";
             this.msk_fechaAsignacion.ReadOnly = true;
@@ -539,34 +560,13 @@
             // 
             this.msk_fechaEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msk_fechaEntrega.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.msk_fechaEntrega.Location = new System.Drawing.Point(145, 189);
+            this.msk_fechaEntrega.Location = new System.Drawing.Point(145, 229);
             this.msk_fechaEntrega.Mask = "00/00/0000";
             this.msk_fechaEntrega.Name = "msk_fechaEntrega";
             this.msk_fechaEntrega.ReadOnly = true;
             this.msk_fechaEntrega.Size = new System.Drawing.Size(134, 20);
             this.msk_fechaEntrega.TabIndex = 38;
             this.msk_fechaEntrega.ValidatingType = typeof(System.DateTime);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label16.Location = new System.Drawing.Point(17, 19);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(101, 13);
-            this.label16.TabIndex = 45;
-            this.label16.Text = "Numero Bitacora";
-            // 
-            // txt_NumeroBitacora
-            // 
-            this.txt_NumeroBitacora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NumeroBitacora.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_NumeroBitacora.Location = new System.Drawing.Point(140, 16);
-            this.txt_NumeroBitacora.Name = "txt_NumeroBitacora";
-            this.txt_NumeroBitacora.ReadOnly = true;
-            this.txt_NumeroBitacora.Size = new System.Drawing.Size(141, 20);
-            this.txt_NumeroBitacora.TabIndex = 46;
             // 
             // frm_Ticket_AtencionTicket
             // 

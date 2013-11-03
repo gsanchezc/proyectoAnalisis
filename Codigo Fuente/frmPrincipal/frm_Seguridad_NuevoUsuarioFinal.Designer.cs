@@ -46,6 +46,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -97,6 +99,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txt_numeroUsuario);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txt_identificacion);
@@ -136,7 +140,7 @@
             // 
             // txt_identificacion
             // 
-            this.txt_identificacion.Location = new System.Drawing.Point(248, 205);
+            this.txt_identificacion.Location = new System.Drawing.Point(249, 249);
             this.txt_identificacion.Name = "txt_identificacion";
             this.txt_identificacion.Size = new System.Drawing.Size(296, 26);
             this.txt_identificacion.TabIndex = 51;
@@ -144,7 +148,7 @@
             // cmb_Departamento
             // 
             this.cmb_Departamento.FormattingEnabled = true;
-            this.cmb_Departamento.Location = new System.Drawing.Point(248, 308);
+            this.cmb_Departamento.Location = new System.Drawing.Point(249, 352);
             this.cmb_Departamento.Name = "cmb_Departamento";
             this.cmb_Departamento.Size = new System.Drawing.Size(410, 28);
             this.cmb_Departamento.TabIndex = 48;
@@ -152,7 +156,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(71, 311);
+            this.label10.Location = new System.Drawing.Point(72, 355);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(141, 20);
             this.label10.TabIndex = 47;
@@ -160,7 +164,7 @@
             // 
             // msk_Telefono
             // 
-            this.msk_Telefono.Location = new System.Drawing.Point(248, 258);
+            this.msk_Telefono.Location = new System.Drawing.Point(249, 302);
             this.msk_Telefono.Mask = "0000-0000";
             this.msk_Telefono.Name = "msk_Telefono";
             this.msk_Telefono.Size = new System.Drawing.Size(296, 26);
@@ -183,7 +187,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(56, 261);
+            this.label7.Location = new System.Drawing.Point(57, 305);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(155, 20);
             this.label7.TabIndex = 36;
@@ -192,7 +196,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(94, 208);
+            this.label3.Location = new System.Drawing.Point(95, 252);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 20);
             this.label3.TabIndex = 32;
@@ -215,6 +219,24 @@
             this.label1.Size = new System.Drawing.Size(138, 20);
             this.label1.TabIndex = 30;
             this.label1.Text = "Numero Usuario";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(250, 196);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(202, 28);
+            this.comboBox1.TabIndex = 55;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(57, 199);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(156, 20);
+            this.label6.TabIndex = 54;
+            this.label6.Text = "Tipo Identificacion";
             // 
             // frm_Seguridad_NuevoUsuarioFinal
             // 
@@ -255,5 +277,7 @@
         private System.Windows.Forms.Button btn_Aceptar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
     }
 }

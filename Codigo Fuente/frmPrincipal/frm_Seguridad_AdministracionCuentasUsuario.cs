@@ -37,6 +37,13 @@ namespace frmPrincipal
 
         private void btn_establecer_Click(object sender, EventArgs e)
         {
+            this.establecerCambiosCuenta();
+        }
+        
+        //METODO PARA GUARDAR CAMBIOS EN CUENTA DE USUARIOS
+        //RAFAEL SEQUEIRA VARGAS
+        public void establecerCambiosCuenta()
+        {
             objUsuariosSistema.idRol = Convert.ToInt32(txt_Usuario.Text);
             objUsuariosSistema.contrasenna = objSeguridad.MD5Hash(txt_Contraseña.Text);
             objUsuariosSistema.isblock = false;
@@ -54,6 +61,33 @@ namespace frmPrincipal
             {
                 MessageBox.Show("Error");
             }
+        }
+
+        //METODO CARGA LISTA USUARIOS SISTEMAS
+        //RAFAEL SEQUEIRA VARGAS
+        private void cargaListaUsuariosSistema()
+        {
+            try
+            {
+                DataSet ds;
+                ds = objUsuariosSistema.cargalistaUsuariosSistema();
+                int tamano = ds.Tables.Count;
+
+                for (int i = 0; i < tamano; i++)
+                {
+                    lst_ListaUsuario.Items.Add(ds.Tables[0].Rows[0]["idUsuarioSistema"].ToString());
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void frm_Seguridad_AdministracionCuentasUsuario_Load(object sender, EventArgs e)
+        {
+            this.cargaListaUsuariosSistema();
         }
     }
 }

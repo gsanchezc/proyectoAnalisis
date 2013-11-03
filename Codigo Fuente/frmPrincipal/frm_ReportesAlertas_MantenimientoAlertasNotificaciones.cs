@@ -11,9 +11,12 @@ namespace frmPrincipal
 {
     public partial class frm_ReportesAlertas_MantenimientoAlertasNotificaciones : Form
     {
-        public frm_ReportesAlertas_MantenimientoAlertasNotificaciones()
+        public frm_ReportesAlertas_MantenimientoAlertasNotificaciones(int id)
         {
+            int usuario = id;
             InitializeComponent();
+
+            labelUsuario.Text = id.ToString();
         }
     }
 }
