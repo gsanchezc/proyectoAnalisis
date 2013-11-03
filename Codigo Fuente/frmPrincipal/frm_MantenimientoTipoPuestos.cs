@@ -81,5 +81,21 @@ namespace frmPrincipal
             ventanaNuevoEditarTipoPuesto.num = Convert.ToInt32(dtg_ListaTipoPuesto.RowCount + 1);
             ventanaNuevoEditarTipoPuesto.ShowDialog();
         }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            string idtipoPuesto = string.Empty;
+            idtipoPuesto = dtg_ListaTipoPuesto.CurrentRow.Cells[0].Value.ToString();
+            if (MessageBox.Show("Desea eliminar el tipo de puesto con el ID : " + idtipoPuesto, "Confirmacion de borrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                if (objTipoPuesto.eliminarTipoPuesto(Convert .ToInt32 (idtipoPuesto)))
+                {
+                    MessageBox.Show("El tipo de puesto se eliminó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.carga_lista_EstatusFacturas();
+
+                }
+            }
+        }
     }
 }
