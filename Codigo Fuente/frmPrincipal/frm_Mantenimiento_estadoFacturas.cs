@@ -79,5 +79,21 @@ namespace frmPrincipal
             ventanaNuevoEditarEstatusFactura.num = Convert.ToInt32(dtg_ListaEstadoFactura.RowCount + 1);
             ventanaNuevoEditarEstatusFactura.ShowDialog();
         }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            string idEstado = string.Empty;
+            idEstado = dtg_ListaEstadoFactura.CurrentRow.Cells[0].Value.ToString();
+            if (MessageBox.Show("Desea eliminar el estatus con el ID : " + idEstado, "Confirmacion de borrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                if (objEstatusFactura.eliminarEstatusFactura(Convert.ToInt32(idEstado)))
+                {
+                    MessageBox.Show("El estatus de factura se eliminó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.carga_lista_EstatusFacturas();
+
+                }
+            }
+        }
     }
 }

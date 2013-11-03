@@ -81,5 +81,21 @@ namespace frmPrincipal
             ventanaNuevoEditarDescripcionRol.num = Convert.ToInt32(dtg_ListaDescripcionRol.RowCount + 1);
             ventanaNuevoEditarDescripcionRol.ShowDialog();
         }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            string idDescripcion = string.Empty;
+            idDescripcion = dtg_ListaDescripcionRol.CurrentRow.Cells[0].Value.ToString();
+            if (MessageBox.Show("Desea eliminar la descripcion con el ID : " + idDescripcion, "Confirmacion de borrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                if (objDescripcionRol.eliminarDescripcionRol(Convert.ToInt32(idDescripcion)))
+                {
+                    MessageBox.Show("La descripcion de rol se eliminó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.carga_lista_EstatusFacturas();
+
+                }
+            }
+        }
     }
 }
