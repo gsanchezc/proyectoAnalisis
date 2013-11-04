@@ -6,7 +6,7 @@ CREATE DATABASE db_soportic
 GO
 USE [db_soportic]
 GO
------------------------LOGIN---------------------------------------------
+-----------------------LOGIN DB---------------------------------------------
 USE [master]
 GO
 CREATE LOGIN [udb_soportic] WITH PASSWORD=N'123', DEFAULT_DATABASE=[master], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
@@ -23,19 +23,10 @@ USE [db_soportic]
 GO
 EXEC sp_addrolemember N'db_owner', N'udb_soportic'
 GO
-------------------------------------------------------------------------------
-USE [db_soportic]
+----------------------------CREACION DE LA ESTRUCTURAS DE DATOS---------------
+USE master
 GO
-CREATE USER [udb_soportic] FOR LOGIN [udb_soportic] WITH DEFAULT_SCHEMA=[dbo]
-GO
-USE [db_soportic]
-GO
-ALTER AUTHORIZATION ON SCHEMA::[db_owner] TO [udb_soportic]
-GO
-USE [db_soportic]
-GO
-EXEC sp_addrolemember N'db_owner', N'udb_soportic'
-GO
+
 -------TABLA TIPOS DE ID------------------------------------------------------
 CREATE TABLE db_soportic.dbo.tbl_tipoIdentificaciones
 (
@@ -92,44 +83,16 @@ CREATE TABLE db_soportic.dbo.tbl_descripcionRoles
 )
 
 GO
--------TABLA ARCHIVOS ADJUNTOS CLIENTE------------------------------------------------------
-CREATE TABLE db_soportic.dbo.tbl_datosAdjuntosCliente
+-------TABLA ARCHIVOS ADJUNTOS------------------------------------------------------
+CREATE TABLE db_soportic.dbo.tbl_datosAdjuntos
 (
-	idArchivoCliente INT NOT NULL IDENTITY (1,1),
+	idArchivoAdjunto INT NOT NULL IDENTITY (1,1),
 	archivo VARBINARY(MAX) NOT NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)
 	
-	CONSTRAINT pk_idArchivoCliente PRIMARY KEY CLUSTERED
+	CONSTRAINT pk_idArchivoAdjunto PRIMARY KEY CLUSTERED
 	(
-		idArchivoCliente ASC
-	)
-)
-
-GO
--------TABLA ARCHIVOS ADJUNTOS TECNICO------------------------------------------------------
-CREATE TABLE db_soportic.dbo.tbl_datosAdjuntosTecnico
-(
-	idArchivoTecnico INT NOT NULL IDENTITY (1,1),
-	archivo VARBINARY(MAX) NOT NULL,
-	isDeleted BIT NOT NULL DEFAULT(0)
-	
-	CONSTRAINT pk_idArchivoTecnico PRIMARY KEY CLUSTERED
-	(
-		idArchivoTecnico ASC
-	)
-)
-
-GO
--------TABLA ARCHIVOS IMAGEN COTIZACION------------------------------------------------------
-CREATE TABLE db_soportic.dbo.tbl_cotizacion
-(
-	idArchivoCotizacion INT NOT NULL IDENTITY (1,1),
-	archivo VARBINARY(MAX) NOT NULL,
-	isDeleted BIT NOT NULL DEFAULT(0)
-	
-	CONSTRAINT pk_idArchivoCotizacion PRIMARY KEY CLUSTERED
-	(
-		idArchivoCotizacion ASC
+		idArchivoAdjunto ASC
 	)
 )
 
@@ -160,19 +123,7 @@ CREATE TABLE db_soportic.dbo.tbl_estatusAlertas
 )
 
 GO
-CREATE TABLE db_soportic.dbo.tbl_estatusCuentas
-(
-	idEstatusCuenta INT NOT NULL IDENTITY(1,1),
-	descripcion VARCHAR(50) NOT NULL,
-	isDeleted BIT NOT NULL DEFAULT(0)
-	
-	CONSTRAINT pk_idEstatusCuenta PRIMARY KEY CLUSTERED
-	(
-		idEstatusCuenta ASC
-	)
-)
 
-GO
 -------TABLA TIPO SERVICIO------------------------------------------------------
 CREATE TABLE db_soportic.dbo.tbl_tipoServicio
 (
@@ -251,11 +202,12 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_clientesUsuarioFinal
 (
 	idClienteUsuarioFinal INT NOT NULL IDENTITY (1,1),
+	idUsuarioSistema INT NULL,
 	nombre VARCHAR(50) NOT NULL,
 	apellidos VARCHAR(50) NOT NULL,
 	idTipoIdentificacion INT NOT NULL,
 	identificacion VARCHAR(15) NOT NULL,
-	telefonoEmpresa VARCHAR(15) NOT NULL,
+	telefonoEmpresa VARCHAR(15) NULL,
 	idEmpresaCliente INT NOT NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)
 	
@@ -270,6 +222,7 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_empleados
 (
 	idEmpleado INT NOT NULL IDENTITY (1,1),
+	idUsuarioSistema INT NULL,
 	nombre VARCHAR(50) NOT NULL,
 	apellido VARCHAR(50) NOT NULL,
 	idTipoIdentificacion INT NOT NULL,
@@ -296,16 +249,16 @@ GO
 -------TABLA USUARIOS SISTEMA------------------------------------------------------
 CREATE TABLE db_soportic.dbo.tbl_usuariosSistema
 (
-	nombreUsuarioSistema varchar(10) NOT NULL,
-	contrasenna varchar(200) NOT NULL,
-	idClienteOR_idEmpleado INT NOT NULL,
+	idUsuarioSistema INT NOT NULL IDENTITY(1,1),
+	nombreUsuarioSistema VARCHAR(10) NOT NULL UNIQUE,
+	contrasenna VARCHAR(200) NOT NULL,
 	idRol INT NOT NULL,
-	idEstatusCuenta INT NOT NULL,
+	isBlocked BIT NOT NULL DEFAULT(0),
 	isdeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_nombreUsuarioSistema PRIMARY KEY CLUSTERED
 	(
-		nombreUsuarioSistema ASC
+		idUsuarioSistema ASC
 	)
 )
 
@@ -319,7 +272,7 @@ CREATE TABLE db_soportic.dbo.tbl_tickets
 	titulo VARCHAR(200) NOT NULL,
 	idTipoServicio INT NOT NULL,
 	descripcion VARCHAR(MAX) NOT NULL,
-	idArchivoCliente INT NULL,
+	idArchivoAdjunto INT NULL,
 	fechaRegistro DATE NOT NULL,
 	idEstatusTickets INT NOT NULL DEFAULT(0),
 	idPrioridad INT NULL,
@@ -343,7 +296,7 @@ CREATE TABLE db_soportic.dbo.tbl_bitacoras
 	idTicket INT NOT NULL,
 	tiempoLaborado INT NOT NULL,
 	descripcion VARCHAR(MAX) NOT NULL,
-	idArchivoTecnico INT NULL,	
+	idArchivoAdjunto INT NULL,	
 	fecha DATE NOT NULL,
 	idEmpleado INT NOT NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)	
@@ -399,7 +352,7 @@ CREATE TABLE db_soportic.dbo.tbl_clientesProveedores
 	identificacion VARCHAR(15) NOT NULL,
 	nombre VARCHAR(50) NOT NULL,
 	direccion VARCHAR(250) NOT NULL,
-	telefono VARCHAR(15) NOT NULL,
+	telefono VARCHAR(15) NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idProveedor PRIMARY KEY CLUSTERED
@@ -418,7 +371,7 @@ CREATE TABLE db_soportic.dbo.tbl_ordenCompras
 	numeroCotizacion INT NOT NULL,
 	detalle VARCHAR(250) NOT NULL,
 	monto INT NOT NULL,
-	idArchivoCotizacion INT NULL,
+	idArchivoAdjunto INT NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idOrdenCompra PRIMARY KEY CLUSTERED
@@ -471,6 +424,7 @@ CREATE TABLE db_soportic.dbo.tbl_alertas
 )
 
 GO
+
 --Creacion de llave Foranea en la tabla Empresas Clientes
 ALTER TABLE db_soportic.dbo.tbl_empresasClientes
 WITH NOCHECK ADD CONSTRAINT fk_tipoIdentificaciones_empresasClientes
@@ -499,6 +453,16 @@ REFERENCES db_soportic.dbo.tbl_empresasClientes(idEmpresaCliente)
 GO
 Alter Table db_soportic.dbo.tbl_clientesUsuarioFinal
 Check Constraint [fk_empresasClientes_clientesUsuarioFinal]
+GO
+
+--Creacion de llave Foranea en la tabla Clientes Usuario Final
+ALTER TABLE db_soportic.dbo.tbl_clientesUsuarioFinal
+WITH NOCHECK ADD CONSTRAINT fk_clientesUsuarioFinal_usuariosSistema
+FOREIGN KEY (idUsuarioSistema)
+REFERENCES db_soportic.dbo.tbl_usuariosSistema
+GO
+ALTER TABLE db_soportic.dbo.tbl_clientesUsuarioFinal
+CHECK CONSTRAINT [fk_clientesUsuarioFinal_usuariosSistema]
 GO
 
 --Creacion de llave Foranea en la tabla Empleados
@@ -541,24 +505,14 @@ Alter Table db_soportic.dbo.tbl_empleados
 Check Constraint [fk_salarios_empleados]
 GO
 
---Creacion de llave Foranea en la tabla USUARIOS SISTEMA
-ALTER TABLE db_soportic.dbo.tbl_usuariosSistema
-WITH NOCHECK ADD CONSTRAINT fk_empleados_usuariosSistema
-FOREIGN KEY (idClienteOR_idEmpleado)
-REFERENCES db_soportic.dbo.tbl_empleados(idEmpleado)
+--Creacion de llave Foranea en la tabla Empleados
+ALTER TABLE db_soportic.dbo.tbl_empleados
+WITH NOCHECK ADD CONSTRAINT fk_usuariosSistema_empleados
+FOREIGN KEY (idUsuarioSistema)
+REFERENCES db_soportic.dbo.tbl_usuariosSistema
 GO
-Alter Table db_soportic.dbo.tbl_usuariosSistema
-Check Constraint [fk_empleados_usuariosSistema]
-GO
-
---Creacion de llave Foranea en la tabla USUARIOS SISTEMA
-ALTER TABLE db_soportic.dbo.tbl_usuariosSistema
-WITH NOCHECK ADD CONSTRAINT fk_clientesUsuarioFinal_usuariosSistema
-FOREIGN KEY (idClienteOR_idEmpleado)
-REFERENCES db_soportic.dbo.tbl_clientesUsuarioFinal(idClienteUsuarioFinal)
-GO
-Alter Table db_soportic.dbo.tbl_usuariosSistema
-Check Constraint [fk_clientesUsuarioFinal_usuariosSistema]
+ALTER TABLE db_soportic.dbo.tbl_empleados
+CHECK CONSTRAINT [fk_usuariosSistema_empleados]
 GO
 
 --Creacion de llave Foranea en la tabla USUARIOS SISTEMA
@@ -569,16 +523,6 @@ REFERENCES db_soportic.dbo.tbl_descripcionRoles(idRol)
 GO
 Alter Table db_soportic.dbo.tbl_usuariosSistema
 Check Constraint [fk_Rol_usuariosSistema]
-GO
-
---Creacion de llave Foranea en la tabla USUARIOS SISTEMA
-ALTER TABLE db_soportic.dbo.tbl_usuariosSistema
-WITH NOCHECK ADD CONSTRAINT fk_EstatusCuenta_usuariosSistema
-FOREIGN KEY (idEstatusCuenta)
-REFERENCES db_soportic.dbo.tbl_estatusCuentas(idEstatusCuenta)
-GO
-Alter Table db_soportic.dbo.tbl_usuariosSistema
-Check Constraint [fk_EstatusCuenta_usuariosSistema]
 GO
 
 --Creacion de llave Foranea en la tabla TICKETS
@@ -609,16 +553,6 @@ REFERENCES db_soportic.dbo.tbl_tipoServicio(idTipoServicio)
 GO
 Alter Table db_soportic.dbo.tbl_tickets
 Check Constraint [fk_tipoServicio_tickets]
-GO
-
---Creacion de llave Foranea en la tabla TICKETS
-ALTER TABLE db_soportic.dbo.tbl_tickets
-WITH NOCHECK ADD CONSTRAINT fk_datosAdjuntosCliente_tickets
-FOREIGN KEY (idArchivoCliente)
-REFERENCES db_soportic.dbo.tbl_datosAdjuntosCliente(idArchivoCliente)
-GO
-Alter Table db_soportic.dbo.tbl_tickets
-Check Constraint [fk_datosAdjuntosCliente_tickets]
 GO
 
 --Creacion de llave Foranea en la tabla TICKETS
@@ -661,15 +595,6 @@ Alter Table db_soportic.dbo.tbl_bitacoras
 Check Constraint [fk_tickets_bitacoras]
 GO
 
---Creacion de llave Foranea en la tabla BITACORA
-ALTER TABLE db_soportic.dbo.tbl_bitacoras
-WITH NOCHECK ADD CONSTRAINT fk_datosAdjuntosTecnico_bitacoras
-FOREIGN KEY (idArchivoTecnico)
-REFERENCES db_soportic.dbo.tbl_datosAdjuntosTecnico(idArchivoTecnico)
-GO
-Alter Table db_soportic.dbo.tbl_bitacoras
-Check Constraint [fk_datosAdjuntosTecnico_bitacoras]
-GO
 
 --Creacion de llave Foranea en la tabla BITACORA
 ALTER TABLE db_soportic.dbo.tbl_bitacoras
@@ -731,16 +656,6 @@ Alter Table db_soportic.dbo.tbl_ordenCompras
 Check Constraint [fk_clientesProveedores_ordenCompras]
 GO
 
---Creacion de llave Foranea en la tabla ORDENES DE COMPRA
-ALTER TABLE db_soportic.dbo.tbl_ordenCompras
-WITH NOCHECK ADD CONSTRAINT fk_cotizacion_ordenCompras
-FOREIGN KEY (idArchivoCotizacion)
-REFERENCES db_soportic.dbo.tbl_cotizacion(idArchivoCotizacion)
-GO
-Alter Table db_soportic.dbo.tbl_ordenCompras
-Check Constraint [fk_cotizacion_ordenCompras]
-GO
-
 --Creacion de llave Foranea en la tabla FACTURAS
 ALTER TABLE db_soportic.dbo.tbl_facturas
 WITH NOCHECK ADD CONSTRAINT fk_clientesUsuarioFinal_facturas
@@ -790,64 +705,86 @@ GO
 Alter Table db_soportic.dbo.tbl_alertas
 Check Constraint [fk_estatusAlertas_alertas]
 GO
----------INSERT DE TIPO IDENTIFICACIONES----------------------------------------
-insert into [db_soportic].[dbo].[tbl_tipoIdentificaciones]
-values ('Cedula Nacional','false'),
-	   ('Cedula de Residencia','false'),
-	   ('Cedula Juridica','false'),
-	   ('Pasaporte','false')
-go
----------INSERT DE PUESTOS----------------------------------------
-insert into [db_soportic].[dbo].[tbl_tipoPuestos]
-values ('Tecnico','false'),
-	   ('RRHH','false'),
-	   ('Supervisor','false'),
-	   ('Administrador','false'),
-	   ('Contabilidad','false')
-go
----------INSERT DE DEPARTAMENTOS----------------------------------------
-insert into [db_soportic].[dbo].[tbl_Departamentos]
-values ('SOFTWARE','false'),
-	   ('HARDWARE','false'),
-	   ('WEB','false'),
-	   ('ACCESOS','false')
-go
----------INSERT DE ROLES----------------------------------------
-insert into [db_soportic].[dbo].[tbl_descripcionRoles]
-values ('Administrador','false'),
-	   ('Supervisor','false'),
-	   ('Tecnico','false'),
-	   ('RRHH','false'),
-	   ('Contabilidad','false')
-go
 
----------FALTAN INSERTS DE ARCHIVOS ADJUNTOS CLIENTE--------------
-------------------------------------------------------------------
+--Creacion de llave Foranea en la tabla BITACORAS
+ALTER TABLE db_soportic.dbo.tbl_bitacoras
+WITH NOCHECK ADD CONSTRAINT fk_bitacoras_datosAdjuntos
+FOREIGN KEY (idArchivoAdjunto)
+REFERENCES db_soportic.dbo.tbl_datosAdjuntos(idArchivoAdjunto)
+GO
+ALTER TABLE db_soportic.dbo.tbl_bitacoras
+CHECK CONSTRAINT [fk_bitacoras_datosAdjuntos]
+GO
 
----------FALTAN INSERTS DE ARCHIVOS ADJUNTOS TECNICO--------------
-------------------------------------------------------------------
+--creacion de llave foranea en la tabla tickets
+ALTER TABLE db_soportic.dbo.tbl_tickets
+WITH NOCHECK ADD CONSTRAINT fk_tickets_datosAdjuntos
+FOREIGN KEY (idArchivoAdjunto)
+REFERENCES db_soportic.dbo.tbl_datosAdjuntos(idArchivoAdjunto)
+GO
+ALTER TABLE db_soportic.dbo.tbl_tickets
+CHECK CONSTRAINT [fk_tickets_datosAdjuntos]
+GO
 
----------FALTAN INSERTS DE ARCHIVOS IMAGEN COTIZACION--------------
-------------------------------------------------------------------
 
----------INSERT DE ROLES----------------------------------------
-insert into [db_soportic].[dbo].[tbl_estatusTickets]
-values ('Pendiente de Asignacion','false'),
-	   ('Asignado a Tecnico','false'),
-	   ('Pendiente de Aprobacion','false'),
-	   ('Finalizado','false'),
-	   ('Rechazado','false')
-go
+-----------INSERT DE TIPO IDENTIFICACIONES----------------------------------------
+--insert into [db_soportic].[dbo].[tbl_tipoIdentificaciones]
+--values ('Cedula Nacional','false'),
+--	   ('Cedula de Residencia','false'),
+--	   ('Cedula Juridica','false'),
+--	   ('Pasaporte','false')
+--go
+-----------INSERT DE PUESTOS----------------------------------------
+--insert into [db_soportic].[dbo].[tbl_tipoPuestos]
+--values ('Tecnico','false'),
+--	   ('RRHH','false'),
+--	   ('Supervisor','false'),
+--	   ('Administrador','false'),
+--	   ('Contabilidad','false')
+--go
+-----------INSERT DE DEPARTAMENTOS----------------------------------------
+--insert into [db_soportic].[dbo].[tbl_Departamentos]
+--values ('SOFTWARE','false'),
+--	   ('HARDWARE','false'),
+--	   ('WEB','false'),
+--	   ('ACCESOS','false')
+--go
+-----------INSERT DE ROLES----------------------------------------
+--insert into [db_soportic].[dbo].[tbl_descripcionRoles]
+--values ('Administrador','false'),
+--	   ('Supervisor','false'),
+--	   ('Tecnico','false'),
+--	   ('RRHH','false'),
+--	   ('Contabilidad','false')
+--go
 
-insert into [db_soportic].[dbo].[tbl_estatusAlertas]
-values ('Alerta Activa','false'),
-	   ('Alerta Finalizada','false')
-go
+-----------FALTAN INSERTS DE ARCHIVOS ADJUNTOS CLIENTE--------------
+--------------------------------------------------------------------
 
-insert into [db_soportic].[dbo].[tbl_estatusTickets]
-values ('Activo','false'),
-	   ('Bloqueado','false'),
-	   ('Pendiente de Aprobacion','false')
-go
+-----------FALTAN INSERTS DE ARCHIVOS ADJUNTOS TECNICO--------------
+--------------------------------------------------------------------
+
+-----------FALTAN INSERTS DE ARCHIVOS IMAGEN COTIZACION--------------
+--------------------------------------------------------------------
+
+-----------INSERT DE ROLES----------------------------------------
+--insert into [db_soportic].[dbo].[tbl_estatusTickets]
+--values ('Pendiente de Asignacion','false'),
+--	   ('Asignado a Tecnico','false'),
+--	   ('Pendiente de Aprobacion','false'),
+--	   ('Finalizado','false'),
+--	   ('Rechazado','false')
+--go
+
+--insert into [db_soportic].[dbo].[tbl_estatusAlertas]
+--values ('Alerta Activa','false'),
+--	   ('Alerta Finalizada','false')
+--go
+
+--insert into [db_soportic].[dbo].[tbl_estatusTickets]
+--values ('Activo','false'),
+--	   ('Bloqueado','false'),
+--	   ('Pendiente de Aprobacion','false')
+--go
 
 
