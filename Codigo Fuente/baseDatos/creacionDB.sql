@@ -316,7 +316,7 @@ CREATE TABLE db_soportic.dbo.tbl_vacaciones
 	fechaInicio DATE NOT NULL,
 	fechaFin DATE NOT NULL,
 	diasSolicitados INT NOT NULL,
-	isApprove BIT NOT NULL DEFAULT(0),
+	idAprobacionVacacion INT NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)
 
 	CONSTRAINT pk_idSolicitudVacacion PRIMARY KEY CLUSTERED
@@ -423,6 +423,40 @@ CREATE TABLE db_soportic.dbo.tbl_alertas
 	)
 )
 
+GO
+
+CREATE TABLE db_soportic.dbo.tbl_vacacionesAprobadas
+(
+	idAprobacionVacacion INT NOT NULL IDENTITY(1,1),
+	idSupervisor INT NOT NULL,
+	fechaAprobacion DATE NOT NULL
+	
+	CONSTRAINT pk_idAprobacionVacacion PRIMARY KEY CLUSTERED
+	(
+		idAprobacionVacacion ASC
+	)
+)
+GO
+--Creacion de llave foranea en la tabla vacaciones
+ALTER TABLE db_soportic.dbo.tbl_vacaciones
+WITH NOCHECK ADD CONSTRAINT fk_vacacionesAprobadas_vacaciones
+FOREIGN KEY (idAprobacionVacacion)
+REFERENCES db_soportic.dbo.tbl_vacacionesAprobadas(idAprobacionVacacion)
+GO
+
+ALTER TABLE db_soportic.dbo.tbl_vacaciones
+CHECK CONSTRAINT fk_vacacionesAprobadas_vacaciones
+GO
+
+--Creacion de llave Foranea en la tabla Empresas Clientes
+ALTER TABLE db_soportic.dbo.tbl_vacacionesAprobadas
+WITH NOCHECK ADD CONSTRAINT fk_empleados_vacacionesAprobadas
+FOREIGN KEY (idSupervisor)
+REFERENCES db_soportic.dbo.tbl_empleados(idEmpleado)
+GO
+
+ALTER TABLE db_soportic.dbo.tbl_vacacionesAprobadas
+CHECK CONSTRAINT fk_empleados_vacacionesAprobadas
 GO
 
 --Creacion de llave Foranea en la tabla Empresas Clientes
