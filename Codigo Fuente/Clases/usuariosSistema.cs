@@ -14,12 +14,12 @@ namespace Clases
     {
         #region propiedades
 
-        private int _idUsuarioSistema;
+        private int _nombreUsuarioSistema;
 
-        public int idUsuarioSistema
+        public int nombreUsuarioSistema
         {
-            get { return _idUsuarioSistema; }
-            set { _idUsuarioSistema = value; }
+            get { return _nombreUsuarioSistema; }
+            set { _nombreUsuarioSistema = value; }
         }
 
         private int _idRol;
@@ -139,7 +139,7 @@ namespace Clases
             }
         }
 
-        public void login_usuariosSistema(int idUsuarioSistema, string contrasenna)
+        public void login_usuariosSistema(string nombreUsuarioSistema, string contrasenna)
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
 
@@ -153,7 +153,7 @@ namespace Clases
                 sql = "spu_login";
 
                 ParamStruct[] parametros = new ParamStruct[2];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idUsuarioSistema", SqlDbType.Int, idUsuarioSistema);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombreUsuarioSistema", SqlDbType.VarChar, nombreUsuarioSistema);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@contrasenna", SqlDbType.VarChar, contrasenna);
 
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);

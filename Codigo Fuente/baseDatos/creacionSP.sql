@@ -443,3 +443,27 @@ begin
 end
 go
 
+----------------Procedure login--------------
+
+create procedure [spu_login]
+(
+	@nombreUsuarioSistema varchar(15),
+	@contrasenna varchar(200)
+)
+as
+	begin
+		declare @passCheck varchar(200)
+	
+		set @passCheck = (select contrasenna from [db_soportic].[dbo].[tbl_usuariosSistema]
+						  where nombreUsuarioSistema = @nombreUsuarioSistema)
+	
+		if @contrasenna = @passCheck
+			begin
+				select 1 as validacion
+			end
+		else
+			begin
+				select 0 as validacion
+			end
+	end
+go

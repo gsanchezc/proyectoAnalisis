@@ -466,6 +466,15 @@
   <ItemGroup>
     <None Include="Resources\images %281%29.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono-de-alerta-roja_17-1215160546.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_proveedor_255x250.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

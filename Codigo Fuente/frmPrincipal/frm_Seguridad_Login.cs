@@ -26,14 +26,6 @@ namespace frmPrincipal
         private void button1_Click(object sender, EventArgs e)
         {
             //VALIDACIONES LOGIN
-            if (validarUsuario(txt_Usuario) == false)
-            {
-                MessageBox.Show("Ingrese Unicamente Numeros en el Usuario", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Limpieza.limpiar(txt_Usuario);
-                Limpieza.limpiar(txt_Contraseña);
-                txt_Usuario.Focus();
-                return;
-            }
             if (!Validaciones.validar(txt_Usuario))
             {
                 MessageBox.Show("No ingresaste Usuario", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -55,14 +47,6 @@ namespace frmPrincipal
             this.salirSistema();
         }
 
-        //METODO VALIDAR USUARIO
-        //DYLAN CALDERON
-        private static bool validarUsuario(Control mitextbox)
-        {
-            Regex regex = new Regex("^[0-9]*$");
-            return regex.IsMatch(mitextbox.Text);
-        }
-
         //METODO PARA SALIR DEL SISTEMA
         //RAFAEL ANGEL SEQUEIRA VARGAS
         public void salirSistema()
@@ -81,9 +65,9 @@ namespace frmPrincipal
         //RAFAEL ANGEL SEQUEIRA VARGAS
         public void login()
         {
-            int id = Convert.ToInt32(txt_Usuario.Text);
+            string usuario = txt_Usuario.Text;
             string contrasenna = objSeguridad.MD5Hash(txt_Contraseña.Text);
-            objUsuariosSistema.login_usuariosSistema(id, contrasenna);
+            objUsuariosSistema.login_usuariosSistema(usuario, contrasenna);
 
             if (objUsuariosSistema.validacion == false)
             {
@@ -97,7 +81,7 @@ namespace frmPrincipal
             {
                 MessageBox.Show("BIENVENIDO AL SISTEMA", "DATOS CORRECTOS",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
-                frm_ReportesAlertas_MantenimientoAlertasNotificaciones ventanaReportes = new frm_ReportesAlertas_MantenimientoAlertasNotificaciones(id);
+                frm_ReportesAlertas_MantenimientoAlertasNotificaciones ventanaReportes = new frm_ReportesAlertas_MantenimientoAlertasNotificaciones(usuario);
                 this.Hide();
                 ventana.Show();
                 ventanaReportes.Show();
