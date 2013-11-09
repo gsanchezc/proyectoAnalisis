@@ -57,19 +57,19 @@
             this.groupBox2.Controls.Add(this.txt_descripcion);
             this.groupBox2.Controls.Add(this.txt_idTipoPrioridad);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(592, 12);
+            this.groupBox2.Location = new System.Drawing.Point(696, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(395, 473);
+            this.groupBox2.Size = new System.Drawing.Size(510, 494);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             // 
             // btn_limpiar
             // 
-            this.btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpiar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_limpiar.Location = new System.Drawing.Point(73, 328);
+            this.btn_limpiar.Location = new System.Drawing.Point(102, 407);
             this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(75, 23);
+            this.btn_limpiar.Size = new System.Drawing.Size(100, 35);
             this.btn_limpiar.TabIndex = 11;
             this.btn_limpiar.Text = "&Limpiar";
             this.btn_limpiar.UseVisualStyleBackColor = true;
@@ -77,11 +77,11 @@
             // 
             // btn_eliminar
             // 
-            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_eliminar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_eliminar.Location = new System.Drawing.Point(232, 230);
+            this.btn_eliminar.Location = new System.Drawing.Point(286, 293);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(75, 23);
+            this.btn_eliminar.Size = new System.Drawing.Size(100, 35);
             this.btn_eliminar.TabIndex = 9;
             this.btn_eliminar.Text = "&Eliminar";
             this.btn_eliminar.UseVisualStyleBackColor = true;
@@ -89,11 +89,11 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Cancelar.Location = new System.Drawing.Point(232, 328);
+            this.btn_Cancelar.Location = new System.Drawing.Point(286, 407);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancelar.Size = new System.Drawing.Size(100, 35);
             this.btn_Cancelar.TabIndex = 7;
             this.btn_Cancelar.Text = "&Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
@@ -101,11 +101,11 @@
             // 
             // btn_Guardar
             // 
-            this.btn_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Guardar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Guardar.Location = new System.Drawing.Point(73, 230);
+            this.btn_Guardar.Location = new System.Drawing.Point(102, 293);
             this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Guardar.Size = new System.Drawing.Size(100, 35);
             this.btn_Guardar.TabIndex = 6;
             this.btn_Guardar.Text = "&Guardar";
             this.btn_Guardar.UseVisualStyleBackColor = true;
@@ -114,24 +114,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(31, 29);
+            this.label1.Location = new System.Drawing.Point(63, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 15);
+            this.label1.Size = new System.Drawing.Size(140, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Id_Tipo_Prioridad";
             // 
             // txt_descripcion
             // 
-            this.txt_descripcion.Location = new System.Drawing.Point(199, 107);
+            this.txt_descripcion.Location = new System.Drawing.Point(244, 138);
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(152, 20);
             this.txt_descripcion.TabIndex = 5;
             // 
             // txt_idTipoPrioridad
             // 
-            this.txt_idTipoPrioridad.Location = new System.Drawing.Point(199, 28);
+            this.txt_idTipoPrioridad.Location = new System.Drawing.Point(244, 52);
             this.txt_idTipoPrioridad.Name = "txt_idTipoPrioridad";
             this.txt_idTipoPrioridad.ReadOnly = true;
             this.txt_idTipoPrioridad.Size = new System.Drawing.Size(152, 20);
@@ -140,20 +140,21 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(45, 97);
+            this.label2.Location = new System.Drawing.Point(77, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 30);
+            this.label2.Size = new System.Drawing.Size(159, 36);
             this.label2.TabIndex = 4;
             this.label2.Text = "Descripcion de Tipo\r\nde Prioridad:";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtg_TipoPrioridad);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(574, 473);
+            this.groupBox1.Size = new System.Drawing.Size(650, 494);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de tipos de identificaciones";
@@ -167,11 +168,11 @@
             this.dtg_TipoPrioridad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPrioridad,
             this.descripcion});
-            this.dtg_TipoPrioridad.Location = new System.Drawing.Point(18, 28);
+            this.dtg_TipoPrioridad.Location = new System.Drawing.Point(42, 19);
             this.dtg_TipoPrioridad.Name = "dtg_TipoPrioridad";
             this.dtg_TipoPrioridad.ReadOnly = true;
             this.dtg_TipoPrioridad.RowHeadersWidth = 40;
-            this.dtg_TipoPrioridad.Size = new System.Drawing.Size(550, 429);
+            this.dtg_TipoPrioridad.Size = new System.Drawing.Size(536, 460);
             this.dtg_TipoPrioridad.TabIndex = 0;
             this.dtg_TipoPrioridad.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtg_TipoPrioridad_CellMouseClick);
             // 
@@ -195,7 +196,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 497);
+            this.ClientSize = new System.Drawing.Size(1264, 518);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

@@ -102,9 +102,30 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Capture {
+            get {
+                object obj = ResourceManager.GetObject("Capture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Fixing_mixing_or_corrupt_System_32_file1 {
             get {
                 object obj = ResourceManager.GetObject("Fixing-mixing-or-corrupt-System-32-file1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap icono_de_alerta_roja_17_1215160546 {
+            get {
+                object obj = ResourceManager.GetObject("icono-de-alerta-roja_17-1215160546", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap imagen_proveedor_255x250 {
+            get {
+                object obj = ResourceManager.GetObject("imagen_proveedor_255x250", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

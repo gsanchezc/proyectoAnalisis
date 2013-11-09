@@ -15,7 +15,7 @@ namespace frmPrincipal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_Seguridad_Login());
+            Application.Run(new frm_0MenuPrincipal());
         }
     }
 }

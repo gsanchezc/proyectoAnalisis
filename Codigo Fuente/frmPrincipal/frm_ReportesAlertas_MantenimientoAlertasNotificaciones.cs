@@ -6,17 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
 namespace frmPrincipal
 {
     public partial class frm_ReportesAlertas_MantenimientoAlertasNotificaciones : Form
     {
-        public frm_ReportesAlertas_MantenimientoAlertasNotificaciones(int id)
+        public frm_ReportesAlertas_MantenimientoAlertasNotificaciones(string usuario)
         {
-            int usuario = id;
+            string usuarioSistema = usuario;
             InitializeComponent();
 
-            labelUsuario.Text = id.ToString();
+            labelUsuario.Text = usuarioSistema;
         }
     }
 }

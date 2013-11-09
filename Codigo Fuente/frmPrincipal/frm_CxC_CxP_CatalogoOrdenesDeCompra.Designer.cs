@@ -37,9 +37,12 @@
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.dtg_OrdenCompra = new System.Windows.Forms.DataGridView();
             this.Numero_Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero_Cotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ver_Cotizacion = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.NumeroCotizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_OrdenCompra)).BeginInit();
@@ -51,9 +54,9 @@
             this.groupBox1.Controls.Add(this.dtg_OrdenCompra);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(0, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(975, 473);
+            this.groupBox1.Size = new System.Drawing.Size(1265, 517);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Catalogo Ordenes de Compra";
@@ -64,9 +67,9 @@
             this.groupBox2.Controls.Add(this.btn_cerrar);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Location = new System.Drawing.Point(16, 411);
+            this.groupBox2.Location = new System.Drawing.Point(1034, 21);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(490, 56);
+            this.groupBox2.Size = new System.Drawing.Size(218, 158);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opciones";
@@ -75,9 +78,9 @@
             // 
             this.btn_NuevoOrdenCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_NuevoOrdenCompra.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_NuevoOrdenCompra.Location = new System.Drawing.Point(38, 22);
+            this.btn_NuevoOrdenCompra.Location = new System.Drawing.Point(6, 35);
             this.btn_NuevoOrdenCompra.Name = "btn_NuevoOrdenCompra";
-            this.btn_NuevoOrdenCompra.Size = new System.Drawing.Size(196, 23);
+            this.btn_NuevoOrdenCompra.Size = new System.Drawing.Size(197, 42);
             this.btn_NuevoOrdenCompra.TabIndex = 4;
             this.btn_NuevoOrdenCompra.Text = "&Nuevo Orden de Compra";
             this.btn_NuevoOrdenCompra.UseVisualStyleBackColor = true;
@@ -87,9 +90,9 @@
             // 
             this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_cerrar.Location = new System.Drawing.Point(257, 22);
+            this.btn_cerrar.Location = new System.Drawing.Point(6, 93);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(196, 23);
+            this.btn_cerrar.Size = new System.Drawing.Size(196, 42);
             this.btn_cerrar.TabIndex = 5;
             this.btn_cerrar.Text = "&Cerrar";
             this.btn_cerrar.UseVisualStyleBackColor = true;
@@ -108,10 +111,13 @@
             this.dtg_OrdenCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_OrdenCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero_Orden,
+            this.NumeroTicket,
             this.Proveedor,
-            this.Numero_Cotizacion,
-            this.Ver_Cotizacion});
-            this.dtg_OrdenCompra.Location = new System.Drawing.Point(16, 32);
+            this.NumeroCotizacion,
+            this.Detalle,
+            this.Monto,
+            this.Eliminar});
+            this.dtg_OrdenCompra.Location = new System.Drawing.Point(12, 21);
             this.dtg_OrdenCompra.Name = "dtg_OrdenCompra";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -121,39 +127,55 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtg_OrdenCompra.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtg_OrdenCompra.Size = new System.Drawing.Size(944, 373);
+            this.dtg_OrdenCompra.Size = new System.Drawing.Size(1016, 490);
             this.dtg_OrdenCompra.TabIndex = 0;
             // 
             // Numero_Orden
             // 
             this.Numero_Orden.HeaderText = "Numero Orden";
             this.Numero_Orden.Name = "Numero_Orden";
-            this.Numero_Orden.Width = 200;
+            this.Numero_Orden.Width = 150;
+            // 
+            // NumeroTicket
+            // 
+            this.NumeroTicket.HeaderText = "Numero Ticket";
+            this.NumeroTicket.Name = "NumeroTicket";
+            this.NumeroTicket.Width = 150;
             // 
             // Proveedor
             // 
             this.Proveedor.HeaderText = "Proveedor";
             this.Proveedor.Name = "Proveedor";
-            this.Proveedor.Width = 250;
+            this.Proveedor.Width = 150;
             // 
-            // Numero_Cotizacion
+            // NumeroCotizacion
             // 
-            this.Numero_Cotizacion.HeaderText = "Numero Cotizacion";
-            this.Numero_Cotizacion.Name = "Numero_Cotizacion";
-            this.Numero_Cotizacion.Width = 200;
+            this.NumeroCotizacion.HeaderText = "Numero Cotizacion";
+            this.NumeroCotizacion.Name = "NumeroCotizacion";
+            this.NumeroCotizacion.Width = 150;
             // 
-            // Ver_Cotizacion
+            // Detalle
             // 
-            this.Ver_Cotizacion.HeaderText = "Ver Cotizacion";
-            this.Ver_Cotizacion.Name = "Ver_Cotizacion";
-            this.Ver_Cotizacion.Text = "Ver Cotizacion";
-            this.Ver_Cotizacion.Width = 250;
+            this.Detalle.HeaderText = "Detalle";
+            this.Detalle.Name = "Detalle";
+            this.Detalle.Width = 150;
+            // 
+            // Monto
+            // 
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            this.Monto.Width = 125;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
             // 
             // frm_CxC_CxP_CatalogoOrdenesDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 497);
+            this.ClientSize = new System.Drawing.Size(1264, 518);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -175,9 +197,12 @@
         private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.DataGridView dtg_OrdenCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Orden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroTicket;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Cotizacion;
-        private System.Windows.Forms.DataGridViewLinkColumn Ver_Cotizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroCotizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Detalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
 
 
     }

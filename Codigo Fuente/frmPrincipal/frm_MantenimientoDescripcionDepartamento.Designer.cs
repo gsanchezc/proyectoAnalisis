@@ -55,10 +55,10 @@
             this.dtg_DescripcionDepartamento.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDepartamento,
             this.descripcion});
-            this.dtg_DescripcionDepartamento.Location = new System.Drawing.Point(18, 28);
+            this.dtg_DescripcionDepartamento.Location = new System.Drawing.Point(37, 31);
             this.dtg_DescripcionDepartamento.Name = "dtg_DescripcionDepartamento";
             this.dtg_DescripcionDepartamento.ReadOnly = true;
-            this.dtg_DescripcionDepartamento.Size = new System.Drawing.Size(578, 423);
+            this.dtg_DescripcionDepartamento.Size = new System.Drawing.Size(614, 442);
             this.dtg_DescripcionDepartamento.TabIndex = 0;
             this.dtg_DescripcionDepartamento.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtg_DescripcionDepartamento_CellMouseClick);
             // 
@@ -81,9 +81,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtg_DescripcionDepartamento);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(613, 473);
+            this.groupBox1.Size = new System.Drawing.Size(734, 494);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de departamentos";
@@ -91,17 +92,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(22, 28);
+            this.label1.Location = new System.Drawing.Point(30, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 15);
+            this.label1.Size = new System.Drawing.Size(132, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Id Departamento";
             // 
             // txt_idDepartamento
             // 
-            this.txt_idDepartamento.Location = new System.Drawing.Point(154, 27);
+            this.txt_idDepartamento.Location = new System.Drawing.Point(217, 43);
             this.txt_idDepartamento.Name = "txt_idDepartamento";
             this.txt_idDepartamento.ReadOnly = true;
             this.txt_idDepartamento.Size = new System.Drawing.Size(164, 20);
@@ -110,17 +111,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(22, 97);
+            this.label2.Location = new System.Drawing.Point(30, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 30);
+            this.label2.Size = new System.Drawing.Size(130, 36);
             this.label2.TabIndex = 4;
             this.label2.Text = "Descripcion del \r\nDepartamento:";
             // 
             // txt_descripcion
             // 
-            this.txt_descripcion.Location = new System.Drawing.Point(154, 107);
+            this.txt_descripcion.Location = new System.Drawing.Point(217, 123);
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(164, 20);
             this.txt_descripcion.TabIndex = 5;
@@ -135,19 +136,19 @@
             this.groupBox2.Controls.Add(this.txt_descripcion);
             this.groupBox2.Controls.Add(this.txt_idDepartamento);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(631, 12);
+            this.groupBox2.Location = new System.Drawing.Point(781, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(356, 473);
+            this.groupBox2.Size = new System.Drawing.Size(449, 494);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             // 
             // btn_limpiar
             // 
-            this.btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpiar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_limpiar.Location = new System.Drawing.Point(67, 330);
+            this.btn_limpiar.Location = new System.Drawing.Point(88, 383);
             this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(75, 23);
+            this.btn_limpiar.Size = new System.Drawing.Size(100, 35);
             this.btn_limpiar.TabIndex = 10;
             this.btn_limpiar.Text = "&Limpiar";
             this.btn_limpiar.UseVisualStyleBackColor = true;
@@ -155,11 +156,11 @@
             // 
             // btn_eliminar
             // 
-            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_eliminar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_eliminar.Location = new System.Drawing.Point(232, 229);
+            this.btn_eliminar.Location = new System.Drawing.Point(253, 282);
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(75, 23);
+            this.btn_eliminar.Size = new System.Drawing.Size(100, 35);
             this.btn_eliminar.TabIndex = 9;
             this.btn_eliminar.Text = "&Eliminar";
             this.btn_eliminar.UseVisualStyleBackColor = true;
@@ -167,11 +168,11 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Cancelar.Location = new System.Drawing.Point(232, 330);
+            this.btn_Cancelar.Location = new System.Drawing.Point(253, 383);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancelar.Size = new System.Drawing.Size(100, 35);
             this.btn_Cancelar.TabIndex = 7;
             this.btn_Cancelar.Text = "&Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
@@ -179,11 +180,11 @@
             // 
             // btn_Guardar
             // 
-            this.btn_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Guardar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Guardar.Location = new System.Drawing.Point(67, 229);
+            this.btn_Guardar.Location = new System.Drawing.Point(88, 282);
             this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(75, 23);
+            this.btn_Guardar.Size = new System.Drawing.Size(100, 35);
             this.btn_Guardar.TabIndex = 6;
             this.btn_Guardar.Text = "&Guardar";
             this.btn_Guardar.UseVisualStyleBackColor = true;
@@ -193,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 497);
+            this.ClientSize = new System.Drawing.Size(1264, 518);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
