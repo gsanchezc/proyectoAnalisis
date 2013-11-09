@@ -236,7 +236,7 @@ CREATE TABLE db_soportic.dbo.tbl_empleados
 	celular VARCHAR(15) NULL,
 	fechaIngreso DATETIME NOT NULL,	
 	vacacionesDisponibles INT NOT NULL DEFAULT(0),
-	idSalario INT NOT NULL,
+	idSalario INT NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)
 	
 	CONSTRAINT pk_idEmpleado PRIMARY KEY CLUSTERED
