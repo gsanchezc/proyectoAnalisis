@@ -35,6 +35,8 @@ namespace frmPrincipal
             this.cargarComboBox();
             this.cargaRolUsuario();
             this.rolesUsuario();
+            this.limpia();
+            this.cargarComboBox();
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
