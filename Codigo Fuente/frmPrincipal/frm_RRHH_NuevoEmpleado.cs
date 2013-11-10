@@ -14,6 +14,10 @@ namespace frmPrincipal
     {
         //DECLARACION DE INSTANCIAS DE LAS CLASES
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        TipoIdentificacion objTipoIdentificacion = new TipoIdentificacion();
+        DescripcionDepartamento objDepartamentos = new DescripcionDepartamento();
+        empleados objNuevoEmpleado = new empleados();
+        tipoPuestos objTipoPuesto = new tipoPuestos();
 
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
