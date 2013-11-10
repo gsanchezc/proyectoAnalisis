@@ -266,6 +266,7 @@
             this.Name = "frm_RRHH_ControlNomina";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Control Nomina";
+            this.Load += new System.EventHandler(this.frm_RRHH_ControlNomina_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

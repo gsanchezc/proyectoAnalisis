@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_CxC_CxP_CatalogoOrdenesDeCompra));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_NuevoOrdenCompra = new System.Windows.Forms.Button();
             this.btn_cerrar = new System.Windows.Forms.Button();
@@ -44,12 +45,14 @@
             this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_OrdenCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dtg_OrdenCompra);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -61,6 +64,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Catalogo Ordenes de Compra";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::frmPrincipal.Properties.Resources.images__2_;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(1052, 237);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(184, 185);
+            this.pictureBox2.TabIndex = 32;
+            this.pictureBox2.TabStop = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btn_NuevoOrdenCompra);
@@ -69,7 +82,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox2.Location = new System.Drawing.Point(1034, 21);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(218, 158);
+            this.groupBox2.Size = new System.Drawing.Size(218, 183);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opciones";
@@ -78,9 +91,9 @@
             // 
             this.btn_NuevoOrdenCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_NuevoOrdenCompra.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_NuevoOrdenCompra.Location = new System.Drawing.Point(6, 35);
+            this.btn_NuevoOrdenCompra.Location = new System.Drawing.Point(18, 35);
             this.btn_NuevoOrdenCompra.Name = "btn_NuevoOrdenCompra";
-            this.btn_NuevoOrdenCompra.Size = new System.Drawing.Size(197, 42);
+            this.btn_NuevoOrdenCompra.Size = new System.Drawing.Size(185, 46);
             this.btn_NuevoOrdenCompra.TabIndex = 4;
             this.btn_NuevoOrdenCompra.Text = "&Nuevo Orden de Compra";
             this.btn_NuevoOrdenCompra.UseVisualStyleBackColor = true;
@@ -90,9 +103,9 @@
             // 
             this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_cerrar.Location = new System.Drawing.Point(6, 93);
+            this.btn_cerrar.Location = new System.Drawing.Point(19, 114);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(196, 42);
+            this.btn_cerrar.Size = new System.Drawing.Size(184, 42);
             this.btn_cerrar.TabIndex = 5;
             this.btn_cerrar.Text = "&Cerrar";
             this.btn_cerrar.UseVisualStyleBackColor = true;
@@ -127,7 +140,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtg_OrdenCompra.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtg_OrdenCompra.Size = new System.Drawing.Size(1016, 490);
+            this.dtg_OrdenCompra.Size = new System.Drawing.Size(1022, 490);
             this.dtg_OrdenCompra.TabIndex = 0;
             // 
             // Numero_Orden
@@ -182,7 +195,9 @@
             this.Name = "frm_CxC_CxP_CatalogoOrdenesDeCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ordenes De Compra";
+            this.Load += new System.EventHandler(this.frm_CxC_CxP_CatalogoOrdenesDeCompra_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_OrdenCompra)).EndInit();
             this.ResumeLayout(false);
@@ -203,6 +218,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Detalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.PictureBox pictureBox2;
 
 
     }

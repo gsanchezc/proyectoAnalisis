@@ -8,19 +8,37 @@ using System.Text;
 using System.Windows.Forms;
 using Clases;
 
-
 namespace frmPrincipal
 {
-    public partial class frm_MantenimientoDescripcionRoles1 : Form
+    public partial class frm_MantenimientoDescripcionRoles : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
         descripcionRol objDescripcionRol = new descripcionRol();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;
+  
+        public frm_MantenimientoDescripcionRoles()
+        {
+            InitializeComponent();
+        }
+
+        public frm_MantenimientoDescripcionRoles(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_MantenimientoDescripcionRoles1_Load(object sender, EventArgs e)
+        {
+            this.carga_lista_EstatusFacturas();
+        }
 
         //Metodo que carga en el data grib view los campos que vienen desde la clase descripcionRol
         private void carga_lista_EstatusFacturas()
         {
             try
             {
-
                 dtg_ListaDescripcionRol.AutoGenerateColumns = false;
                 dtg_ListaDescripcionRol.DataSource = objDescripcionRol.cargaListaDescripcionRol().Tables[0];
             }
@@ -31,14 +49,9 @@ namespace frmPrincipal
             }
         }
 
-        public frm_MantenimientoDescripcionRoles1()
-        {
-            InitializeComponent();
-        }
-
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+            frm_Mantenimiento_0Menu ventana = new frm_Mantenimiento_0Menu(usuarioSistema);
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -49,11 +62,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_MantenimientoDescripcionRoles1_Load(object sender, EventArgs e)
-        {
-            this.carga_lista_EstatusFacturas();
         }
 
         private void btn_actualizar_Click(object sender, EventArgs e)
@@ -68,7 +76,7 @@ namespace frmPrincipal
                 MessageBox.Show("No hay ninguna descripcion en la lista", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            frm_MantenimientoDescripcionRolesNuevoEditar ventanaNuevoEditarDescripcionRol = new frm_MantenimientoDescripcionRolesNuevoEditar();
+            frm_MantenimientoDescripcionRolesNuevoEditar ventanaNuevoEditarDescripcionRol = new frm_MantenimientoDescripcionRolesNuevoEditar(usuarioSistema);
             //ingresa en el campo id de la ventana frm_MantenimientoDescripcionRolesNuevoEditar el campo id que viene desde el data grid view de la ventana anterior
             ventanaNuevoEditarDescripcionRol.id = Convert.ToInt32(dtg_ListaDescripcionRol.CurrentRow.Cells[0].Value.ToString());
             ventanaNuevoEditarDescripcionRol.ShowDialog();
@@ -76,7 +84,7 @@ namespace frmPrincipal
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            frm_MantenimientoDescripcionRolesNuevoEditar ventanaNuevoEditarDescripcionRol = new frm_MantenimientoDescripcionRolesNuevoEditar();
+            frm_MantenimientoDescripcionRolesNuevoEditar ventanaNuevoEditarDescripcionRol = new frm_MantenimientoDescripcionRolesNuevoEditar(usuarioSistema);
             //cuenta la cantidad de descripciones que hay en el data grid view y le suma 1 
             ventanaNuevoEditarDescripcionRol.num = Convert.ToInt32(dtg_ListaDescripcionRol.RowCount + 1);
             ventanaNuevoEditarDescripcionRol.ShowDialog();

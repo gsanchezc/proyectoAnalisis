@@ -460,6 +460,7 @@
             this.Name = "frm_CxC_CxP_EnvioEstadosCuenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Envio Estados Cuenta";
+            this.Load += new System.EventHandler(this.frm_CxC_CxP_EnvioEstadosCuenta_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

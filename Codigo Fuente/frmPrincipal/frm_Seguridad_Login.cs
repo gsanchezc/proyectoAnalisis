@@ -23,7 +23,7 @@ namespace frmPrincipal
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_IngresarSistema_Click(object sender, EventArgs e)
         {
             //VALIDACIONES LOGIN
             if (!Validaciones.validar(txt_Usuario))
@@ -43,13 +43,6 @@ namespace frmPrincipal
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
-        {
-            this.salirSistema();
-        }
-
-        //METODO PARA SALIR DEL SISTEMA
-        //RAFAEL ANGEL SEQUEIRA VARGAS
-        public void salirSistema()
         {
             if ((MessageBox.Show("Desea salir del Sistema", "Cierre del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -71,20 +64,77 @@ namespace frmPrincipal
 
             if (objUsuariosSistema.validacion == false)
             {
-                intentosFallidos++;
-                MessageBox.Show("Intento de login fallido, Cantidad de Intentos: "+intentosFallidos, "CUIDADO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Limpieza.limpiar(txt_Usuario);
-                Limpieza.limpiar(txt_Contraseña);
-                return;
+                objUsuariosSistema.existeUsuarioSistemaLogin(txt_Usuario.Text);
+                if (objUsuariosSistema.validacion == false)
+                {
+                    MessageBox.Show("Usuario No existe en Sistema", "Intento de login fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Limpieza.limpiar(txt_Usuario);
+                    Limpieza.limpiar(txt_Contraseña);
+                    txt_Usuario.Focus();
+                    return;
+                }
+                else 
+                {
+                    intentosFallidos++;
+                    if (intentosFallidos < 3)
+                    {
+                        MessageBox.Show("Intento de login fallido, Cantidad de Intentos: " + intentosFallidos, "CUIDADO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Limpieza.limpiar(txt_Usuario);
+                        Limpieza.limpiar(txt_Contraseña);
+                        txt_Usuario.Focus();
+                        return;
+                    }
+                    else
+                    {
+                        objUsuariosSistema.nombreUsuarioSistema = txt_Usuario.Text;
+    
+                        string accion = String.Empty;
+                        accion = "Editar";
+
+                        if (objUsuariosSistema.bloquearCuentaEnLogin(accion))
+                        {
+                            MessageBox.Show("Usuario Bloqueado", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpieza.limpiar(txt_Usuario);
+                            Limpieza.limpiar(txt_Contraseña);
+                            txt_Usuario.Focus();
+                            return;
+                        }
+                    }
+                }
             }
-            if (objUsuariosSistema.validacion == true)
+            else if (objUsuariosSistema.validacion == true)
             {
-                MessageBox.Show("BIENVENIDO AL SISTEMA", "DATOS CORRECTOS",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-                frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
-                frm_ReportesAlertas_MantenimientoAlertasNotificaciones ventanaReportes = new frm_ReportesAlertas_MantenimientoAlertasNotificaciones(usuario);
-                this.Hide();
-                ventana.Show();
-                ventanaReportes.Show();
+                objUsuariosSistema.existeUsuario(usuario);
+
+                if (objUsuariosSistema.validacion == true)
+                {
+                    objUsuariosSistema.validaEstatusCuenta(usuario);
+
+                    if(objUsuariosSistema.isblock == false)
+                    {
+                        MessageBox.Show("BIENVENIDO AL SISTEMA", "DATOS CORRECTOS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        frm_0MenuPrincipal ventana = new frm_0MenuPrincipal(usuario);
+                        frm_ReportesAlertas_MantenimientoAlertasNotificaciones ventanaReportes = new frm_ReportesAlertas_MantenimientoAlertasNotificaciones(usuario);
+                        this.Hide();
+                        ventana.Show();
+                        ventanaReportes.Show();
+                    }
+                    else if (objUsuariosSistema.isblock == true)
+                    {
+                        MessageBox.Show("USUARIO BLOQUEADO, FAVOR CONTACTE A SU ADMINISTRADOR", "ERROR");
+                        return;
+                    }
+                }
+                else if (objUsuariosSistema.validacion == false)
+                {
+                    MessageBox.Show("USUARIO NO ASIGNADO, FAVOR CONTACTE A SU ADMINISTRADOR", "ERROR");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("CONTACTE ADMINISTRADOR DE SISTEMA", "ERROR");
+                    return;
+                }
             }
             else
             {

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_RRHH_ControlIncapacidades));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtg_Planilla = new System.Windows.Forms.DataGridView();
             this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.dtg_Planilla = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +56,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control Incapacidades";
             // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Cancelar.Location = new System.Drawing.Point(808, 444);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(152, 23);
+            this.btn_Cancelar.TabIndex = 15;
+            this.btn_Cancelar.Text = "&Salir";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
             // dtg_Planilla
             // 
             this.dtg_Planilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -71,18 +83,6 @@
             this.dtg_Planilla.Name = "dtg_Planilla";
             this.dtg_Planilla.Size = new System.Drawing.Size(941, 406);
             this.dtg_Planilla.TabIndex = 1;
-            // 
-            // btn_Cancelar
-            // 
-            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_Cancelar.Location = new System.Drawing.Point(808, 444);
-            this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(152, 23);
-            this.btn_Cancelar.TabIndex = 15;
-            this.btn_Cancelar.Text = "&Salir";
-            this.btn_Cancelar.UseVisualStyleBackColor = true;
-            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // Column1
             // 
@@ -133,6 +133,7 @@
             this.Name = "frm_RRHH_ControlIncapacidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Control Incapacidades";
+            this.Load += new System.EventHandler(this.frm_RRHH_ControlIncapacidades_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Planilla)).EndInit();
             this.ResumeLayout(false);

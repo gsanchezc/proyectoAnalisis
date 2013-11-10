@@ -42,8 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteProveedor.cs" />
+    <Compile Include="clientesUsuarioFinal.cs" />
     <Compile Include="DescripcionDepartamento.cs" />
     <Compile Include="descripcionRol.cs" />
+    <Compile Include="empleados.cs" />
+    <Compile Include="empresasClientes.cs" />
     <Compile Include="estatusFactura.cs" />
     <Compile Include="EstatusTicket.cs" />
     <Compile Include="Limpieza.cs" />

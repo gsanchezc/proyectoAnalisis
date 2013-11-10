@@ -47,6 +47,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dtg_facturaq = new System.Windows.Forms.DataGridView();
+            this.Ticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Orden_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,6 +64,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_direccion = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_numeroFactura = new System.Windows.Forms.TextBox();
             this.txt_correo = new System.Windows.Forms.TextBox();
@@ -66,16 +76,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_direccion = new System.Windows.Forms.RichTextBox();
-            this.Ticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Orden_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -271,6 +271,51 @@
             this.dtg_facturaq.Size = new System.Drawing.Size(939, 233);
             this.dtg_facturaq.TabIndex = 0;
             // 
+            // Ticket
+            // 
+            this.Ticket.HeaderText = "Ticket";
+            this.Ticket.Name = "Ticket";
+            // 
+            // Cliente
+            // 
+            this.Cliente.HeaderText = "Cliente";
+            this.Cliente.Name = "Cliente";
+            // 
+            // TipoServicio
+            // 
+            this.TipoServicio.HeaderText = "Servicio";
+            this.TipoServicio.Name = "TipoServicio";
+            // 
+            // Detalle
+            // 
+            this.Detalle.HeaderText = "Tema";
+            this.Detalle.Name = "Detalle";
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            // 
+            // Tiempo
+            // 
+            this.Tiempo.HeaderText = "Tiempo";
+            this.Tiempo.Name = "Tiempo";
+            // 
+            // Orden_Compra
+            // 
+            this.Orden_Compra.HeaderText = "Orden de Compra";
+            this.Orden_Compra.Name = "Orden_Compra";
+            // 
+            // Monto
+            // 
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label3);
@@ -369,6 +414,16 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(162, 21);
             this.textBox1.TabIndex = 18;
+            // 
+            // txt_direccion
+            // 
+            this.txt_direccion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txt_direccion.Location = new System.Drawing.Point(83, 45);
+            this.txt_direccion.Name = "txt_direccion";
+            this.txt_direccion.ReadOnly = true;
+            this.txt_direccion.Size = new System.Drawing.Size(470, 61);
+            this.txt_direccion.TabIndex = 16;
+            this.txt_direccion.Text = "";
             // 
             // label9
             // 
@@ -470,61 +525,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
             // 
-            // txt_direccion
-            // 
-            this.txt_direccion.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txt_direccion.Location = new System.Drawing.Point(83, 45);
-            this.txt_direccion.Name = "txt_direccion";
-            this.txt_direccion.ReadOnly = true;
-            this.txt_direccion.Size = new System.Drawing.Size(470, 61);
-            this.txt_direccion.TabIndex = 16;
-            this.txt_direccion.Text = "";
-            // 
-            // Ticket
-            // 
-            this.Ticket.HeaderText = "Ticket";
-            this.Ticket.Name = "Ticket";
-            // 
-            // Cliente
-            // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            // 
-            // TipoServicio
-            // 
-            this.TipoServicio.HeaderText = "Servicio";
-            this.TipoServicio.Name = "TipoServicio";
-            // 
-            // Detalle
-            // 
-            this.Detalle.HeaderText = "Tema";
-            this.Detalle.Name = "Detalle";
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // Tiempo
-            // 
-            this.Tiempo.HeaderText = "Tiempo";
-            this.Tiempo.Name = "Tiempo";
-            // 
-            // Orden_Compra
-            // 
-            this.Orden_Compra.HeaderText = "Orden de Compra";
-            this.Orden_Compra.Name = "Orden_Compra";
-            // 
-            // Monto
-            // 
-            this.Monto.HeaderText = "Monto";
-            this.Monto.Name = "Monto";
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            // 
             // frm_CxC_CxP_NuevaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,6 +538,7 @@
             this.Name = "frm_CxC_CxP_NuevaFactura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Generar Nueva Factura";
+            this.Load += new System.EventHandler(this.frm_CxC_CxP_NuevaFactura_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -12,7 +12,12 @@ namespace frmPrincipal
 {
     public partial class frm_MantenimientoTipoPuestoNuevoEditar : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
         tipoPuestos objTipoPuesto = new tipoPuestos();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;
 
         private int _id;
 
@@ -30,6 +35,29 @@ namespace frmPrincipal
             set { _num = value; }
         }
 
+        public frm_MantenimientoTipoPuestoNuevoEditar()
+        {
+            InitializeComponent();
+        }
+
+        public frm_MantenimientoTipoPuestoNuevoEditar(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_MantenimientoTipoPuestoNuevoEditar_Load(object sender, EventArgs e)
+        {
+            if (_id != 0)
+            {
+
+                this.carga_info();
+            }
+            else
+            {
+                txt_Id.Text = num.ToString();
+            }
+        }
+
         //Metodo que carga la informacion que viene del data grid view en la ventana frm_MantenimientoTipoPuestoNuevoEditar
         private void carga_info()
         {
@@ -37,11 +65,6 @@ namespace frmPrincipal
 
             txt_Id.Text = _id.ToString();
             txt_Descripcion.Text = objTipoPuesto._descripcion;
-        }
-
-        public frm_MantenimientoTipoPuestoNuevoEditar()
-        {
-            InitializeComponent();
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -82,20 +105,9 @@ namespace frmPrincipal
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
+            frm_MantenimientoTipoPuestos ventana = new frm_MantenimientoTipoPuestos();
             this.Close();
-        }
-
-        private void frm_MantenimientoTipoPuestoNuevoEditar_Load(object sender, EventArgs e)
-        {
-            if (_id != 0)
-            {
-
-                this.carga_info();
-            }
-            else
-            {
-                txt_Id.Text = num.ToString();
-            }
+            ventana.Show();
         }
     }
 }

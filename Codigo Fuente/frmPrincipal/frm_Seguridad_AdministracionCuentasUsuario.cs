@@ -12,17 +12,33 @@ namespace frmPrincipal
 {
     public partial class frm_Seguridad_AdministracionCuentasUsuario : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
         Seguridad objSeguridad = new Seguridad();
+        clientesUsuarioFinal objClienteUsuarioFinal = new clientesUsuarioFinal();
+        empleados objEmpleados = new empleados();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;
 
         public frm_Seguridad_AdministracionCuentasUsuario()
         {
             InitializeComponent();
         }
 
+        public frm_Seguridad_AdministracionCuentasUsuario(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_Seguridad_AdministracionCuentasUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+            frm_0MenuPrincipal ventana = new frm_0MenuPrincipal(usuarioSistema);
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -35,19 +51,219 @@ namespace frmPrincipal
             }
         }
 
-        private void btn_establecer_Click(object sender, EventArgs e)
+        private void btn_limpiar_Click(object sender, EventArgs e)
         {
-            this.establecerCambiosCuenta();
+            this.limpiezaDeCampos();
         }
-        
-        //METODO PARA GUARDAR CAMBIOS EN CUENTA DE USUARIOS
-        //RAFAEL SEQUEIRA VARGAS
-        public void establecerCambiosCuenta()
+
+        private void rb_clientes_CheckedChanged(object sender, EventArgs e)
         {
-            objUsuariosSistema.idRol = Convert.ToInt32(txt_Usuario.Text);
+            lst_ListaUsuario.Items.Clear();
+            this.cargaListaUsuariosSistema();
+        }
+
+        private void rb_empleados_CheckedChanged(object sender, EventArgs e)
+        {
+            lst_ListaUsuario.Items.Clear();
+            this.cargaListaUsuariosSistema();
+        }
+
+        private void lst_ListaUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.cargaInfo();
+        }
+
+        private void txt_idUsuarioSistema_TextChanged(object sender, EventArgs e)
+        {
+            int usuarioSistemaCargado = Convert.ToInt32(txt_idUsuarioSistema.Text);
+            if (usuarioSistemaCargado == 0)
+            {
+                btn_actualizarUsuario.Enabled = false;
+                btn_crearUsuario.Enabled = true;
+            }
+            else
+            {
+                btn_actualizarUsuario.Enabled = true;
+                btn_crearUsuario.Enabled = false;
+            }
+        }
+
+        private void btn_crearUsuario_Click(object sender, EventArgs e)
+        {
+            if (this.validacionDeCampos() == true)
+            {
+                if (this.validacionRadioButtonActivoInactivo() == true)
+                {
+                    this.crearCuenta();
+                    this.actualizarIdUsuarioSistema();
+
+                    if (rb_clientes.Checked == true)
+                    {
+                        this.actualizarIdUsuarioSistemaCliente();
+                    }
+                    else if (rb_empleados.Checked == true)
+                    {
+                        this.actualizarIdUsuarioSistemaEmpleado();
+                    }
+                    else { }
+                }
+            }
+        }
+
+        private void btn_actualizarUsuario_Click(object sender, EventArgs e)
+        {
+            if (rb_actualizarUsuarioContrasena.Checked == true)
+            {
+                this.actualizarUsuarioContrasena();
+            }
+            else if (rb_bloquearDesbloquearCuenta.Checked == true)
+            {
+                if (this.validacionRadioButtonActivoInactivo() == true)
+                {
+                    this.bloquearDesbloquearCuenta();
+                }
+            }
+            else { }
+        }
+
+        //METODO PARA ACTUALIZAR
+        //RAFAEL SEQUEIRA VARGAS
+        private void actualizarUsuarioContrasena()
+        {
+            if (!Validaciones.validar(txt_Usuario))
+            {
+                MessageBox.Show("No ingreso Usuario", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Usuario.Focus();
+                return;
+            }
+            if (!Validaciones.validar(txt_Contraseña))
+            {
+                MessageBox.Show("No ingreso Contraseña", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Contraseña.Focus();
+                return;
+            }
+
+            objUsuariosSistema.idUsuarioSistema = Convert.ToInt32(txt_idUsuarioSistema.Text);
+            objUsuariosSistema.nombreUsuarioSistema = txt_Usuario.Text;
             objUsuariosSistema.contrasenna = objSeguridad.MD5Hash(txt_Contraseña.Text);
-            objUsuariosSistema.isblock = false;
-            objUsuariosSistema.idEmpleado = Convert.ToInt32(txt_Usuario.Text);
+
+            string accion = String.Empty;
+            accion = "Editar";
+
+            if (objUsuariosSistema.actualizar_usuariosSistema(accion))
+            {
+                MessageBox.Show("Exito al actualizar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //METODO PARA ACTUALIZAR
+        //RAFAEL SEQUEIRA VARGAS
+        private void bloquearDesbloquearCuenta()
+        {
+            objUsuariosSistema.idUsuarioSistema = Convert.ToInt32(txt_idUsuarioSistema.Text);
+            this.validacionRadioButtonActivoInactivo();
+
+            string accion = String.Empty;
+            accion = "Editar";
+
+            if (objUsuariosSistema.actualizarEstatusCuenta(accion))
+            {
+                MessageBox.Show("Exito al actualizar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //METODO PARA ACTUALIZAR EL CAMPO ID USUARIO SISTEMA
+        //RAFAEL SEQUEIRA VARGAS
+        private void actualizarIdUsuarioSistema()
+        {
+            objUsuariosSistema.cargaIdUsuarioSistema(txt_Usuario.Text);
+            txt_idUsuarioSistema.Text = objUsuariosSistema.idUsuarioSistema.ToString();
+        }
+
+        //METODO PARA ACTUALIZAR ID USUARIO SISTEMA CLIENTE EN LA BASE
+        //RAFAEL SEQUEIRA VARGAS
+        public void actualizarIdUsuarioSistemaCliente()
+        {
+            objClienteUsuarioFinal.idClienteUsuarioFinal = Convert.ToInt32(lst_ListaUsuario.SelectedItem.ToString());
+            objClienteUsuarioFinal.idUsuarioSistema = Convert.ToInt32(txt_idUsuarioSistema.Text);
+
+            string accion = String.Empty;
+            accion = "Editar";
+
+            if (objClienteUsuarioFinal.actualizarIdUsuarioSistemaCliente(accion))
+            {
+                MessageBox.Show("Exito al actualizar datos","Validacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //METODO PARA ACTUALIZAR ID USUARIO SISTEMA EMPLEADO EN LA BASE
+        //RAFAEL SEQUEIRA VARGAS
+        public void actualizarIdUsuarioSistemaEmpleado()
+        {
+            objEmpleados.idEmpleado = Convert.ToInt32(lst_ListaUsuario.SelectedItem.ToString());
+            objEmpleados.idUsuarioSistema = Convert.ToInt32(txt_idUsuarioSistema.Text);
+
+            string accion = String.Empty;
+            accion = "Editar";
+
+            if (objEmpleados.actualizarIdUsuarioSistemaEmpleado(accion))
+            {
+                MessageBox.Show("Exito al actualizar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //METODO PARA CREAR CUENTA
+        //RAFAEL SEQUEIRA VARGAS
+        public bool validacionRadioButtonActivoInactivo()
+        {
+            if (rbt_activo.Checked == true)
+            {
+                objUsuariosSistema.isblock = false;
+                return true;
+            }
+            else if (rbt_inactivo.Checked == true)
+            {
+                objUsuariosSistema.isblock = true;
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("No ha marcado opcion de activo o inactivo", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        //METODO PARA CREAR CUENTA
+        //RAFAEL SEQUEIRA VARGAS
+        public void crearCuenta()
+        {
+            objUsuariosSistema.nombreUsuarioSistema = txt_Usuario.Text;
+            objUsuariosSistema.contrasenna = objSeguridad.MD5Hash(txt_Contraseña.Text);
+            objUsuariosSistema.idRol = 6;
             objUsuariosSistema.isdeleted = false;
 
             string accion = String.Empty;
@@ -55,11 +271,46 @@ namespace frmPrincipal
 
             if (objUsuariosSistema.insertar_usuariosSistema(accion))
             {
-                MessageBox.Show("Exito");
+                MessageBox.Show("Exito al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }       
+        }
+
+        //METODO CARGA LISTA USUARIOS SISTEMAS
+        //RAFAEL SEQUEIRA VARGAS
+        private void cargaInfo()
+        {
+            if (rb_clientes.Checked == true)
+            {
+                int idClienteUsuarioFinalSeleccionado = Convert.ToInt32(lst_ListaUsuario.SelectedItem.ToString());
+                objClienteUsuarioFinal.cargaInfoCliente(idClienteUsuarioFinalSeleccionado);
+                objClienteUsuarioFinal.cargaIdUsuarioSistema(idClienteUsuarioFinalSeleccionado);
+
+                txt_idUsuarioSistema.Text = objClienteUsuarioFinal.idUsuarioSistema.ToString();
+                txt_nombre.Text = objClienteUsuarioFinal.nombre;
+                txt_apellidos.Text = objClienteUsuarioFinal.apellidos;
+                txt_identificacion.Text = objClienteUsuarioFinal.identificacion;
+            }
+            else if (rb_empleados.Checked == true)
+            {
+                int idEmpleadoSeleccionado = Convert.ToInt32(lst_ListaUsuario.SelectedItem.ToString());
+                objEmpleados.cargaInfoEmpleado(idEmpleadoSeleccionado);
+                objEmpleados.cargaIdEmpleado(idEmpleadoSeleccionado);
+
+                txt_idUsuarioSistema.Text = objEmpleados.idUsuarioSistema.ToString();
+                txt_nombre.Text = objEmpleados.nombre;
+                txt_apellidos.Text = objEmpleados.apellido;
+                txt_identificacion.Text = objEmpleados.identificacion;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar Informacion", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
@@ -67,27 +318,125 @@ namespace frmPrincipal
         //RAFAEL SEQUEIRA VARGAS
         private void cargaListaUsuariosSistema()
         {
-            try
+            if (rb_clientes.Checked == true)
             {
-                DataSet ds;
-                ds = objUsuariosSistema.cargalistaUsuariosSistema();
-                int tamano = ds.Tables.Count;
-
-                for (int i = 0; i < tamano; i++)
+                try
                 {
-                    lst_ListaUsuario.Items.Add(ds.Tables[0].Rows[0]["idUsuarioSistema"].ToString());
+                    DataSet ds;
+                    ds = objUsuariosSistema.cargalistaIDClientes();
+                    int tamano = ds.Tables[0].Rows.Count;
+                    txt_clientes.Text = tamano.ToString();
+
+                    for (int i = 0; i < tamano; i++)
+                    {
+                        lst_ListaUsuario.Items.Add(ds.Tables[0].Rows[i]["idClienteUsuarioFinal"].ToString());
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
-            catch (Exception)
+            else if (rb_empleados.Checked == true)
             {
-                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    DataSet ds;
+                    ds = objUsuariosSistema.cargalistaIDEmpleados();
+                    int tamano = ds.Tables[0].Rows.Count;
+                    txt_empleados.Text = tamano.ToString();
+
+                    for (int i = 0; i < tamano; i++)
+                    {
+                        lst_ListaUsuario.Items.Add(ds.Tables[0].Rows[i]["idEmpleado"].ToString());
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar lista", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
 
-        private void frm_Seguridad_AdministracionCuentasUsuario_Load(object sender, EventArgs e)
+        //METODO VALIDACION DE CAMPOS
+        //RAFAEL SEQUEIRA VARGAS
+        public bool validacionDeCampos()
         {
-            this.cargaListaUsuariosSistema();
+            if (!Validaciones.validar(txt_Usuario))
+            {
+                MessageBox.Show("No ingreso Usuario", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Usuario.Focus();
+                return false;
+            }
+            if (!Validaciones.validar(txt_Contraseña))
+            {
+                MessageBox.Show("No ingreso Contraseña", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Contraseña.Focus();
+                return false;
+            }
+            if (!Validaciones.validar(txt_confirmaContraseña))
+            {
+                MessageBox.Show("No ingreso Confirmar Contrasena", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_confirmaContraseña.Focus();
+                return false;
+            }
+            if (!Validaciones.validar(txt_idUsuarioSistema))
+            {
+                MessageBox.Show("No hay dato cargado en campo ID Usuario Sistema", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_idUsuarioSistema.Focus();
+                return false;
+            }
+            if (!Validaciones.validar(txt_nombre))
+            {
+                MessageBox.Show("No hay dato cargado en campo nombre", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_nombre.Focus();
+                return false;
+            }
+            if (!Validaciones.validar(txt_apellidos))
+            {
+                MessageBox.Show("No hay dato cargado en campo apellidos", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_apellidos.Focus();
+                return false;
+            }
+            if (!Validaciones.validar(txt_identificacion))
+            {
+                MessageBox.Show("No hay dato cargado en campo Identificacion", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_identificacion.Focus();
+                return false;
+            }
+
+            if (txt_Contraseña.Text != txt_confirmaContraseña.Text)
+            {
+                MessageBox.Show("La confirmacion de la contrasena es erronea", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpieza.limpiar(txt_Contraseña);
+                Limpieza.limpiar(txt_confirmaContraseña);
+                txt_Contraseña.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        //METODO VALIDACION DE CAMPOS
+        //RAFAEL SEQUEIRA VARGAS
+        public void limpiezaDeCampos()
+        {
+            txt_idUsuarioSistema.Text = "0";
+            Limpieza.limpiar(txt_nombre);
+            Limpieza.limpiar(txt_apellidos);
+            Limpieza.limpiar(txt_identificacion);
+            Limpieza.limpiar(txt_Usuario);
+            Limpieza.limpiar(txt_Contraseña);
+            Limpieza.limpiar(txt_confirmaContraseña);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace frmPrincipal
 {
-    partial class frm_MantenimientoDescripcionRoles1
+    partial class frm_MantenimientoDescripcionRoles
     {
         /// <summary>
         /// Required designer variable.

@@ -8,16 +8,32 @@ using System.Text;
 using System.Windows.Forms;
 using Clases;
 
-
 namespace frmPrincipal
 {
     public partial class frm_MantenimientoEstatusTickets : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        EstatusTicket objEstatusTicket = new EstatusTicket();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;
+
         public frm_MantenimientoEstatusTickets()
         {
             InitializeComponent();
         }
-        EstatusTicket objEstatusTicket = new EstatusTicket();
+
+        public frm_MantenimientoEstatusTickets(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_MantenimientoEstatusTickets_Load(object sender, EventArgs e)
+        {
+            this.cargar_Estatus_Tickets();
+            this.limpia();
+        }
 
         private void cargar_Estatus_Tickets()
         {
@@ -119,7 +135,7 @@ namespace frmPrincipal
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+            frm_Mantenimiento_0Menu ventana = new frm_Mantenimiento_0Menu(usuarioSistema);
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -130,14 +146,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_MantenimientoEstatusTickets_Load(object sender, EventArgs e)
-        {
-            this.cargar_Estatus_Tickets();
-            this.limpia();
-        }
-
-         
+        }  
     }
 }

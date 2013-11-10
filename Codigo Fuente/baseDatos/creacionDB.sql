@@ -142,7 +142,6 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_salarios
 (
 	idSalario INT NOT NULL IDENTITY(1,1),
-	idEmpleado INT NOT NULL,
 	monto DECIMAL(18,2) NOT NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)
 	
@@ -201,7 +200,7 @@ GO
 -------TABLA CLIENTES USUARIO FINAL------------------------------------------------------
 CREATE TABLE db_soportic.dbo.tbl_clientesUsuarioFinal
 (
-	idClienteUsuarioFinal INT NOT NULL IDENTITY (1,1),
+	idClienteUsuarioFinal INT NOT NULL IDENTITY (1000000,1),
 	idUsuarioSistema INT NULL,
 	nombre VARCHAR(50) NOT NULL,
 	apellidos VARCHAR(50) NOT NULL,
@@ -759,6 +758,3 @@ GO
 ALTER TABLE db_soportic.dbo.tbl_tickets
 CHECK CONSTRAINT [fk_tickets_datosAdjuntos]
 GO
-
-
-
