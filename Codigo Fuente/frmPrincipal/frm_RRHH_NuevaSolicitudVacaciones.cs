@@ -39,6 +39,7 @@ namespace frmPrincipal
         //RAFAEL ANGEL SEQUEIRA VARGAS
         public void cargaRolUsuario()
         {
+            this.cargarListaEmpleados();
             objUsuariosSistema.cargaRolUsuario(usuarioSistema);
             rolUsuario = objUsuariosSistema.idRol;
         }
@@ -62,11 +63,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_RRHH_NuevaSolicitudVacaciones_Load(object sender, EventArgs e)
-        {
-            this.cargarListaEmpleados();
         }
 
         private void cargarListaEmpleados()

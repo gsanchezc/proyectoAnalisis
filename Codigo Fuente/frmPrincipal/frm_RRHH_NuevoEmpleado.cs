@@ -31,6 +31,8 @@ namespace frmPrincipal
 
         private void frm_RRHH_NuevoEmpleado_Load(object sender, EventArgs e)
         {
+            this.limpia();
+            this.cargarComboBox();
             this.cargaRolUsuario();
             this.rolesUsuario();
         }
@@ -62,12 +64,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_RRHH_NuevoEmpleado_Load(object sender, EventArgs e)
-        {
-            this.limpia();
-            this.cargarComboBox();
         }
 
         private void cargarComboBox()

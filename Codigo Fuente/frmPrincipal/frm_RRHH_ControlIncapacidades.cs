@@ -31,6 +31,7 @@ namespace frmPrincipal
 
         private void frm_RRHH_ControlIncapacidades_Load(object sender, EventArgs e)
         {
+            this.cargar_lista_incapacidades();
             this.cargaRolUsuario();
             this.rolesUsuario();
         }
@@ -62,11 +63,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_RRHH_ControlIncapacidades_Load(object sender, EventArgs e)
-        {
-            this.cargar_lista_incapacidades();
         }
 
         public void cargar_lista_incapacidades()
