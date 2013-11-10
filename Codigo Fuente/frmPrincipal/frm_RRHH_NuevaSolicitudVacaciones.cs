@@ -64,6 +64,33 @@ namespace frmPrincipal
             }
         }
 
+        private void frm_RRHH_NuevaSolicitudVacaciones_Load(object sender, EventArgs e)
+        {
+            this.cargarListaEmpleados();
+        }
+
+        private void cargarListaEmpleados()
+        {
+            try
+            {
+                DataSet ds;
+                ds = objVacaciones.cargarListaEmpleados();
+                cmb_Identificacion.DataSource = ds.Tables[0];
+                cmb_Identificacion.DisplayMember = ds.Tables[0].Columns["identificacion"].ColumnName.ToString();
+                cmb_Identificacion.ValueMember = ds.Tables[0].Columns["idEmpleado"].ColumnName.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void calculos()
+        { 
+            
+        }
+
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
 

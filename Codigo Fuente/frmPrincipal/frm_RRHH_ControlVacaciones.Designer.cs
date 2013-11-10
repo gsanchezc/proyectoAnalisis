@@ -51,14 +51,14 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(975, 473);
+            this.groupBox1.Size = new System.Drawing.Size(1240, 494);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control de Vacaciones";
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(776, 444);
+            this.btn_Cancelar.Location = new System.Drawing.Point(1035, 465);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(182, 23);
             this.btn_Cancelar.TabIndex = 13;
@@ -77,15 +77,16 @@
             this.Saldo_Vacaciones,
             this.Status_Solicitud,
             this.Seleccionar});
-            this.dtg_Planilla.Location = new System.Drawing.Point(17, 21);
+            this.dtg_Planilla.Location = new System.Drawing.Point(15, 32);
             this.dtg_Planilla.Name = "dtg_Planilla";
-            this.dtg_Planilla.Size = new System.Drawing.Size(941, 417);
+            this.dtg_Planilla.Size = new System.Drawing.Size(1027, 417);
             this.dtg_Planilla.TabIndex = 1;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Id Empleado";
             this.Column1.Name = "Column1";
+            this.Column1.Width = 110;
             // 
             // Column2
             // 
@@ -109,6 +110,7 @@
             // 
             this.Saldo_Vacaciones.HeaderText = "Saldo Vacaciones";
             this.Saldo_Vacaciones.Name = "Saldo_Vacaciones";
+            this.Saldo_Vacaciones.Width = 120;
             // 
             // Status_Solicitud
             // 
@@ -120,12 +122,13 @@
             // 
             this.Seleccionar.HeaderText = "Seleccionar";
             this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.Width = 120;
             // 
             // frm_RRHH_ControlVacaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 497);
+            this.ClientSize = new System.Drawing.Size(1264, 518);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

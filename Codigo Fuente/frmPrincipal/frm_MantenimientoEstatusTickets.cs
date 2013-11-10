@@ -62,7 +62,7 @@ namespace frmPrincipal
             DataGridView thisGrid = (DataGridView)sender;
             DataTable table = (DataTable)thisGrid.DataSource;
             DataRow currenRow = table.Rows[thisGrid.CurrentCell.RowIndex];
-            txt_idEstatusTicket.Text = currenRow["idEstatus"].ToString();
+            txt_idEstatusTicket.Text = currenRow["idEstatusTickets"].ToString();
             txt_descripcion.Text = currenRow["descripcion"].ToString();
         }
 

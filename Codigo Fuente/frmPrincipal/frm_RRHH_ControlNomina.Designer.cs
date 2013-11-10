@@ -70,7 +70,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(975, 473);
+            this.groupBox1.Size = new System.Drawing.Size(1240, 494);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Calculo y consulta de planilla";
@@ -79,7 +79,7 @@
             // 
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox3.Location = new System.Drawing.Point(757, 11);
+            this.groupBox3.Location = new System.Drawing.Point(535, 21);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(201, 59);
             this.groupBox3.TabIndex = 19;
@@ -100,7 +100,7 @@
             this.groupBox2.Controls.Add(this.btn_Aceptar);
             this.groupBox2.Controls.Add(this.btn_Cancelar);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Location = new System.Drawing.Point(446, 11);
+            this.groupBox2.Location = new System.Drawing.Point(844, 21);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(305, 59);
             this.groupBox2.TabIndex = 18;
@@ -136,7 +136,7 @@
             "2013",
             "2014",
             "2015"});
-            this.comboBox2.Location = new System.Drawing.Point(307, 32);
+            this.comboBox2.Location = new System.Drawing.Point(308, 46);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 17;
@@ -144,7 +144,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(258, 35);
+            this.label2.Location = new System.Drawing.Point(259, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 16);
             this.label2.TabIndex = 16;
@@ -166,7 +166,7 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.comboBox1.Location = new System.Drawing.Point(122, 32);
+            this.comboBox1.Location = new System.Drawing.Point(123, 46);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 15;
@@ -174,7 +174,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 35);
+            this.label1.Location = new System.Drawing.Point(7, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 16);
             this.label1.TabIndex = 14;
@@ -195,9 +195,9 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            this.dtg_Planilla.Location = new System.Drawing.Point(6, 76);
+            this.dtg_Planilla.Location = new System.Drawing.Point(9, 97);
             this.dtg_Planilla.Name = "dtg_Planilla";
-            this.dtg_Planilla.Size = new System.Drawing.Size(952, 391);
+            this.dtg_Planilla.Size = new System.Drawing.Size(1225, 391);
             this.dtg_Planilla.TabIndex = 0;
             // 
             // Column1
@@ -259,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 497);
+            this.ClientSize = new System.Drawing.Size(1264, 518);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

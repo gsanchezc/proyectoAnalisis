@@ -63,5 +63,24 @@ namespace frmPrincipal
                 return;
             }
         }
+
+        private void frm_RRHH_ControlIncapacidades_Load(object sender, EventArgs e)
+        {
+            this.cargar_lista_incapacidades();
+        }
+
+        public void cargar_lista_incapacidades()
+        {
+            try
+            {
+                dtg_Incapacidades.AutoGenerateColumns = false;
+                dtg_Incapacidades.DataSource = objRRHHIcapacidades.cargarListaIncapacidades().Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
     }
 }
