@@ -14,7 +14,7 @@ namespace frmPrincipal
     {
         //DECLARACION DE INSTANCIAS DE LAS CLASES
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
-
+        RRHH_incapacidades objRRHHIcapacidades = new RRHH_incapacidades();
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
         private int rolUsuario;
@@ -33,6 +33,7 @@ namespace frmPrincipal
         {
             this.cargaRolUsuario();
             this.rolesUsuario();
+            this.cargar_lista_incapacidades();
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
@@ -62,11 +63,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_RRHH_ControlIncapacidades_Load(object sender, EventArgs e)
-        {
-            this.cargar_lista_incapacidades();
         }
 
         public void cargar_lista_incapacidades()

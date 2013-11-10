@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_RRHH_ControlIncapacidades));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Cancelar = new System.Windows.Forms.Button();
-            this.dtg_Planilla = new System.Windows.Forms.DataGridView();
             this.dtg_Incapacidades = new System.Windows.Forms.DataGridView();
             this.idIncapacidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,22 +66,6 @@
             this.btn_Cancelar.Text = "&Salir";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
-            // 
-            // dtg_Planilla
-            // 
-            this.dtg_Planilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_Planilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column5,
-            this.Dias_Incapacitado,
-            this.Status,
-            this.Seleccionar});
-            this.dtg_Planilla.Location = new System.Drawing.Point(19, 32);
-            this.dtg_Planilla.Name = "dtg_Planilla";
-            this.dtg_Planilla.Size = new System.Drawing.Size(941, 406);
-            this.dtg_Planilla.TabIndex = 1;
             // 
             // btn_Cancelar
             // 

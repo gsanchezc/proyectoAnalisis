@@ -14,6 +14,7 @@ namespace frmPrincipal
     {
         //DECLARACION DE INSTANCIAS DE LAS CLASES
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        RRHH_SolicitudVacaciones objVacaciones = new RRHH_SolicitudVacaciones();
 
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
@@ -33,6 +34,7 @@ namespace frmPrincipal
         {
             this.cargaRolUsuario();
             this.rolesUsuario();
+            this.cargarListaEmpleados();
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
@@ -62,11 +64,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_RRHH_NuevaSolicitudVacaciones_Load(object sender, EventArgs e)
-        {
-            this.cargarListaEmpleados();
         }
 
         private void cargarListaEmpleados()

@@ -33,6 +33,8 @@ namespace frmPrincipal
         {
             this.cargaRolUsuario();
             this.rolesUsuario();
+            this.limpia();
+            this.cargarComboBox();
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
@@ -62,12 +64,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_RRHH_NuevoEmpleado_Load(object sender, EventArgs e)
-        {
-            this.limpia();
-            this.cargarComboBox();
         }
 
         private void cargarComboBox()
