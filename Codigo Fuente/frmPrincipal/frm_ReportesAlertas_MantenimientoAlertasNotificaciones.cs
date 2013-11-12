@@ -67,5 +67,10 @@ namespace frmPrincipal
                 labelDepartamento.Text = "No Autorizado";
             }
         }
+
+        private void frm_ReportesAlertas_MantenimientoAlertasNotificaciones_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
     }
 }

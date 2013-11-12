@@ -184,6 +184,8 @@
             this.Name = "frm_Seguridad_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ingreso al Sistema";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Seguridad_Login_FormClosing);
+            this.Load += new System.EventHandler(this.frm_Seguridad_Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

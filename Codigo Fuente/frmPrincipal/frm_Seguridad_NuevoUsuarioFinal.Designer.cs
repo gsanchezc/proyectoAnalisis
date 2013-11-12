@@ -251,6 +251,7 @@
             this.Name = "frm_Seguridad_NuevoUsuarioFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Nuevo Usuario Final";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Seguridad_NuevoUsuarioFinal_FormClosing);
             this.Load += new System.EventHandler(this.frm_Seguridad_NuevoUsuarioFinal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

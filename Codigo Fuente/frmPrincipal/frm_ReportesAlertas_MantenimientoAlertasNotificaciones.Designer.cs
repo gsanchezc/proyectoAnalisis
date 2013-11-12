@@ -71,7 +71,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(-3, -2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1267, 136);
+            this.groupBox1.Size = new System.Drawing.Size(1267, 147);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Panel de Alertas";
@@ -82,7 +82,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(7, 20);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(113, 117);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -98,7 +98,7 @@
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox5.Location = new System.Drawing.Point(126, 14);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(302, 122);
+            this.groupBox5.Size = new System.Drawing.Size(302, 123);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Usuario en Sistema";
@@ -169,7 +169,7 @@
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox4.Location = new System.Drawing.Point(434, 14);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(258, 122);
+            this.groupBox4.Size = new System.Drawing.Size(258, 123);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Alerta de Ticket";
@@ -235,7 +235,7 @@
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox3.Location = new System.Drawing.Point(974, 14);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(284, 122);
+            this.groupBox3.Size = new System.Drawing.Size(284, 123);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Comunicados";
@@ -245,7 +245,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(8, 22);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(228, 94);
+            this.richTextBox1.Size = new System.Drawing.Size(270, 95);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -259,7 +259,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox2.Location = new System.Drawing.Point(698, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(270, 122);
+            this.groupBox2.Size = new System.Drawing.Size(270, 123);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Uso RRHH";
@@ -304,7 +304,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 133);
+            this.ClientSize = new System.Drawing.Size(1264, 143);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -315,6 +315,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Mantenimiento Alertas Notificaciones";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_ReportesAlertas_MantenimientoAlertasNotificaciones_FormClosing);
             this.Load += new System.EventHandler(this.frm_ReportesAlertas_MantenimientoAlertasNotificaciones_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -622,5 +622,10 @@ namespace frmPrincipal
             this.Hide();
             ventana.Show();
         }
+
+        private void frm_0MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
     }
 }

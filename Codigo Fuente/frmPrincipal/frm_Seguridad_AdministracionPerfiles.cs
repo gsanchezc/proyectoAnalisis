@@ -42,7 +42,7 @@ namespace frmPrincipal
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                this.Close();
+                this.Hide();
                 ventana.Show();
             }
             else
@@ -281,6 +281,11 @@ namespace frmPrincipal
                 MessageBox.Show("No ha marcado ninguna opcion de rol", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+
+        private void frm_Seguridad_AdministracionPerfiles_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
         }
     }
 }

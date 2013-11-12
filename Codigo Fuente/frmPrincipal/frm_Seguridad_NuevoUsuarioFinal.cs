@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
+using System.Text.RegularExpressions;
 
 namespace frmPrincipal
 {
@@ -34,6 +35,7 @@ namespace frmPrincipal
 
         private void frm_Seguridad_NuevoUsuarioFinal_Load(object sender, EventArgs e)
         {
+            this.limiteCampos();
             this.cargarComboBoxTipoID();
             this.cargarComboBoxEmpresasClientes();
         }
@@ -81,7 +83,7 @@ namespace frmPrincipal
             if ((MessageBox.Show("Desea salir sin generar nuevo Usuario", "Volver al Menu Principal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
                 frm_0MenuPrincipal ventanaMenuPrincipal = new frm_0MenuPrincipal(usuarioSistema);
-                this.Close();
+                this.Hide();
                 ventanaMenuPrincipal.Show();
             }
             else
@@ -140,6 +142,31 @@ namespace frmPrincipal
 
         public void insertarNuevoUsuarioFinal()
         {
+            if (validarSoloLetras(txt_Nombre) == false)
+            {
+                MessageBox.Show("Ingrese Unicamente Letras para el campo de Nombre", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Nombre.Focus();
+                return;
+            }
+            if (validarSoloLetrasConEspacios(txt_Apellido) == false)
+            {
+                MessageBox.Show("Ingrese Unicamente Letras para el campo de Apellidos", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Apellido.Focus();
+                return;
+            }
+            if (validarSoloLetrasYNumeros(txt_identificacion) == false)
+            {
+                MessageBox.Show("Ingrese Unicamente Letras para el campo de Identificacion", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Apellido.Focus();
+                return;
+            }
+            if (validarSoloNumeros(txt_telefonoEmpresa) == false)
+            {
+                MessageBox.Show("Ingrese Unicamente Numeros para el campo de telefono", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_telefonoEmpresa.Focus();
+                return;
+            }
+
             objClienteUsuarioFinal.nombre = Convert.ToString(txt_Nombre.Text);
             objClienteUsuarioFinal.apellidos = Convert.ToString(txt_Apellido.Text);
             objClienteUsuarioFinal.idTipoIdentificacion = Convert.ToInt32(cb_tipoIdentificacion.SelectedValue);
@@ -169,6 +196,43 @@ namespace frmPrincipal
             Limpieza.limpiar(txt_Apellido);
             Limpieza.limpiar(txt_identificacion);
             Limpieza.limpiar(txt_telefonoEmpresa);
+        }
+
+        private static bool validarSoloNumeros(Control mitextbox)
+        {
+            Regex regex = new Regex("^[0-9]*$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        private static bool validarSoloLetras(Control mitextbox)
+        {
+            Regex regex = new Regex("^[a-zA-Z]+$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        private static bool validarSoloLetrasConEspacios(Control mitextbox)
+        {
+            Regex regex = new Regex("^[a-zA-Z ]+$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        private static bool validarSoloLetrasYNumeros(Control mitextbox)
+        {
+            Regex regex = new Regex("^[a-zA-Z0-9]+$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        private void frm_Seguridad_NuevoUsuarioFinal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
+
+        public void limiteCampos()
+        {
+            txt_Nombre.MaxLength = 50;
+            txt_Apellido.MaxLength = 50;
+            txt_identificacion.MaxLength = 15;
+            txt_telefonoEmpresa.MaxLength = 8;
         }
     }
 }

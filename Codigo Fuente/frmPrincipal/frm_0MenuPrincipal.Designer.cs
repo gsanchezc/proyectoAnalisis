@@ -781,6 +781,7 @@
             this.Name = "frm_0MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Menu Principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_0MenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frm_0MenuPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

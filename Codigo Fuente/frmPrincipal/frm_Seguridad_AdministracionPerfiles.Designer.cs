@@ -411,6 +411,7 @@
             this.Name = "frm_Seguridad_AdministracionPerfiles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Administracion Perfiles";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Seguridad_AdministracionPerfiles_FormClosing);
             this.Load += new System.EventHandler(this.frm_Seguridad_AdministracionPerfiles_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
