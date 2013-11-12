@@ -425,6 +425,7 @@ CREATE TABLE db_soportic.dbo.tbl_alertas
 
 GO
 
+----------------TABLA VACACIONES APROBADAS
 CREATE TABLE db_soportic.dbo.tbl_vacacionesAprobadas
 (
 	idAprobacionVacacion INT NOT NULL IDENTITY(1,1),
@@ -437,6 +438,38 @@ CREATE TABLE db_soportic.dbo.tbl_vacacionesAprobadas
 	)
 )
 GO
+
+--------------TABLA PLANILLA-----------------------
+CREATE TABLE db_soportic.dbo.tbl_planillas
+(
+	idComprobante INT NOT NULL IDENTITY(1,1),
+	idPlanilla INT NOT NULL,
+	idEmpleado INT NOT NULL,
+	salario DECIMAL(18,2) NOT NULL,
+	fechaPago DATE NOT NULL
+	
+	CONSTRAINT pk_idPlanillas PRIMARY KEY CLUSTERED
+	(
+		idComprobante ASC,
+		idPlanilla ASC
+	)
+)
+GO
+
+--CREACION LLAVE FORÁNEA PLANILLAS
+ALTER TABLE db_soportic.dbo.tbl_planillas
+WITH NOCHECK ADD CONSTRAINT fk_planillas_empleados
+FOREIGN KEY (idEmpleado)
+REFERENCES db_soportic.dbo.tbl_empleados (idEmpleado)
+GO
+
+ALTER TABLE db_soportic.dbo.tbl_planillas
+CHECK CONSTRAINT fk_planillas_empleados
+GO
+
+drop table db_soportic.dbo.tbl_planillas
+alter table db_soportic.dbo.tbl_planillas
+drop constraint fk_planillas_empleados
 --Creacion de llave foranea en la tabla vacaciones
 ALTER TABLE db_soportic.dbo.tbl_vacaciones
 WITH NOCHECK ADD CONSTRAINT fk_vacacionesAprobadas_vacaciones
@@ -760,5 +793,65 @@ ALTER TABLE db_soportic.dbo.tbl_tickets
 CHECK CONSTRAINT [fk_tickets_datosAdjuntos]
 GO
 
+
+-----------INSERT DE TIPO IDENTIFICACIONES----------------------------------------
+--insert into [db_soportic].[dbo].[tbl_tipoIdentificaciones]
+--values ('Cedula Nacional','false'),
+--	   ('Cedula de Residencia','false'),
+--	   ('Cedula Juridica','false'),
+--	   ('Pasaporte','false')
+--go
+-----------INSERT DE PUESTOS----------------------------------------
+--insert into [db_soportic].[dbo].[tbl_tipoPuestos]
+--values ('Tecnico','false'),
+--	   ('RRHH','false'),
+--	   ('Supervisor','false'),
+--	   ('Administrador','false'),
+--	   ('Contabilidad','false')
+--go
+-----------INSERT DE DEPARTAMENTOS----------------------------------------
+--insert into [db_soportic].[dbo].[tbl_Departamentos]
+--values ('SOFTWARE','false'),
+--	   ('HARDWARE','false'),
+--	   ('WEB','false'),
+--	   ('ACCESOS','false')
+--go
+-----------INSERT DE ROLES----------------------------------------
+--insert into [db_soportic].[dbo].[tbl_descripcionRoles]
+--values ('Administrador','false'),
+--	   ('Supervisor','false'),
+--	   ('Tecnico','false'),
+--	   ('RRHH','false'),
+--	   ('Contabilidad','false')
+--go
+
+-----------FALTAN INSERTS DE ARCHIVOS ADJUNTOS CLIENTE--------------
+--------------------------------------------------------------------
+
+-----------FALTAN INSERTS DE ARCHIVOS ADJUNTOS TECNICO--------------
+--------------------------------------------------------------------
+
+-----------FALTAN INSERTS DE ARCHIVOS IMAGEN COTIZACION--------------
+--------------------------------------------------------------------
+
+-----------INSERT DE ROLES----------------------------------------
+--insert into [db_soportic].[dbo].[tbl_estatusTickets]
+--values ('Pendiente de Asignacion','false'),
+--	   ('Asignado a Tecnico','false'),
+--	   ('Pendiente de Aprobacion','false'),
+--	   ('Finalizado','false'),
+--	   ('Rechazado','false')
+--go
+
+--insert into [db_soportic].[dbo].[tbl_estatusAlertas]
+--values ('Alerta Activa','false'),
+--	   ('Alerta Finalizada','false')
+--go
+
+--insert into [db_soportic].[dbo].[tbl_estatusTickets]
+--values ('Activo','false'),
+--	   ('Bloqueado','false'),
+--	   ('Pendiente de Aprobacion','false')
+--go
 
 
