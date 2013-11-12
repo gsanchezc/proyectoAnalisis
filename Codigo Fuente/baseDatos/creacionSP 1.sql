@@ -998,7 +998,7 @@ create procedure stp_modificarVacaciones
 as
 begin
 update  db_soportic.dbo.tbl_vacaciones
-set descripcion = @descripcion--- ¿?--- no supe qué poner O.o ----
+set diasSolicitados = @diasSolicitados--- ¿?--- no supe qué poner O.o ----
 where idSolicitudVacacion = @id
 end----Revisarlo ----
 
@@ -1046,7 +1046,7 @@ create procedure stp_modificarIncapacidades
 as
 begin
 update  db_soportic.dbo.tbl_incapacidades
-set descripcion = @descripcion--- ¿?--- no supe qué poner O.o ----
+set totalDias = @totalDias--- ¿?--- no supe qué poner O.o ----
 where idIncapacidad = @id
 end----Revisarlo ----
 
@@ -1337,6 +1337,57 @@ create procedure stp_traeInfoAlertas
 as
 begin
 select *from db_soportic.dbo.tbl_alertas where idAlerta = @id
+end
+
+go
+
+---------------------------Procedure de almacenamiento para la tabla Planillas-------------------------
+------------------------------------------------------------------------------------------------------
+  
+  
+  ----***No sé qué Onda con este STP, pero me da problemas, por favor revisar y el que puede, ayudeme---
+  ---- a resolver el enigma de este procedure que no pude hacer correctamente**-----
+  
+create procedure stp_insertaPlanillas
+(
+    @idComprobante int,
+	@idPlanilla int,
+	@idEmpleado int,
+	@salario decimal (18,2),
+	@fechaPago date
+)
+as
+begin
+insert into db_soportic.dbo.tbl_planillas (idPlanilla,idEmpleado,salario,fechaPago) 
+values(@idPlanilla,@idEmpleado,@salario,@fechaPago)
+end
+
+go
+
+create procedure stp_modificarPlanillas
+(
+    @idComprobante int,
+	@idPlanilla int,
+	@idEmpleado int,
+	@salario decimal (18,2),
+	@fechaPago date
+)
+as
+begin
+update  db_soportic.dbo.tbl_planillas
+set salario = @salario
+where idComprobante = @idComprobante
+end
+
+go
+
+create procedure stp_traeInfoAlertas
+(
+@idComprobante int
+)
+as
+begin
+select *from db_soportic.dbo.tbl_planillas where idComprobante = @idComprobante
 end
 
 go
