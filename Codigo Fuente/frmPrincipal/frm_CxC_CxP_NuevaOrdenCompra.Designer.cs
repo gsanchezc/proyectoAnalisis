@@ -38,7 +38,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,17 +54,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmb_proveedor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_imprimir
@@ -176,6 +176,17 @@
             this.label9.TabIndex = 3;
             this.label9.Text = "Telefax: 5555-5555\r\n";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::frmPrincipal.Properties.Resources.support2;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 21);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(503, 115);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button1);
@@ -202,6 +213,32 @@
             this.groupBox4.TabIndex = 26;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Orden De Compra";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(246, 253);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(243, 31);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(246, 209);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(243, 21);
+            this.textBox2.TabIndex = 12;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(248, 68);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(299, 21);
+            this.textBox1.TabIndex = 11;
             // 
             // label11
             // 
@@ -315,32 +352,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Proveedor";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(248, 68);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(299, 21);
-            this.textBox1.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(246, 209);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(243, 21);
-            this.textBox2.TabIndex = 12;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(246, 253);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(243, 31);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::frmPrincipal.Properties.Resources.Capture;
@@ -350,17 +361,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(148, 159);
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::frmPrincipal.Properties.Resources.support2;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 21);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(503, 115);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
             // 
             // frm_CxC_CxP_NuevaOrdenCompra
             // 
@@ -378,14 +378,15 @@
             this.Name = "frm_CxC_CxP_NuevaOrdenCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Nueva Orden Compra";
+            this.Load += new System.EventHandler(this.frm_CxC_CxP_NuevaOrdenCompra_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

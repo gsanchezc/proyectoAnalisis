@@ -12,12 +12,28 @@ namespace frmPrincipal
 {
     public partial class frm_MantenimientoTipoPrioridad : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        TipoPrioridad objTipoPrioridad = new TipoPrioridad();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;
+
         public frm_MantenimientoTipoPrioridad()
         {
             InitializeComponent();
         }
 
-        TipoPrioridad objTipoPrioridad = new TipoPrioridad();
+        public frm_MantenimientoTipoPrioridad(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_MantenimientoTipoPrioridad_Load(object sender, EventArgs e)
+        {
+            this.cargar_Tipo_prioridad();
+            this.limpia();
+        }
 
         private void cargar_Tipo_prioridad()
         {
@@ -119,7 +135,7 @@ namespace frmPrincipal
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+            frm_Mantenimiento_0Menu ventana = new frm_Mantenimiento_0Menu(usuarioSistema);
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -131,12 +147,5 @@ namespace frmPrincipal
                 return;
             }
         }
-
-        private void frm_MantenimientoTipoPrioridad_Load(object sender, EventArgs e)
-        {
-            this.cargar_Tipo_prioridad();
-            this.limpia();
-        }
-
     }
 }

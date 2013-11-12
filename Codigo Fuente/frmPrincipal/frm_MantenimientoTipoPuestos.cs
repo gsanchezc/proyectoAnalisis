@@ -8,19 +8,37 @@ using System.Text;
 using System.Windows.Forms;
 using Clases;
 
-
 namespace frmPrincipal
 {
     public partial class frm_MantenimientoTipoPuestos : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
         tipoPuestos objTipoPuesto = new tipoPuestos();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;  
+
+        public frm_MantenimientoTipoPuestos()
+        {
+            InitializeComponent();
+        }
+
+        public frm_MantenimientoTipoPuestos(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_MantenimientoTipoPuestos_Load(object sender, EventArgs e)
+        {
+            this.carga_lista_EstatusFacturas();
+        }
 
         //Metodo que carga en el data grib view los campos que vienen desde la clase tipoPuesto
         private void carga_lista_EstatusFacturas()
         {
             try
             {
-
                 dtg_ListaTipoPuesto.AutoGenerateColumns = false;
                 dtg_ListaTipoPuesto.DataSource = objTipoPuesto.cargaListaTipoPuesto().Tables[0];
             }
@@ -31,14 +49,9 @@ namespace frmPrincipal
             }
         }
 
-        public frm_MantenimientoTipoPuestos()
-        {
-            InitializeComponent();
-        }
-
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+            frm_Mantenimiento_0Menu ventana = new frm_Mantenimiento_0Menu(usuarioSistema);
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -56,11 +69,6 @@ namespace frmPrincipal
             this.carga_lista_EstatusFacturas();
         }
 
-        private void frm_MantenimientoTipoPuestos_Load(object sender, EventArgs e)
-        {
-            this.carga_lista_EstatusFacturas();
-        }
-
         private void b_editar_Click(object sender, EventArgs e)
         {
             if (Convert.ToInt32(dtg_ListaTipoPuesto.RowCount) == 0)
@@ -68,7 +76,7 @@ namespace frmPrincipal
                 MessageBox.Show("No hay ningun estado de Factura en la lista", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            frm_MantenimientoTipoPuestoNuevoEditar ventanaNuevoEditarTipoPuesto = new frm_MantenimientoTipoPuestoNuevoEditar();
+            frm_MantenimientoTipoPuestoNuevoEditar ventanaNuevoEditarTipoPuesto = new frm_MantenimientoTipoPuestoNuevoEditar(usuarioSistema);
             //ingresa en el campo id de la ventana ventanaNuevoEditarEstatusFactura el campo id que viene desde el data grid view
             ventanaNuevoEditarTipoPuesto.id = Convert.ToInt32(dtg_ListaTipoPuesto.CurrentRow.Cells[0].Value.ToString());
             ventanaNuevoEditarTipoPuesto.ShowDialog();
@@ -76,7 +84,7 @@ namespace frmPrincipal
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            frm_MantenimientoTipoPuestoNuevoEditar ventanaNuevoEditarTipoPuesto = new frm_MantenimientoTipoPuestoNuevoEditar();
+            frm_MantenimientoTipoPuestoNuevoEditar ventanaNuevoEditarTipoPuesto = new frm_MantenimientoTipoPuestoNuevoEditar(usuarioSistema);
             //cuenta la cantidad de estatus que hay en el data grid view y le suma 1 
             ventanaNuevoEditarTipoPuesto.num = Convert.ToInt32(dtg_ListaTipoPuesto.RowCount + 1);
             ventanaNuevoEditarTipoPuesto.ShowDialog();

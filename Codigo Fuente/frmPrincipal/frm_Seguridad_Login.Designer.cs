@@ -75,7 +75,7 @@
             this.txt_Usuario.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(188, 26);
-            this.txt_Usuario.TabIndex = 2;
+            this.txt_Usuario.TabIndex = 1;
             // 
             // txt_Contraseña
             // 
@@ -85,7 +85,7 @@
             this.txt_Contraseña.Name = "txt_Contraseña";
             this.txt_Contraseña.PasswordChar = '*';
             this.txt_Contraseña.Size = new System.Drawing.Size(188, 26);
-            this.txt_Contraseña.TabIndex = 3;
+            this.txt_Contraseña.TabIndex = 2;
             // 
             // btn_IngresarSistema
             // 
@@ -95,20 +95,21 @@
             this.btn_IngresarSistema.Margin = new System.Windows.Forms.Padding(4);
             this.btn_IngresarSistema.Name = "btn_IngresarSistema";
             this.btn_IngresarSistema.Size = new System.Drawing.Size(188, 28);
-            this.btn_IngresarSistema.TabIndex = 4;
+            this.btn_IngresarSistema.TabIndex = 3;
             this.btn_IngresarSistema.Text = "&Ingresar al Sistema";
             this.btn_IngresarSistema.UseVisualStyleBackColor = true;
-            this.btn_IngresarSistema.Click += new System.EventHandler(this.button1_Click);
+            this.btn_IngresarSistema.Click += new System.EventHandler(this.btn_IngresarSistema_Click);
             // 
             // btn_SalirSistema
             // 
+            this.btn_SalirSistema.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_SalirSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SalirSistema.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_SalirSistema.Location = new System.Drawing.Point(268, 208);
             this.btn_SalirSistema.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SalirSistema.Name = "btn_SalirSistema";
             this.btn_SalirSistema.Size = new System.Drawing.Size(188, 28);
-            this.btn_SalirSistema.TabIndex = 6;
+            this.btn_SalirSistema.TabIndex = 4;
             this.btn_SalirSistema.Text = "&Salir del Sistema";
             this.btn_SalirSistema.UseVisualStyleBackColor = true;
             this.btn_SalirSistema.Click += new System.EventHandler(this.btn_Cancelar_Click);
@@ -122,7 +123,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(159, 20);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Ingreso al Sistema";
             // 
             // groupBox1
@@ -169,8 +170,10 @@
             // 
             // frm_Seguridad_Login
             // 
+            this.AcceptButton = this.btn_IngresarSistema;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_SalirSistema;
             this.ClientSize = new System.Drawing.Size(1264, 518);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
@@ -181,6 +184,8 @@
             this.Name = "frm_Seguridad_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ingreso al Sistema";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Seguridad_Login_FormClosing);
+            this.Load += new System.EventHandler(this.frm_Seguridad_Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -59,6 +59,18 @@
             // 
             this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Cancelar.Location = new System.Drawing.Point(808, 444);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(152, 23);
+            this.btn_Cancelar.TabIndex = 15;
+            this.btn_Cancelar.Text = "&Salir";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_Cancelar.Location = new System.Drawing.Point(1065, 415);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(152, 23);

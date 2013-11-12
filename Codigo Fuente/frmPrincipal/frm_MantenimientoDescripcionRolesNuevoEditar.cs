@@ -8,12 +8,16 @@ using System.Text;
 using System.Windows.Forms;
 using Clases;
 
-
 namespace frmPrincipal
 {
     public partial class frm_MantenimientoDescripcionRolesNuevoEditar : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
         descripcionRol objDescripcionRol = new descripcionRol();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;
 
         private int _id;
 
@@ -31,6 +35,29 @@ namespace frmPrincipal
             set { _num = value; }
         }
 
+        public frm_MantenimientoDescripcionRolesNuevoEditar()
+        {
+            InitializeComponent();
+        }
+
+        public frm_MantenimientoDescripcionRolesNuevoEditar(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_MantenimientoDescripcionRolesNuevoEditar_Load(object sender, EventArgs e)
+        {
+            if (_id != 0)
+            {
+
+                this.carga_info();
+            }
+            else
+            {
+                txt_Id.Text = num.ToString();
+            }
+        }
+
         //Metodo que carga la informacion que viene del data grid view en la ventana frm_MantenimientoDescripcionRolesNuevoEditar
         private void carga_info()
         {
@@ -38,11 +65,6 @@ namespace frmPrincipal
 
             txt_Id.Text = _id.ToString();
             txt_Descripcion.Text = objDescripcionRol._descripcion;
-        }
-
-        public frm_MantenimientoDescripcionRolesNuevoEditar()
-        {
-            InitializeComponent();
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -81,22 +103,11 @@ namespace frmPrincipal
             }
         }
 
-        private void frm_MantenimientoDescripcionRolesNuevoEditar_Load(object sender, EventArgs e)
-        {
-            if (_id != 0)
-            {
-
-                this.carga_info();
-            }
-            else
-            {
-                txt_Id.Text = num.ToString();
-            }
-        }
-
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
+            frm_MantenimientoDescripcionRoles ventana = new frm_MantenimientoDescripcionRoles(usuarioSistema);
             this.Close();
+            ventana.Show();  
         }
     }
 }

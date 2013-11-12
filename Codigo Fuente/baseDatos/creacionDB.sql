@@ -142,7 +142,6 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_salarios
 (
 	idSalario INT NOT NULL IDENTITY(1,1),
-	idEmpleado INT NOT NULL,
 	monto DECIMAL(18,2) NOT NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)
 	
@@ -201,7 +200,7 @@ GO
 -------TABLA CLIENTES USUARIO FINAL------------------------------------------------------
 CREATE TABLE db_soportic.dbo.tbl_clientesUsuarioFinal
 (
-	idClienteUsuarioFinal INT NOT NULL IDENTITY (1,1),
+	idClienteUsuarioFinal INT NOT NULL IDENTITY (1000000,1),
 	idUsuarioSistema INT NULL,
 	nombre VARCHAR(50) NOT NULL,
 	apellidos VARCHAR(50) NOT NULL,
@@ -792,66 +791,3 @@ GO
 ALTER TABLE db_soportic.dbo.tbl_tickets
 CHECK CONSTRAINT [fk_tickets_datosAdjuntos]
 GO
-
-
------------INSERT DE TIPO IDENTIFICACIONES----------------------------------------
---insert into [db_soportic].[dbo].[tbl_tipoIdentificaciones]
---values ('Cedula Nacional','false'),
---	   ('Cedula de Residencia','false'),
---	   ('Cedula Juridica','false'),
---	   ('Pasaporte','false')
---go
------------INSERT DE PUESTOS----------------------------------------
---insert into [db_soportic].[dbo].[tbl_tipoPuestos]
---values ('Tecnico','false'),
---	   ('RRHH','false'),
---	   ('Supervisor','false'),
---	   ('Administrador','false'),
---	   ('Contabilidad','false')
---go
------------INSERT DE DEPARTAMENTOS----------------------------------------
---insert into [db_soportic].[dbo].[tbl_Departamentos]
---values ('SOFTWARE','false'),
---	   ('HARDWARE','false'),
---	   ('WEB','false'),
---	   ('ACCESOS','false')
---go
------------INSERT DE ROLES----------------------------------------
---insert into [db_soportic].[dbo].[tbl_descripcionRoles]
---values ('Administrador','false'),
---	   ('Supervisor','false'),
---	   ('Tecnico','false'),
---	   ('RRHH','false'),
---	   ('Contabilidad','false')
---go
-
------------FALTAN INSERTS DE ARCHIVOS ADJUNTOS CLIENTE--------------
---------------------------------------------------------------------
-
------------FALTAN INSERTS DE ARCHIVOS ADJUNTOS TECNICO--------------
---------------------------------------------------------------------
-
------------FALTAN INSERTS DE ARCHIVOS IMAGEN COTIZACION--------------
---------------------------------------------------------------------
-
------------INSERT DE ROLES----------------------------------------
---insert into [db_soportic].[dbo].[tbl_estatusTickets]
---values ('Pendiente de Asignacion','false'),
---	   ('Asignado a Tecnico','false'),
---	   ('Pendiente de Aprobacion','false'),
---	   ('Finalizado','false'),
---	   ('Rechazado','false')
---go
-
---insert into [db_soportic].[dbo].[tbl_estatusAlertas]
---values ('Alerta Activa','false'),
---	   ('Alerta Finalizada','false')
---go
-
---insert into [db_soportic].[dbo].[tbl_estatusTickets]
---values ('Activo','false'),
---	   ('Bloqueado','false'),
---	   ('Pendiente de Aprobacion','false')
---go
-
-

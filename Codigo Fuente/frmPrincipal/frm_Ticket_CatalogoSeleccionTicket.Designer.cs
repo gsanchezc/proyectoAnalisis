@@ -139,6 +139,7 @@
             this.Name = "frm_Ticket_CatalogoSeleccionTicket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Catalogo Seleccion Ticket";
+            this.Load += new System.EventHandler(this.frm_Ticket_CatalogoSeleccionTicket_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_TicketPendientes)).EndInit();
             this.ResumeLayout(false);

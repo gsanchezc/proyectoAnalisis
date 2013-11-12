@@ -12,12 +12,22 @@ namespace frmPrincipal
 {
     public partial class frm_MantenimientoTipoIdentificacion : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        TipoIdentificacion objTipoIdentificacion = new TipoIdentificacion();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;   
+
         public frm_MantenimientoTipoIdentificacion()
         {
             InitializeComponent();
         }
 
-        TipoIdentificacion objTipoIdentificacion = new TipoIdentificacion();
+        public frm_MantenimientoTipoIdentificacion(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
 
         private void frm_MantenimientoTipoIdentificacion_Load(object sender, EventArgs e)
         {
@@ -100,8 +110,7 @@ namespace frmPrincipal
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-
-            frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+            frm_Mantenimiento_0Menu ventana = new frm_Mantenimiento_0Menu(usuarioSistema);
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {

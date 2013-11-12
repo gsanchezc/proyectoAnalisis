@@ -74,6 +74,13 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Accounting_Purchase_order_icon {
+            get {
+                object obj = ResourceManager.GetObject("Accounting-Purchase-order-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Accounts___Contacts {
             get {
                 object obj = ResourceManager.GetObject("Accounts & Contacts", resourceCulture);
@@ -140,6 +147,13 @@ namespace frmPrincipal.Properties {
         internal static System.Drawing.Bitmap images__1_ {
             get {
                 object obj = ResourceManager.GetObject("images (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap images__2_ {
+            get {
+                object obj = ResourceManager.GetObject("images (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

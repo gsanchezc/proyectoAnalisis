@@ -141,6 +141,7 @@
             this.Name = "frm_Ticket_CatalogoAsignacionTicket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Asignacion_Ticket";
+            this.Load += new System.EventHandler(this.frm_Ticket_CatalogoAsignacionTicket_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_asignacionTicket)).EndInit();
             this.ResumeLayout(false);

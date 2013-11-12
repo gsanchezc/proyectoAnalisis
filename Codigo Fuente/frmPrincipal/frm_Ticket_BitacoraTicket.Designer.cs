@@ -118,6 +118,7 @@
             this.Name = "frm_Ticket_BitacoraTicket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Bitacora de Ticket";
+            this.Load += new System.EventHandler(this.frm_Ticket_BitacoraTicket_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listaHistorial)).EndInit();
             this.ResumeLayout(false);

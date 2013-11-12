@@ -12,17 +12,31 @@ namespace frmPrincipal
 {
     public partial class frm_MantenimientoClienteProveedor : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        ClienteProveedor objClienteProveedor = new ClienteProveedor();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;
+
         public frm_MantenimientoClienteProveedor()
         {
             InitializeComponent();
         }
 
-        ClienteProveedor objClienteProveedor = new ClienteProveedor();
+        public frm_MantenimientoClienteProveedor(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_MantenimientoClienteProveedor_Load(object sender, EventArgs e)
+        {
+            this.cargar_lista_cliente_proveedores();
+        }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-
-            frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+            frm_Mantenimiento_0Menu ventana = new frm_Mantenimiento_0Menu(usuarioSistema);
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -33,11 +47,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_MantenimientoClienteProveedor_Load(object sender, EventArgs e)
-        {
-            this.cargar_lista_cliente_proveedores();
         }
 
         private void cargar_lista_cliente_proveedores()
@@ -63,8 +72,6 @@ namespace frmPrincipal
             DataRow currenRow = table.Rows[thisGrid.CurrentCell.RowIndex];
             txt_idClienteProveedor.Text = currenRow["idTipoClienteProveedor"].ToString();
             txt_nombreClienteProveedor.Text = currenRow["descripcion"].ToString();
-
-
         }
 
         public void limpia()

@@ -12,17 +12,52 @@ namespace frmPrincipal
 {
     public partial class frm_RRHH_NuevaSolicitudVacaciones : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        RRHH_SolicitudVacaciones objVacaciones = new RRHH_SolicitudVacaciones();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;
+        private int rolUsuario;
+
         public frm_RRHH_NuevaSolicitudVacaciones()
         {
             InitializeComponent();
         }
 
-        RRHH_SolicitudVacaciones objVacaciones = new RRHH_SolicitudVacaciones();
+        public frm_RRHH_NuevaSolicitudVacaciones(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_RRHH_NuevaSolicitudVacaciones_Load(object sender, EventArgs e)
+        {
+            this.cargaRolUsuario();
+            this.rolesUsuario();
+            this.cargarListaEmpleados();
+        }
+
+        //METODO PARA MANEJAR EL ACCESO POR ROLES
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void cargaRolUsuario()
+        {
+            this.cargarListaEmpleados();
+            objUsuariosSistema.cargaRolUsuario(usuarioSistema);
+            rolUsuario = objUsuariosSistema.idRol;
+        }
+
+        //METODO PARA MANEJAR EL ACCESO POR ROLES
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void rolesUsuario()
+        {
+
+        }
+
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             if ((MessageBox.Show("Desea salir sin generar factura", "Volver al Menu Principal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+                frm_0MenuPrincipal ventana = new frm_0MenuPrincipal(usuarioSistema);
                 this.Close();
                 ventana.Show();
             }
@@ -30,11 +65,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_RRHH_NuevaSolicitudVacaciones_Load(object sender, EventArgs e)
-        {
-            this.cargarListaEmpleados();
         }
 
         private void cargarListaEmpleados()

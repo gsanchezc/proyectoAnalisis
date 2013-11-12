@@ -39,19 +39,19 @@ namespace Clases
         #endregion
 
         #region Metodos
+
         public DataSet cargarTipoIdenticacion()
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
-
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
 
             else
             {
-                sql = "stp_traeTipoIdentificacion";
+                sql = "spu_cargaComboBoxTipoId";
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
@@ -63,7 +63,6 @@ namespace Clases
                     return ds;
                 }
             }
-       
         }
 
         public bool agregarActualiazarTipoIdentificacion(string accion)

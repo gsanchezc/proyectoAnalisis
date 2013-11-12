@@ -135,6 +135,7 @@
             this.Name = "frm_RRHH_ControlVacaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Control Vacaciones";
+            this.Load += new System.EventHandler(this.frm_RRHH_ControlVacaciones_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Planilla)).EndInit();
             this.ResumeLayout(false);

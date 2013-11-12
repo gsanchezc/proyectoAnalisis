@@ -12,18 +12,34 @@ namespace frmPrincipal
 {
     public partial class frm_Mantenimiento_estatusFacturas : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;
+
         estatusFactura objEstatusFactura = new estatusFactura();
 
         public frm_Mantenimiento_estatusFacturas()
         {
             InitializeComponent();
         }
+
+        public frm_Mantenimiento_estatusFacturas(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_Mantenimiento_estatusFacturas_Load(object sender, EventArgs e)
+        {
+            this.carga_lista_EstatusFacturas();
+        }
+
         //Metodo que carga en el data grib view los campos que vienen desde la clase objEstatusFactura
         private void carga_lista_EstatusFacturas()
         {
             try
             {
-
                 dtg_ListaEstadoFactura.AutoGenerateColumns = false;
                 dtg_ListaEstadoFactura.DataSource = objEstatusFactura.cargaListaEstadosFactura().Tables[0];
             }
@@ -36,7 +52,7 @@ namespace frmPrincipal
 
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+            frm_Mantenimiento_0Menu ventana = new frm_Mantenimiento_0Menu(usuarioSistema);
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -47,11 +63,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_Mantenimiento_estatusFacturas_Load(object sender, EventArgs e)
-        {
-            this.carga_lista_EstatusFacturas();
         }
 
         private void btn_actualizar_Click(object sender, EventArgs e)
@@ -66,7 +77,7 @@ namespace frmPrincipal
                 MessageBox.Show("No hay ningun estado de Factura en la lista", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            frm_MantenimientoEstadoFacturaNuevoEditar ventanaNuevoEditarEstatusFactura = new frm_MantenimientoEstadoFacturaNuevoEditar();
+            frm_MantenimientoEstadoFacturaNuevoEditar ventanaNuevoEditarEstatusFactura = new frm_MantenimientoEstadoFacturaNuevoEditar(usuarioSistema);
             //ingresa en el campo id de la ventana ventanaNuevoEditarEstatusFactura el campo id que viene desde el data grid view
             ventanaNuevoEditarEstatusFactura.id = Convert.ToInt32(dtg_ListaEstadoFactura.CurrentRow.Cells[0].Value.ToString());
             ventanaNuevoEditarEstatusFactura.ShowDialog();
@@ -74,7 +85,7 @@ namespace frmPrincipal
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            frm_MantenimientoEstadoFacturaNuevoEditar ventanaNuevoEditarEstatusFactura = new frm_MantenimientoEstadoFacturaNuevoEditar();
+            frm_MantenimientoEstadoFacturaNuevoEditar ventanaNuevoEditarEstatusFactura = new frm_MantenimientoEstadoFacturaNuevoEditar(usuarioSistema);
             //cuenta la cantidad de estatus que hay en el data grid view y le suma 1 
             ventanaNuevoEditarEstatusFactura.num = Convert.ToInt32(dtg_ListaEstadoFactura.RowCount + 1);
             ventanaNuevoEditarEstatusFactura.ShowDialog();

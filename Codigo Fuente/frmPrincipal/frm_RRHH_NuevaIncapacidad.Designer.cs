@@ -281,6 +281,7 @@
             this.Name = "frm_RRHH_NuevaIncapacidad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Control Incapacidades";
+            this.Load += new System.EventHandler(this.frm_RRHH_NuevaIncapacidad_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

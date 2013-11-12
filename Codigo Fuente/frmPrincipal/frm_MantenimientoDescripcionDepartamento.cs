@@ -12,11 +12,28 @@ namespace frmPrincipal
 {
     public partial class frm_MantenimientoDescripcionDepartamento : Form
     {
+        //DECLARACION DE INSTANCIAS DE LAS CLASES
+        UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        DescripcionDepartamento objDescripcionDepartamentos = new DescripcionDepartamento();
+
+        //VARIABLES GLOBALES
+        private string usuarioSistema = string.Empty;
+
         public frm_MantenimientoDescripcionDepartamento()
         {
             InitializeComponent();
         }
-        DescripcionDepartamento objDescripcionDepartamentos = new DescripcionDepartamento();
+
+        public frm_MantenimientoDescripcionDepartamento(string usuario) : this()
+        {
+            this.usuarioSistema = usuario;
+        }
+
+        private void frm_MantenimientoDescripcionDepartamento_Load(object sender, EventArgs e)
+        {
+            this.cargar_Lista_Descripcion_Departamentos();
+            this.limpia();
+        }
 
         private void cargar_Lista_Descripcion_Departamentos()
         {
@@ -118,7 +135,7 @@ namespace frmPrincipal
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            frm_0MenuPrincipal ventana = new frm_0MenuPrincipal();
+            frm_Mantenimiento_0Menu ventana = new frm_Mantenimiento_0Menu(usuarioSistema);
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
@@ -129,12 +146,6 @@ namespace frmPrincipal
             {
                 return;
             }
-        }
-
-        private void frm_MantenimientoDescripcionDepartamento_Load(object sender, EventArgs e)
-        {
-            this.cargar_Lista_Descripcion_Departamentos();
-            this.limpia();
         }
     }
 }
