@@ -253,3 +253,15 @@ as
 begin
 	select idEmpleado,identificacion from tbl_empleados where isDeleted=0
 end
+go
+
+-------------------carga informacion de dais de vacaciones disponibles--
+create procedure stp_VacacionesDisponibles
+(
+	@identificacion int
+)
+as
+begin
+	select vacacionesDisponibles from tbl_empleados where identificacion=@identificacion
+end
+go

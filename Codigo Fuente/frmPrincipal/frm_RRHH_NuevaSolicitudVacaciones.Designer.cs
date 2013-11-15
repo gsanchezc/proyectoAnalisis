@@ -304,6 +304,7 @@
             this.Name = "frm_RRHH_NuevaSolicitudVacaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Solicitud de Vacaciones";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_RRHH_NuevaSolicitudVacaciones_FormClosing);
             this.Load += new System.EventHandler(this.frm_RRHH_NuevaSolicitudVacaciones_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);

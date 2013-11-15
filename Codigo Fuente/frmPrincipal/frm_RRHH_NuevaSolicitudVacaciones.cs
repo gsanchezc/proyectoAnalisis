@@ -85,13 +85,21 @@ namespace frmPrincipal
         }
 
         private void calculos()
-        { 
-            
+        {
+            DateTime oldDate = Convert.ToDateTime(dtp_FechaSalida.Value.Date);
+            DateTime newDate = Convert.ToDateTime(dtp_FechaRegreso.Value.Date);
+            TimeSpan ts = newDate - oldDate;
+            txt_DiasSolicitados.Text = ts.TotalDays.ToString();
         }
 
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
+            this.calculos();
+        }
 
+        private void frm_RRHH_NuevaSolicitudVacaciones_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
         }
     }
 }
