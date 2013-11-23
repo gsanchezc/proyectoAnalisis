@@ -145,7 +145,7 @@ namespace frmPrincipal
             {
                 int idEmpleadoSeleccionado = Convert.ToInt32(lst_ListaUsuario.SelectedItem.ToString());
                 objEmpleados.cargaInfoEmpleado(idEmpleadoSeleccionado);
-                objEmpleados.cargaIdEmpleado(idEmpleadoSeleccionado);
+                objEmpleados.cargaIdUsuarioSistema(idEmpleadoSeleccionado);
 
                 txt_idUsuarioSistema.Text = objEmpleados.idUsuarioSistema.ToString();
                 txt_nombre.Text = objEmpleados.nombre;

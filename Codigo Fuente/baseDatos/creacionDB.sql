@@ -87,6 +87,7 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_datosAdjuntos
 (
 	idArchivoAdjunto INT NOT NULL IDENTITY (1,1),
+	nombre VARCHAR (200) NULL,
 	archivo VARBINARY(MAX) NOT NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)
 	
@@ -94,7 +95,7 @@ CREATE TABLE db_soportic.dbo.tbl_datosAdjuntos
 	(
 		idArchivoAdjunto ASC
 	)
-)
+)ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
 -------TABLA STATUS TICKETS------------------------------------------------------
@@ -758,3 +759,9 @@ GO
 ALTER TABLE db_soportic.dbo.tbl_tickets
 CHECK CONSTRAINT [fk_tickets_datosAdjuntos]
 GO
+
+--alter table estatus tickets
+alter table dbo.tbl_estatusTickets
+add tipoUsuario varchar(20)
+go
+

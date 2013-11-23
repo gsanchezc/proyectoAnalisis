@@ -203,6 +203,12 @@
     <Compile Include="frm_Seguridad_NuevoUsuarioFinal.Designer.cs">
       <DependentUpon>frm_Seguridad_NuevoUsuarioFinal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Ticket_BitacoraDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Ticket_BitacoraDetalle.Designer.cs">
+      <DependentUpon>frm_Ticket_BitacoraDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Ticket_CatalogoAsignacionTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     <EmbeddedResource Include="frm_Seguridad_NuevoUsuarioFinal.resx">
       <DependentUpon>frm_Seguridad_NuevoUsuarioFinal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Ticket_BitacoraDetalle.resx">
+      <DependentUpon>frm_Ticket_BitacoraDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Ticket_CatalogoAsignacionTicket.resx">
       <DependentUpon>frm_Ticket_CatalogoAsignacionTicket.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,6 +489,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Accounting-Purchase-order-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdfLogo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

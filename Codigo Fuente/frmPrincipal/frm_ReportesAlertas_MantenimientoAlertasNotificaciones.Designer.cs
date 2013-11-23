@@ -28,45 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ReportesAlertas_MantenimientoAlertasNotificaciones));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lb_Numero = new System.Windows.Forms.Label();
+            this.lb_numeroEmpleado = new System.Windows.Forms.Label();
             this.labelDepartamento = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.gb_AlertasTicket = new System.Windows.Forms.GroupBox();
+            this.lb_MinutosTranscurridos = new System.Windows.Forms.Label();
+            this.lb_TicketVencidos = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lb_TicketPendientes = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txt_Comunicados = new System.Windows.Forms.TextBox();
+            this.gb_AlertasRRHH = new System.Windows.Forms.GroupBox();
+            this.lb_SolitudIncapacidades = new System.Windows.Forms.Label();
+            this.lb_SolicitudVacaciones = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.gb_AlertasTicket.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gb_AlertasRRHH.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox4);
+            this.groupBox1.Controls.Add(this.gb_AlertasTicket);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.gb_AlertasRRHH);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(-3, -2);
@@ -88,132 +90,144 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.lb_Numero);
+            this.groupBox5.Controls.Add(this.lb_numeroEmpleado);
             this.groupBox5.Controls.Add(this.labelDepartamento);
             this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Controls.Add(this.label3);
             this.groupBox5.Controls.Add(this.labelUsuario);
             this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox5.Location = new System.Drawing.Point(126, 14);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(302, 123);
+            this.groupBox5.Size = new System.Drawing.Size(287, 123);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Usuario en Sistema";
             // 
+            // lb_Numero
+            // 
+            this.lb_Numero.AutoSize = true;
+            this.lb_Numero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Numero.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lb_Numero.Location = new System.Drawing.Point(181, 87);
+            this.lb_Numero.Name = "lb_Numero";
+            this.lb_Numero.Size = new System.Drawing.Size(62, 16);
+            this.lb_Numero.TabIndex = 7;
+            this.lb_Numero.Text = "Numero";
+            // 
+            // lb_numeroEmpleado
+            // 
+            this.lb_numeroEmpleado.AutoSize = true;
+            this.lb_numeroEmpleado.Location = new System.Drawing.Point(38, 86);
+            this.lb_numeroEmpleado.Name = "lb_numeroEmpleado";
+            this.lb_numeroEmpleado.Size = new System.Drawing.Size(127, 15);
+            this.lb_numeroEmpleado.TabIndex = 6;
+            this.lb_numeroEmpleado.Text = "Numero Empleado";
+            // 
             // labelDepartamento
             // 
             this.labelDepartamento.AutoSize = true;
-            this.labelDepartamento.Location = new System.Drawing.Point(179, 46);
+            this.labelDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDepartamento.ForeColor = System.Drawing.Color.DarkCyan;
+            this.labelDepartamento.Location = new System.Drawing.Point(181, 56);
             this.labelDepartamento.Name = "labelDepartamento";
-            this.labelDepartamento.Size = new System.Drawing.Size(51, 15);
+            this.labelDepartamento.Size = new System.Drawing.Size(56, 16);
             this.labelDepartamento.TabIndex = 5;
             this.labelDepartamento.Text = "Puesto";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 46);
+            this.label15.Location = new System.Drawing.Point(114, 57);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 15);
             this.label15.TabIndex = 4;
             this.label15.Text = "Puesto";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(179, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Tiempo";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tiempo Laborado";
-            // 
             // labelUsuario
             // 
             this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Location = new System.Drawing.Point(179, 20);
+            this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuario.ForeColor = System.Drawing.Color.DarkCyan;
+            this.labelUsuario.Location = new System.Drawing.Point(181, 24);
             this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(57, 15);
+            this.labelUsuario.Size = new System.Drawing.Size(62, 16);
             this.labelUsuario.TabIndex = 1;
             this.labelUsuario.Text = "Usuario";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 20);
+            this.label1.Location = new System.Drawing.Point(16, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario en el Sistema";
             // 
-            // groupBox4
+            // gb_AlertasTicket
             // 
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox4.Location = new System.Drawing.Point(434, 14);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(258, 123);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Alerta de Ticket";
+            this.gb_AlertasTicket.Controls.Add(this.lb_MinutosTranscurridos);
+            this.gb_AlertasTicket.Controls.Add(this.lb_TicketVencidos);
+            this.gb_AlertasTicket.Controls.Add(this.label3);
+            this.gb_AlertasTicket.Controls.Add(this.lb_TicketPendientes);
+            this.gb_AlertasTicket.Controls.Add(this.label6);
+            this.gb_AlertasTicket.Controls.Add(this.label5);
+            this.gb_AlertasTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_AlertasTicket.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gb_AlertasTicket.Location = new System.Drawing.Point(419, 14);
+            this.gb_AlertasTicket.Name = "gb_AlertasTicket";
+            this.gb_AlertasTicket.Size = new System.Drawing.Size(259, 123);
+            this.gb_AlertasTicket.TabIndex = 2;
+            this.gb_AlertasTicket.TabStop = false;
+            this.gb_AlertasTicket.Text = "Alertas Atencion De Ticket";
             // 
-            // label12
+            // lb_MinutosTranscurridos
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(165, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 15);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Tiempo";
+            this.lb_MinutosTranscurridos.AutoSize = true;
+            this.lb_MinutosTranscurridos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_MinutosTranscurridos.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lb_MinutosTranscurridos.Location = new System.Drawing.Point(183, 87);
+            this.lb_MinutosTranscurridos.Name = "lb_MinutosTranscurridos";
+            this.lb_MinutosTranscurridos.Size = new System.Drawing.Size(16, 16);
+            this.lb_MinutosTranscurridos.TabIndex = 7;
+            this.lb_MinutosTranscurridos.Text = "0";
             // 
-            // label13
+            // lb_TicketVencidos
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(165, 46);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 15);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Cantidad";
+            this.lb_TicketVencidos.AutoSize = true;
+            this.lb_TicketVencidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TicketVencidos.ForeColor = System.Drawing.Color.Red;
+            this.lb_TicketVencidos.Location = new System.Drawing.Point(183, 57);
+            this.lb_TicketVencidos.Name = "lb_TicketVencidos";
+            this.lb_TicketVencidos.Size = new System.Drawing.Size(70, 16);
+            this.lb_TicketVencidos.TabIndex = 4;
+            this.lb_TicketVencidos.Text = "Cantidad";
             // 
-            // label14
+            // label3
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(165, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(64, 15);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Cantidad";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Minutos Transcurridos";
             // 
-            // label11
+            // lb_TicketPendientes
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 72);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 15);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Cronometro de Ticket";
+            this.lb_TicketPendientes.AutoSize = true;
+            this.lb_TicketPendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TicketPendientes.ForeColor = System.Drawing.Color.Red;
+            this.lb_TicketPendientes.Location = new System.Drawing.Point(183, 26);
+            this.lb_TicketPendientes.Name = "lb_TicketPendientes";
+            this.lb_TicketPendientes.Size = new System.Drawing.Size(70, 16);
+            this.lb_TicketPendientes.TabIndex = 3;
+            this.lb_TicketPendientes.Text = "Cantidad";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 46);
+            this.label6.Location = new System.Drawing.Point(49, 58);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 15);
             this.label6.TabIndex = 1;
@@ -222,7 +236,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 20);
+            this.label5.Location = new System.Drawing.Point(35, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 15);
             this.label5.TabIndex = 0;
@@ -230,9 +244,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.richTextBox1);
+            this.groupBox3.Controls.Add(this.txt_Comunicados);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox3.ForeColor = System.Drawing.Color.Blue;
             this.groupBox3.Location = new System.Drawing.Point(974, 14);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(284, 123);
@@ -240,52 +254,59 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Comunicados";
             // 
-            // richTextBox1
+            // txt_Comunicados
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(8, 22);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(270, 95);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.txt_Comunicados.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txt_Comunicados.Location = new System.Drawing.Point(7, 21);
+            this.txt_Comunicados.Multiline = true;
+            this.txt_Comunicados.Name = "txt_Comunicados";
+            this.txt_Comunicados.ReadOnly = true;
+            this.txt_Comunicados.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_Comunicados.Size = new System.Drawing.Size(271, 96);
+            this.txt_Comunicados.TabIndex = 0;
+            this.txt_Comunicados.Text = "Comunicados";
             // 
-            // groupBox2
+            // gb_AlertasRRHH
             // 
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Location = new System.Drawing.Point(698, 14);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(270, 123);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Uso RRHH";
+            this.gb_AlertasRRHH.Controls.Add(this.lb_SolitudIncapacidades);
+            this.gb_AlertasRRHH.Controls.Add(this.lb_SolicitudVacaciones);
+            this.gb_AlertasRRHH.Controls.Add(this.label8);
+            this.gb_AlertasRRHH.Controls.Add(this.label7);
+            this.gb_AlertasRRHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_AlertasRRHH.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gb_AlertasRRHH.Location = new System.Drawing.Point(684, 14);
+            this.gb_AlertasRRHH.Name = "gb_AlertasRRHH";
+            this.gb_AlertasRRHH.Size = new System.Drawing.Size(284, 123);
+            this.gb_AlertasRRHH.TabIndex = 0;
+            this.gb_AlertasRRHH.TabStop = false;
+            this.gb_AlertasRRHH.Text = "Alertas RRHH";
             // 
-            // label10
+            // lb_SolitudIncapacidades
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(198, 46);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 15);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Cantidad";
+            this.lb_SolitudIncapacidades.AutoSize = true;
+            this.lb_SolitudIncapacidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SolitudIncapacidades.ForeColor = System.Drawing.Color.Red;
+            this.lb_SolitudIncapacidades.Location = new System.Drawing.Point(199, 58);
+            this.lb_SolitudIncapacidades.Name = "lb_SolitudIncapacidades";
+            this.lb_SolitudIncapacidades.Size = new System.Drawing.Size(70, 16);
+            this.lb_SolitudIncapacidades.TabIndex = 3;
+            this.lb_SolitudIncapacidades.Text = "Cantidad";
             // 
-            // label9
+            // lb_SolicitudVacaciones
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(198, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 15);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Cantidad";
+            this.lb_SolicitudVacaciones.AutoSize = true;
+            this.lb_SolicitudVacaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_SolicitudVacaciones.ForeColor = System.Drawing.Color.Red;
+            this.lb_SolicitudVacaciones.Location = new System.Drawing.Point(199, 27);
+            this.lb_SolicitudVacaciones.Name = "lb_SolicitudVacaciones";
+            this.lb_SolicitudVacaciones.Size = new System.Drawing.Size(70, 16);
+            this.lb_SolicitudVacaciones.TabIndex = 2;
+            this.lb_SolicitudVacaciones.Text = "Cantidad";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 46);
+            this.label8.Location = new System.Drawing.Point(7, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(175, 15);
             this.label8.TabIndex = 1;
@@ -294,11 +315,16 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 20);
+            this.label7.Location = new System.Drawing.Point(42, 27);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 15);
             this.label7.TabIndex = 0;
             this.label7.Text = "Solicitudes Vaciones";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 60000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frm_ReportesAlertas_MantenimientoAlertasNotificaciones
             // 
@@ -321,11 +347,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.gb_AlertasTicket.ResumeLayout(false);
+            this.gb_AlertasTicket.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBox3.PerformLayout();
+            this.gb_AlertasRRHH.ResumeLayout(false);
+            this.gb_AlertasRRHH.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -333,27 +360,28 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gb_AlertasTicket;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gb_AlertasRRHH;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lb_SolitudIncapacidades;
+        private System.Windows.Forms.Label lb_SolicitudVacaciones;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lb_TicketVencidos;
+        private System.Windows.Forms.Label lb_TicketPendientes;
         private System.Windows.Forms.Label labelDepartamento;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lb_MinutosTranscurridos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_Comunicados;
+        private System.Windows.Forms.Label lb_Numero;
+        private System.Windows.Forms.Label lb_numeroEmpleado;
     }
 }

@@ -8,7 +8,6 @@ namespace Clases
 {
     public static class Validaciones
     {
-
         public static bool validar(TextBox txt)
         {
             if (String.IsNullOrEmpty(txt.Text))

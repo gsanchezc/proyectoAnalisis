@@ -102,6 +102,7 @@ namespace frmPrincipal
                 }
 
                 //BOTONES ENABLED FALSE
+                btn_NuevoTicket.Enabled = false;
                 btn_AsignarTicket.Enabled = false;
                 btn_ConfiguracionSistema.Enabled = false;
 
@@ -323,14 +324,18 @@ namespace frmPrincipal
 
         private void BitacoraTicketToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_Ticket_BitacoraTicket ventanaBitacoraTicket = new frm_Ticket_BitacoraTicket(usuarioSistema);
+            string pantalla = "MenuPrincipal";
+            int Ticket = 0;
+            frm_Ticket_BitacoraTicket ventanaBitacoraTicket = new frm_Ticket_BitacoraTicket(usuarioSistema, pantalla, Ticket);
             this.Hide();
             ventanaBitacoraTicket.ShowDialog();
         }
 
         private void btn_BitacoraTicket_Click(object sender, EventArgs e)
         {
-            frm_Ticket_BitacoraTicket ventanaBitacoraTicket = new frm_Ticket_BitacoraTicket(usuarioSistema);
+            string pantalla = "MenuPrincipal";
+            int Ticket = 0;
+            frm_Ticket_BitacoraTicket ventanaBitacoraTicket = new frm_Ticket_BitacoraTicket(usuarioSistema, pantalla, Ticket);
             this.Hide();
             ventanaBitacoraTicket.ShowDialog();
         }
@@ -612,8 +617,7 @@ namespace frmPrincipal
 
         private void btn_MantenimientoAlertasNotificaciones_Click(object sender, EventArgs e)
         {
-            frm_ReportesAlertas_MantenimientoAlertasNotificaciones ventana = new frm_ReportesAlertas_MantenimientoAlertasNotificaciones(usuarioSistema);
-            ventana.Show();
+
         }
 
         private void btn_MantenimientoComunicacion_Click(object sender, EventArgs e)

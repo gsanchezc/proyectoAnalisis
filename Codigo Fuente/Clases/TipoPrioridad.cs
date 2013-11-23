@@ -39,6 +39,7 @@ namespace Clases
         #endregion
 
         #region Metodos
+
         public DataSet cargarTipoPrioridad()
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
@@ -51,7 +52,7 @@ namespace Clases
 
             else
             {
-                sql = "stp_traeTipoPrioridad";
+                sql = "stu_traeInfoTipoPrioridades";
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
@@ -63,7 +64,6 @@ namespace Clases
                     return ds;
                 }
             }
-
         }
 
         public bool agregarActualiazarTipoPrioridad(string accion)
@@ -132,6 +132,7 @@ namespace Clases
                 }
             }
         }
+
         #endregion
     }
 }

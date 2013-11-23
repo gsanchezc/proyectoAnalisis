@@ -440,6 +440,7 @@ namespace Clases
             else
             {
                 sql = "spu_cargaListaIDEmpleados";
+
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, false, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {

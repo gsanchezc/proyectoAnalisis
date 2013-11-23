@@ -374,12 +374,11 @@ end
 go
 
 ---------------Procedure que trae la Descripcion de Departamentos-----------------
-create procedure stp_traeDescripcionDepartamentos
-
+create procedure [stp_traeDescripcionDepartamentos]
 as
 begin
 	select idDepartamento, descripcion 
-	from tbl_descripcionDepartamentos
+	from dbo.tbl_Departamentos
 end
 
 go
@@ -610,15 +609,6 @@ as
 	end
 go
 
---------RAFAEL SEQUEIRA VARGAS------------
---CARGA LISTA ID CLIENTES
-create procedure [spu_cargaListaIDClientes]
-as
-	begin
-		select idClienteUsuarioFinal
-		from tbl_clientesUsuarioFinal
-	end
-go
 
 --------RAFAEL SEQUEIRA VARGAS------------
 --CARGA INFORMACION USUARIO EMPLEADO
@@ -831,7 +821,8 @@ as
 		where idUsuarioSistema = @idUsuarioSistema
 	end
 go
-
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+------------------Procedure Carga Rol Usuario-------------------------
 create procedure [dbo].[spu_cargaRolUsuario]
 (
 	@nombreUsuario varchar(10)
@@ -844,3 +835,529 @@ as
 
 GO
 
+-----------------RAFAEL SEQUEIRA VARGAS---------------------------------------------
+------------------Procedure que inserta datos en la tabla tbl_tipoServicio-------------------------
+create procedure stp_insertarTipoServicio
+(
+		@id int, --->id que pertenece a idTipoServicio-----
+		@descripcion varchar(50)--->Descripcion Tipo Servicio, de tipo Varchar-----
+)
+
+as
+begin
+	insert into tbl_tipoServicio(descripcion) 
+	values(@descripcion)
+end
+
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+-------------Procedure que modifica y actualiza los datos de la tabla tbl_tipoServicio-----------------
+create procedure stp_modificarTipoServicio
+(
+	@id int,
+	@descripcion varchar(50)
+)
+
+as
+begin
+	update tbl_tipoServicio set descripcion = @descripcion
+	where idTipoServicio  = @id
+end
+
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+--------------------Procedure que trae/jala la informacion dela tabla tbl_tipoServicio-------------
+create procedure stp_traeInfoTipoServicio
+(
+    @id int
+)
+as
+begin
+	select idTipoServicio, descripcion
+	from tbl_tipoServicio where idTipoServicio  = @id
+end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+----------------Procedure que trae los datos de la tabla tbl_tipoServicio--------------
+create procedure [stp_traeTipoServicio]
+
+as
+begin
+	select idtipoServicio, descripcion
+	from tbl_tipoServicio
+end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+----------------Procedure -------------------------------------------------
+create procedure [stp_insertarArchivoAdjunto]
+(
+	@nombre varchar(200),
+	@archivo image,
+	@isDeleted bit
+)
+as
+	begin
+		insert into dbo.PDFupload(fname,fcontent) 
+		values (@nombre, @archivo, @isDeleted)
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+----------------Procedure -------------------------------------------------
+create procedure [stp_cargaArchivoAdjunto]
+(
+	@ID int
+)
+as
+	begin
+		select * from dbo.PDFupload
+		where ID = @ID
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+----------------Procedure -------------------------------------------------
+create procedure [stp_cargaIdArchivoAdjuntoRecienGuardado]
+as
+	begin
+		select MAX(idArchivoAdjunto) as ID from dbo.tbl_datosAdjuntos
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+----------------Procedure -------------------------------------------------
+create procedure [spu_insertarTicket]
+(
+	@idClienteUsuarioFinal int,
+	@idDepartamento int,
+	@titulo varchar(200),
+	@idTipoServicio int,
+	@descripcion varchar(max),
+	@idArchivoAdjunto int,
+	@fechaRegistro date,
+	@idEstatusTickets int,
+	@idPrioridad int,
+	@isDeleted bit
+)
+as
+	begin
+		insert into dbo.tbl_tickets
+		values (
+					@idClienteUsuarioFinal, @idDepartamento, @titulo, @idTipoServicio, @descripcion, 
+					@idArchivoAdjunto, @fechaRegistro, @idEstatusTickets, @idPrioridad, Null,
+					null, null, null, @isDeleted
+				)
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+----------------Procedure -------------------------------------------------
+create procedure [spu_insertarTicketSinArchivoAdjunto]
+(
+	@idClienteUsuarioFinal int,
+	@idDepartamento int,
+	@titulo varchar(200),
+	@idTipoServicio int,
+	@descripcion varchar(max),
+	@fechaRegistro date,
+	@idEstatusTickets int,
+	@idPrioridad int,
+	@isDeleted bit
+)
+as
+	begin
+		insert into dbo.tbl_tickets
+		values (
+					@idClienteUsuarioFinal, @idDepartamento, @titulo, @idTipoServicio, @descripcion, 
+					null, @fechaRegistro, @idEstatusTickets, @idPrioridad, Null,
+					null, null, null, @isDeleted
+				)
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+----------------Procedure -------------------------------------------------
+create procedure [spu_cargaIdClienteUsuarioFinal]
+(
+	@nombreUsuarioSistema varchar(10)
+)
+as
+	begin
+		select * from dbo.tbl_clientesUsuarioFinal, dbo.tbl_usuariosSistema 
+		where dbo.tbl_clientesUsuarioFinal.idUsuarioSistema = dbo.tbl_usuariosSistema.idUsuarioSistema
+		and nombreUsuarioSistema = @nombreUsuarioSistema
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_cargaDataTicketsSinAsignarYPendientesAprobacion]
+as
+	begin
+	   select idTicket, 
+			  dbo.tbl_clientesUsuarioFinal.nombre +' '+apellidos as idClienteUsuarioFinal, 
+			  dbo.tbl_Departamentos.descripcion as idDepartamento,
+			  dbo.tbl_tipoServicio.descripcion as idTipoServicio, 
+			  fechaRegistro, 
+			  dbo.tbl_estatusTickets.descripcion as idEstatusTickets,
+			  dbo.tbl_tipoPrioridades.descripcion as idPrioridad,
+			  dbo.tbl_empleados.nombre +' '+ dbo.tbl_empleados.apellido as idEmpleado,
+			  fechaAsignacion,
+			  fechaInicio,
+			  fechaEntrega
+		 from dbo.tbl_tickets 
+			  left outer join dbo.tbl_clientesUsuarioFinal on dbo.tbl_tickets.idClienteUsuarioFinal = dbo.tbl_clientesUsuarioFinal.idClienteUsuarioFinal
+			  left outer join dbo.tbl_Departamentos on dbo.tbl_tickets.idDepartamento = dbo.tbl_Departamentos.idDepartamento
+			  left outer join dbo.tbl_tipoServicio on dbo.tbl_tickets.idTipoServicio = dbo.tbl_tipoServicio.idTipoServicio
+			  left outer join dbo.tbl_estatusTickets on dbo.tbl_tickets.idEstatusTickets = dbo.tbl_estatusTickets.idEstatusTickets
+			  left outer join dbo.tbl_tipoPrioridades on dbo.tbl_tickets.idPrioridad = dbo.tbl_tipoPrioridades.idPrioridad
+			  left outer join dbo.tbl_empleados on dbo.tbl_tickets.idEmpleado = dbo.tbl_empleados.idEmpleado
+		where dbo.tbl_tickets.idEstatusTickets = 1 or 
+		      dbo.tbl_tickets.idEstatusTickets = 3
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_cargaDataTicketsAsignadosATecnico]
+as
+	begin
+	   select idTicket, 
+			  dbo.tbl_clientesUsuarioFinal.nombre +' '+ apellidos as idClienteUsuarioFinal, 
+			  dbo.tbl_Departamentos.descripcion as idDepartamento,
+			  dbo.tbl_tipoServicio.descripcion as idTipoServicio, 
+			  fechaRegistro, 
+			  dbo.tbl_estatusTickets.descripcion as idEstatusTickets,
+			  dbo.tbl_tipoPrioridades.descripcion as idPrioridad,
+			  dbo.tbl_empleados.nombre +' '+ dbo.tbl_empleados.apellido as idEmpleado,
+			  fechaAsignacion,
+			  fechaInicio,
+			  fechaEntrega
+		 from dbo.tbl_tickets
+			  left outer join dbo.tbl_clientesUsuarioFinal on dbo.tbl_tickets.idClienteUsuarioFinal = dbo.tbl_clientesUsuarioFinal.idClienteUsuarioFinal
+			  left outer join dbo.tbl_Departamentos on dbo.tbl_tickets.idDepartamento = dbo.tbl_Departamentos.idDepartamento
+			  left outer join dbo.tbl_tipoServicio on dbo.tbl_tickets.idTipoServicio = dbo.tbl_tipoServicio.idTipoServicio
+			  left outer join dbo.tbl_estatusTickets on dbo.tbl_tickets.idEstatusTickets = dbo.tbl_estatusTickets.idEstatusTickets
+			  left outer join dbo.tbl_tipoPrioridades on dbo.tbl_tickets.idPrioridad = dbo.tbl_tipoPrioridades.idPrioridad
+			  left outer join dbo.tbl_empleados on dbo.tbl_tickets.idEmpleado = dbo.tbl_empleados.idEmpleado
+		where dbo.tbl_tickets.idEstatusTickets = 2 or
+			  dbo.tbl_tickets.idEstatusTickets = 4
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_cargaDataBitacora]
+as
+	begin
+	   select idBitacora,
+			  idTicket,
+			  tiempoLaborado,
+			  descripcion,
+			  idArchivoAdjunto,
+			  fecha,
+			  nombre +' '+apellido as idEmpleado
+		 from dbo.tbl_bitacoras,
+			  dbo.tbl_empleados
+		where dbo.tbl_bitacoras.idEmpleado = dbo.tbl_empleados.idEmpleado
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_cargaDataBitacoraEspecifico]
+(
+	@idBitacora int
+)
+as
+	begin
+	   select idBitacora,
+			  idTicket,
+			  tiempoLaborado,
+			  descripcion,
+			  idArchivoAdjunto,
+			  fecha,
+			  nombre +' '+apellido as idEmpleado
+		 from dbo.tbl_bitacoras
+			  left outer join dbo.tbl_empleados on dbo.tbl_bitacoras.idEmpleado = dbo.tbl_empleados.idEmpleado
+		where idBitacora = @idBitacora
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_cargaDataBitacoraTicketEspecifico]
+(
+	@idTicket int
+)
+as
+	begin
+	   select idBitacora,
+			  idTicket,
+			  tiempoLaborado,
+			  descripcion,
+			  idArchivoAdjunto,
+			  fecha,
+			  nombre +' '+apellido as idEmpleado
+		 from dbo.tbl_bitacoras
+			  left outer join dbo.tbl_empleados on dbo.tbl_bitacoras.idEmpleado = dbo.tbl_empleados.idEmpleado
+		where idTicket = @idTicket
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_cargaDataTicket]
+(
+	@idTicket int
+)
+as
+	begin
+		select idTicket, 
+			   dbo.tbl_clientesUsuarioFinal.nombre +' '+ apellidos as nombreUsuario, 
+			   dbo.tbl_Departamentos.descripcion as Departamento,
+			   titulo,
+			   dbo.tbl_tipoServicio.descripcion as TipoServicio,
+			   dbo.tbl_tickets.descripcion,
+			   idArchivoAdjunto as idArchivoAdjunto,
+			   fechaRegistro, 
+			   dbo.tbl_estatusTickets.descripcion as EstatusTicket,
+			   dbo.tbl_tipoPrioridades.descripcion as Prioridad,
+			   dbo.tbl_empleados.nombre +' '+ dbo.tbl_empleados.apellido as Empleado,
+			   fechaAsignacion,
+			   fechaInicio,
+			   fechaEntrega,
+			   dbo.tbl_tickets.isDeleted,
+			   dbo.tbl_tickets.idEstatusTickets,
+			   dbo.tbl_tickets.idPrioridad,
+			   dbo.tbl_tickets.idEmpleado
+		  from dbo.tbl_tickets
+			   left outer join dbo.tbl_clientesUsuarioFinal on dbo.tbl_tickets.idClienteUsuarioFinal = dbo.tbl_clientesUsuarioFinal.idClienteUsuarioFinal
+			   left outer join dbo.tbl_Departamentos on dbo.tbl_tickets.idDepartamento = dbo.tbl_Departamentos.idDepartamento
+			   left outer join dbo.tbl_tipoServicio on dbo.tbl_tickets.idTipoServicio = dbo.tbl_tipoServicio.idTipoServicio
+			   left outer join dbo.tbl_estatusTickets on dbo.tbl_tickets.idEstatusTickets = dbo.tbl_estatusTickets.idEstatusTickets
+			   left outer join dbo.tbl_tipoPrioridades on dbo.tbl_tickets.idPrioridad = dbo.tbl_tipoPrioridades.idPrioridad
+			   left outer join dbo.tbl_empleados on dbo.tbl_tickets.idEmpleado = dbo.tbl_empleados.idEmpleado
+		 where idTicket = @idTicket
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stu_traeInfoTipoPrioridades]
+as
+	begin
+		select * from dbo.tbl_tipoPrioridades
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stu_cargaComboBoxTecnicos]
+as
+	begin
+		select nombre +' '+ apellido as Empleado, idEmpleado
+		from dbo.tbl_empleados, dbo.tbl_usuariosSistema
+		where dbo.tbl_empleados.idUsuarioSistema = dbo.tbl_usuariosSistema.idUsuarioSistema and idRol = 3
+	end
+go
+
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stu_asignacionTicket]
+(
+	@idTicket int,
+	@idEstatusTickets int,
+	@idPrioridad int,
+	@idEmpleado int,
+	@fechaAsignacion date,
+	@fechaEntrega date
+)
+as
+	begin
+		update dbo.tbl_tickets
+		set idEstatusTickets = @idEstatusTickets,
+			idPrioridad = @idPrioridad,
+			idEmpleado = @idEmpleado,
+			fechaAsignacion = @fechaAsignacion,
+			fechaEntrega = @fechaEntrega
+		where idTicket = @idTicket
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stu_atencionTicket]
+(
+	@idTicket int,
+	@idEstatusTickets int
+)
+as
+	begin
+		update dbo.tbl_tickets
+		set idEstatusTickets = @idEstatusTickets
+		where idTicket = @idTicket
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stu_actualizarFechaInicio]
+(
+	@idTicket int,
+	@fechaInicio date
+)
+as
+	begin
+		update dbo.tbl_tickets
+		set fechaInicio = @fechaInicio
+		where idTicket = @idTicket
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stu_insertBitacora]
+(
+	@idTicket int,
+	@tiempoLaborado int,
+	@descripcion varchar(max),
+	@idArchivoAdjunto int,
+	@fecha date,
+	@idEmpleado int,
+	@isDeleted bit
+)
+as
+	begin
+		insert into dbo.tbl_bitacoras(idTicket, tiempoLaborado, descripcion, idArchivoAdjunto, fecha, idEmpleado, isDeleted)
+		values(@idTicket, @tiempoLaborado, @descripcion, @idArchivoAdjunto, @fecha, @idEmpleado, @isDeleted)
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stu_insertBitacoraSinArchivoAdjunto]
+(
+	@idTicket int,
+	@tiempoLaborado int,
+	@descripcion varchar(max),
+	@fecha date,
+	@idEmpleado int,
+	@isDeleted bit
+)
+as
+	begin
+		insert into dbo.tbl_bitacoras(idTicket, tiempoLaborado, descripcion, idArchivoAdjunto, fecha, idEmpleado, isDeleted)
+		values(@idTicket, @tiempoLaborado, @descripcion, null, @fecha, @idEmpleado, @isDeleted)
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_validarBitacoraTicket]
+(
+	@idTicket int
+)
+as
+	begin
+		if exists(select * 
+				  from dbo.tbl_bitacoras
+				  where idTicket = @idTicket)
+			begin
+				select 1 as validacion
+			end
+		else
+			begin
+				select 0 as validacion
+			end
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_cantidadTicketPendientesSupervisor]
+as
+	select COUNT(*) as PendientesSupervisor
+	from dbo.tbl_tickets
+	where idEstatusTickets = 1 or
+		  idEstatusTickets = 3
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_cantidadTicketPendientesTecnico]
+(
+	@idEmpleado int
+)
+as
+	select COUNT(*) as PendientesTecnico
+	from dbo.tbl_tickets
+	where idEstatusTickets = 2 or
+		  idEstatusTickets = 4 and
+		  idEmpleado = @idEmpleado
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_TicketsVencidos]
+as
+	begin
+		declare @fechaHoy date
+		declare @vencidos int
+		set @fechaHoy = GETDATE()
+		set @vencidos = 0
+		
+		if exists(select COUNT(*) as vencidos from dbo.tbl_tickets where fechaEntrega <= @fechaHoy)
+			select COUNT(*) as vencidos from dbo.tbl_tickets where fechaEntrega <= @fechaHoy
+		else
+			begin
+				select @vencidos as vencidos
+			end
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_TicketsVencidosTecnico]
+(
+	@idEmpleado int
+)
+as
+	begin
+		declare @fechaHoy date
+		declare @vencidos int
+		set @fechaHoy = GETDATE()
+		set @vencidos = 0
+		
+		if exists(select COUNT(*) as vencidos 
+			      from dbo.tbl_tickets 
+			      where fechaEntrega <= @fechaHoy and
+			      idEmpleado = @idEmpleado)
+			select COUNT(*) as vencidos 
+			from dbo.tbl_tickets 
+			where fechaEntrega <= @fechaHoy and
+			      idEmpleado = @idEmpleado
+		else
+			begin
+				select @vencidos as vencidos
+			end
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stu_cargaIdEmpleadoPorNombreUsuario]
+(
+	@nombreUsuarioSistema varchar(10)
+)
+as
+	begin
+		select idEmpleado
+		from dbo.tbl_empleados
+		left outer join dbo.tbl_usuariosSistema on dbo.tbl_empleados.idUsuarioSistema = dbo.tbl_usuariosSistema.idUsuarioSistema
+		where nombreUsuarioSistema = @nombreUsuarioSistema
+	end
+go

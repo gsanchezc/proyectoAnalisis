@@ -186,6 +186,13 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap pdfLogo {
+            get {
+                object obj = ResourceManager.GetObject("pdfLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap reports {
             get {
                 object obj = ResourceManager.GetObject("reports", resourceCulture);

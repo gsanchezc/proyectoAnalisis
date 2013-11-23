@@ -35,7 +35,6 @@
             this.rb_actualizarUsuarioContrasena = new System.Windows.Forms.RadioButton();
             this.rb_bloquearDesbloquearCuenta = new System.Windows.Forms.RadioButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.txt_empleados = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_clientes = new System.Windows.Forms.TextBox();
@@ -89,7 +88,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1264, 518);
+            this.groupBox1.Size = new System.Drawing.Size(1262, 518);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asignacion de Usuario y Contrasena";
@@ -101,18 +100,18 @@
             this.groupBox9.Controls.Add(this.rb_bloquearDesbloquearCuenta);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox9.Location = new System.Drawing.Point(916, 271);
+            this.groupBox9.Location = new System.Drawing.Point(470, 417);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(326, 241);
+            this.groupBox9.Size = new System.Drawing.Size(782, 89);
             this.groupBox9.TabIndex = 11;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "En caso de actualizar";
             // 
             // btn_actualizarUsuario
             // 
-            this.btn_actualizarUsuario.Location = new System.Drawing.Point(68, 168);
+            this.btn_actualizarUsuario.Location = new System.Drawing.Point(618, 28);
             this.btn_actualizarUsuario.Name = "btn_actualizarUsuario";
-            this.btn_actualizarUsuario.Size = new System.Drawing.Size(193, 40);
+            this.btn_actualizarUsuario.Size = new System.Drawing.Size(153, 40);
             this.btn_actualizarUsuario.TabIndex = 2;
             this.btn_actualizarUsuario.Text = "Actualizar";
             this.btn_actualizarUsuario.UseVisualStyleBackColor = true;
@@ -121,7 +120,7 @@
             // rb_actualizarUsuarioContrasena
             // 
             this.rb_actualizarUsuarioContrasena.AutoSize = true;
-            this.rb_actualizarUsuarioContrasena.Location = new System.Drawing.Point(24, 61);
+            this.rb_actualizarUsuarioContrasena.Location = new System.Drawing.Point(24, 36);
             this.rb_actualizarUsuarioContrasena.Name = "rb_actualizarUsuarioContrasena";
             this.rb_actualizarUsuarioContrasena.Size = new System.Drawing.Size(285, 24);
             this.rb_actualizarUsuarioContrasena.TabIndex = 0;
@@ -132,7 +131,7 @@
             // rb_bloquearDesbloquearCuenta
             // 
             this.rb_bloquearDesbloquearCuenta.AutoSize = true;
-            this.rb_bloquearDesbloquearCuenta.Location = new System.Drawing.Point(24, 113);
+            this.rb_bloquearDesbloquearCuenta.Location = new System.Drawing.Point(320, 36);
             this.rb_bloquearDesbloquearCuenta.Name = "rb_bloquearDesbloquearCuenta";
             this.rb_bloquearDesbloquearCuenta.Size = new System.Drawing.Size(284, 24);
             this.rb_bloquearDesbloquearCuenta.TabIndex = 1;
@@ -142,7 +141,6 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.groupBox8);
             this.groupBox7.Controls.Add(this.txt_empleados);
             this.groupBox7.Controls.Add(this.label9);
             this.groupBox7.Controls.Add(this.txt_clientes);
@@ -150,27 +148,16 @@
             this.groupBox7.Controls.Add(this.rb_clientes);
             this.groupBox7.Controls.Add(this.rb_empleados);
             this.groupBox7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox7.Location = new System.Drawing.Point(17, 25);
+            this.groupBox7.Location = new System.Drawing.Point(6, 25);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(239, 493);
+            this.groupBox7.Size = new System.Drawing.Size(191, 493);
             this.groupBox7.TabIndex = 10;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Listas";
             // 
-            // groupBox8
-            // 
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox8.Location = new System.Drawing.Point(20, 305);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(202, 172);
-            this.groupBox8.TabIndex = 20;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Opciones";
-            // 
             // txt_empleados
             // 
-            this.txt_empleados.Location = new System.Drawing.Point(38, 244);
+            this.txt_empleados.Location = new System.Drawing.Point(14, 244);
             this.txt_empleados.Name = "txt_empleados";
             this.txt_empleados.ReadOnly = true;
             this.txt_empleados.Size = new System.Drawing.Size(158, 26);
@@ -179,7 +166,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(34, 218);
+            this.label9.Location = new System.Drawing.Point(10, 218);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(175, 20);
             this.label9.TabIndex = 19;
@@ -187,7 +174,7 @@
             // 
             // txt_clientes
             // 
-            this.txt_clientes.Location = new System.Drawing.Point(38, 175);
+            this.txt_clientes.Location = new System.Drawing.Point(14, 175);
             this.txt_clientes.Name = "txt_clientes";
             this.txt_clientes.ReadOnly = true;
             this.txt_clientes.Size = new System.Drawing.Size(158, 26);
@@ -196,7 +183,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(34, 152);
+            this.label8.Location = new System.Drawing.Point(10, 152);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(151, 20);
             this.label8.TabIndex = 17;
@@ -205,7 +192,7 @@
             // rb_clientes
             // 
             this.rb_clientes.AutoSize = true;
-            this.rb_clientes.Location = new System.Drawing.Point(40, 47);
+            this.rb_clientes.Location = new System.Drawing.Point(16, 47);
             this.rb_clientes.Name = "rb_clientes";
             this.rb_clientes.Size = new System.Drawing.Size(136, 24);
             this.rb_clientes.TabIndex = 0;
@@ -217,7 +204,7 @@
             // rb_empleados
             // 
             this.rb_empleados.AutoSize = true;
-            this.rb_empleados.Location = new System.Drawing.Point(38, 86);
+            this.rb_empleados.Location = new System.Drawing.Point(14, 86);
             this.rb_empleados.Name = "rb_empleados";
             this.rb_empleados.Size = new System.Drawing.Size(160, 24);
             this.rb_empleados.TabIndex = 1;
@@ -233,18 +220,18 @@
             this.groupBox5.Controls.Add(this.btn_limpiar);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox5.Location = new System.Drawing.Point(916, 13);
+            this.groupBox5.Location = new System.Drawing.Point(1069, 26);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(326, 250);
+            this.groupBox5.Size = new System.Drawing.Size(183, 297);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Opciones";
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(68, 190);
+            this.btn_cerrar.Location = new System.Drawing.Point(24, 236);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(193, 40);
+            this.btn_cerrar.Size = new System.Drawing.Size(153, 40);
             this.btn_cerrar.TabIndex = 2;
             this.btn_cerrar.Text = "Cerrar";
             this.btn_cerrar.UseVisualStyleBackColor = true;
@@ -252,9 +239,9 @@
             // 
             // btn_crearUsuario
             // 
-            this.btn_crearUsuario.Location = new System.Drawing.Point(68, 118);
+            this.btn_crearUsuario.Location = new System.Drawing.Point(24, 37);
             this.btn_crearUsuario.Name = "btn_crearUsuario";
-            this.btn_crearUsuario.Size = new System.Drawing.Size(193, 40);
+            this.btn_crearUsuario.Size = new System.Drawing.Size(153, 40);
             this.btn_crearUsuario.TabIndex = 0;
             this.btn_crearUsuario.Text = "Crear Usuario";
             this.btn_crearUsuario.UseVisualStyleBackColor = true;
@@ -262,9 +249,9 @@
             // 
             // btn_limpiar
             // 
-            this.btn_limpiar.Location = new System.Drawing.Point(68, 37);
+            this.btn_limpiar.Location = new System.Drawing.Point(24, 131);
             this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(193, 40);
+            this.btn_limpiar.Size = new System.Drawing.Size(153, 40);
             this.btn_limpiar.TabIndex = 1;
             this.btn_limpiar.Text = "Limpiar";
             this.btn_limpiar.UseVisualStyleBackColor = true;
@@ -281,9 +268,9 @@
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox6.Location = new System.Drawing.Point(588, 25);
+            this.groupBox6.Location = new System.Drawing.Point(470, 25);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(322, 238);
+            this.groupBox6.Size = new System.Drawing.Size(292, 298);
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Datos Usuario";
@@ -293,7 +280,7 @@
             this.txt_identificacion.Location = new System.Drawing.Point(21, 201);
             this.txt_identificacion.Name = "txt_identificacion";
             this.txt_identificacion.ReadOnly = true;
-            this.txt_identificacion.Size = new System.Drawing.Size(274, 26);
+            this.txt_identificacion.Size = new System.Drawing.Size(250, 26);
             this.txt_identificacion.TabIndex = 3;
             // 
             // txt_apellidos
@@ -301,7 +288,7 @@
             this.txt_apellidos.Location = new System.Drawing.Point(21, 149);
             this.txt_apellidos.Name = "txt_apellidos";
             this.txt_apellidos.ReadOnly = true;
-            this.txt_apellidos.Size = new System.Drawing.Size(274, 26);
+            this.txt_apellidos.Size = new System.Drawing.Size(250, 26);
             this.txt_apellidos.TabIndex = 2;
             // 
             // txt_nombre
@@ -309,7 +296,7 @@
             this.txt_nombre.Location = new System.Drawing.Point(21, 97);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.ReadOnly = true;
-            this.txt_nombre.Size = new System.Drawing.Size(274, 26);
+            this.txt_nombre.Size = new System.Drawing.Size(250, 26);
             this.txt_nombre.TabIndex = 1;
             // 
             // txt_idUsuarioSistema
@@ -317,7 +304,7 @@
             this.txt_idUsuarioSistema.Location = new System.Drawing.Point(21, 45);
             this.txt_idUsuarioSistema.Name = "txt_idUsuarioSistema";
             this.txt_idUsuarioSistema.ReadOnly = true;
-            this.txt_idUsuarioSistema.Size = new System.Drawing.Size(274, 26);
+            this.txt_idUsuarioSistema.Size = new System.Drawing.Size(250, 26);
             this.txt_idUsuarioSistema.TabIndex = 0;
             this.txt_idUsuarioSistema.TextChanged += new System.EventHandler(this.txt_idUsuarioSistema_TextChanged);
             // 
@@ -368,9 +355,9 @@
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox3.Location = new System.Drawing.Point(588, 269);
+            this.groupBox3.Location = new System.Drawing.Point(768, 25);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(323, 249);
+            this.groupBox3.Size = new System.Drawing.Size(295, 298);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Usuario y Contrasena";
@@ -381,9 +368,9 @@
             this.groupBox4.Controls.Add(this.rbt_inactivo);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox4.Location = new System.Drawing.Point(22, 187);
+            this.groupBox4.Location = new System.Drawing.Point(22, 201);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(279, 54);
+            this.groupBox4.Size = new System.Drawing.Size(255, 83);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Estatus de Cuenta";
@@ -391,7 +378,7 @@
             // rbt_activo
             // 
             this.rbt_activo.AutoSize = true;
-            this.rbt_activo.Location = new System.Drawing.Point(36, 24);
+            this.rbt_activo.Location = new System.Drawing.Point(27, 31);
             this.rbt_activo.Name = "rbt_activo";
             this.rbt_activo.Size = new System.Drawing.Size(76, 24);
             this.rbt_activo.TabIndex = 0;
@@ -402,7 +389,7 @@
             // rbt_inactivo
             // 
             this.rbt_inactivo.AutoSize = true;
-            this.rbt_inactivo.Location = new System.Drawing.Point(155, 24);
+            this.rbt_inactivo.Location = new System.Drawing.Point(139, 31);
             this.rbt_inactivo.Name = "rbt_inactivo";
             this.rbt_inactivo.Size = new System.Drawing.Size(90, 24);
             this.rbt_inactivo.TabIndex = 1;
@@ -415,7 +402,7 @@
             this.txt_confirmaContraseña.Location = new System.Drawing.Point(22, 155);
             this.txt_confirmaContraseña.Name = "txt_confirmaContraseña";
             this.txt_confirmaContraseña.PasswordChar = '*';
-            this.txt_confirmaContraseña.Size = new System.Drawing.Size(279, 26);
+            this.txt_confirmaContraseña.Size = new System.Drawing.Size(255, 26);
             this.txt_confirmaContraseña.TabIndex = 2;
             // 
             // label3
@@ -432,14 +419,14 @@
             this.txt_Contraseña.Location = new System.Drawing.Point(22, 100);
             this.txt_Contraseña.Name = "txt_Contraseña";
             this.txt_Contraseña.PasswordChar = '*';
-            this.txt_Contraseña.Size = new System.Drawing.Size(279, 26);
+            this.txt_Contraseña.Size = new System.Drawing.Size(255, 26);
             this.txt_Contraseña.TabIndex = 1;
             // 
             // txt_Usuario
             // 
             this.txt_Usuario.Location = new System.Drawing.Point(22, 48);
             this.txt_Usuario.Name = "txt_Usuario";
-            this.txt_Usuario.Size = new System.Drawing.Size(279, 26);
+            this.txt_Usuario.Size = new System.Drawing.Size(255, 26);
             this.txt_Usuario.TabIndex = 0;
             // 
             // label2
@@ -465,9 +452,9 @@
             this.groupBox2.Controls.Add(this.lst_ListaUsuario);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Location = new System.Drawing.Point(275, 25);
+            this.groupBox2.Location = new System.Drawing.Point(203, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(291, 493);
+            this.groupBox2.Size = new System.Drawing.Size(261, 493);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista ID Clientes / Empleados";
@@ -480,7 +467,8 @@
             this.lst_ListaUsuario.ItemHeight = 16;
             this.lst_ListaUsuario.Location = new System.Drawing.Point(18, 25);
             this.lst_ListaUsuario.Name = "lst_ListaUsuario";
-            this.lst_ListaUsuario.Size = new System.Drawing.Size(258, 452);
+            this.lst_ListaUsuario.ScrollAlwaysVisible = true;
+            this.lst_ListaUsuario.Size = new System.Drawing.Size(226, 452);
             this.lst_ListaUsuario.TabIndex = 0;
             this.lst_ListaUsuario.SelectedIndexChanged += new System.EventHandler(this.lst_ListaUsuario_SelectedIndexChanged);
             // 
@@ -553,6 +541,5 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.RadioButton rb_actualizarUsuarioContrasena;
         private System.Windows.Forms.RadioButton rb_bloquearDesbloquearCuenta;
-        private System.Windows.Forms.GroupBox groupBox8;
     }
 }

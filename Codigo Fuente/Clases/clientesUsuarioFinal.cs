@@ -20,7 +20,7 @@ namespace Clases
             get { return _idClienteUsuarioFinal; }
             set { _idClienteUsuarioFinal = value; }
         }
-
+        
         private int _idUsuarioSistema;
 
         public int idUsuarioSistema
@@ -255,7 +255,7 @@ namespace Clases
 
                 if (ds == null)
                 {
-                    MessageBox.Show(mensaje_error, "Error al cargar Rol", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(mensaje_error, "Error al cargar Id Usuario Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     _mensaje = mensaje_error;
                 }
                 else
@@ -263,6 +263,43 @@ namespace Clases
                     if (ds.Tables[0].Rows.Count > 0)
                     {
                         _idUsuarioSistema = Convert.ToInt32(ds.Tables[0].Rows[0]["idUsuarioSistema"]);
+                    }
+                    else
+                    {
+                        _mensaje = mensaje_error;
+                    }
+                }
+            }
+        }
+
+        public void cargaIdUsuarioSistemaPorNombreDeUsuario(string nombreUsuarioSistema)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _mensaje = mensaje_error;
+            }
+            else
+            {
+                sql = "spu_cargaIdClienteUsuarioFinal";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombreUsuarioSistema", SqlDbType.VarChar, nombreUsuarioSistema);
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (ds == null)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _mensaje = mensaje_error;
+                }
+                else
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        _idClienteUsuarioFinal = Convert.ToInt32(ds.Tables[0].Rows[0]["idClienteUsuarioFinal"]);
                     }
                     else
                     {
