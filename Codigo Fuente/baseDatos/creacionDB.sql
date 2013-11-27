@@ -425,6 +425,7 @@ CREATE TABLE db_soportic.dbo.tbl_alertas
 
 GO
 
+----------------TABLA VACACIONES APROBADAS
 CREATE TABLE db_soportic.dbo.tbl_vacacionesAprobadas
 (
 	idAprobacionVacacion INT NOT NULL IDENTITY(1,1),
