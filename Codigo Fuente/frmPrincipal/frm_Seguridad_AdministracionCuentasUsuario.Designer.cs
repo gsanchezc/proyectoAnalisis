@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Seguridad_AdministracionCuentasUsuario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btn_actualizarUsuario = new System.Windows.Forms.Button();
             this.rb_actualizarUsuarioContrasena = new System.Windows.Forms.RadioButton();
@@ -67,6 +68,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lst_ListaUsuario = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -78,6 +80,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.groupBox9);
             this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.groupBox5);
@@ -93,6 +96,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asignacion de Usuario y Contrasena";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::frmPrincipal.Properties.Resources.olvidopass;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1070, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(182, 210);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.btn_actualizarUsuario);
@@ -100,16 +113,16 @@
             this.groupBox9.Controls.Add(this.rb_bloquearDesbloquearCuenta);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox9.Location = new System.Drawing.Point(470, 417);
+            this.groupBox9.Location = new System.Drawing.Point(470, 428);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(782, 89);
+            this.groupBox9.Size = new System.Drawing.Size(782, 74);
             this.groupBox9.TabIndex = 11;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "En caso de actualizar";
             // 
             // btn_actualizarUsuario
             // 
-            this.btn_actualizarUsuario.Location = new System.Drawing.Point(618, 28);
+            this.btn_actualizarUsuario.Location = new System.Drawing.Point(619, 17);
             this.btn_actualizarUsuario.Name = "btn_actualizarUsuario";
             this.btn_actualizarUsuario.Size = new System.Drawing.Size(153, 40);
             this.btn_actualizarUsuario.TabIndex = 2;
@@ -120,7 +133,7 @@
             // rb_actualizarUsuarioContrasena
             // 
             this.rb_actualizarUsuarioContrasena.AutoSize = true;
-            this.rb_actualizarUsuarioContrasena.Location = new System.Drawing.Point(24, 36);
+            this.rb_actualizarUsuarioContrasena.Location = new System.Drawing.Point(25, 25);
             this.rb_actualizarUsuarioContrasena.Name = "rb_actualizarUsuarioContrasena";
             this.rb_actualizarUsuarioContrasena.Size = new System.Drawing.Size(285, 24);
             this.rb_actualizarUsuarioContrasena.TabIndex = 0;
@@ -131,7 +144,7 @@
             // rb_bloquearDesbloquearCuenta
             // 
             this.rb_bloquearDesbloquearCuenta.AutoSize = true;
-            this.rb_bloquearDesbloquearCuenta.Location = new System.Drawing.Point(320, 36);
+            this.rb_bloquearDesbloquearCuenta.Location = new System.Drawing.Point(321, 25);
             this.rb_bloquearDesbloquearCuenta.Name = "rb_bloquearDesbloquearCuenta";
             this.rb_bloquearDesbloquearCuenta.Size = new System.Drawing.Size(284, 24);
             this.rb_bloquearDesbloquearCuenta.TabIndex = 1;
@@ -220,16 +233,16 @@
             this.groupBox5.Controls.Add(this.btn_limpiar);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox5.Location = new System.Drawing.Point(1069, 26);
+            this.groupBox5.Location = new System.Drawing.Point(469, 314);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(183, 297);
+            this.groupBox5.Size = new System.Drawing.Size(594, 78);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Opciones";
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(24, 236);
+            this.btn_cerrar.Location = new System.Drawing.Point(415, 25);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(153, 40);
             this.btn_cerrar.TabIndex = 2;
@@ -239,7 +252,7 @@
             // 
             // btn_crearUsuario
             // 
-            this.btn_crearUsuario.Location = new System.Drawing.Point(24, 37);
+            this.btn_crearUsuario.Location = new System.Drawing.Point(26, 25);
             this.btn_crearUsuario.Name = "btn_crearUsuario";
             this.btn_crearUsuario.Size = new System.Drawing.Size(153, 40);
             this.btn_crearUsuario.TabIndex = 0;
@@ -249,7 +262,7 @@
             // 
             // btn_limpiar
             // 
-            this.btn_limpiar.Location = new System.Drawing.Point(24, 131);
+            this.btn_limpiar.Location = new System.Drawing.Point(220, 25);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(153, 40);
             this.btn_limpiar.TabIndex = 1;
@@ -270,7 +283,7 @@
             this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox6.Location = new System.Drawing.Point(470, 25);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(292, 298);
+            this.groupBox6.Size = new System.Drawing.Size(292, 283);
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Datos Usuario";
@@ -357,7 +370,7 @@
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox3.Location = new System.Drawing.Point(768, 25);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(295, 298);
+            this.groupBox3.Size = new System.Drawing.Size(295, 283);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Usuario y Contrasena";
@@ -370,7 +383,7 @@
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox4.Location = new System.Drawing.Point(22, 201);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(255, 83);
+            this.groupBox4.Size = new System.Drawing.Size(255, 69);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Estatus de Cuenta";
@@ -477,15 +490,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 518);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_Seguridad_AdministracionCuentasUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Administracion Cuentas Usuario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Seguridad_AdministracionCuentasUsuario_FormClosing);
             this.Load += new System.EventHandler(this.frm_Seguridad_AdministracionCuentasUsuario_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -541,5 +555,6 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.RadioButton rb_actualizarUsuarioContrasena;
         private System.Windows.Forms.RadioButton rb_bloquearDesbloquearCuenta;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -65,6 +65,7 @@ namespace frmPrincipal
 
                 //BOTONES ENABLED FALSE
                 btn_NuevoTicket.Enabled = false;
+                btn_MisTickets.Enabled = false;
                 btn_AtencionTicket.Enabled = false;
                 btn_ControlNomina.Enabled = false;
                 btn_ConfiguracionSistema.Enabled = false;
@@ -103,6 +104,7 @@ namespace frmPrincipal
 
                 //BOTONES ENABLED FALSE
                 btn_NuevoTicket.Enabled = false;
+                btn_MisTickets.Enabled = false;
                 btn_AsignarTicket.Enabled = false;
                 btn_ConfiguracionSistema.Enabled = false;
 
@@ -205,7 +207,6 @@ namespace frmPrincipal
                 //BOTONES ENABLED FALSE
                 btn_AsignarTicket.Enabled = false;
                 btn_AtencionTicket.Enabled = false;
-                btn_BitacoraTicket.Enabled = false;
                 btn_ConfiguracionSistema.Enabled = false;
 
                 //TOOL STRIP MENU ENABLED FALSE
@@ -284,42 +285,42 @@ namespace frmPrincipal
         {
             frm_Ticket_NuevoTicket ventanaNuevoTicket = new frm_Ticket_NuevoTicket(usuarioSistema);
             this.Hide();
-            ventanaNuevoTicket.ShowDialog();
+            ventanaNuevoTicket.Show();
         }
 
         private void btn_NuevoTicket_Click(object sender, EventArgs e)
         {
             frm_Ticket_NuevoTicket ventanaNuevoTicket = new frm_Ticket_NuevoTicket(usuarioSistema);
             this.Hide();
-            ventanaNuevoTicket.ShowDialog();
+            ventanaNuevoTicket.Show();
         }
 
         private void CatalogoAsignacionDeTicketToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_Ticket_CatalogoAsignacionTicket ventanaCatalogoTicket = new frm_Ticket_CatalogoAsignacionTicket(usuarioSistema);
             this.Hide();
-            ventanaCatalogoTicket.ShowDialog();
+            ventanaCatalogoTicket.Show();
         }
 
         private void btn_AsignarTicket_Click(object sender, EventArgs e)
         {
             frm_Ticket_CatalogoAsignacionTicket ventanaCatalogoTicket = new frm_Ticket_CatalogoAsignacionTicket(usuarioSistema);
             this.Hide();
-            ventanaCatalogoTicket.ShowDialog();
+            ventanaCatalogoTicket.Show();
         }
 
         private void CatalogoAtencionDeTicketToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_Ticket_CatalogoSeleccionTicket ventanaCatalogoTicket = new frm_Ticket_CatalogoSeleccionTicket(usuarioSistema);
             this.Hide();
-            ventanaCatalogoTicket.ShowDialog();
+            ventanaCatalogoTicket.Show();
         }
 
         private void btn_AtencionTicket_Click(object sender, EventArgs e)
         {
             frm_Ticket_CatalogoSeleccionTicket ventanaCatalogoTicket = new frm_Ticket_CatalogoSeleccionTicket(usuarioSistema);
             this.Hide();
-            ventanaCatalogoTicket.ShowDialog();
+            ventanaCatalogoTicket.Show();
         }
 
         private void BitacoraTicketToolStripMenuItem_Click(object sender, EventArgs e)
@@ -328,7 +329,7 @@ namespace frmPrincipal
             int Ticket = 0;
             frm_Ticket_BitacoraTicket ventanaBitacoraTicket = new frm_Ticket_BitacoraTicket(usuarioSistema, pantalla, Ticket);
             this.Hide();
-            ventanaBitacoraTicket.ShowDialog();
+            ventanaBitacoraTicket.Show();
         }
 
         private void btn_BitacoraTicket_Click(object sender, EventArgs e)
@@ -337,217 +338,223 @@ namespace frmPrincipal
             int Ticket = 0;
             frm_Ticket_BitacoraTicket ventanaBitacoraTicket = new frm_Ticket_BitacoraTicket(usuarioSistema, pantalla, Ticket);
             this.Hide();
-            ventanaBitacoraTicket.ShowDialog();
+            ventanaBitacoraTicket.Show();
         }
 
         private void administracionPerfilesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_Seguridad_AdministracionPerfiles ventanaAdministracionPerfiles = new frm_Seguridad_AdministracionPerfiles(usuarioSistema);
             this.Hide();
-            ventanaAdministracionPerfiles.ShowDialog();
+            ventanaAdministracionPerfiles.Show();
         }
 
         private void btn_AdministracionPerfiles_Click(object sender, EventArgs e)
         {
             frm_Seguridad_AdministracionPerfiles ventanaAdministracionPerfiles = new frm_Seguridad_AdministracionPerfiles(usuarioSistema);
             this.Hide();
-            ventanaAdministracionPerfiles.ShowDialog();
+            ventanaAdministracionPerfiles.Show();
         }
 
         private void administracionCuentasUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_Seguridad_AdministracionCuentasUsuario ventanaAdministracionCuentas = new frm_Seguridad_AdministracionCuentasUsuario(usuarioSistema);
             this.Hide();
-            ventanaAdministracionCuentas.ShowDialog();
+            ventanaAdministracionCuentas.Show();
         }
 
         private void btn_AdministracionCuentasUsuario_Click(object sender, EventArgs e)
         {
             frm_Seguridad_AdministracionCuentasUsuario ventanaAdministracionCuentas = new frm_Seguridad_AdministracionCuentasUsuario(usuarioSistema);
             this.Hide();
-            ventanaAdministracionCuentas.ShowDialog();
+            ventanaAdministracionCuentas.Show();
         }
 
         private void nuevoUsuarioFinalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_Seguridad_NuevoUsuarioFinal ventanaNuevoUsuario = new frm_Seguridad_NuevoUsuarioFinal(usuarioSistema);
             this.Hide();
-            ventanaNuevoUsuario.ShowDialog();
+            ventanaNuevoUsuario.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             frm_Seguridad_NuevoUsuarioFinal ventanaNuevoUsuario = new frm_Seguridad_NuevoUsuarioFinal(usuarioSistema);
             this.Hide();
-            ventanaNuevoUsuario.ShowDialog();
+            ventanaNuevoUsuario.Show();
         }
 
         private void nuevaFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_CxC_CxP_NuevaFactura ventanaNuevaFactura = new frm_CxC_CxP_NuevaFactura(usuarioSistema);
             this.Hide();
-            ventanaNuevaFactura.ShowDialog();
+            ventanaNuevaFactura.Show();
         }
 
         private void btn_NuevaFactura_Click(object sender, EventArgs e)
         {
             frm_CxC_CxP_NuevaFactura ventanaNuevaFactura = new frm_CxC_CxP_NuevaFactura(usuarioSistema);
             this.Hide();
-            ventanaNuevaFactura.ShowDialog();
+            ventanaNuevaFactura.Show();
         }
 
         private void envioEstadoDeCuentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_CxC_CxP_EnvioEstadosCuenta ventanaEnvioEstadosCuenta = new frm_CxC_CxP_EnvioEstadosCuenta(usuarioSistema);
             this.Hide();
-            ventanaEnvioEstadosCuenta.ShowDialog();
+            ventanaEnvioEstadosCuenta.Show();
         }
 
         private void btn_EnvioEstadosCuenta_Click(object sender, EventArgs e)
         {
             frm_CxC_CxP_EnvioEstadosCuenta ventanaEnvioEstadosCuenta = new frm_CxC_CxP_EnvioEstadosCuenta(usuarioSistema);
             this.Hide();
-            ventanaEnvioEstadosCuenta.ShowDialog();
+            ventanaEnvioEstadosCuenta.Show();
         }
 
         private void solicitudOrdenesCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_CxC_CxP_CatalogoOrdenesDeCompra ventanaCatalogoOrdenesCompra = new frm_CxC_CxP_CatalogoOrdenesDeCompra(usuarioSistema);
+            string pantalla = "MenuPrincipal";
+            frm_CxC_CxP_CatalogoOrdenesDeCompra ventanaCatalogoOrdenesCompra = new frm_CxC_CxP_CatalogoOrdenesDeCompra(usuarioSistema, pantalla);
             this.Hide();
-            ventanaCatalogoOrdenesCompra.ShowDialog();
+            ventanaCatalogoOrdenesCompra.Show();
         }
 
         private void btn_SolictudOrdenesCompra_Click(object sender, EventArgs e)
         {
-            frm_CxC_CxP_CatalogoOrdenesDeCompra ventanaCatalogoOrdenesCompra = new frm_CxC_CxP_CatalogoOrdenesDeCompra(usuarioSistema);
+            string pantalla = "MenuPrincipal";
+            frm_CxC_CxP_CatalogoOrdenesDeCompra ventanaCatalogoOrdenesCompra = new frm_CxC_CxP_CatalogoOrdenesDeCompra(usuarioSistema, pantalla);
             this.Hide();
-            ventanaCatalogoOrdenesCompra.ShowDialog();
+            ventanaCatalogoOrdenesCompra.Show();
         }
 
         private void nuevaOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_CxC_CxP_NuevaOrdenCompra ventanaNuevaOrdenCompra = new frm_CxC_CxP_NuevaOrdenCompra(usuarioSistema);
+            string pantalla = "MenuPrincipal";
+            int Solicitud = 0;
+            frm_CxC_CxP_NuevaOrdenCompra ventanaNuevaOrdenCompra = new frm_CxC_CxP_NuevaOrdenCompra(usuarioSistema, Solicitud, pantalla);
             this.Hide();
-            ventanaNuevaOrdenCompra.ShowDialog();
+            ventanaNuevaOrdenCompra.Show();
         }
 
         private void btn_nuevaOrdenCompra_Click(object sender, EventArgs e)
         {
-            frm_CxC_CxP_NuevaOrdenCompra ventanaNuevaOrdenCompra = new frm_CxC_CxP_NuevaOrdenCompra(usuarioSistema);
+            string pantalla = "MenuPrincipal";
+            int Solicitud = 0;
+            frm_CxC_CxP_NuevaOrdenCompra ventanaNuevaOrdenCompra = new frm_CxC_CxP_NuevaOrdenCompra(usuarioSistema, Solicitud, pantalla);
             this.Hide();
-            ventanaNuevaOrdenCompra.ShowDialog();
+            ventanaNuevaOrdenCompra.Show();
         }
 
         private void catalgoProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_CxC_CxP_CatalogoProveedores ventanaCatalogoProveedores = new frm_CxC_CxP_CatalogoProveedores(usuarioSistema);
             this.Hide();
-            ventanaCatalogoProveedores.ShowDialog();
+            ventanaCatalogoProveedores.Show();
         }
 
         private void btn_CatalogoProveedores_Click(object sender, EventArgs e)
         {
             frm_CxC_CxP_CatalogoProveedores ventanaCatalogoProveedores = new frm_CxC_CxP_CatalogoProveedores(usuarioSistema);
             this.Hide();
-            ventanaCatalogoProveedores.ShowDialog();
+            ventanaCatalogoProveedores.Show();
         }
 
         private void nuevoProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_CxC_CxP_NuevoProveedor ventanaNuevoProveedor = new frm_CxC_CxP_NuevoProveedor(usuarioSistema);
             this.Hide();
-            ventanaNuevoProveedor.ShowDialog();
+            ventanaNuevoProveedor.Show();
         }
 
         private void btn_NuevoProveedor_Click(object sender, EventArgs e)
         {
             frm_CxC_CxP_NuevoProveedor ventanaNuevoProveedor = new frm_CxC_CxP_NuevoProveedor(usuarioSistema);
             this.Hide();
-            ventanaNuevoProveedor.ShowDialog();
+            ventanaNuevoProveedor.Show();
         }
 
         private void controlNominaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_RRHH_ControlNomina ventanaControlNomina = new frm_RRHH_ControlNomina(usuarioSistema);
             this.Hide();
-            ventanaControlNomina.ShowDialog();
+            ventanaControlNomina.Show();
         }
 
         private void btn_ControlNomina_Click(object sender, EventArgs e)
         {
             frm_RRHH_ControlNomina ventanaControlNomina = new frm_RRHH_ControlNomina(usuarioSistema);
             this.Hide();
-            ventanaControlNomina.ShowDialog();
+            ventanaControlNomina.Show();
         }
 
         private void btn_NuevoEmpleado_Click(object sender, EventArgs e)
         {
             frm_RRHH_NuevoEmpleado ventanaNuevoEmpleado = new frm_RRHH_NuevoEmpleado(usuarioSistema);
             this.Hide();
-            ventanaNuevoEmpleado.ShowDialog();
+            ventanaNuevoEmpleado.Show();
         }
 
         private void nuevoEmpleadoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frm_RRHH_NuevoEmpleado ventanaNuevoEmpleado = new frm_RRHH_NuevoEmpleado(usuarioSistema);
             this.Hide();
-            ventanaNuevoEmpleado.ShowDialog();
+            ventanaNuevoEmpleado.Show();
         }
 
         private void controlVacacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_RRHH_ControlVacaciones ventanaControlVacaciones = new frm_RRHH_ControlVacaciones(usuarioSistema);
             this.Hide();
-            ventanaControlVacaciones.ShowDialog();
+            ventanaControlVacaciones.Show();
         }
 
         private void btn_ControlVacaciones_Click(object sender, EventArgs e)
         {
             frm_RRHH_ControlVacaciones ventanaControlVacaciones = new frm_RRHH_ControlVacaciones(usuarioSistema);
             this.Hide();
-            ventanaControlVacaciones.ShowDialog();
+            ventanaControlVacaciones.Show();
         }
 
         private void solicitudDeVacacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_RRHH_NuevaSolicitudVacaciones ventanaSolicitudVacaciones = new frm_RRHH_NuevaSolicitudVacaciones(usuarioSistema);
             this.Hide();
-            ventanaSolicitudVacaciones.ShowDialog();
+            ventanaSolicitudVacaciones.Show();
         }
 
         private void btn_SolicitudVacaciones_Click(object sender, EventArgs e)
         {
             frm_RRHH_NuevaSolicitudVacaciones ventanaSolicitudVacaciones = new frm_RRHH_NuevaSolicitudVacaciones(usuarioSistema);
             this.Hide();
-            ventanaSolicitudVacaciones.ShowDialog();
+            ventanaSolicitudVacaciones.Show();
         }
 
         private void controlIncapacidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_RRHH_ControlIncapacidades ventanaControlIncapacidades = new frm_RRHH_ControlIncapacidades(usuarioSistema);
             this.Hide();
-            ventanaControlIncapacidades.ShowDialog();
+            ventanaControlIncapacidades.Show();
         }
 
         private void btn_ControlIncapacidades_Click(object sender, EventArgs e)
         {
             frm_RRHH_ControlIncapacidades ventanaControlIncapacidades = new frm_RRHH_ControlIncapacidades(usuarioSistema);
             this.Hide();
-            ventanaControlIncapacidades.ShowDialog();
+            ventanaControlIncapacidades.Show();
         }
 
         private void ingresoDeIncapacidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_RRHH_NuevaIncapacidad ventanaIngresoIncapacidad = new frm_RRHH_NuevaIncapacidad(usuarioSistema);
             this.Hide();
-            ventanaIngresoIncapacidad.ShowDialog();
+            ventanaIngresoIncapacidad.Show();
         }
 
         private void btn_IngresoIncapacidad_Click(object sender, EventArgs e)
         {
             frm_RRHH_NuevaIncapacidad ventanaIngresoIncapacidad = new frm_RRHH_NuevaIncapacidad(usuarioSistema);
             this.Hide();
-            ventanaIngresoIncapacidad.ShowDialog();
+            ventanaIngresoIncapacidad.Show();
         }
 
         private void btn_CerrarSesion_Click(object sender, EventArgs e)
@@ -578,7 +585,7 @@ namespace frmPrincipal
         {
             frm_Mantenimiento_0Menu ventanaMenuMantenimiento = new frm_Mantenimiento_0Menu(usuarioSistema);
             this.Hide();
-            ventanaMenuMantenimiento.ShowDialog();
+            ventanaMenuMantenimiento.Show();
         }
 
         private void generarGraficoReporteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -598,7 +605,7 @@ namespace frmPrincipal
         {
             frm_Mantenimiento_0Menu ventanaMenuMantenimiento = new frm_Mantenimiento_0Menu(usuarioSistema);
             this.Hide();
-            ventanaMenuMantenimiento.ShowDialog();
+            ventanaMenuMantenimiento.Show();
         }
 
         private void configuracionDeSistemaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -622,7 +629,7 @@ namespace frmPrincipal
 
         private void btn_MantenimientoComunicacion_Click(object sender, EventArgs e)
         {
-            frm_ReporteAlertas_MantenimientoComunicacion ventana = new frm_ReporteAlertas_MantenimientoComunicacion(usuarioSistema);
+            frm_ReportesAlertas_MantenimientoComunicacion ventana = new frm_ReportesAlertas_MantenimientoComunicacion(usuarioSistema);
             this.Hide();
             ventana.Show();
         }
@@ -630,6 +637,45 @@ namespace frmPrincipal
         private void frm_0MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
+
+        private void btn_MisTickets_Click(object sender, EventArgs e)
+        {
+            frm_Ticket_Clientes ventana = new frm_Ticket_Clientes(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void misTicketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Ticket_Clientes ventana = new frm_Ticket_Clientes(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_SolicitudOrdenCompra_Click(object sender, EventArgs e)
+        {
+            string pantalla = "MenuPrincipal";
+            int Ticket = 0;
+            frm_CxC_CxP_ControlSolicitudOrdenDeCompra ventana = new frm_CxC_CxP_ControlSolicitudOrdenDeCompra(usuarioSistema, pantalla, Ticket);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void catalogoSolicitudesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string pantalla = "MenuPrincipal";
+            int Ticket = 0;
+            frm_CxC_CxP_ControlSolicitudOrdenDeCompra ventana = new frm_CxC_CxP_ControlSolicitudOrdenDeCompra(usuarioSistema, pantalla, Ticket);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void ingresarAlertaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_ReportesAlertas_IngresarAlerta ventana = new frm_ReportesAlertas_IngresarAlerta(usuarioSistema);
+            this.Hide();
+            ventana.Show();
         }
     }
 }

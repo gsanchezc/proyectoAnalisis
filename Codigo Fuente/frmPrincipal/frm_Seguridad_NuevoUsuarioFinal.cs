@@ -167,11 +167,11 @@ namespace frmPrincipal
                 return;
             }
 
-            objClienteUsuarioFinal.nombre = Convert.ToString(txt_Nombre.Text);
-            objClienteUsuarioFinal.apellidos = Convert.ToString(txt_Apellido.Text);
+            objClienteUsuarioFinal.nombre = txt_Nombre.Text;
+            objClienteUsuarioFinal.apellidos = txt_Apellido.Text;
             objClienteUsuarioFinal.idTipoIdentificacion = Convert.ToInt32(cb_tipoIdentificacion.SelectedValue);
-            objClienteUsuarioFinal.identificacion = Convert.ToString(txt_identificacion.Text);
-            objClienteUsuarioFinal.telefonoEmpresa = Convert.ToString(txt_telefonoEmpresa.Text);
+            objClienteUsuarioFinal.identificacion = txt_identificacion.Text;
+            objClienteUsuarioFinal.telefonoEmpresa = txt_telefonoEmpresa.Text;
             objClienteUsuarioFinal.idEmpresaCliente = Convert.ToInt32(cb_empresaCliente.SelectedValue);
             objClienteUsuarioFinal.isdeleted = false;
 

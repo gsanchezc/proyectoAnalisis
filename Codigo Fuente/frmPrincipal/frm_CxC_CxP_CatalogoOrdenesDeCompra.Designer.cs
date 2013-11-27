@@ -113,6 +113,8 @@
             // 
             // dtg_OrdenCompra
             // 
+            this.dtg_OrdenCompra.AllowUserToAddRows = false;
+            this.dtg_OrdenCompra.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,36 +147,42 @@
             // 
             // Numero_Orden
             // 
+            this.Numero_Orden.DataPropertyName = "idOrdenCompra";
             this.Numero_Orden.HeaderText = "Numero Orden";
             this.Numero_Orden.Name = "Numero_Orden";
             this.Numero_Orden.Width = 150;
             // 
             // NumeroTicket
             // 
+            this.NumeroTicket.DataPropertyName = "idTicket";
             this.NumeroTicket.HeaderText = "Numero Ticket";
             this.NumeroTicket.Name = "NumeroTicket";
             this.NumeroTicket.Width = 150;
             // 
             // Proveedor
             // 
+            this.Proveedor.DataPropertyName = "nombre";
             this.Proveedor.HeaderText = "Proveedor";
             this.Proveedor.Name = "Proveedor";
             this.Proveedor.Width = 150;
             // 
             // NumeroCotizacion
             // 
+            this.NumeroCotizacion.DataPropertyName = "numeroCotizacion";
             this.NumeroCotizacion.HeaderText = "Numero Cotizacion";
             this.NumeroCotizacion.Name = "NumeroCotizacion";
             this.NumeroCotizacion.Width = 150;
             // 
             // Detalle
             // 
+            this.Detalle.DataPropertyName = "detalle";
             this.Detalle.HeaderText = "Detalle";
             this.Detalle.Name = "Detalle";
             this.Detalle.Width = 150;
             // 
             // Monto
             // 
+            this.Monto.DataPropertyName = "monto";
             this.Monto.HeaderText = "Monto";
             this.Monto.Name = "Monto";
             this.Monto.Width = 125;
@@ -211,6 +219,7 @@
         private System.Windows.Forms.Button btn_NuevoOrdenCompra;
         private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.DataGridView dtg_OrdenCompra;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero_Orden;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroTicket;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proveedor;
@@ -218,7 +227,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Detalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.PictureBox pictureBox2;
 
 
     }

@@ -104,6 +104,8 @@ namespace frmPrincipal
         //RAFAEL ANGEL SEQUEIRA VARGAS
         public void guardarTicket()
         {
+            int ultimoRegistro = 0;
+
             objTicket.idClienteUsuarioFinal = Convert.ToInt32(txt_NumeroUsuario.Text);
             objTicket.idDepartamento = Convert.ToInt32(cmb_TipoTicket.SelectedValue);
             objTicket.titulo = txt_tema.Text;
@@ -124,6 +126,19 @@ namespace frmPrincipal
                 {
                     MessageBox.Show("Exito al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    try
+                    {
+                        DataSet ds;
+                        ds = objTicket.cargarUltimoRegistroTicket();
+                        ultimoRegistro = Convert.ToInt32(ds.Tables[0].Rows[0]["idTicket"]);
+                        MessageBox.Show("El numero de Ticket recien ingresado es :"+ultimoRegistro, "Por favor tome nota", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
                     frm_0MenuPrincipal ventanaMenuPrincipal = new frm_0MenuPrincipal(usuarioSistema);
                     this.Hide();
                     ventanaMenuPrincipal.Show();
@@ -141,6 +156,19 @@ namespace frmPrincipal
                 if (objTicket.insertar_ticket(accion))
                 {
                     MessageBox.Show("Exito al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    try
+                    {
+                        DataSet ds;
+                        ds = objTicket.cargarUltimoRegistroTicket();
+                        ultimoRegistro = Convert.ToInt32(ds.Tables[0].Rows[0]["idTicket"]);
+                        MessageBox.Show("El numero de Ticket recien ingresado es : " + ultimoRegistro, "Por favor tome nota", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
                     frm_0MenuPrincipal ventanaMenuPrincipal = new frm_0MenuPrincipal(usuarioSistema);
                     this.Hide();

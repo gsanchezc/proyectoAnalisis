@@ -40,7 +40,7 @@ namespace frmPrincipal
             if ((MessageBox.Show("Desea volver al Menu Principal", "Volver al Menu Principal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
                 frm_0MenuPrincipal ventanaMenuPrincipal = new frm_0MenuPrincipal(usuarioSistema);
-                this.Close();
+                this.Hide();
                 ventanaMenuPrincipal.Show();
             }
             else

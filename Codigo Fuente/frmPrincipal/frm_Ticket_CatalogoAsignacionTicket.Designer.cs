@@ -183,11 +183,12 @@
             // 
             // btn_salir
             // 
-            this.btn_salir.Location = new System.Drawing.Point(1123, 21);
+            this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salir.Location = new System.Drawing.Point(1077, 16);
             this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(134, 30);
+            this.btn_salir.Size = new System.Drawing.Size(180, 39);
             this.btn_salir.TabIndex = 1;
-            this.btn_salir.Text = "&Salir";
+            this.btn_salir.Text = "Regresar al Menu";
             this.btn_salir.UseVisualStyleBackColor = true;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
@@ -196,9 +197,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 518);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_Ticket_CatalogoAsignacionTicket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Asignacion_Ticket";

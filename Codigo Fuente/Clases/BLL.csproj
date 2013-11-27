@@ -53,11 +53,13 @@
     <Compile Include="estatusFactura.cs" />
     <Compile Include="EstatusTicket.cs" />
     <Compile Include="Limpieza.cs" />
+    <Compile Include="OrdenCompras.cs" />
     <Compile Include="RRHH_incapacidades.cs" />
     <Compile Include="RRHH_NuevoEmpleado.cs" />
     <Compile Include="RRHH_SolicitudVacaciones.cs" />
     <Compile Include="Seguridad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolicitudOrdenesCompra.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="TipoIdentificacion.cs" />
     <Compile Include="TipoPrioridad.cs" />

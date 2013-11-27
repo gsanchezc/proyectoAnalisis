@@ -61,7 +61,7 @@ namespace frmPrincipal
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                this.Close();
+                this.Hide();
                 ventana.Show();
             }
             else

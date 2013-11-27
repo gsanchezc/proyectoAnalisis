@@ -34,6 +34,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btn_NuevaSolicitud = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
@@ -85,7 +87,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_VerSolicitudes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ArchivoAdjunto)).BeginInit();
@@ -130,6 +134,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -143,28 +148,53 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle de Ticket";
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.btn_VerSolicitudes);
+            this.groupBox7.Controls.Add(this.btn_NuevaSolicitud);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBox7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox7.Location = new System.Drawing.Point(900, 298);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(357, 123);
+            this.groupBox7.TabIndex = 51;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "En Caso de necesitar Orden de Compra";
+            // 
+            // btn_NuevaSolicitud
+            // 
+            this.btn_NuevaSolicitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_NuevaSolicitud.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_NuevaSolicitud.Location = new System.Drawing.Point(24, 28);
+            this.btn_NuevaSolicitud.Name = "btn_NuevaSolicitud";
+            this.btn_NuevaSolicitud.Size = new System.Drawing.Size(246, 38);
+            this.btn_NuevaSolicitud.TabIndex = 0;
+            this.btn_NuevaSolicitud.Text = "Solicitud de Compra de Equipo";
+            this.btn_NuevaSolicitud.UseVisualStyleBackColor = true;
+            this.btn_NuevaSolicitud.Click += new System.EventHandler(this.btn_NuevaSolicitud_Click);
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.btn_aceptar);
             this.groupBox5.Controls.Add(this.btn_cancelar);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox5.Location = new System.Drawing.Point(900, 395);
+            this.groupBox5.Location = new System.Drawing.Point(900, 427);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(357, 122);
+            this.groupBox5.Size = new System.Drawing.Size(363, 79);
             this.groupBox5.TabIndex = 50;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Opciones";
+            this.groupBox5.Text = "Opciones Ticket";
             // 
             // btn_aceptar
             // 
             this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btn_aceptar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_aceptar.Location = new System.Drawing.Point(24, 40);
+            this.btn_aceptar.Location = new System.Drawing.Point(24, 28);
             this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(148, 40);
+            this.btn_aceptar.Size = new System.Drawing.Size(148, 42);
             this.btn_aceptar.TabIndex = 0;
-            this.btn_aceptar.Text = "&Aceptar";
+            this.btn_aceptar.Text = "Guardar Cambios";
             this.btn_aceptar.UseVisualStyleBackColor = true;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
@@ -172,9 +202,9 @@
             // 
             this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btn_cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_cancelar.Location = new System.Drawing.Point(197, 40);
+            this.btn_cancelar.Location = new System.Drawing.Point(197, 28);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(148, 40);
+            this.btn_cancelar.Size = new System.Drawing.Size(148, 42);
             this.btn_cancelar.TabIndex = 1;
             this.btn_cancelar.Text = "&Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = true;
@@ -391,7 +421,7 @@
             this.groupBox3.Size = new System.Drawing.Size(879, 219);
             this.groupBox3.TabIndex = 48;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Bitacora";
+            this.groupBox3.Text = "Bitacora o Historial de Atencion del Ticket";
             // 
             // pictureBox1
             // 
@@ -471,9 +501,9 @@
             // 
             this.btn_GuardarArchivoTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GuardarArchivoTecnico.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_GuardarArchivoTecnico.Location = new System.Drawing.Point(376, 178);
+            this.btn_GuardarArchivoTecnico.Location = new System.Drawing.Point(431, 178);
             this.btn_GuardarArchivoTecnico.Name = "btn_GuardarArchivoTecnico";
-            this.btn_GuardarArchivoTecnico.Size = new System.Drawing.Size(201, 30);
+            this.btn_GuardarArchivoTecnico.Size = new System.Drawing.Size(146, 30);
             this.btn_GuardarArchivoTecnico.TabIndex = 46;
             this.btn_GuardarArchivoTecnico.Text = "Guardar Archivo";
             this.btn_GuardarArchivoTecnico.UseVisualStyleBackColor = true;
@@ -485,7 +515,7 @@
             this.btn_AdjuntarArchivoTecnico.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_AdjuntarArchivoTecnico.Location = new System.Drawing.Point(376, 142);
             this.btn_AdjuntarArchivoTecnico.Name = "btn_AdjuntarArchivoTecnico";
-            this.btn_AdjuntarArchivoTecnico.Size = new System.Drawing.Size(201, 30);
+            this.btn_AdjuntarArchivoTecnico.Size = new System.Drawing.Size(147, 30);
             this.btn_AdjuntarArchivoTecnico.TabIndex = 3;
             this.btn_AdjuntarArchivoTecnico.Text = "Adjuntar Archivo";
             this.btn_AdjuntarArchivoTecnico.UseVisualStyleBackColor = true;
@@ -602,7 +632,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox2.Location = new System.Drawing.Point(900, 19);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(357, 370);
+            this.groupBox2.Size = new System.Drawing.Size(357, 273);
             this.groupBox2.TabIndex = 47;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle de asignación";
@@ -611,7 +641,7 @@
             // 
             this.txt_FechaEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_FechaEntrega.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_FechaEntrega.Location = new System.Drawing.Point(151, 317);
+            this.txt_FechaEntrega.Location = new System.Drawing.Point(151, 240);
             this.txt_FechaEntrega.Name = "txt_FechaEntrega";
             this.txt_FechaEntrega.ReadOnly = true;
             this.txt_FechaEntrega.Size = new System.Drawing.Size(194, 22);
@@ -621,7 +651,7 @@
             // 
             this.txt_FechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_FechaInicio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_FechaInicio.Location = new System.Drawing.Point(151, 266);
+            this.txt_FechaInicio.Location = new System.Drawing.Point(151, 200);
             this.txt_FechaInicio.Name = "txt_FechaInicio";
             this.txt_FechaInicio.ReadOnly = true;
             this.txt_FechaInicio.Size = new System.Drawing.Size(194, 22);
@@ -631,7 +661,7 @@
             // 
             this.txt_FechaAsignacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_FechaAsignacion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txt_FechaAsignacion.Location = new System.Drawing.Point(151, 209);
+            this.txt_FechaAsignacion.Location = new System.Drawing.Point(151, 161);
             this.txt_FechaAsignacion.Name = "txt_FechaAsignacion";
             this.txt_FechaAsignacion.ReadOnly = true;
             this.txt_FechaAsignacion.Size = new System.Drawing.Size(194, 22);
@@ -639,10 +669,11 @@
             // 
             // cmb_prioridad
             // 
+            this.cmb_prioridad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_prioridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_prioridad.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.cmb_prioridad.FormattingEnabled = true;
-            this.cmb_prioridad.Location = new System.Drawing.Point(151, 90);
+            this.cmb_prioridad.Location = new System.Drawing.Point(151, 74);
             this.cmb_prioridad.Name = "cmb_prioridad";
             this.cmb_prioridad.Size = new System.Drawing.Size(194, 24);
             this.cmb_prioridad.TabIndex = 1;
@@ -650,6 +681,7 @@
             // 
             // cmb_status
             // 
+            this.cmb_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_status.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.cmb_status.FormattingEnabled = true;
@@ -661,10 +693,11 @@
             // 
             // cmb_tecnico
             // 
+            this.cmb_tecnico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_tecnico.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.cmb_tecnico.FormattingEnabled = true;
-            this.cmb_tecnico.Location = new System.Drawing.Point(151, 152);
+            this.cmb_tecnico.Location = new System.Drawing.Point(151, 117);
             this.cmb_tecnico.Name = "cmb_tecnico";
             this.cmb_tecnico.Size = new System.Drawing.Size(194, 24);
             this.cmb_tecnico.TabIndex = 2;
@@ -674,7 +707,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(69, 92);
+            this.label10.Location = new System.Drawing.Point(69, 76);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(76, 16);
             this.label10.TabIndex = 22;
@@ -685,7 +718,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(49, 268);
+            this.label6.Location = new System.Drawing.Point(49, 202);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 16);
             this.label6.TabIndex = 25;
@@ -696,7 +729,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(32, 319);
+            this.label5.Location = new System.Drawing.Point(32, 242);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 16);
             this.label5.TabIndex = 26;
@@ -707,7 +740,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(7, 154);
+            this.label8.Location = new System.Drawing.Point(7, 119);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(138, 16);
             this.label8.TabIndex = 21;
@@ -729,7 +762,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(10, 211);
+            this.label13.Location = new System.Drawing.Point(10, 163);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(135, 16);
             this.label13.TabIndex = 33;
@@ -740,20 +773,33 @@
             this.timer1.Interval = 60000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btn_VerSolicitudes
+            // 
+            this.btn_VerSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_VerSolicitudes.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_VerSolicitudes.Location = new System.Drawing.Point(99, 72);
+            this.btn_VerSolicitudes.Name = "btn_VerSolicitudes";
+            this.btn_VerSolicitudes.Size = new System.Drawing.Size(246, 38);
+            this.btn_VerSolicitudes.TabIndex = 1;
+            this.btn_VerSolicitudes.Text = "Ver Solicitudes del Ticket";
+            this.btn_VerSolicitudes.UseVisualStyleBackColor = true;
+            this.btn_VerSolicitudes.Click += new System.EventHandler(this.btn_VerSolicitudes_Click);
+            // 
             // frm_Ticket_AtencionTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 518);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_Ticket_AtencionTicket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AtencionTicket";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Ticket_AtencionTicket_FormClosing);
             this.Load += new System.EventHandler(this.frm_AtencioTicket_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -825,5 +871,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_VerBitacoraTicket;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btn_NuevaSolicitud;
+        private System.Windows.Forms.Button btn_VerSolicitudes;
     }
 }

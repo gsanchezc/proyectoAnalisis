@@ -16,9 +16,11 @@ namespace frmPrincipal
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
         ClienteProveedor objClienteProveedor = new ClienteProveedor();
         Ticket objTicket = new Ticket();
+        empleados objEmpleados = new empleados();
 
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
+        private int IdEmpleado = 0;
 
         public frm_Ticket_CatalogoSeleccionTicket()
         {
@@ -32,6 +34,7 @@ namespace frmPrincipal
 
         private void frm_Ticket_CatalogoSeleccionTicket_Load(object sender, EventArgs e)
         {
+            this.cargarNumeroEmpleado();
             this.cargaDataGridTicketParaTecnico();
         }
 
@@ -40,7 +43,7 @@ namespace frmPrincipal
             if ((MessageBox.Show("Desea volver al Menu", "Volver al Menu Principal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
                 frm_0MenuPrincipal ventanaMenuPrincipal = new frm_0MenuPrincipal(usuarioSistema);
-                this.Close();
+                this.Hide();
                 ventanaMenuPrincipal.Show();
             }
             else
@@ -54,7 +57,7 @@ namespace frmPrincipal
             try
             {
                 dtg_atencionTicket.AutoGenerateColumns = false;
-                dtg_atencionTicket.DataSource = objTicket.cargarDataGridTicketParaTecnico().Tables[0];
+                dtg_atencionTicket.DataSource = objTicket.cargarDataGridTicketParaTecnico(IdEmpleado).Tables[0];
             }
             catch (Exception)
             {
@@ -82,6 +85,14 @@ namespace frmPrincipal
         private void frm_Ticket_CatalogoSeleccionTicket_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
+
+        //METODO 
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void cargarNumeroEmpleado()
+        {
+            objEmpleados.cargaIdEmpleadoPorNombreUsuario(usuarioSistema);
+            IdEmpleado = objEmpleados.idEmpleado;
         }
     }
 }

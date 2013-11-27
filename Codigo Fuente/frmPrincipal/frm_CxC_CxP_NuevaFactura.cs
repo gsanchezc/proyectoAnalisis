@@ -55,7 +55,7 @@ namespace frmPrincipal
             if ((MessageBox.Show("Desea salir sin generar factura", "Volver al Menu Principal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
                 frm_0MenuPrincipal ventana = new frm_0MenuPrincipal(usuarioSistema);
-                this.Close();
+                this.Hide();
                 ventana.Show();
             }
             else

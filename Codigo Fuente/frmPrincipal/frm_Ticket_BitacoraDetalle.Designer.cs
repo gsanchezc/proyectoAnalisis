@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_VerArchivoAdjuntoBitacora = new System.Windows.Forms.Button();
             this.Cerrar = new System.Windows.Forms.Button();
@@ -48,12 +49,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ArchivoAdjunto)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.pb_ArchivoAdjunto);
             this.groupBox1.Controls.Add(this.txt_Tecnico);
@@ -79,6 +82,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle Bitacora";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::frmPrincipal.Properties.Resources.download;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1030, 151);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(195, 192);
+            this.pictureBox1.TabIndex = 70;
+            this.pictureBox1.TabStop = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btn_VerArchivoAdjuntoBitacora);
@@ -86,7 +99,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox2.Location = new System.Drawing.Point(197, 335);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(324, 144);
+            this.groupBox2.Size = new System.Drawing.Size(302, 144);
             this.groupBox2.TabIndex = 69;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Opciones";
@@ -95,7 +108,7 @@
             // 
             this.btn_VerArchivoAdjuntoBitacora.Location = new System.Drawing.Point(21, 34);
             this.btn_VerArchivoAdjuntoBitacora.Name = "btn_VerArchivoAdjuntoBitacora";
-            this.btn_VerArchivoAdjuntoBitacora.Size = new System.Drawing.Size(281, 37);
+            this.btn_VerArchivoAdjuntoBitacora.Size = new System.Drawing.Size(256, 37);
             this.btn_VerArchivoAdjuntoBitacora.TabIndex = 14;
             this.btn_VerArchivoAdjuntoBitacora.Text = "Ver Archivo Adjunto Bitacora";
             this.btn_VerArchivoAdjuntoBitacora.UseVisualStyleBackColor = true;
@@ -105,7 +118,7 @@
             // 
             this.Cerrar.Location = new System.Drawing.Point(21, 90);
             this.Cerrar.Name = "Cerrar";
-            this.Cerrar.Size = new System.Drawing.Size(281, 37);
+            this.Cerrar.Size = new System.Drawing.Size(256, 37);
             this.Cerrar.TabIndex = 15;
             this.Cerrar.Text = "Cerrar Bitacora";
             this.Cerrar.UseVisualStyleBackColor = true;
@@ -174,12 +187,12 @@
             // 
             // txt_DescripcionBitacora
             // 
-            this.txt_DescripcionBitacora.Location = new System.Drawing.Point(539, 45);
+            this.txt_DescripcionBitacora.Location = new System.Drawing.Point(540, 45);
             this.txt_DescripcionBitacora.Multiline = true;
             this.txt_DescripcionBitacora.Name = "txt_DescripcionBitacora";
             this.txt_DescripcionBitacora.ReadOnly = true;
             this.txt_DescripcionBitacora.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_DescripcionBitacora.Size = new System.Drawing.Size(676, 434);
+            this.txt_DescripcionBitacora.Size = new System.Drawing.Size(473, 434);
             this.txt_DescripcionBitacora.TabIndex = 7;
             // 
             // txt_TiempoLaborado
@@ -209,7 +222,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(535, 22);
+            this.label4.Location = new System.Drawing.Point(536, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(200, 20);
             this.label4.TabIndex = 3;
@@ -247,8 +260,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 518);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "frm_Ticket_BitacoraDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frm_TicketBitacoraDetalle";
@@ -256,6 +269,7 @@
             this.Load += new System.EventHandler(this.frm_TicketBitacoraDetalle_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_ArchivoAdjunto)).EndInit();
             this.ResumeLayout(false);
@@ -283,5 +297,6 @@
         private System.Windows.Forms.PictureBox pb_ArchivoAdjunto;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button Cerrar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

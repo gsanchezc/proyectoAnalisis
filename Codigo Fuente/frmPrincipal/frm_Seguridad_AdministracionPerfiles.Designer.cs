@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Seguridad_AdministracionPerfiles));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txt_empleados = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lst_ListaUsuario = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -70,6 +72,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.groupBox4);
@@ -83,6 +86,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asignacion de Roles";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::frmPrincipal.Properties.Resources.download__1_;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1031, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(192, 213);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox7
             // 
@@ -268,18 +281,18 @@
             this.groupBox4.Controls.Add(this.btn_actualizarRoles);
             this.groupBox4.Controls.Add(this.btn_cerrar);
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox4.Location = new System.Drawing.Point(1022, 28);
+            this.groupBox4.Location = new System.Drawing.Point(1031, 304);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(203, 445);
+            this.groupBox4.Size = new System.Drawing.Size(192, 169);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Opciones";
             // 
             // btn_actualizarRoles
             // 
-            this.btn_actualizarRoles.Location = new System.Drawing.Point(18, 50);
+            this.btn_actualizarRoles.Location = new System.Drawing.Point(21, 37);
             this.btn_actualizarRoles.Name = "btn_actualizarRoles";
-            this.btn_actualizarRoles.Size = new System.Drawing.Size(156, 38);
+            this.btn_actualizarRoles.Size = new System.Drawing.Size(153, 38);
             this.btn_actualizarRoles.TabIndex = 4;
             this.btn_actualizarRoles.Text = "Actualizar Rol";
             this.btn_actualizarRoles.UseVisualStyleBackColor = true;
@@ -287,9 +300,9 @@
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(18, 149);
+            this.btn_cerrar.Location = new System.Drawing.Point(21, 101);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(156, 36);
+            this.btn_cerrar.Size = new System.Drawing.Size(153, 36);
             this.btn_cerrar.TabIndex = 5;
             this.btn_cerrar.Text = "Cerrar";
             this.btn_cerrar.UseVisualStyleBackColor = true;
@@ -405,15 +418,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 518);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_Seguridad_AdministracionPerfiles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Administracion Perfiles";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Seguridad_AdministracionPerfiles_FormClosing);
             this.Load += new System.EventHandler(this.frm_Seguridad_AdministracionPerfiles_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -459,5 +473,6 @@
         private System.Windows.Forms.RadioButton rb_empleados;
         private System.Windows.Forms.TextBox txt_RolActual;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

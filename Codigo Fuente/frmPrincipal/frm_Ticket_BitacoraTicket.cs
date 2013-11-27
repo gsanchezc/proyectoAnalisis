@@ -59,7 +59,7 @@ namespace frmPrincipal
                 if ((MessageBox.Show("Desea volver al Menu Principal", "Volver al Menu Principal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                 {
                     frm_0MenuPrincipal ventanaMenuPrincipal = new frm_0MenuPrincipal(usuarioSistema);
-                    this.Close();
+                    this.Hide();
                     ventanaMenuPrincipal.Show();
                 }
                 else
@@ -69,18 +69,18 @@ namespace frmPrincipal
             }
             else if (pantalla == "AtencionTicketEspecifico")
             {
-                this.Close();
+                this.Hide();
             }
             else if (pantalla == "AtencionTicketGeneral")
             {
-                this.Close();
+                this.Hide();
             }
             else 
             {
                 if ((MessageBox.Show("Desea volver al Menu Principal", "Volver al Menu Principal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                 {
                     frm_0MenuPrincipal ventanaMenuPrincipal = new frm_0MenuPrincipal(usuarioSistema);
-                    this.Close();
+                    this.Hide();
                     ventanaMenuPrincipal.Show();
                 }
                 else
@@ -136,7 +136,7 @@ namespace frmPrincipal
                 idBitacora = Convert.ToInt32(dgv_Bitacora.Rows[e.RowIndex].Cells[0].Value.ToString());
 
                 frm_Ticket_BitacoraDetalle ventana = new frm_Ticket_BitacoraDetalle(usuarioSistema, idBitacora, pantalla, Ticket);
-                ventana.Show();
+                ventana.ShowDialog();
             }
             else
             { }

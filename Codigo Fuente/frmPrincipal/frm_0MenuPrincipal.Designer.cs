@@ -35,6 +35,7 @@
             this.salirDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NuevoTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.misTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CatalogoAsignacionDeTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CatalogoAtencionDeTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BitacoraTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,24 +47,26 @@
             this.generarGraficoReporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoAlertasNotificacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoComunicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresarAlertaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contabilidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.envioEstadoDeCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solicitudOrdenesCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.catalgoProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solicitudOrdenesCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.catalgoProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.catalogoSolicitudesDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.envioEstadoDeCuentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rRHHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlNominaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoEmpleadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.controlVacacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solicitudDeVacacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.controlIncapacidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoEmpleadoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresoDeIncapacidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solicitudDeVacacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionDeSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gb_tickets = new System.Windows.Forms.GroupBox();
-            this.btn_BitacoraTicket = new System.Windows.Forms.Button();
+            this.btn_MisTickets = new System.Windows.Forms.Button();
             this.btn_AtencionTicket = new System.Windows.Forms.Button();
             this.btn_AsignarTicket = new System.Windows.Forms.Button();
             this.btn_NuevoTicket = new System.Windows.Forms.Button();
@@ -79,7 +82,7 @@
             this.btn_GenerarGrafico = new System.Windows.Forms.Button();
             this.btn_MantenimientoAlertasNotificaciones = new System.Windows.Forms.Button();
             this.gb_CxC = new System.Windows.Forms.GroupBox();
-            this.btn_CatalogoProveedores = new System.Windows.Forms.Button();
+            this.btn_SolicitudOrdenCompra = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btn_NuevaFactura = new System.Windows.Forms.Button();
             this.btn_SolictudOrdenesCompra = new System.Windows.Forms.Button();
@@ -117,10 +120,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sistemaToolStripMenuItem,
             this.ticketToolStripMenuItem,
-            this.seguridadToolStripMenuItem,
-            this.reportesYAlertasToolStripMenuItem,
             this.contabilidadToolStripMenuItem,
             this.rRHHToolStripMenuItem,
+            this.reportesYAlertasToolStripMenuItem,
+            this.seguridadToolStripMenuItem,
             this.mantenimientoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -155,6 +158,7 @@
             // 
             this.ticketToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NuevoTicketToolStripMenuItem,
+            this.misTicketToolStripMenuItem,
             this.CatalogoAsignacionDeTicketToolStripMenuItem,
             this.CatalogoAtencionDeTicketToolStripMenuItem,
             this.BitacoraTicketToolStripMenuItem});
@@ -168,6 +172,13 @@
             this.NuevoTicketToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.NuevoTicketToolStripMenuItem.Text = "Nuevo Ticket";
             this.NuevoTicketToolStripMenuItem.Click += new System.EventHandler(this.NuevoTicketToolStripMenuItem_Click);
+            // 
+            // misTicketToolStripMenuItem
+            // 
+            this.misTicketToolStripMenuItem.Name = "misTicketToolStripMenuItem";
+            this.misTicketToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.misTicketToolStripMenuItem.Text = "Mis Ticket";
+            this.misTicketToolStripMenuItem.Click += new System.EventHandler(this.misTicketToolStripMenuItem_Click);
             // 
             // CatalogoAsignacionDeTicketToolStripMenuItem
             // 
@@ -226,7 +237,8 @@
             this.reportesYAlertasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generarGraficoReporteToolStripMenuItem,
             this.mantenimientoAlertasNotificacionesToolStripMenuItem,
-            this.mantenimientoComunicacionToolStripMenuItem});
+            this.mantenimientoComunicacionToolStripMenuItem,
+            this.ingresarAlertaToolStripMenuItem});
             this.reportesYAlertasToolStripMenuItem.Name = "reportesYAlertasToolStripMenuItem";
             this.reportesYAlertasToolStripMenuItem.Size = new System.Drawing.Size(127, 21);
             this.reportesYAlertasToolStripMenuItem.Text = "Reportes y Alertas";
@@ -252,15 +264,23 @@
             this.mantenimientoComunicacionToolStripMenuItem.Text = "Mantenimiento Comunicacion";
             this.mantenimientoComunicacionToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoComunicacionToolStripMenuItem_Click);
             // 
+            // ingresarAlertaToolStripMenuItem
+            // 
+            this.ingresarAlertaToolStripMenuItem.Name = "ingresarAlertaToolStripMenuItem";
+            this.ingresarAlertaToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
+            this.ingresarAlertaToolStripMenuItem.Text = "Ingresar Alerta";
+            this.ingresarAlertaToolStripMenuItem.Click += new System.EventHandler(this.ingresarAlertaToolStripMenuItem_Click);
+            // 
             // contabilidadToolStripMenuItem
             // 
             this.contabilidadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevaFacturaToolStripMenuItem,
-            this.envioEstadoDeCuentasToolStripMenuItem,
-            this.solicitudOrdenesCompraToolStripMenuItem,
+            this.nuevoProveedorToolStripMenuItem,
             this.nuevaOrdenDeCompraToolStripMenuItem,
+            this.solicitudOrdenesCompraToolStripMenuItem,
             this.catalgoProveedoresToolStripMenuItem,
-            this.nuevoProveedorToolStripMenuItem});
+            this.catalogoSolicitudesDeCompraToolStripMenuItem,
+            this.envioEstadoDeCuentasToolStripMenuItem});
             this.contabilidadToolStripMenuItem.Name = "contabilidadToolStripMenuItem";
             this.contabilidadToolStripMenuItem.Size = new System.Drawing.Size(94, 21);
             this.contabilidadToolStripMenuItem.Text = "Contabilidad";
@@ -268,54 +288,61 @@
             // nuevaFacturaToolStripMenuItem
             // 
             this.nuevaFacturaToolStripMenuItem.Name = "nuevaFacturaToolStripMenuItem";
-            this.nuevaFacturaToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.nuevaFacturaToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.nuevaFacturaToolStripMenuItem.Text = "Nueva Factura";
             this.nuevaFacturaToolStripMenuItem.Click += new System.EventHandler(this.nuevaFacturaToolStripMenuItem_Click);
-            // 
-            // envioEstadoDeCuentasToolStripMenuItem
-            // 
-            this.envioEstadoDeCuentasToolStripMenuItem.Name = "envioEstadoDeCuentasToolStripMenuItem";
-            this.envioEstadoDeCuentasToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.envioEstadoDeCuentasToolStripMenuItem.Text = "Envio Estado de Cuentas";
-            this.envioEstadoDeCuentasToolStripMenuItem.Click += new System.EventHandler(this.envioEstadoDeCuentasToolStripMenuItem_Click);
-            // 
-            // solicitudOrdenesCompraToolStripMenuItem
-            // 
-            this.solicitudOrdenesCompraToolStripMenuItem.Name = "solicitudOrdenesCompraToolStripMenuItem";
-            this.solicitudOrdenesCompraToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.solicitudOrdenesCompraToolStripMenuItem.Text = "Catalogo Ordenes de Compra";
-            this.solicitudOrdenesCompraToolStripMenuItem.Click += new System.EventHandler(this.solicitudOrdenesCompraToolStripMenuItem_Click);
-            // 
-            // nuevaOrdenDeCompraToolStripMenuItem
-            // 
-            this.nuevaOrdenDeCompraToolStripMenuItem.Name = "nuevaOrdenDeCompraToolStripMenuItem";
-            this.nuevaOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.nuevaOrdenDeCompraToolStripMenuItem.Text = "Nueva Orden de Compra";
-            this.nuevaOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.nuevaOrdenDeCompraToolStripMenuItem_Click);
-            // 
-            // catalgoProveedoresToolStripMenuItem
-            // 
-            this.catalgoProveedoresToolStripMenuItem.Name = "catalgoProveedoresToolStripMenuItem";
-            this.catalgoProveedoresToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.catalgoProveedoresToolStripMenuItem.Text = "Catalogo Proveedores";
-            this.catalgoProveedoresToolStripMenuItem.Click += new System.EventHandler(this.catalgoProveedoresToolStripMenuItem_Click);
             // 
             // nuevoProveedorToolStripMenuItem
             // 
             this.nuevoProveedorToolStripMenuItem.Name = "nuevoProveedorToolStripMenuItem";
-            this.nuevoProveedorToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.nuevoProveedorToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
             this.nuevoProveedorToolStripMenuItem.Text = "Nuevo Proveedor";
             this.nuevoProveedorToolStripMenuItem.Click += new System.EventHandler(this.nuevoProveedorToolStripMenuItem_Click);
+            // 
+            // nuevaOrdenDeCompraToolStripMenuItem
+            // 
+            this.nuevaOrdenDeCompraToolStripMenuItem.Name = "nuevaOrdenDeCompraToolStripMenuItem";
+            this.nuevaOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.nuevaOrdenDeCompraToolStripMenuItem.Text = "Nueva Orden de Compra";
+            this.nuevaOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.nuevaOrdenDeCompraToolStripMenuItem_Click);
+            // 
+            // solicitudOrdenesCompraToolStripMenuItem
+            // 
+            this.solicitudOrdenesCompraToolStripMenuItem.Name = "solicitudOrdenesCompraToolStripMenuItem";
+            this.solicitudOrdenesCompraToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.solicitudOrdenesCompraToolStripMenuItem.Text = "Catalogo Ordenes de Compra";
+            this.solicitudOrdenesCompraToolStripMenuItem.Click += new System.EventHandler(this.solicitudOrdenesCompraToolStripMenuItem_Click);
+            // 
+            // catalgoProveedoresToolStripMenuItem
+            // 
+            this.catalgoProveedoresToolStripMenuItem.Name = "catalgoProveedoresToolStripMenuItem";
+            this.catalgoProveedoresToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.catalgoProveedoresToolStripMenuItem.Text = "Catalogo Proveedores";
+            this.catalgoProveedoresToolStripMenuItem.Click += new System.EventHandler(this.catalgoProveedoresToolStripMenuItem_Click);
+            // 
+            // catalogoSolicitudesDeCompraToolStripMenuItem
+            // 
+            this.catalogoSolicitudesDeCompraToolStripMenuItem.Name = "catalogoSolicitudesDeCompraToolStripMenuItem";
+            this.catalogoSolicitudesDeCompraToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.catalogoSolicitudesDeCompraToolStripMenuItem.Text = "Catalogo Solicitudes de Compra";
+            this.catalogoSolicitudesDeCompraToolStripMenuItem.Click += new System.EventHandler(this.catalogoSolicitudesDeCompraToolStripMenuItem_Click);
+            // 
+            // envioEstadoDeCuentasToolStripMenuItem
+            // 
+            this.envioEstadoDeCuentasToolStripMenuItem.Name = "envioEstadoDeCuentasToolStripMenuItem";
+            this.envioEstadoDeCuentasToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.envioEstadoDeCuentasToolStripMenuItem.Text = "Generar Estado de Cuentas";
+            this.envioEstadoDeCuentasToolStripMenuItem.Click += new System.EventHandler(this.envioEstadoDeCuentasToolStripMenuItem_Click);
             // 
             // rRHHToolStripMenuItem
             // 
             this.rRHHToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.controlNominaToolStripMenuItem,
-            this.nuevoEmpleadoToolStripMenuItem1,
             this.controlVacacionesToolStripMenuItem,
-            this.solicitudDeVacacionesToolStripMenuItem,
             this.controlIncapacidadesToolStripMenuItem,
-            this.ingresoDeIncapacidadToolStripMenuItem});
+            this.nuevoEmpleadoToolStripMenuItem1,
+            this.ingresoDeIncapacidadToolStripMenuItem,
+            this.solicitudDeVacacionesToolStripMenuItem});
             this.rRHHToolStripMenuItem.Name = "rRHHToolStripMenuItem";
             this.rRHHToolStripMenuItem.Size = new System.Drawing.Size(54, 21);
             this.rRHHToolStripMenuItem.Text = "RRHH";
@@ -327,26 +354,12 @@
             this.controlNominaToolStripMenuItem.Text = "Control de Nomina";
             this.controlNominaToolStripMenuItem.Click += new System.EventHandler(this.controlNominaToolStripMenuItem_Click);
             // 
-            // nuevoEmpleadoToolStripMenuItem1
-            // 
-            this.nuevoEmpleadoToolStripMenuItem1.Name = "nuevoEmpleadoToolStripMenuItem1";
-            this.nuevoEmpleadoToolStripMenuItem1.Size = new System.Drawing.Size(225, 22);
-            this.nuevoEmpleadoToolStripMenuItem1.Text = "Nuevo Empleado";
-            this.nuevoEmpleadoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoEmpleadoToolStripMenuItem1_Click);
-            // 
             // controlVacacionesToolStripMenuItem
             // 
             this.controlVacacionesToolStripMenuItem.Name = "controlVacacionesToolStripMenuItem";
             this.controlVacacionesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.controlVacacionesToolStripMenuItem.Text = "Control de Vacaciones";
             this.controlVacacionesToolStripMenuItem.Click += new System.EventHandler(this.controlVacacionesToolStripMenuItem_Click);
-            // 
-            // solicitudDeVacacionesToolStripMenuItem
-            // 
-            this.solicitudDeVacacionesToolStripMenuItem.Name = "solicitudDeVacacionesToolStripMenuItem";
-            this.solicitudDeVacacionesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.solicitudDeVacacionesToolStripMenuItem.Text = "Solicitud de Vacaciones";
-            this.solicitudDeVacacionesToolStripMenuItem.Click += new System.EventHandler(this.solicitudDeVacacionesToolStripMenuItem_Click);
             // 
             // controlIncapacidadesToolStripMenuItem
             // 
@@ -355,12 +368,26 @@
             this.controlIncapacidadesToolStripMenuItem.Text = "Control de Incapacidades";
             this.controlIncapacidadesToolStripMenuItem.Click += new System.EventHandler(this.controlIncapacidadesToolStripMenuItem_Click);
             // 
+            // nuevoEmpleadoToolStripMenuItem1
+            // 
+            this.nuevoEmpleadoToolStripMenuItem1.Name = "nuevoEmpleadoToolStripMenuItem1";
+            this.nuevoEmpleadoToolStripMenuItem1.Size = new System.Drawing.Size(225, 22);
+            this.nuevoEmpleadoToolStripMenuItem1.Text = "Nuevo Empleado";
+            this.nuevoEmpleadoToolStripMenuItem1.Click += new System.EventHandler(this.nuevoEmpleadoToolStripMenuItem1_Click);
+            // 
             // ingresoDeIncapacidadToolStripMenuItem
             // 
             this.ingresoDeIncapacidadToolStripMenuItem.Name = "ingresoDeIncapacidadToolStripMenuItem";
             this.ingresoDeIncapacidadToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.ingresoDeIncapacidadToolStripMenuItem.Text = "Ingreso de Incapacidad";
             this.ingresoDeIncapacidadToolStripMenuItem.Click += new System.EventHandler(this.ingresoDeIncapacidadToolStripMenuItem_Click);
+            // 
+            // solicitudDeVacacionesToolStripMenuItem
+            // 
+            this.solicitudDeVacacionesToolStripMenuItem.Name = "solicitudDeVacacionesToolStripMenuItem";
+            this.solicitudDeVacacionesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.solicitudDeVacacionesToolStripMenuItem.Text = "Solicitud de Vacaciones";
+            this.solicitudDeVacacionesToolStripMenuItem.Click += new System.EventHandler(this.solicitudDeVacacionesToolStripMenuItem_Click);
             // 
             // mantenimientoToolStripMenuItem
             // 
@@ -379,7 +406,7 @@
             // 
             // gb_tickets
             // 
-            this.gb_tickets.Controls.Add(this.btn_BitacoraTicket);
+            this.gb_tickets.Controls.Add(this.btn_MisTickets);
             this.gb_tickets.Controls.Add(this.btn_AtencionTicket);
             this.gb_tickets.Controls.Add(this.btn_AsignarTicket);
             this.gb_tickets.Controls.Add(this.btn_NuevoTicket);
@@ -393,20 +420,20 @@
             this.gb_tickets.TabStop = false;
             this.gb_tickets.Text = "Mantenimiento de Tickets";
             // 
-            // btn_BitacoraTicket
+            // btn_MisTickets
             // 
-            this.btn_BitacoraTicket.Location = new System.Drawing.Point(140, 132);
-            this.btn_BitacoraTicket.Name = "btn_BitacoraTicket";
-            this.btn_BitacoraTicket.Size = new System.Drawing.Size(220, 32);
-            this.btn_BitacoraTicket.TabIndex = 4;
-            this.btn_BitacoraTicket.Text = "Bitacora de Ticket";
-            this.btn_BitacoraTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_BitacoraTicket.UseVisualStyleBackColor = true;
-            this.btn_BitacoraTicket.Click += new System.EventHandler(this.btn_BitacoraTicket_Click);
+            this.btn_MisTickets.Location = new System.Drawing.Point(140, 56);
+            this.btn_MisTickets.Name = "btn_MisTickets";
+            this.btn_MisTickets.Size = new System.Drawing.Size(220, 32);
+            this.btn_MisTickets.TabIndex = 5;
+            this.btn_MisTickets.Text = "Control De Mis Ticket";
+            this.btn_MisTickets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_MisTickets.UseVisualStyleBackColor = true;
+            this.btn_MisTickets.Click += new System.EventHandler(this.btn_MisTickets_Click);
             // 
             // btn_AtencionTicket
             // 
-            this.btn_AtencionTicket.Location = new System.Drawing.Point(140, 95);
+            this.btn_AtencionTicket.Location = new System.Drawing.Point(140, 132);
             this.btn_AtencionTicket.Name = "btn_AtencionTicket";
             this.btn_AtencionTicket.Size = new System.Drawing.Size(220, 32);
             this.btn_AtencionTicket.TabIndex = 3;
@@ -417,7 +444,7 @@
             // 
             // btn_AsignarTicket
             // 
-            this.btn_AsignarTicket.Location = new System.Drawing.Point(140, 57);
+            this.btn_AsignarTicket.Location = new System.Drawing.Point(140, 94);
             this.btn_AsignarTicket.Name = "btn_AsignarTicket";
             this.btn_AsignarTicket.Size = new System.Drawing.Size(220, 32);
             this.btn_AsignarTicket.TabIndex = 2;
@@ -432,7 +459,7 @@
             this.btn_NuevoTicket.Name = "btn_NuevoTicket";
             this.btn_NuevoTicket.Size = new System.Drawing.Size(220, 32);
             this.btn_NuevoTicket.TabIndex = 1;
-            this.btn_NuevoTicket.Text = "Nuevo Ticket";
+            this.btn_NuevoTicket.Text = "Ingresar Nuevo Ticket";
             this.btn_NuevoTicket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NuevoTicket.UseVisualStyleBackColor = true;
             this.btn_NuevoTicket.Click += new System.EventHandler(this.btn_NuevoTicket_Click);
@@ -565,7 +592,7 @@
             // 
             // gb_CxC
             // 
-            this.gb_CxC.Controls.Add(this.btn_CatalogoProveedores);
+            this.gb_CxC.Controls.Add(this.btn_SolicitudOrdenCompra);
             this.gb_CxC.Controls.Add(this.pictureBox6);
             this.gb_CxC.Controls.Add(this.btn_NuevaFactura);
             this.gb_CxC.Controls.Add(this.btn_SolictudOrdenesCompra);
@@ -579,16 +606,16 @@
             this.gb_CxC.TabStop = false;
             this.gb_CxC.Text = "Cuentas por Cobrar y por Pagar";
             // 
-            // btn_CatalogoProveedores
+            // btn_SolicitudOrdenCompra
             // 
-            this.btn_CatalogoProveedores.Location = new System.Drawing.Point(6, 132);
-            this.btn_CatalogoProveedores.Name = "btn_CatalogoProveedores";
-            this.btn_CatalogoProveedores.Size = new System.Drawing.Size(220, 32);
-            this.btn_CatalogoProveedores.TabIndex = 7;
-            this.btn_CatalogoProveedores.Text = "Control Proveedores";
-            this.btn_CatalogoProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CatalogoProveedores.UseVisualStyleBackColor = true;
-            this.btn_CatalogoProveedores.Click += new System.EventHandler(this.btn_CatalogoProveedores_Click);
+            this.btn_SolicitudOrdenCompra.Location = new System.Drawing.Point(6, 19);
+            this.btn_SolicitudOrdenCompra.Name = "btn_SolicitudOrdenCompra";
+            this.btn_SolicitudOrdenCompra.Size = new System.Drawing.Size(220, 32);
+            this.btn_SolicitudOrdenCompra.TabIndex = 11;
+            this.btn_SolicitudOrdenCompra.Text = "Solicitudes de Compra";
+            this.btn_SolicitudOrdenCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_SolicitudOrdenCompra.UseVisualStyleBackColor = true;
+            this.btn_SolicitudOrdenCompra.Click += new System.EventHandler(this.btn_SolicitudOrdenCompra_Click);
             // 
             // pictureBox6
             // 
@@ -602,33 +629,33 @@
             // 
             // btn_NuevaFactura
             // 
-            this.btn_NuevaFactura.Location = new System.Drawing.Point(6, 19);
+            this.btn_NuevaFactura.Location = new System.Drawing.Point(6, 94);
             this.btn_NuevaFactura.Name = "btn_NuevaFactura";
             this.btn_NuevaFactura.Size = new System.Drawing.Size(220, 32);
             this.btn_NuevaFactura.TabIndex = 4;
-            this.btn_NuevaFactura.Text = "Nueva Factura";
+            this.btn_NuevaFactura.Text = "Generar Facturas";
             this.btn_NuevaFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_NuevaFactura.UseVisualStyleBackColor = true;
             this.btn_NuevaFactura.Click += new System.EventHandler(this.btn_NuevaFactura_Click);
             // 
             // btn_SolictudOrdenesCompra
             // 
-            this.btn_SolictudOrdenesCompra.Location = new System.Drawing.Point(6, 95);
+            this.btn_SolictudOrdenesCompra.Location = new System.Drawing.Point(6, 56);
             this.btn_SolictudOrdenesCompra.Name = "btn_SolictudOrdenesCompra";
             this.btn_SolictudOrdenesCompra.Size = new System.Drawing.Size(220, 32);
             this.btn_SolictudOrdenesCompra.TabIndex = 6;
-            this.btn_SolictudOrdenesCompra.Text = "Control Orden Compra";
+            this.btn_SolictudOrdenesCompra.Text = "Control Ordenes de Compra";
             this.btn_SolictudOrdenesCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_SolictudOrdenesCompra.UseVisualStyleBackColor = true;
             this.btn_SolictudOrdenesCompra.Click += new System.EventHandler(this.btn_SolictudOrdenesCompra_Click);
             // 
             // btn_EnvioEstadosCuenta
             // 
-            this.btn_EnvioEstadosCuenta.Location = new System.Drawing.Point(6, 57);
+            this.btn_EnvioEstadosCuenta.Location = new System.Drawing.Point(6, 132);
             this.btn_EnvioEstadosCuenta.Name = "btn_EnvioEstadosCuenta";
             this.btn_EnvioEstadosCuenta.Size = new System.Drawing.Size(220, 32);
             this.btn_EnvioEstadosCuenta.TabIndex = 5;
-            this.btn_EnvioEstadosCuenta.Text = "Estados de Cuenta";
+            this.btn_EnvioEstadosCuenta.Text = "Generar Estados de Cuenta";
             this.btn_EnvioEstadosCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_EnvioEstadosCuenta.UseVisualStyleBackColor = true;
             this.btn_EnvioEstadosCuenta.Click += new System.EventHandler(this.btn_EnvioEstadosCuenta_Click);
@@ -773,11 +800,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1264, 518);
-            this.ControlBox = false;
             this.Controls.Add(this.gb_mantenimientos);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "frm_0MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Menu Principal";
@@ -839,7 +866,6 @@
         private System.Windows.Forms.ToolStripMenuItem solicitudDeVacacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresoDeIncapacidadToolStripMenuItem;
         private System.Windows.Forms.GroupBox gb_tickets;
-        private System.Windows.Forms.Button btn_BitacoraTicket;
         private System.Windows.Forms.Button btn_AtencionTicket;
         private System.Windows.Forms.Button btn_AsignarTicket;
         private System.Windows.Forms.Button btn_NuevoTicket;
@@ -855,7 +881,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btn_MantenimientoAlertasNotificaciones;
         private System.Windows.Forms.GroupBox gb_CxC;
-        private System.Windows.Forms.Button btn_CatalogoProveedores;
         private System.Windows.Forms.Button btn_SolictudOrdenesCompra;
         private System.Windows.Forms.Button btn_EnvioEstadosCuenta;
         private System.Windows.Forms.Button btn_NuevaFactura;
@@ -871,6 +896,11 @@
         private System.Windows.Forms.Button btn_ConfiguracionSistema;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.GroupBox gb_mantenimientos;
+        private System.Windows.Forms.Button btn_MisTickets;
+        private System.Windows.Forms.ToolStripMenuItem misTicketToolStripMenuItem;
+        private System.Windows.Forms.Button btn_SolicitudOrdenCompra;
+        private System.Windows.Forms.ToolStripMenuItem catalogoSolicitudesDeCompraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ingresarAlertaToolStripMenuItem;
 
     }
 }

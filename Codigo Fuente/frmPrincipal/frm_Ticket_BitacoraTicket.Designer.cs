@@ -71,11 +71,12 @@
             // 
             // btn_cerrar
             // 
-            this.btn_cerrar.Location = new System.Drawing.Point(1091, 21);
+            this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrar.Location = new System.Drawing.Point(1077, 15);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(161, 23);
+            this.btn_cerrar.Size = new System.Drawing.Size(181, 32);
             this.btn_cerrar.TabIndex = 45;
-            this.btn_cerrar.Text = "&Cerrar";
+            this.btn_cerrar.Text = "Cerrar Historial";
             this.btn_cerrar.UseVisualStyleBackColor = true;
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
@@ -169,6 +170,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 518);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_Ticket_BitacoraTicket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Bitacora de Ticket";

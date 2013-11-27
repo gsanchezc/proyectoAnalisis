@@ -110,6 +110,8 @@
             // 
             // dtg_CatalogoProveedor
             // 
+            this.dtg_CatalogoProveedor.AllowUserToAddRows = false;
+            this.dtg_CatalogoProveedor.AllowUserToDeleteRows = false;
             this.dtg_CatalogoProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_CatalogoProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Proveedor,
@@ -125,30 +127,35 @@
             // 
             // Id_Proveedor
             // 
+            this.Id_Proveedor.DataPropertyName = "idProveedor";
             this.Id_Proveedor.HeaderText = "Id Proveedor";
             this.Id_Proveedor.Name = "Id_Proveedor";
             this.Id_Proveedor.Width = 150;
             // 
             // Identificacion
             // 
+            this.Identificacion.DataPropertyName = "identificacion";
             this.Identificacion.HeaderText = "Identificacion";
             this.Identificacion.Name = "Identificacion";
             this.Identificacion.Width = 150;
             // 
             // Nombre_Proveedor
             // 
+            this.Nombre_Proveedor.DataPropertyName = "nombre";
             this.Nombre_Proveedor.HeaderText = "Nombre Proveedor";
             this.Nombre_Proveedor.Name = "Nombre_Proveedor";
             this.Nombre_Proveedor.Width = 200;
             // 
             // Direccion
             // 
+            this.Direccion.DataPropertyName = "direccion";
             this.Direccion.HeaderText = "Direccion";
             this.Direccion.Name = "Direccion";
             this.Direccion.Width = 225;
             // 
             // Telefono
             // 
+            this.Telefono.DataPropertyName = "telefono";
             this.Telefono.HeaderText = "Telefono";
             this.Telefono.Name = "Telefono";
             this.Telefono.Width = 150;
@@ -163,12 +170,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 518);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_CxC_CxP_CatalogoProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Catalogo Proveedores";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_CxC_CxP_CatalogoProveedores_FormClosing);
             this.Load += new System.EventHandler(this.frm_CxC_CxP_CatalogoProveedores_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -185,12 +193,12 @@
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_cerrar;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Identificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

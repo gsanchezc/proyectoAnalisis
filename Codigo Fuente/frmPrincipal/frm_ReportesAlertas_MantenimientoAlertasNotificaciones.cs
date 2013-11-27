@@ -16,7 +16,6 @@ namespace frmPrincipal
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
         Alertas objAlertas = new Alertas();
         empleados objEmpleados = new empleados();
-        StringBuilder stComunicado = new StringBuilder("Bienvenido al Sistema");
 
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
@@ -40,7 +39,8 @@ namespace frmPrincipal
             this.cargaRolUsuario();
             this.TicketsPendientes();
             this.TicketsVencidos();
-            this.cargarComunicados();
+            this.cargarCantidadAlertasEmpleado();
+            this.cargarAlertas();
             this.iniciaTimer();
         }
 
@@ -62,7 +62,6 @@ namespace frmPrincipal
             else if (rolUsuario == 3)
             {
                 labelDepartamento.Text = "Tecnico";
-                gb_AlertasRRHH.Visible = false;
             }
             else if (rolUsuario == 4)
             {
@@ -75,19 +74,17 @@ namespace frmPrincipal
             else if (rolUsuario == 6)
             {
                 labelDepartamento.Text = "Cliente";
-
-                gb_AlertasRRHH.Visible = false;
+                dgv_AlertasEmpleados.Visible = false;
                 gb_AlertasTicket.Visible = false;
                 lb_numeroEmpleado.Visible = false;
                 lb_Numero.Visible = false;
             }
             else 
             {
-                gb_AlertasRRHH.Visible = true;
-                gb_AlertasRRHH.Visible = true;
+                dgv_AlertasEmpleados.Visible = true;
                 gb_AlertasTicket.Visible = true;
                 lb_numeroEmpleado.Visible = true;
-                lb_Numero.Visible = true;
+                lb_Numero.Visible = true;               
             }
 
             if (rolUsuario != 6)
@@ -153,13 +150,45 @@ namespace frmPrincipal
             else { }
         }
 
+        //METODO 
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private void cargarAlertas()
+        {
+            if (rolUsuario != 6)
+            {
+                try
+                {
+                    dgv_AlertasEmpleados.AutoGenerateColumns = false;
+                    dgv_AlertasEmpleados.DataSource = objAlertas.cargaAlertasPorEmpleado(IdEmpleado).Tables[0];
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else { }
+        }
+
+        //METODO 
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private void cargarCantidadAlertasEmpleado()
+        {
+            if (rolUsuario != 6)
+            {
+                objAlertas.cargaCantidadAlertasPorEmpleado(IdEmpleado);
+                lb_CantidadAlertas.Text = objAlertas.cantidad.ToString();
+            }
+            else { }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             contadorseg++;
             this.TicketsPendientes();
             this.TicketsVencidos();
-            stComunicado.Clear();
-            this.cargarComunicados();
+            this.cargarCantidadAlertasEmpleado();
+            this.cargarAlertas();
 
             lb_MinutosTranscurridos.Text = contadorseg.ToString();
         }
@@ -180,17 +209,16 @@ namespace frmPrincipal
             lb_Numero.Text = IdEmpleado.ToString();
         }
 
-        //METODO 
-        //RAFAEL ANGEL SEQUEIRA VARGAS
-        public void cargarComunicados()
+        private void btn_SalirSistema_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(lb_TicketVencidos.Text) > 0)
+            if ((MessageBox.Show("Desea salir del Sistema", "Cierre del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                stComunicado.Append(Environment.NewLine);
-                stComunicado.Append("Tienes "+Convert.ToInt32(lb_TicketVencidos.Text)+" tickets vencidos");
+                Application.Exit();
             }
-
-            txt_Comunicados.Text = stComunicado.ToString();
+            else
+            {
+                return;
+            }
         }
     }
 }

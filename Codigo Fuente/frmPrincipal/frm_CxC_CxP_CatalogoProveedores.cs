@@ -14,6 +14,7 @@ namespace frmPrincipal
     {
         //DECLARACION DE INSTANCIAS DE LAS CLASES
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        ClienteProveedor objProveedores = new ClienteProveedor();
 
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
@@ -33,6 +34,7 @@ namespace frmPrincipal
         {
             this.cargaRolUsuario();
             this.rolesUsuario();
+            this.cargaDataGridProveedores();
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
@@ -53,7 +55,7 @@ namespace frmPrincipal
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             frm_CxC_CxP_NuevoProveedor ventana = new frm_CxC_CxP_NuevoProveedor(usuarioSistema);
-            this.Close();
+            this.Hide();
             ventana.Show();
         }
 
@@ -63,11 +65,32 @@ namespace frmPrincipal
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                this.Close();
+                this.Hide();
                 ventana.Show();
             }
             else
             {
+                return;
+            }
+        }
+
+        private void frm_CxC_CxP_CatalogoProveedores_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
+
+        //METODO 
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private void cargaDataGridProveedores()
+        {
+            try
+            {
+                dtg_CatalogoProveedor.AutoGenerateColumns = false;
+                dtg_CatalogoProveedor.DataSource = objProveedores.cargarDataGridProveedores().Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }

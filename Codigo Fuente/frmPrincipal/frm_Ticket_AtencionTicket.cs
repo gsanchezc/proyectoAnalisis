@@ -24,6 +24,7 @@ namespace frmPrincipal
         empleados objEmpleados = new empleados();
         ArchivosAdjuntos objArchivosAdjuntos = new ArchivosAdjuntos();
         Bitacora objBitacora = new Bitacora();
+        Alertas objAlertas = new Alertas();
 
         //CONECCION
         SqlConnection sqlcon = new SqlConnection(@"Data Source=(local);Initial Catalog=db_soportic;Integrated Security=True");
@@ -120,7 +121,7 @@ namespace frmPrincipal
         {
             string pantalla = "AtencionTicketGeneral";
             frm_Ticket_BitacoraTicket ventana = new frm_Ticket_BitacoraTicket(usuarioSistema, pantalla, ticketID);
-            ventana.ShowDialog();
+            ventana.Show();
         }
 
         private void btn_aceptar_Click(object sender, EventArgs e)
@@ -163,7 +164,39 @@ namespace frmPrincipal
                     }
                     else
                     {
-                        this.actualizarTicketSupervisor();
+                        if (Convert.ToInt32(cmb_status.SelectedValue.ToString()) == 5 && Convert.ToInt32(cmb_prioridad.SelectedValue.ToString()) == 5)
+                        {
+                            this.actualizarTicketSupervisor();
+                            objAlertas.actualizaAlertasPorPrioridad(ticketID);
+                        }
+                        else
+                        {
+                            this.actualizarTicketSupervisor();
+                            if (Convert.ToInt32(cmb_prioridad.SelectedValue.ToString()) == 5 || Convert.ToInt32(cmb_prioridad.SelectedValue.ToString()) == 6)
+                            {
+                                objAlertas.idTipoAlerta = 1;
+                                objAlertas.detalle = "Alerta de Ticket Prioridad Critica o Urgente";
+                                objAlertas.idEmpleado = Convert.ToInt32(cmb_tecnico.SelectedValue);
+                                objAlertas.fechaFinalizacion = txt_FechaEntrega.Text;
+                                objAlertas.idPrioridad = Convert.ToInt32(cmb_prioridad.SelectedValue);
+                                objAlertas.idEstatusAlertas = 1;
+                                objAlertas.isDeleted = false;
+                                objAlertas.Referencia = Convert.ToInt32(txt_IdTicket.Text);
+
+                                string accion = String.Empty;
+                                accion = "Insertar";
+
+                                if (objAlertas.insertar_Alerta(accion))
+                                {
+                                    MessageBox.Show("Se ha enviado una alerta por este Ticket", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error al enviar Alerta", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                            }
+                        }  
                     }
                 }
             }
@@ -210,7 +243,7 @@ namespace frmPrincipal
         {
             string pantalla = "AtencionTicketEspecifico";
             frm_Ticket_BitacoraTicket ventana = new frm_Ticket_BitacoraTicket(usuarioSistema, pantalla, ticketID);
-            ventana.ShowDialog();
+            ventana.Show();
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
@@ -236,6 +269,7 @@ namespace frmPrincipal
                 btn_AdjuntarArchivoTecnico.Enabled = false;
                 btn_GuardarArchivoTecnico.Enabled = false;
                 btn_verHistorial.Enabled = false;
+                btn_NuevaSolicitud.Enabled = false;
             }
             else if (rolUsuario == 3)//TECNICO
             {
@@ -712,6 +746,22 @@ namespace frmPrincipal
         private void frm_Ticket_AtencionTicket_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
+
+        private void btn_NuevaSolicitud_Click(object sender, EventArgs e)
+        {
+            string pantalla = "TicketAtencion";
+            frm_CxC_CxP_NuevaSolicitudOrdenCompra ventana = new frm_CxC_CxP_NuevaSolicitudOrdenCompra(usuarioSistema, ticketID, pantalla);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_VerSolicitudes_Click(object sender, EventArgs e)
+        {
+            string pantalla = "TicketAtencion";
+            frm_CxC_CxP_ControlSolicitudOrdenDeCompra ventana = new frm_CxC_CxP_ControlSolicitudOrdenDeCompra(usuarioSistema, pantalla, ticketID);
+            this.Hide();
+            ventana.Show();
         }
     }
 }

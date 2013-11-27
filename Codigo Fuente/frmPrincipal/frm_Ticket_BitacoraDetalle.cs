@@ -34,7 +34,6 @@ namespace frmPrincipal
         private string filefullpath = string.Empty;
         private string filetype = string.Empty;
         private string filename = string.Empty;
-        private byte[] FileBytes = null;
 
         public frm_Ticket_BitacoraDetalle()
         {
@@ -61,7 +60,7 @@ namespace frmPrincipal
 
         private void Cerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         public void cargarDatosBitacoraEspecifico()
@@ -113,7 +112,7 @@ namespace frmPrincipal
 
         private void frm_Ticket_BitacoraDetalle_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
         }
     }
 }

@@ -357,6 +357,7 @@
             // 
             // cmb_tipoServicio
             // 
+            this.cmb_tipoServicio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipoServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_tipoServicio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.cmb_tipoServicio.FormattingEnabled = true;
@@ -409,6 +410,7 @@
             // 
             // cmb_TipoTicket
             // 
+            this.cmb_TipoTicket.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TipoTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_TipoTicket.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.cmb_TipoTicket.FormattingEnabled = true;
@@ -470,9 +472,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 518);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_Ticket_NuevoTicket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Nuevo Ticket";
