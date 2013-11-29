@@ -43,7 +43,6 @@ namespace Clases
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
-
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }

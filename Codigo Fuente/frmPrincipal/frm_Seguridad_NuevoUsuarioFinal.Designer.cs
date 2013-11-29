@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Seguridad_NuevoUsuarioFinal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.btn_Aceptar = new System.Windows.Forms.Button();
@@ -48,12 +49,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -65,24 +68,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Usuario Final Cliente";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::frmPrincipal.Properties.Resources.employer_icon;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(965, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(260, 214);
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btn_limpiar);
             this.groupBox4.Controls.Add(this.btn_Aceptar);
             this.groupBox4.Controls.Add(this.btn_Cancelar);
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox4.Location = new System.Drawing.Point(960, 34);
+            this.groupBox4.Location = new System.Drawing.Point(965, 245);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(250, 425);
+            this.groupBox4.Size = new System.Drawing.Size(260, 231);
             this.groupBox4.TabIndex = 30;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Opciones";
             // 
             // btn_limpiar
             // 
-            this.btn_limpiar.Location = new System.Drawing.Point(37, 218);
+            this.btn_limpiar.Location = new System.Drawing.Point(26, 168);
             this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(183, 44);
+            this.btn_limpiar.Size = new System.Drawing.Size(206, 44);
             this.btn_limpiar.TabIndex = 2;
             this.btn_limpiar.Text = "&Limpiar";
             this.btn_limpiar.UseVisualStyleBackColor = true;
@@ -90,21 +103,21 @@
             // 
             // btn_Aceptar
             // 
-            this.btn_Aceptar.Location = new System.Drawing.Point(37, 67);
+            this.btn_Aceptar.Location = new System.Drawing.Point(26, 39);
             this.btn_Aceptar.Name = "btn_Aceptar";
-            this.btn_Aceptar.Size = new System.Drawing.Size(183, 44);
+            this.btn_Aceptar.Size = new System.Drawing.Size(206, 44);
             this.btn_Aceptar.TabIndex = 0;
-            this.btn_Aceptar.Text = "&Aceptar";
+            this.btn_Aceptar.Text = "Ingresar Nuevo Cliente";
             this.btn_Aceptar.UseVisualStyleBackColor = true;
             this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(37, 141);
+            this.btn_Cancelar.Location = new System.Drawing.Point(26, 103);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(183, 44);
+            this.btn_Cancelar.Size = new System.Drawing.Size(206, 44);
             this.btn_Cancelar.TabIndex = 1;
-            this.btn_Cancelar.Text = "&Cerrar";
+            this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
@@ -123,9 +136,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Location = new System.Drawing.Point(33, 34);
+            this.groupBox2.Location = new System.Drawing.Point(15, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(893, 425);
+            this.groupBox2.Size = new System.Drawing.Size(927, 451);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Usuario Final";
@@ -140,6 +153,7 @@
             // 
             // cb_tipoIdentificacion
             // 
+            this.cb_tipoIdentificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_tipoIdentificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_tipoIdentificacion.FormattingEnabled = true;
             this.cb_tipoIdentificacion.Location = new System.Drawing.Point(250, 172);
@@ -245,14 +259,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 518);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_Seguridad_NuevoUsuarioFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Nuevo Usuario Final";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Seguridad_NuevoUsuarioFinal_FormClosing);
             this.Load += new System.EventHandler(this.frm_Seguridad_NuevoUsuarioFinal_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -280,5 +296,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_telefonoEmpresa;
         private System.Windows.Forms.Button btn_limpiar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

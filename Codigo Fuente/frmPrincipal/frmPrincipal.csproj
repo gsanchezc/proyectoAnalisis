@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Messaging" />
@@ -47,11 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_CxC_CxP_NuevaSolicitudOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CxC_CxP_NuevaSolicitudOrdenCompra.Designer.cs">
+      <DependentUpon>frm_CxC_CxP_NuevaSolicitudOrdenCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_CxC_CxP_CatalogoProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_CxC_CxP_CatalogoProveedores.Designer.cs">
       <DependentUpon>frm_CxC_CxP_CatalogoProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CxC_CxP_ControlSolicitudOrdenDeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CxC_CxP_ControlSolicitudOrdenDeCompra.Designer.cs">
+      <DependentUpon>frm_CxC_CxP_ControlSolicitudOrdenDeCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_CxC_CxP_EnvioEstadosCuenta.cs">
       <SubType>Form</SubType>
@@ -149,11 +164,17 @@
     <Compile Include="frm_MantenimientoEstadoFacturas.Designer.cs">
       <DependentUpon>frm_MantenimientoEstadoFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_ReporteAlertas_MantenimientoComunicacion.cs">
+    <Compile Include="frm_ReportesAlertas_MantenimientoComunicacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_ReporteAlertas_MantenimientoComunicacion.Designer.cs">
-      <DependentUpon>frm_ReporteAlertas_MantenimientoComunicacion.cs</DependentUpon>
+    <Compile Include="frm_ReportesAlertas_MantenimientoComunicacion.Designer.cs">
+      <DependentUpon>frm_ReportesAlertas_MantenimientoComunicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ReportesAlertas_IngresarAlerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ReportesAlertas_IngresarAlerta.Designer.cs">
+      <DependentUpon>frm_ReportesAlertas_IngresarAlerta.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_ReportesAlertas_GenerarGrafico.cs">
       <SubType>Form</SubType>
@@ -202,6 +223,12 @@
     </Compile>
     <Compile Include="frm_Seguridad_NuevoUsuarioFinal.Designer.cs">
       <DependentUpon>frm_Seguridad_NuevoUsuarioFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Ticket_BitacoraDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Ticket_BitacoraDetalle.Designer.cs">
+      <DependentUpon>frm_Ticket_BitacoraDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Ticket_CatalogoAsignacionTicket.cs">
       <SubType>Form</SubType>
@@ -257,6 +284,12 @@
     <Compile Include="frm_0MenuPrincipal.Designer.cs">
       <DependentUpon>frm_0MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Ticket_Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Ticket_Clientes.Designer.cs">
+      <DependentUpon>frm_Ticket_Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Ticket_NuevoTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,11 +307,17 @@
     <EmbeddedResource Include="frm_CxC_CxP_CatalogoProveedores.resx">
       <DependentUpon>frm_CxC_CxP_CatalogoProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_CxC_CxP_ControlSolicitudOrdenDeCompra.resx">
+      <DependentUpon>frm_CxC_CxP_ControlSolicitudOrdenDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_CxC_CxP_EnvioEstadosCuenta.resx">
       <DependentUpon>frm_CxC_CxP_EnvioEstadosCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_CxC_CxP_NuevaOrdenCompra.resx">
       <DependentUpon>frm_CxC_CxP_NuevaOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CxC_CxP_NuevaSolicitudOrdenCompra.resx">
+      <DependentUpon>frm_CxC_CxP_NuevaSolicitudOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_CxC_CxP_NuevoProveedor.resx">
       <DependentUpon>frm_CxC_CxP_NuevoProveedor.cs</DependentUpon>
@@ -322,8 +361,11 @@
     <EmbeddedResource Include="frm_MantenimientoEstadoFacturas.resx">
       <DependentUpon>frm_MantenimientoEstadoFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_ReporteAlertas_MantenimientoComunicacion.resx">
-      <DependentUpon>frm_ReporteAlertas_MantenimientoComunicacion.cs</DependentUpon>
+    <EmbeddedResource Include="frm_ReportesAlertas_IngresarAlerta.resx">
+      <DependentUpon>frm_ReportesAlertas_IngresarAlerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ReportesAlertas_MantenimientoComunicacion.resx">
+      <DependentUpon>frm_ReportesAlertas_MantenimientoComunicacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ReportesAlertas_GenerarGrafico.resx">
       <DependentUpon>frm_ReportesAlertas_GenerarGrafico.cs</DependentUpon>
@@ -348,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Seguridad_NuevoUsuarioFinal.resx">
       <DependentUpon>frm_Seguridad_NuevoUsuarioFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Ticket_BitacoraDetalle.resx">
+      <DependentUpon>frm_Ticket_BitacoraDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Ticket_CatalogoAsignacionTicket.resx">
       <DependentUpon>frm_Ticket_CatalogoAsignacionTicket.cs</DependentUpon>
@@ -375,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_0MenuPrincipal.resx">
       <DependentUpon>frm_0MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Ticket_Clientes.resx">
+      <DependentUpon>frm_Ticket_Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Ticket_NuevoTicket.resx">
       <DependentUpon>frm_Ticket_NuevoTicket.cs</DependentUpon>
@@ -480,6 +528,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Accounting-Purchase-order-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdfLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alerts1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employer_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\olvidopass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

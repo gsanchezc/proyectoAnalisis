@@ -10,21 +10,22 @@ using Clases;
 
 namespace frmPrincipal
 {
-    public partial class frm_ReporteAlertas_MantenimientoComunicacion : Form
+    public partial class frm_ReportesAlertas_MantenimientoComunicacion : Form
     {
         //DECLARACION DE INSTANCIAS DE LAS CLASES
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        Alertas objAlertas = new Alertas();
 
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
         private int rolUsuario;
 
-        public frm_ReporteAlertas_MantenimientoComunicacion()
+        public frm_ReportesAlertas_MantenimientoComunicacion()
         {
             InitializeComponent();
         }
 
-        public frm_ReporteAlertas_MantenimientoComunicacion(string usuario) : this()
+        public frm_ReportesAlertas_MantenimientoComunicacion(string usuario) : this()
         {
             this.usuarioSistema = usuario;
         }
@@ -33,6 +34,7 @@ namespace frmPrincipal
         {
             this.cargaRolUsuario();
             this.rolesUsuario();
+            this.cargaAlertasActivas();
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
@@ -53,8 +55,34 @@ namespace frmPrincipal
         private void btn_regresar_Click(object sender, EventArgs e)
         {
             frm_0MenuPrincipal ventana = new frm_0MenuPrincipal(usuarioSistema);
-            this.Close();
+            this.Hide();
             ventana.Show();
+        }
+
+        private void btn_NuevaAlerta_Click(object sender, EventArgs e)
+        {
+            frm_ReportesAlertas_IngresarAlerta ventana = new frm_ReportesAlertas_IngresarAlerta(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void cargaAlertasActivas()
+        {
+            try
+            {
+                dtg_Alertas.AutoGenerateColumns = false;
+                dtg_Alertas.DataSource = objAlertas.cargaDataGridAlertasActivas().Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void frm_ReportesAlertas_MantenimientoComunicacion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
         }
     }
 }

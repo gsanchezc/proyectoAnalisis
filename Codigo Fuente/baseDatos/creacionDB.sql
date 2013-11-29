@@ -87,6 +87,7 @@ GO
 CREATE TABLE db_soportic.dbo.tbl_datosAdjuntos
 (
 	idArchivoAdjunto INT NOT NULL IDENTITY (1,1),
+	nombre VARCHAR (200) NULL,
 	archivo VARBINARY(MAX) NOT NULL,
 	isDeleted BIT NOT NULL DEFAULT(0)
 	
@@ -94,7 +95,7 @@ CREATE TABLE db_soportic.dbo.tbl_datosAdjuntos
 	(
 		idArchivoAdjunto ASC
 	)
-)
+)ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
 -------TABLA STATUS TICKETS------------------------------------------------------
@@ -424,6 +425,7 @@ CREATE TABLE db_soportic.dbo.tbl_alertas
 
 GO
 
+----------------TABLA VACACIONES APROBADAS
 CREATE TABLE db_soportic.dbo.tbl_vacacionesAprobadas
 (
 	idAprobacionVacacion INT NOT NULL IDENTITY(1,1),
@@ -436,6 +438,33 @@ CREATE TABLE db_soportic.dbo.tbl_vacacionesAprobadas
 	)
 )
 GO
+
+CREATE TABLE db_soportic.dbo.tbl_solicitudOrdenDeCompra
+(
+	idSolicitud INT NOT NULL IDENTITY(1,1),
+	idTicket INT NOT NULL,
+	detalleOrden VARCHAR(250),
+	fechaSolicitud DATE NOT NULL,
+	isAproved BIT NOT NULL DEFAULT(0),
+	isDeleted BIT NOT NULL DEFAULT(0)
+	
+	CONSTRAINT pk_Solicitud PRIMARY KEY CLUSTERED
+	(
+		idSolicitud ASC
+	)
+)
+GO
+
+--alter table estatus tickets
+alter table dbo.tbl_estatusTickets
+add tipoUsuario varchar(20)
+go
+
+--alter table estatus tickets
+alter table dbo.tbl_alertas
+add Referencia int
+go
+
 --Creacion de llave foranea en la tabla vacaciones
 ALTER TABLE db_soportic.dbo.tbl_vacaciones
 WITH NOCHECK ADD CONSTRAINT fk_vacacionesAprobadas_vacaciones
@@ -757,4 +786,14 @@ REFERENCES db_soportic.dbo.tbl_datosAdjuntos(idArchivoAdjunto)
 GO
 ALTER TABLE db_soportic.dbo.tbl_tickets
 CHECK CONSTRAINT [fk_tickets_datosAdjuntos]
+GO
+
+--creacion de llave foranea en la tabla tickets
+ALTER TABLE db_soportic.dbo.tbl_solicitudOrdenDeCompra
+WITH NOCHECK ADD CONSTRAINT fk_solicitudOrden_Tickets
+FOREIGN KEY (idTicket)
+REFERENCES db_soportic.dbo.tbl_tickets(idTicket)
+GO
+ALTER TABLE db_soportic.dbo.tbl_solicitudOrdenDeCompra
+CHECK CONSTRAINT [fk_solicitudOrden_Tickets]
 GO

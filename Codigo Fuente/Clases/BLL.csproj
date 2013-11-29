@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alertas.cs" />
+    <Compile Include="ArchivosAdjuntos.cs" />
+    <Compile Include="Bitacora.cs" />
     <Compile Include="ClienteProveedor.cs" />
     <Compile Include="clientesUsuarioFinal.cs" />
     <Compile Include="DescripcionDepartamento.cs" />
@@ -50,14 +53,18 @@
     <Compile Include="estatusFactura.cs" />
     <Compile Include="EstatusTicket.cs" />
     <Compile Include="Limpieza.cs" />
+    <Compile Include="OrdenCompras.cs" />
     <Compile Include="RRHH_incapacidades.cs" />
     <Compile Include="RRHH_NuevoEmpleado.cs" />
     <Compile Include="RRHH_SolicitudVacaciones.cs" />
     <Compile Include="Seguridad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolicitudOrdenesCompra.cs" />
+    <Compile Include="Ticket.cs" />
     <Compile Include="TipoIdentificacion.cs" />
     <Compile Include="TipoPrioridad.cs" />
     <Compile Include="tipoPuestos.cs" />
+    <Compile Include="tipoServicio.cs" />
     <Compile Include="usuariosSistema.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>

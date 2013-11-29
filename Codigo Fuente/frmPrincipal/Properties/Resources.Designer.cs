@@ -102,6 +102,13 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Alerts1 {
+            get {
+                object obj = ResourceManager.GetObject("Alerts1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap bdsoftandmore2 {
             get {
                 object obj = ResourceManager.GetObject("bdsoftandmore2", resourceCulture);
@@ -112,6 +119,27 @@ namespace frmPrincipal.Properties {
         internal static System.Drawing.Bitmap Capture {
             get {
                 object obj = ResourceManager.GetObject("Capture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap download__1_ {
+            get {
+                object obj = ResourceManager.GetObject("download (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap employer_icon {
+            get {
+                object obj = ResourceManager.GetObject("employer_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -158,6 +186,13 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap images1 {
+            get {
+                object obj = ResourceManager.GetObject("images1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ist2_8758228_support_service {
             get {
                 object obj = ResourceManager.GetObject("ist2_8758228-support-service", resourceCulture);
@@ -182,6 +217,20 @@ namespace frmPrincipal.Properties {
         internal static System.Drawing.Bitmap login1 {
             get {
                 object obj = ResourceManager.GetObject("login1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap olvidopass {
+            get {
+                object obj = ResourceManager.GetObject("olvidopass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap pdfLogo {
+            get {
+                object obj = ResourceManager.GetObject("pdfLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

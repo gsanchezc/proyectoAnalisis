@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
+using System.Text.RegularExpressions;
 
 namespace frmPrincipal
 {
@@ -33,7 +34,7 @@ namespace frmPrincipal
 
         private void frm_Seguridad_AdministracionCuentasUsuario_Load(object sender, EventArgs e)
         {
-
+            this.limiteCampos();
         }
 
         private void btn_cerrar_Click(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace frmPrincipal
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                this.Close();
+                this.Hide(); ;
                 ventana.Show();
             }
             else
@@ -94,8 +95,17 @@ namespace frmPrincipal
             {
                 if (this.validacionRadioButtonActivoInactivo() == true)
                 {
-                    this.crearCuenta();
-                    this.actualizarIdUsuarioSistema();
+                    objUsuariosSistema.existeUsuarioSistemaLogin(txt_Usuario.Text);
+                    if (objUsuariosSistema.validacion == true)
+                    {
+                        MessageBox.Show("Usuario Ya existe en Sistema", "Intento de login fallido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        this.crearCuenta();
+                        this.actualizarIdUsuarioSistema();
+                    }
 
                     if (rb_clientes.Checked == true)
                     {
@@ -105,7 +115,8 @@ namespace frmPrincipal
                     {
                         this.actualizarIdUsuarioSistemaEmpleado();
                     }
-                    else { }
+                    else
+                    {}
                 }
             }
         }
@@ -114,16 +125,47 @@ namespace frmPrincipal
         {
             if (rb_actualizarUsuarioContrasena.Checked == true)
             {
-                this.actualizarUsuarioContrasena();
+                if (!Validaciones.validar(txt_idUsuarioSistema))
+                {
+                    MessageBox.Show("No hay dato cargado en campo ID Usuario Sistema", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_idUsuarioSistema.Focus();
+                    return;
+                }
+                else
+                {
+                    objUsuariosSistema.existeUsuarioSistemaLogin(txt_Usuario.Text);
+                    if (objUsuariosSistema.validacion == true)
+                    {
+                        MessageBox.Show("Usuario Ya existe en Sistema", "Lo sentimos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        this.actualizarUsuarioContrasena();
+                    }
+                }
             }
             else if (rb_bloquearDesbloquearCuenta.Checked == true)
             {
                 if (this.validacionRadioButtonActivoInactivo() == true)
                 {
-                    this.bloquearDesbloquearCuenta();
+                    if (!Validaciones.validar(txt_idUsuarioSistema))
+                    {
+                        MessageBox.Show("No hay dato cargado en campo ID Usuario Sistema", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txt_idUsuarioSistema.Focus();
+                        return;
+                    }
+                    else
+                    {
+                        this.bloquearDesbloquearCuenta();
+                    }
                 }
             }
-            else { }
+            else
+            {
+                MessageBox.Show("No ha marcado ninguna opcion de actualizacion", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         //METODO PARA ACTUALIZAR
@@ -139,6 +181,18 @@ namespace frmPrincipal
             if (!Validaciones.validar(txt_Contraseña))
             {
                 MessageBox.Show("No ingreso Contraseña", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Contraseña.Focus();
+                return;
+            }
+            if (validarSoloLetrasYNumeros(txt_Usuario) == false)
+            {
+                MessageBox.Show("Ingrese Unicamente Letras o numeros para nombre de usuario", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Usuario.Focus();
+                return;
+            }
+            if (validarSoloLetrasYNumeros(txt_Contraseña) == false)
+            {
+                MessageBox.Show("Ingrese Unicamente Letras o numeros para contrasena", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_Contraseña.Focus();
                 return;
             }
@@ -300,7 +354,7 @@ namespace frmPrincipal
             {
                 int idEmpleadoSeleccionado = Convert.ToInt32(lst_ListaUsuario.SelectedItem.ToString());
                 objEmpleados.cargaInfoEmpleado(idEmpleadoSeleccionado);
-                objEmpleados.cargaIdEmpleado(idEmpleadoSeleccionado);
+                objEmpleados.cargaIdUsuarioSistema(idEmpleadoSeleccionado);
 
                 txt_idUsuarioSistema.Text = objEmpleados.idUsuarioSistema.ToString();
                 txt_nombre.Text = objEmpleados.nombre;
@@ -420,6 +474,18 @@ namespace frmPrincipal
                 txt_Contraseña.Focus();
                 return false;
             }
+            if (validarSoloLetrasYNumeros(txt_Usuario) == false)
+            {
+                MessageBox.Show("Ingrese Unicamente Letras o numeros para nombre de usuario", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Usuario.Focus();
+                return false;
+            }
+            if (validarSoloLetrasYNumeros(txt_Contraseña) == false)
+            {
+                MessageBox.Show("Ingrese Unicamente Letras o numeros para contrasena", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_Contraseña.Focus();
+                return false;
+            }
             else
             {
                 return true;
@@ -437,6 +503,23 @@ namespace frmPrincipal
             Limpieza.limpiar(txt_Usuario);
             Limpieza.limpiar(txt_Contraseña);
             Limpieza.limpiar(txt_confirmaContraseña);
+        }
+
+        private void frm_Seguridad_AdministracionCuentasUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
+
+        public void limiteCampos()
+        {
+            txt_Usuario.MaxLength = 10;
+            txt_Contraseña.MaxLength = 200;
+        }
+
+        private static bool validarSoloLetrasYNumeros(Control mitextbox)
+        {
+            Regex regex = new Regex("^[a-zA-Z0-9]+$");
+            return regex.IsMatch(mitextbox.Text);
         }
     }
 }

@@ -28,53 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ReportesAlertas_MantenimientoAlertasNotificaciones));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv_AlertasEmpleados = new System.Windows.Forms.DataGridView();
+            this.idAlerta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTipoAlerta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaSuceso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPrioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Referencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lb_MinutosTranscurridos = new System.Windows.Forms.Label();
+            this.lb_Numero = new System.Windows.Forms.Label();
+            this.lb_numeroEmpleado = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.labelDepartamento = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.gb_AlertasTicket = new System.Windows.Forms.GroupBox();
+            this.lb_CantidadAlertas = new System.Windows.Forms.Label();
+            this.lb_AlertasActivas = new System.Windows.Forms.Label();
+            this.lb_TicketVencidos = new System.Windows.Forms.Label();
+            this.lb_TicketPendientes = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_SalirSistema = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AlertasEmpleados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox5.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gb_AlertasTicket.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dgv_AlertasEmpleados);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.groupBox5);
-            this.groupBox1.Controls.Add(this.groupBox4);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.gb_AlertasTicket);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Location = new System.Drawing.Point(-3, -2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1267, 136);
+            this.groupBox1.Size = new System.Drawing.Size(1267, 147);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Panel de Alertas";
+            // 
+            // dgv_AlertasEmpleados
+            // 
+            this.dgv_AlertasEmpleados.AllowUserToAddRows = false;
+            this.dgv_AlertasEmpleados.AllowUserToDeleteRows = false;
+            this.dgv_AlertasEmpleados.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_AlertasEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_AlertasEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idAlerta,
+            this.idTipoAlerta,
+            this.detalle,
+            this.fechaSuceso,
+            this.idPrioridad,
+            this.Referencia});
+            this.dgv_AlertasEmpleados.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgv_AlertasEmpleados.Location = new System.Drawing.Point(633, 14);
+            this.dgv_AlertasEmpleados.Name = "dgv_AlertasEmpleados";
+            this.dgv_AlertasEmpleados.ReadOnly = true;
+            this.dgv_AlertasEmpleados.Size = new System.Drawing.Size(628, 127);
+            this.dgv_AlertasEmpleados.TabIndex = 5;
+            // 
+            // idAlerta
+            // 
+            this.idAlerta.DataPropertyName = "idAlerta";
+            this.idAlerta.HeaderText = "Id Alerta";
+            this.idAlerta.Name = "idAlerta";
+            this.idAlerta.ReadOnly = true;
+            // 
+            // idTipoAlerta
+            // 
+            this.idTipoAlerta.DataPropertyName = "idTipoAlerta";
+            this.idTipoAlerta.HeaderText = "Tipo Alerta";
+            this.idTipoAlerta.Name = "idTipoAlerta";
+            this.idTipoAlerta.ReadOnly = true;
+            // 
+            // detalle
+            // 
+            this.detalle.DataPropertyName = "detalle";
+            this.detalle.HeaderText = "Detalle";
+            this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
+            this.detalle.Width = 185;
+            // 
+            // fechaSuceso
+            // 
+            this.fechaSuceso.DataPropertyName = "fechaSuceso";
+            this.fechaSuceso.HeaderText = "Fecha Suceso";
+            this.fechaSuceso.Name = "fechaSuceso";
+            this.fechaSuceso.ReadOnly = true;
+            // 
+            // idPrioridad
+            // 
+            this.idPrioridad.DataPropertyName = "idPrioridad";
+            this.idPrioridad.HeaderText = "Prioridad";
+            this.idPrioridad.Name = "idPrioridad";
+            this.idPrioridad.ReadOnly = true;
+            // 
+            // Referencia
+            // 
+            this.Referencia.DataPropertyName = "Referencia";
+            this.Referencia.HeaderText = "Referencia";
+            this.Referencia.Name = "Referencia";
+            this.Referencia.ReadOnly = true;
             // 
             // pictureBox1
             // 
@@ -82,138 +148,173 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(7, 20);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(113, 117);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.lb_MinutosTranscurridos);
+            this.groupBox5.Controls.Add(this.lb_Numero);
+            this.groupBox5.Controls.Add(this.lb_numeroEmpleado);
+            this.groupBox5.Controls.Add(this.label3);
             this.groupBox5.Controls.Add(this.labelDepartamento);
             this.groupBox5.Controls.Add(this.label15);
-            this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Controls.Add(this.label3);
             this.groupBox5.Controls.Add(this.labelUsuario);
             this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox5.Location = new System.Drawing.Point(126, 14);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(302, 122);
+            this.groupBox5.Size = new System.Drawing.Size(287, 133);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Usuario en Sistema";
             // 
+            // lb_MinutosTranscurridos
+            // 
+            this.lb_MinutosTranscurridos.AutoSize = true;
+            this.lb_MinutosTranscurridos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_MinutosTranscurridos.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lb_MinutosTranscurridos.Location = new System.Drawing.Point(188, 107);
+            this.lb_MinutosTranscurridos.Name = "lb_MinutosTranscurridos";
+            this.lb_MinutosTranscurridos.Size = new System.Drawing.Size(16, 16);
+            this.lb_MinutosTranscurridos.TabIndex = 7;
+            this.lb_MinutosTranscurridos.Text = "0";
+            // 
+            // lb_Numero
+            // 
+            this.lb_Numero.AutoSize = true;
+            this.lb_Numero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Numero.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lb_Numero.Location = new System.Drawing.Point(188, 77);
+            this.lb_Numero.Name = "lb_Numero";
+            this.lb_Numero.Size = new System.Drawing.Size(62, 16);
+            this.lb_Numero.TabIndex = 7;
+            this.lb_Numero.Text = "Numero";
+            // 
+            // lb_numeroEmpleado
+            // 
+            this.lb_numeroEmpleado.AutoSize = true;
+            this.lb_numeroEmpleado.Location = new System.Drawing.Point(15, 77);
+            this.lb_numeroEmpleado.Name = "lb_numeroEmpleado";
+            this.lb_numeroEmpleado.Size = new System.Drawing.Size(127, 15);
+            this.lb_numeroEmpleado.TabIndex = 6;
+            this.lb_numeroEmpleado.Text = "Numero Empleado";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Minutos Transcurridos";
+            // 
             // labelDepartamento
             // 
             this.labelDepartamento.AutoSize = true;
-            this.labelDepartamento.Location = new System.Drawing.Point(179, 46);
+            this.labelDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDepartamento.ForeColor = System.Drawing.Color.DarkCyan;
+            this.labelDepartamento.Location = new System.Drawing.Point(188, 48);
             this.labelDepartamento.Name = "labelDepartamento";
-            this.labelDepartamento.Size = new System.Drawing.Size(51, 15);
+            this.labelDepartamento.Size = new System.Drawing.Size(56, 16);
             this.labelDepartamento.TabIndex = 5;
             this.labelDepartamento.Text = "Puesto";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 46);
+            this.label15.Location = new System.Drawing.Point(16, 48);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 15);
             this.label15.TabIndex = 4;
             this.label15.Text = "Puesto";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(179, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Tiempo";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tiempo Laborado";
-            // 
             // labelUsuario
             // 
             this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Location = new System.Drawing.Point(179, 20);
+            this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuario.ForeColor = System.Drawing.Color.DarkCyan;
+            this.labelUsuario.Location = new System.Drawing.Point(188, 20);
             this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(57, 15);
+            this.labelUsuario.Size = new System.Drawing.Size(62, 16);
             this.labelUsuario.TabIndex = 1;
             this.labelUsuario.Text = "Usuario";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 20);
+            this.label1.Location = new System.Drawing.Point(16, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario en el Sistema";
             // 
-            // groupBox4
+            // gb_AlertasTicket
             // 
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox4.Location = new System.Drawing.Point(434, 14);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(258, 122);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Alerta de Ticket";
+            this.gb_AlertasTicket.Controls.Add(this.btn_SalirSistema);
+            this.gb_AlertasTicket.Controls.Add(this.lb_CantidadAlertas);
+            this.gb_AlertasTicket.Controls.Add(this.lb_AlertasActivas);
+            this.gb_AlertasTicket.Controls.Add(this.lb_TicketVencidos);
+            this.gb_AlertasTicket.Controls.Add(this.lb_TicketPendientes);
+            this.gb_AlertasTicket.Controls.Add(this.label6);
+            this.gb_AlertasTicket.Controls.Add(this.label5);
+            this.gb_AlertasTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_AlertasTicket.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.gb_AlertasTicket.Location = new System.Drawing.Point(419, 14);
+            this.gb_AlertasTicket.Name = "gb_AlertasTicket";
+            this.gb_AlertasTicket.Size = new System.Drawing.Size(208, 133);
+            this.gb_AlertasTicket.TabIndex = 2;
+            this.gb_AlertasTicket.TabStop = false;
+            this.gb_AlertasTicket.Text = "Alertas Atencion De Ticket";
             // 
-            // label12
+            // lb_CantidadAlertas
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(165, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 15);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Tiempo";
+            this.lb_CantidadAlertas.AutoSize = true;
+            this.lb_CantidadAlertas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_CantidadAlertas.ForeColor = System.Drawing.Color.Red;
+            this.lb_CantidadAlertas.Location = new System.Drawing.Point(133, 20);
+            this.lb_CantidadAlertas.Name = "lb_CantidadAlertas";
+            this.lb_CantidadAlertas.Size = new System.Drawing.Size(57, 16);
+            this.lb_CantidadAlertas.TabIndex = 6;
+            this.lb_CantidadAlertas.Text = "Alertas";
             // 
-            // label13
+            // lb_AlertasActivas
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(165, 46);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 15);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Cantidad";
+            this.lb_AlertasActivas.AutoSize = true;
+            this.lb_AlertasActivas.Location = new System.Drawing.Point(6, 20);
+            this.lb_AlertasActivas.Name = "lb_AlertasActivas";
+            this.lb_AlertasActivas.Size = new System.Drawing.Size(99, 15);
+            this.lb_AlertasActivas.TabIndex = 5;
+            this.lb_AlertasActivas.Text = "Alertas Activas";
             // 
-            // label14
+            // lb_TicketVencidos
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(165, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(64, 15);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Cantidad";
+            this.lb_TicketVencidos.AutoSize = true;
+            this.lb_TicketVencidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TicketVencidos.ForeColor = System.Drawing.Color.Red;
+            this.lb_TicketVencidos.Location = new System.Drawing.Point(133, 77);
+            this.lb_TicketVencidos.Name = "lb_TicketVencidos";
+            this.lb_TicketVencidos.Size = new System.Drawing.Size(70, 16);
+            this.lb_TicketVencidos.TabIndex = 4;
+            this.lb_TicketVencidos.Text = "Cantidad";
             // 
-            // label11
+            // lb_TicketPendientes
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 72);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(144, 15);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Cronometro de Ticket";
+            this.lb_TicketPendientes.AutoSize = true;
+            this.lb_TicketPendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_TicketPendientes.ForeColor = System.Drawing.Color.Red;
+            this.lb_TicketPendientes.Location = new System.Drawing.Point(133, 48);
+            this.lb_TicketPendientes.Name = "lb_TicketPendientes";
+            this.lb_TicketPendientes.Size = new System.Drawing.Size(59, 16);
+            this.lb_TicketPendientes.TabIndex = 3;
+            this.lb_TicketPendientes.Text = "Tickets";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 46);
+            this.label6.Location = new System.Drawing.Point(6, 78);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 15);
             this.label6.TabIndex = 1;
@@ -222,109 +323,49 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 20);
+            this.label5.Location = new System.Drawing.Point(6, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "Ticket Pendientes";
             // 
-            // groupBox3
+            // timer1
             // 
-            this.groupBox3.Controls.Add(this.richTextBox1);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox3.Location = new System.Drawing.Point(974, 14);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(284, 122);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Comunicados";
+            this.timer1.Interval = 60000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // richTextBox1
+            // btn_SalirSistema
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(8, 22);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(228, 94);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Location = new System.Drawing.Point(698, 14);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(270, 122);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Uso RRHH";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(198, 46);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 15);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Cantidad";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(198, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 15);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Cantidad";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(175, 15);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Solicitudes Incapacidades";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 15);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Solicitudes Vaciones";
+            this.btn_SalirSistema.Location = new System.Drawing.Point(9, 104);
+            this.btn_SalirSistema.Name = "btn_SalirSistema";
+            this.btn_SalirSistema.Size = new System.Drawing.Size(183, 23);
+            this.btn_SalirSistema.TabIndex = 7;
+            this.btn_SalirSistema.Text = "Atajo Salir del Sistema";
+            this.btn_SalirSistema.UseVisualStyleBackColor = true;
+            this.btn_SalirSistema.Click += new System.EventHandler(this.btn_SalirSistema_Click);
             // 
             // frm_ReportesAlertas_MantenimientoAlertasNotificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 133);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(1264, 143);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(0, 546);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frm_ReportesAlertas_MantenimientoAlertasNotificaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Mantenimiento Alertas Notificaciones";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_ReportesAlertas_MantenimientoAlertasNotificaciones_FormClosing);
             this.Load += new System.EventHandler(this.frm_ReportesAlertas_MantenimientoAlertasNotificaciones_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_AlertasEmpleados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gb_AlertasTicket.ResumeLayout(false);
+            this.gb_AlertasTicket.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -332,27 +373,31 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gb_AlertasTicket;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lb_TicketVencidos;
+        private System.Windows.Forms.Label lb_TicketPendientes;
         private System.Windows.Forms.Label labelDepartamento;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lb_MinutosTranscurridos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_Numero;
+        private System.Windows.Forms.Label lb_numeroEmpleado;
+        private System.Windows.Forms.Label lb_CantidadAlertas;
+        private System.Windows.Forms.Label lb_AlertasActivas;
+        private System.Windows.Forms.DataGridView dgv_AlertasEmpleados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAlerta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTipoAlerta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaSuceso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPrioridad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Referencia;
+        private System.Windows.Forms.Button btn_SalirSistema;
     }
 }

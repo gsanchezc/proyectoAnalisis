@@ -220,7 +220,7 @@ namespace Clases
             }
         }
 
-        public void cargaIdEmpleado(int idEmpleado)
+        public void cargaIdUsuarioSistema(int idEmpleado)
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
 
@@ -289,6 +289,69 @@ namespace Clases
                 {
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return true;
+                }
+            }
+        }
+
+        public DataSet cargarEmpleadosTecnicos()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+            else
+            {
+                sql = "stu_cargaComboBoxTecnicos";
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public void cargaIdEmpleadoPorNombreUsuario(string nombreUsuario)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _mensaje = mensaje_error;
+            }
+            else
+            {
+                sql = "stu_cargaIdEmpleadoPorNombreUsuario";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@nombreUsuarioSistema", SqlDbType.VarChar, nombreUsuario);
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (ds == null)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar Rol", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _mensaje = mensaje_error;
+                }
+                else
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        _idEmpleado = Convert.ToInt32(ds.Tables[0].Rows[0]["idEmpleado"]);
+                    }
+                    else
+                    {
+                        _mensaje = mensaje_error;
+                    }
                 }
             }
         }

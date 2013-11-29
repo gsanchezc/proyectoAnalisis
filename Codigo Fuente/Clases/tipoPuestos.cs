@@ -27,7 +27,6 @@ namespace Clases
             set { descripcion = value; }
         }
 
-
         #endregion
 
         #region variables privadas
@@ -65,7 +64,6 @@ namespace Clases
                     return ds;
                 }
             }
-
         }
 
         //Metodo que trae la informacion de un unico tipo de puesto

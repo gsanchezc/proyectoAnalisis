@@ -39,12 +39,12 @@ namespace Clases
         #endregion
 
         #region Metodos
+
         public DataSet cargarEstatusTicket()
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
-
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
@@ -63,7 +63,6 @@ namespace Clases
                     return ds;
                 }
             }
-
         }
 
         public bool agregarActualiazarEstatusTickets(string accion)
@@ -71,7 +70,6 @@ namespace Clases
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
-
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }

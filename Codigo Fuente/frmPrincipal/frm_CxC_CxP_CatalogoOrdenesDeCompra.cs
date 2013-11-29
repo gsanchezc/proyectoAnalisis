@@ -14,6 +14,7 @@ namespace frmPrincipal
     {
         //DECLARACION DE INSTANCIAS DE LAS CLASES
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
+        OrdenCompras objOrdenCompra = new OrdenCompras();
 
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
@@ -24,7 +25,7 @@ namespace frmPrincipal
             InitializeComponent();
         }
 
-        public frm_CxC_CxP_CatalogoOrdenesDeCompra(string usuario) :this()
+        public frm_CxC_CxP_CatalogoOrdenesDeCompra(string usuario, string pantalla) :this()
         {
             this.usuarioSistema = usuario;
         }
@@ -33,6 +34,7 @@ namespace frmPrincipal
         {
             this.cargaRolUsuario();
             this.rolesUsuario();
+            this.cargaDataGridOrdenesDeCompra();
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
@@ -67,7 +69,9 @@ namespace frmPrincipal
 
         private void btn_NuevoOrdenCompra_Click(object sender, EventArgs e)
         {
-            frm_CxC_CxP_NuevaOrdenCompra ventana = new frm_CxC_CxP_NuevaOrdenCompra(usuarioSistema);
+            string pantalla = "CatalogoOrdenes";
+            int IdSolicitud = 0;
+            frm_CxC_CxP_NuevaOrdenCompra ventana = new frm_CxC_CxP_NuevaOrdenCompra(usuarioSistema, IdSolicitud, pantalla);
             this.Close();
             ventana.Show();
         }
@@ -83,6 +87,22 @@ namespace frmPrincipal
             }
             else
             {
+                return;
+            }
+        }
+
+        //METODO 
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private void cargaDataGridOrdenesDeCompra()
+        {
+            try
+            {
+                dtg_OrdenCompra.AutoGenerateColumns = false;
+                dtg_OrdenCompra.DataSource = objOrdenCompra.cargarDataGridOrdenesDeCompra().Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }

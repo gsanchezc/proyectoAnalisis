@@ -23,6 +23,16 @@ namespace frmPrincipal
             InitializeComponent();
         }
 
+        private void frm_Seguridad_Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
+
+        private void frm_Seguridad_Login_Load(object sender, EventArgs e)
+        {
+            this.limiteCampos();
+        }
+
         private void btn_IngresarSistema_Click(object sender, EventArgs e)
         {
             //VALIDACIONES LOGIN
@@ -141,6 +151,12 @@ namespace frmPrincipal
                 MessageBox.Show("CONTACTE ADMINISTRADOR DE SISTEMA", "ERROR");
                 return;
             }
+        }
+
+        public void limiteCampos()
+        {
+            txt_Usuario.MaxLength = 10;
+            txt_Contraseña.MaxLength = 200;
         }
     }
 }

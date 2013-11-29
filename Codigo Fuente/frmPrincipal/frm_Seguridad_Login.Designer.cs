@@ -151,9 +151,9 @@
             // 
             this.pictureBox2.BackgroundImage = global::frmPrincipal.Properties.Resources.images__1_;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(90, 56);
+            this.pictureBox2.Location = new System.Drawing.Point(22, 59);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(88, 75);
+            this.pictureBox2.Size = new System.Drawing.Size(126, 119);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
@@ -175,15 +175,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_SalirSistema;
             this.ClientSize = new System.Drawing.Size(1264, 518);
-            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "frm_Seguridad_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ingreso al Sistema";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Seguridad_Login_FormClosing);
+            this.Load += new System.EventHandler(this.frm_Seguridad_Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
