@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_RRHH_NuevoEmpleado));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmb_Salarios = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmb_TipoIdentificacion = new System.Windows.Forms.ComboBox();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.btn_Aceptar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -56,8 +61,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmb_Salarios = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +117,22 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Empleado";
+            // 
+            // cmb_Salarios
+            // 
+            this.cmb_Salarios.FormattingEnabled = true;
+            this.cmb_Salarios.Location = new System.Drawing.Point(763, 299);
+            this.cmb_Salarios.Name = "cmb_Salarios";
+            this.cmb_Salarios.Size = new System.Drawing.Size(210, 28);
+            this.cmb_Salarios.TabIndex = 29;
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(678, 302);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 20);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "Salario:";
             // 
             // cmb_TipoIdentificacion
             // 
@@ -177,6 +196,7 @@
             // txt_identificacion
             // 
             this.txt_identificacion.Location = new System.Drawing.Point(211, 216);
+            this.txt_identificacion.MaxLength = 15;
             this.txt_identificacion.Name = "txt_identificacion";
             this.txt_identificacion.Size = new System.Drawing.Size(230, 26);
             this.txt_identificacion.TabIndex = 9;
@@ -184,6 +204,7 @@
             // txt_Direccion
             // 
             this.txt_Direccion.Location = new System.Drawing.Point(210, 351);
+            this.txt_Direccion.MaxLength = 250;
             this.txt_Direccion.Multiline = true;
             this.txt_Direccion.Name = "txt_Direccion";
             this.txt_Direccion.Size = new System.Drawing.Size(291, 81);
@@ -278,6 +299,7 @@
             // txt_Correo
             // 
             this.txt_Correo.Location = new System.Drawing.Point(211, 302);
+            this.txt_Correo.MaxLength = 50;
             this.txt_Correo.Name = "txt_Correo";
             this.txt_Correo.Size = new System.Drawing.Size(291, 26);
             this.txt_Correo.TabIndex = 13;
@@ -285,6 +307,7 @@
             // txt_Apellido
             // 
             this.txt_Apellido.Location = new System.Drawing.Point(208, 121);
+            this.txt_Apellido.MaxLength = 50;
             this.txt_Apellido.Name = "txt_Apellido";
             this.txt_Apellido.Size = new System.Drawing.Size(292, 26);
             this.txt_Apellido.TabIndex = 5;
@@ -292,6 +315,7 @@
             // txt_Nombre
             // 
             this.txt_Nombre.Location = new System.Drawing.Point(208, 68);
+            this.txt_Nombre.MaxLength = 50;
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(292, 26);
             this.txt_Nombre.TabIndex = 3;
@@ -358,22 +382,6 @@
             this.label1.Size = new System.Drawing.Size(156, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Numero Empleado";
-            // 
-            // cmb_Salarios
-            // 
-            this.cmb_Salarios.FormattingEnabled = true;
-            this.cmb_Salarios.Location = new System.Drawing.Point(763, 299);
-            this.cmb_Salarios.Name = "cmb_Salarios";
-            this.cmb_Salarios.Size = new System.Drawing.Size(210, 28);
-            this.cmb_Salarios.TabIndex = 29;
-            // 
-            // label14
-            // 
-            this.label14.Location = new System.Drawing.Point(678, 302);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 20);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "Salario:";
             // 
             // frm_RRHH_NuevoEmpleado
             // 

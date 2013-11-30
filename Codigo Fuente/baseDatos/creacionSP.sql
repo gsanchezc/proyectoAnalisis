@@ -1727,3 +1727,14 @@ go
 
 
 
+create procedure [dbo].[spu_cargaRolUsuario]
+(
+ @nombreUsuario varchar(10)
+)
+as
+ begin
+  select idRol as Id_Rol from [db_soportic].[dbo].[tbl_usuariosSistema]
+  where nombreUsuarioSistema = @nombreUsuario
+ end
+
+GO
