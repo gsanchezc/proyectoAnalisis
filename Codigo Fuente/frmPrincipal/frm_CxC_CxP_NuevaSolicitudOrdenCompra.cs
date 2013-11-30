@@ -37,7 +37,7 @@ namespace frmPrincipal
         private void frm_CxC_CxP_NuevaSolicitudOrdenCompra_Load(object sender, EventArgs e)
         {
             txt_numeroTicket.Text = ticketID.ToString();
-            txt_fechaSolicitud.Text = DateTime.Now.ToShortDateString().Substring(0, 10);
+            txt_fechaSolicitud.Text = DateTime.Now.ToShortDateString();
             this.limiteCampos();
         }
 

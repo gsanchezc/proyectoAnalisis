@@ -208,7 +208,9 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "frm_ReportesAlertas_IngresarAlerta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Nuevo Reporte Alerta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_ReportesAlertas_IngresarAlerta_FormClosing);
             this.Load += new System.EventHandler(this.frm_ReportesAlertas_IngresarAlerta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -77,6 +77,14 @@ namespace Clases
             set { _num_error = value; }
         }
 
+        private string _Direccion;
+
+        public string Direccion
+        {
+            get { return _Direccion; }
+            set { _Direccion = value; }
+        }
+        
         #endregion
 
         #region variables
@@ -112,6 +120,44 @@ namespace Clases
                 else
                 {
                     return ds;
+                }
+            }
+        }
+
+        public void cargaInfoEmpresaCliente(int idEmpresaCliente)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _mensaje = mensaje_error;
+            }
+            else
+            {
+                sql = "spu_cargaInfoEmpresasClientes";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idEmpresaCliente", SqlDbType.Int, idEmpresaCliente);
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (ds == null)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _mensaje = mensaje_error;
+                }
+                else
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        _nombre = ds.Tables[0].Rows[0]["nombre"].ToString();
+                        _Direccion = ds.Tables[0].Rows[0]["Direccion"].ToString();
+                    }
+                    else
+                    {
+                        _mensaje = mensaje_error;
+                    }
                 }
             }
         }

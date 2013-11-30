@@ -309,6 +309,31 @@ namespace Clases
             }
         }
 
+        public DataSet cargarListaClientesUsuarioFinal()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "spu_cargaListaClientes";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
         #endregion
     }
 }

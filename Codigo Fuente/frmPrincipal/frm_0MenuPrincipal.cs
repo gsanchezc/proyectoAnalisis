@@ -392,9 +392,9 @@ namespace frmPrincipal
 
         private void btn_NuevaFactura_Click(object sender, EventArgs e)
         {
-            frm_CxC_CxP_NuevaFactura ventanaNuevaFactura = new frm_CxC_CxP_NuevaFactura(usuarioSistema);
+            frm_CxC_CxP_ControlFacturas ventana = new frm_CxC_CxP_ControlFacturas(usuarioSistema);
             this.Hide();
-            ventanaNuevaFactura.Show();
+            ventana.Show();
         }
 
         private void envioEstadoDeCuentasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -406,9 +406,9 @@ namespace frmPrincipal
 
         private void btn_EnvioEstadosCuenta_Click(object sender, EventArgs e)
         {
-            frm_CxC_CxP_EnvioEstadosCuenta ventanaEnvioEstadosCuenta = new frm_CxC_CxP_EnvioEstadosCuenta(usuarioSistema);
+            frm_CxC_CxP_ControlEstadosDeCuenta ventana = new frm_CxC_CxP_ControlEstadosDeCuenta(usuarioSistema);
             this.Hide();
-            ventanaEnvioEstadosCuenta.Show();
+            ventana.Show();
         }
 
         private void solicitudOrdenesCompraToolStripMenuItem_Click(object sender, EventArgs e)
@@ -674,6 +674,20 @@ namespace frmPrincipal
         private void ingresarAlertaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_ReportesAlertas_IngresarAlerta ventana = new frm_ReportesAlertas_IngresarAlerta(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void controlFacturacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_CxC_CxP_ControlFacturas ventana = new frm_CxC_CxP_ControlFacturas(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void controlEstadosDeCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_CxC_CxP_ControlEstadosDeCuenta ventana = new frm_CxC_CxP_ControlEstadosDeCuenta(usuarioSistema);
             this.Hide();
             ventana.Show();
         }

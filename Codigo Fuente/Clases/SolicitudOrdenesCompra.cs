@@ -218,6 +218,38 @@ namespace Clases
             }
         }
 
+        public bool actualizarEstadoSolicitudDeCompra(int idSolicitud)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                sql = "spu_actualizarEstadoSolicitudDeCompra";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idSolicitud", SqlDbType.Int, idSolicitud);
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+            }
+        }
+
         #endregion 
     }
 }

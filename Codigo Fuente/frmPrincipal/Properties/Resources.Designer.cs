@@ -123,6 +123,20 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap charIcon_billings {
+            get {
+                object obj = ResourceManager.GetObject("charIcon-billings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap charIcon_billings1 {
+            get {
+                object obj = ResourceManager.GetObject("charIcon-billings1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -154,6 +168,13 @@ namespace frmPrincipal.Properties {
         internal static System.Drawing.Bitmap icono_de_alerta_roja_17_1215160546 {
             get {
                 object obj = ResourceManager.GetObject("icono-de-alerta-roja_17-1215160546", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap iconoestadodecuentas {
+            get {
+                object obj = ResourceManager.GetObject("iconoestadodecuentas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

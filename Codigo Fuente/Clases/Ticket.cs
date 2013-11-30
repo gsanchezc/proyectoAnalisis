@@ -204,6 +204,22 @@ namespace Clases
             get { return _Empleado; }
             set { _Empleado = value; }
         }
+
+        private int _idFactura;
+
+        public int idFactura
+        {
+            get { return _idFactura; }
+            set { _idFactura = value; }
+        }
+
+        private bool _isCanceled;
+
+        public bool isCanceled
+        {
+            get { return _isCanceled; }
+            set { _isCanceled = value; }
+        }
         
         #endregion
 
@@ -691,6 +707,35 @@ namespace Clases
                     {
                         MessageBox.Show(mensaje_error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                }
+            }
+        }
+
+        public DataSet cargaDataGridTicketsParaFacturas(int idClienteUsuarioFinal)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "spu_cargaDataGridTicketsParaFacturas";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idClienteUsuarioFinal", SqlDbType.Int, idClienteUsuarioFinal);
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true,parametros, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
                 }
             }
         }

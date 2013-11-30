@@ -876,7 +876,7 @@ as
 		values (
 					@idClienteUsuarioFinal, @idDepartamento, @titulo, @idTipoServicio, @descripcion, 
 					@idArchivoAdjunto, @fechaRegistro, @idEstatusTickets, @idPrioridad, Null,
-					null, null, null, @isDeleted
+					null, null, null, @isDeleted, null, 0
 				)
 	end
 go
@@ -901,7 +901,7 @@ as
 		values (
 					@idClienteUsuarioFinal, @idDepartamento, @titulo, @idTipoServicio, @descripcion, 
 					null, @fechaRegistro, @idEstatusTickets, @idPrioridad, Null,
-					null, null, null, @isDeleted
+					null, null, null, @isDeleted, null, 0
 				)
 	end
 go
@@ -1655,6 +1655,75 @@ as
 			end
 	end
 go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+------------------------------------------
+create procedure [spu_actualizarEstadoSolicitudDeCompra]
+(
+	@idSolicitud int
+)
+as
+	begin
+		update dbo.tbl_solicitudOrdenDeCompra
+		set isAproved = 1
+		where idSolicitud = @idSolicitud
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+------------------------------------------
+create procedure [spu_cargaListaClientes]
+as
+	begin
+		select idClienteUsuarioFinal,
+			   dbo.tbl_clientesUsuarioFinal.nombre +' '+apellidos as nombre,
+			   dbo.tbl_clientesUsuarioFinal.identificacion,
+			   dbo.tbl_clientesUsuarioFinal.telefonoEmpresa,
+			   idEmpresaCliente
+		from dbo.tbl_clientesUsuarioFinal
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+------------------------------------------
+create procedure [spu_cargaInfoEmpresasClientes]
+(
+	@idEmpresaCliente int
+)
+as
+	begin
+		select *
+		from dbo.tbl_empresasClientes
+		where idEmpresaCliente = @idEmpresaCliente
+	end 
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+------------------------------------------
+create procedure [spu_cargaDataGridTicketsParaFacturas]
+(
+	@idClienteUsuarioFinal int
+)
+as
+	begin
+		select idTicket,
+			   titulo,
+			   dbo.tbl_tipoServicio.descripcion as idTipoServicio,
+			   fechaRegistro,
+			   dbo.tbl_estatusTickets.descripcion as idEstatusTickets,
+			   dbo.tbl_tipoPrioridades.descripcion as idPrioridad,
+			   fechaEntrega
+		from dbo.tbl_tickets
+		left outer join dbo.tbl_tipoServicio on dbo.tbl_tickets.idTipoServicio = dbo.tbl_tipoServicio.idTipoServicio
+		left outer join dbo.tbl_estatusTickets on dbo.tbl_tickets.idEstatusTickets = dbo.tbl_estatusTickets.idEstatusTickets
+		left outer join dbo.tbl_tipoPrioridades on dbo.tbl_tickets.idPrioridad = dbo.tbl_tipoPrioridades.idPrioridad
+		where dbo.tbl_tickets.idEstatusTickets = 5 and
+			  dbo.tbl_tickets.isCanceled = 0 and
+			  idClienteUsuarioFinal = @idClienteUsuarioFinal
+	end
+go
+
+
 
 
 

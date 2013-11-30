@@ -41,6 +41,7 @@
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -49,6 +50,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dtg_CatalogoProveedor);
@@ -120,9 +122,9 @@
             this.Direccion,
             this.Telefono,
             this.Eliminar});
-            this.dtg_CatalogoProveedor.Location = new System.Drawing.Point(12, 21);
+            this.dtg_CatalogoProveedor.Location = new System.Drawing.Point(12, 45);
             this.dtg_CatalogoProveedor.Name = "dtg_CatalogoProveedor";
-            this.dtg_CatalogoProveedor.Size = new System.Drawing.Size(1020, 493);
+            this.dtg_CatalogoProveedor.Size = new System.Drawing.Size(1020, 469);
             this.dtg_CatalogoProveedor.TabIndex = 0;
             // 
             // Id_Proveedor
@@ -165,6 +167,16 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(380, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(319, 24);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "CATALOGO DE PROVEEDORES";
+            // 
             // frm_CxC_CxP_CatalogoProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +191,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_CxC_CxP_CatalogoProveedores_FormClosing);
             this.Load += new System.EventHandler(this.frm_CxC_CxP_CatalogoProveedores_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_CatalogoProveedor)).EndInit();
@@ -200,5 +213,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.Label label1;
     }
 }

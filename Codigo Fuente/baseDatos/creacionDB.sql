@@ -391,7 +391,6 @@ CREATE TABLE db_soportic.dbo.tbl_facturas
 	fechaFactura DATE NOT NULL,
 	fechaDesde DATE NOT NULL,
 	fechahasta DATE NOT NULL,
-	detalle VARCHAR(250) NOT NULL,
 	subTotal INT NOT NULL,
 	impuesto INT NULL,
 	total INT NOT NULL,
@@ -402,8 +401,8 @@ CREATE TABLE db_soportic.dbo.tbl_facturas
 		idFactura ASC
 	)
 )
-
 GO
+
 -------TABLA ALERTAS------------------------------------------------------
 CREATE TABLE db_soportic.dbo.tbl_alertas
 (
@@ -461,8 +460,24 @@ add tipoUsuario varchar(20)
 go
 
 --alter table estatus tickets
+alter table dbo.tbl_tickets
+add idFactura int null,
+	isCanceled bit
+go
+
+--alter table estatus tickets
 alter table dbo.tbl_alertas
 add Referencia int
+go
+
+--alter table empresasCliente
+alter table dbo.tbl_empresasClientes
+add Direccion varchar(250)
+go
+
+--alter table facturas
+alter table dbo.tbl_facturas
+add isCanceled bit
 go
 
 --Creacion de llave foranea en la tabla vacaciones
@@ -585,6 +600,16 @@ REFERENCES db_soportic.dbo.tbl_descripcionRoles(idRol)
 GO
 Alter Table db_soportic.dbo.tbl_usuariosSistema
 Check Constraint [fk_Rol_usuariosSistema]
+GO
+
+--Creacion de llave Foranea en la tabla TICKETS
+ALTER TABLE db_soportic.dbo.tbl_tickets
+WITH NOCHECK ADD CONSTRAINT fk_facturas_tickets
+FOREIGN KEY (idFactura)
+REFERENCES db_soportic.dbo.tbl_facturas(idFactura)
+GO
+Alter Table db_soportic.dbo.tbl_tickets
+Check Constraint [fk_facturas_tickets]
 GO
 
 --Creacion de llave Foranea en la tabla TICKETS

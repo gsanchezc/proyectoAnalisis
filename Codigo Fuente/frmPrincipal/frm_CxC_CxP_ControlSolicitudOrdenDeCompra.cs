@@ -79,8 +79,7 @@ namespace frmPrincipal
                 this.Hide();
                 ventana.Show();
             }
-            else
-            { }
+            else{}
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
@@ -147,8 +146,15 @@ namespace frmPrincipal
                     this.Hide();
                     ventana.Show();
                 }
-                else
-                { }
+                else if (pantalla == "CatalogoSolicitudes")
+                {
+                    idSolicitudCompra = Convert.ToInt32(dtg_CatalogoSolicitudesCompra.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    pantalla = "CatalogoSolicitudes";
+                    frm_CxC_CxP_NuevaOrdenCompra ventana = new frm_CxC_CxP_NuevaOrdenCompra(usuarioSistema, idSolicitudCompra, pantalla);
+                    this.Hide();
+                    ventana.Show();
+                }
+                else { }
             }
             else
             { }

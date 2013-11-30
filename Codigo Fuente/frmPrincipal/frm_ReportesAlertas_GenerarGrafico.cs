@@ -50,11 +50,16 @@ namespace frmPrincipal
 
         }
 
-        private void btn_regresar_Click(object sender, EventArgs e)
+        private void btn_regresarMenu_Click(object sender, EventArgs e)
         {
             frm_0MenuPrincipal ventana = new frm_0MenuPrincipal(usuarioSistema);
-            this.Close();
+            this.Hide();
             ventana.Show();
+        }
+
+        private void frm_ReportesAlertas_GenerarGrafico_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
         }
     }
 }

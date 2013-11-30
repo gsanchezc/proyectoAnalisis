@@ -47,5 +47,10 @@ namespace frmPrincipal
         {
             txt_DetalleAlerta.MaxLength = 250;
         }
+
+        private void frm_ReportesAlertas_IngresarAlerta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
     }
 }

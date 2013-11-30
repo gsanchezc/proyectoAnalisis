@@ -110,8 +110,7 @@ namespace frmPrincipal
             objTicket.idDepartamento = Convert.ToInt32(cmb_TipoTicket.SelectedValue);
             objTicket.titulo = txt_tema.Text;
             objTicket.idTipoServicio = Convert.ToInt32(cmb_tipoServicio.SelectedValue);
-            objTicket.descripcion = txt_Descripcion.Text;
-            
+            objTicket.descripcion = txt_Descripcion.Text;         
             objTicket.fechaRegistro = DateTime.Now.Date.ToString();
             objTicket.idEstatusTickets = 1;
             objTicket.idPrioridad = 1;

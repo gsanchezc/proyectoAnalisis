@@ -151,6 +151,10 @@ namespace frmPrincipal
                 {
                     MessageBox.Show("Exito al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    objSolicitud.actualizarEstadoSolicitudDeCompra(IdSolicitudCompras);
+
+                    MessageBox.Show("La solicitud de Compra fue aprobada", "Confirmacion de Orden de Compra", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     if (pantalla == "CatalogoOrdenes")
                     {
                         frm_CxC_CxP_CatalogoOrdenesDeCompra ventana = new frm_CxC_CxP_CatalogoOrdenesDeCompra(usuarioSistema, pantalla);
@@ -177,7 +181,7 @@ namespace frmPrincipal
                             return;
                         }
                     }
-                    else { } 
+                    else { }           
                 }
                 else
                 {

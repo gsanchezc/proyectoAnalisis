@@ -291,7 +291,7 @@ namespace frmPrincipal
             txt_Departamento.Text = objTicket.Departamento;
             txt_TipoServicio.Text = objTicket.TipoServicio;
             txt_temaTicket.Text = objTicket.titulo;
-            txt_FechaIngreso.Text = objTicket.fechaRegistro.Substring(0, 10) ;
+            txt_FechaIngreso.Text = objTicket.fechaRegistro;
             txt_decripcion.Text = objTicket.descripcion;
             txt_archivoAdjuntoCliente.Text = objTicket.idArchivoAdjunto.ToString();
             txt_FechaAsignacion.Text = objTicket.fechaAsignacion;
@@ -457,23 +457,23 @@ namespace frmPrincipal
                 }
                 else if (cmb_prioridad.SelectedIndex == 1)
                 {
-                    txt_FechaEntrega.Text = DateTime.Now.AddDays(7).ToShortDateString().Substring(0, 10);
+                    txt_FechaEntrega.Text = DateTime.Now.AddDays(7).ToShortDateString();
                 }
                 else if (cmb_prioridad.SelectedIndex == 2)
                 {
-                    txt_FechaEntrega.Text = DateTime.Now.AddDays(5).ToShortDateString().Substring(0, 10);
+                    txt_FechaEntrega.Text = DateTime.Now.AddDays(5).ToShortDateString();
                 }
                 else if (cmb_prioridad.SelectedIndex == 3)
                 {
-                    txt_FechaEntrega.Text = DateTime.Now.AddDays(3).ToShortDateString().Substring(0, 10);
+                    txt_FechaEntrega.Text = DateTime.Now.AddDays(3).ToShortDateString();
                 }
                 else if (cmb_prioridad.SelectedIndex == 4)
                 {
-                    txt_FechaEntrega.Text = DateTime.Now.AddDays(1).ToShortDateString().Substring(0, 10);
+                    txt_FechaEntrega.Text = DateTime.Now.AddDays(1).ToShortDateString();
                 }
                 else if (cmb_prioridad.SelectedIndex == 5)
                 {
-                    txt_FechaEntrega.Text = DateTime.Now.ToShortDateString().Substring(0, 10);
+                    txt_FechaEntrega.Text = DateTime.Now.ToShortDateString();
                 }
                 else { }
             }
