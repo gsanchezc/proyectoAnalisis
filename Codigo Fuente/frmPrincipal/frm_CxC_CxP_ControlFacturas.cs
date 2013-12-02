@@ -13,7 +13,7 @@ namespace frmPrincipal
     public partial class frm_CxC_CxP_ControlFacturas : Form
     {
         //DECLARACION DE INSTANCIAS DE LAS CLASES
-        
+        facturas objFacturas = new facturas();
 
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
@@ -30,7 +30,7 @@ namespace frmPrincipal
 
         private void frm_CxC_CxP_ControlFacturas_Load(object sender, EventArgs e)
         {
-
+            this.cargaDataGridFacturasTodas();
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
@@ -57,6 +57,70 @@ namespace frmPrincipal
         private void frm_CxC_CxP_ControlFacturas_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void cargaDataGridFacturasTodas()
+        {
+            try
+            {
+                dtg_facturas.AutoGenerateColumns = false;
+                dtg_facturas.DataSource = objFacturas.cargarDataGridFacturasTodas().Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void cargaDataGridFacturasPendientesPago()
+        {
+            try
+            {
+                dtg_facturas.AutoGenerateColumns = false;
+                dtg_facturas.DataSource = objFacturas.cargarDataGridFacturasPendientesPago().Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void cargaDataGridFacturasCanceladas()
+        {
+            try
+            {
+                dtg_facturas.AutoGenerateColumns = false;
+                dtg_facturas.DataSource = objFacturas.cargarDataGridFacturasCanceladas().Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void rb_facturasCanceladas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_facturasCanceladas.Checked == true)
+            {
+                this.cargaDataGridFacturasCanceladas();
+            }
+        }
+
+        private void rb_facturasPendientes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_facturasPendientes.Checked == true)
+            {
+                this.cargaDataGridFacturasPendientesPago();
+            }
         }
     }
 }

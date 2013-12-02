@@ -1723,18 +1723,176 @@ as
 	end
 go
 
+--------RAFAEL SEQUEIRA VARGAS------------
+------------------------------------------
+create procedure [spu_cargaDataGridTicketsParaFacturasPorFechas]
+(
+	@idClienteUsuarioFinal int,
+	@fechaDesde date,
+	@fechahasta date
+)
+as
+	begin
+		select idTicket,
+			   titulo,
+			   dbo.tbl_tipoServicio.descripcion as idTipoServicio,
+			   fechaRegistro,
+			   dbo.tbl_estatusTickets.descripcion as idEstatusTickets,
+			   dbo.tbl_tipoPrioridades.descripcion as idPrioridad,
+			   fechaEntrega
+		from dbo.tbl_tickets
+		left outer join dbo.tbl_tipoServicio on dbo.tbl_tickets.idTipoServicio = dbo.tbl_tipoServicio.idTipoServicio
+		left outer join dbo.tbl_estatusTickets on dbo.tbl_tickets.idEstatusTickets = dbo.tbl_estatusTickets.idEstatusTickets
+		left outer join dbo.tbl_tipoPrioridades on dbo.tbl_tickets.idPrioridad = dbo.tbl_tipoPrioridades.idPrioridad
+		where dbo.tbl_tickets.idEstatusTickets = 5 and
+			  dbo.tbl_tickets.isCanceled = 0 and
+			  idClienteUsuarioFinal = @idClienteUsuarioFinal and  
+		fechaEntrega between @fechaDesde and @fechahasta
+	end
+go
 
+create procedure [spu_cargaDataGridOrdenesDeCompraPorFacturaPorFecha]
+(
+	@idClienteUsuarioFinal int,
+	@fechaDesde date,
+	@fechahasta date
+)
+as
+	begin
+		select idOrdenCompra,
+			   idTicket,
+			   dbo.tbl_clientesProveedores.nombre as idProveedor,
+			   numeroCotizacion,
+			   detalle,
+			   monto
+		from dbo.tbl_ordenCompras
+		left outer join dbo.tbl_clientesProveedores on dbo.tbl_ordenCompras.idProveedor = dbo.tbl_clientesProveedores.idProveedor
+		where idTicket in (select idTicket
+						    from dbo.tbl_tickets
+						   where dbo.tbl_tickets.idEstatusTickets = 5 and
+							     dbo.tbl_tickets.isCanceled = 0 and
+								 idClienteUsuarioFinal = @idClienteUsuarioFinal and
+								 fechaEntrega between @fechaDesde and @fechahasta)
+	end
+go
 
-
-
+--------RAFAEL SEQUEIRA VARGAS------------
+------------------------------------------
 create procedure [dbo].[spu_cargaRolUsuario]
 (
  @nombreUsuario varchar(10)
 )
 as
- begin
-  select idRol as Id_Rol from [db_soportic].[dbo].[tbl_usuariosSistema]
-  where nombreUsuarioSistema = @nombreUsuario
- end
-
+	begin
+		select idRol as Id_Rol 
+		from [db_soportic].[dbo].[tbl_usuariosSistema]
+		where nombreUsuarioSistema = @nombreUsuario
+	end
 GO
+
+--------RAFAEL SEQUEIRA VARGAS------------
+------------------------------------------
+create procedure [spu_insertaFactura]
+(
+	@idClienteUsuarioFinal int,
+	@telefono varchar(15),
+	@direccion varchar(250),
+	@fechaDesde date,
+	@fechahasta date,
+	@cantidadTickets int,
+	@cantidadOrdenes int,
+	@cargoPorTipoServicio float,
+	@cargoPorPrioridad float,
+	@cargoPorPuntualidad float,
+	@montoTickets float,
+	@montoOrdenesCompra float,
+	@subTotal int,
+	@impuesto float,
+	@total float
+)
+as
+	begin
+		insert into dbo.tbl_facturas
+		values(@idClienteUsuarioFinal,
+			   @telefono,
+			   @direccion,
+			   getdate(),
+			   @fechaDesde,
+			   @fechahasta,
+			   @cantidadTickets,
+			   @cantidadOrdenes,
+			   @cargoPorTipoServicio,
+			   @cargoPorPrioridad,
+			   @cargoPorPuntualidad,
+			   @montoTickets,
+			   @montoOrdenesCompra,
+			   @subTotal,
+			   @impuesto,
+			   @total,
+			   0,
+			   0
+			   )
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+------------------------------------------
+create procedure [spu_cargarDataGridFacturasTodas]
+as
+	begin
+		select idFactura,
+			   nombre +' '+ apellidos as idClienteUsuarioFinal,
+			   fechaFactura,
+			   fechaDesde,
+			   fechahasta,
+			   montoTickets,
+			   montoOrdenesCompra,
+			   subTotal,
+			   impuesto,
+			   total
+		from dbo.tbl_facturas
+		left outer join dbo.tbl_clientesUsuarioFinal on dbo.tbl_facturas.idClienteUsuarioFinal = dbo.tbl_clientesUsuarioFinal.idClienteUsuarioFinal
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+------------------------------------------
+create procedure [spu_cargarDataGridFacturasPendientesPago]
+as
+	begin
+		select idFactura,
+			   nombre +' '+ apellidos as idClienteUsuarioFinal,
+			   fechaFactura,
+			   fechaDesde,
+			   fechahasta,
+			   montoTickets,
+			   montoOrdenesCompra,
+			   subTotal,
+			   impuesto,
+			   total
+		from dbo.tbl_facturas
+		left outer join dbo.tbl_clientesUsuarioFinal on dbo.tbl_facturas.idClienteUsuarioFinal = dbo.tbl_clientesUsuarioFinal.idClienteUsuarioFinal
+		where isCanceled = 0
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+------------------------------------------
+create procedure [spu_cargarDataGridFacturasCanceladas]
+as
+	begin
+		select idFactura,
+			   nombre +' '+ apellidos as idClienteUsuarioFinal,
+			   fechaFactura,
+			   fechaDesde,
+			   fechahasta,
+			   montoTickets,
+			   montoOrdenesCompra,
+			   subTotal,
+			   impuesto,
+			   total
+		from dbo.tbl_facturas
+		left outer join dbo.tbl_clientesUsuarioFinal on dbo.tbl_facturas.idClienteUsuarioFinal = dbo.tbl_clientesUsuarioFinal.idClienteUsuarioFinal
+		where isCanceled = 1
+	end
+go

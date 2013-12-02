@@ -52,6 +52,7 @@
     <Compile Include="empresasClientes.cs" />
     <Compile Include="estatusFactura.cs" />
     <Compile Include="EstatusTicket.cs" />
+    <Compile Include="facturas.cs" />
     <Compile Include="Limpieza.cs" />
     <Compile Include="OrdenCompras.cs" />
     <Compile Include="RRHH_incapacidades.cs" />

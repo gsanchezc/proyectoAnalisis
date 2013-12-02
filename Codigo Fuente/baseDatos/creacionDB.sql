@@ -381,6 +381,7 @@ CREATE TABLE db_soportic.dbo.tbl_ordenCompras
 )
 
 GO
+
 -------TABLA FACTURAS------------------------------------------------------
 CREATE TABLE db_soportic.dbo.tbl_facturas
 (
@@ -391,10 +392,18 @@ CREATE TABLE db_soportic.dbo.tbl_facturas
 	fechaFactura DATE NOT NULL,
 	fechaDesde DATE NOT NULL,
 	fechahasta DATE NOT NULL,
-	subTotal INT NOT NULL,
-	impuesto INT NULL,
-	total INT NOT NULL,
-	isDeleted BIT NOT NULL DEFAULT(0)
+	cantidadTickets int NULL,
+	cantidadOrdenes int NULL,
+	cargoPorTipoServicio FLOAT NOT NULL,
+	cargoPorPrioridad FLOAT NOT NULL,
+	cargoPorPuntualidad FLOAT NOT NULL,
+	montoTickets FLOAT NOT NULL,
+	montoOrdenesCompra FLOAT NOT NULL,
+	subTotal FLOAT NOT NULL,
+	impuesto FLOAT NULL,
+	total FLOAT NOT NULL,
+	isCanceled BIT NOT NULL DEFAULT(0),
+	isDeleted BIT NOT NULL DEFAULT(0)	
 	
 	CONSTRAINT pk_idFactura PRIMARY KEY CLUSTERED
 	(
@@ -475,18 +484,12 @@ alter table dbo.tbl_empresasClientes
 add Direccion varchar(250)
 go
 
---alter table facturas
-alter table dbo.tbl_facturas
-add isCanceled bit
-go
-
 --Creacion de llave foranea en la tabla vacaciones
 ALTER TABLE db_soportic.dbo.tbl_vacaciones
 WITH NOCHECK ADD CONSTRAINT fk_vacacionesAprobadas_vacaciones
 FOREIGN KEY (idAprobacionVacacion)
 REFERENCES db_soportic.dbo.tbl_vacacionesAprobadas(idAprobacionVacacion)
 GO
-
 ALTER TABLE db_soportic.dbo.tbl_vacaciones
 CHECK CONSTRAINT fk_vacacionesAprobadas_vacaciones
 GO
@@ -497,7 +500,6 @@ WITH NOCHECK ADD CONSTRAINT fk_empleados_vacacionesAprobadas
 FOREIGN KEY (idSupervisor)
 REFERENCES db_soportic.dbo.tbl_empleados(idEmpleado)
 GO
-
 ALTER TABLE db_soportic.dbo.tbl_vacacionesAprobadas
 CHECK CONSTRAINT fk_empleados_vacacionesAprobadas
 GO
