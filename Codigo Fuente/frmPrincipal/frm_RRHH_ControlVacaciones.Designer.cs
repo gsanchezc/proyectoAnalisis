@@ -32,12 +32,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.dtg_Planilla = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Saldo_Vacaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status_Solicitud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSolicitudVacacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diasSolicitados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idAprobacionVacacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Planilla)).BeginInit();
@@ -70,53 +70,59 @@
             // 
             this.dtg_Planilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Planilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column5,
-            this.Saldo_Vacaciones,
-            this.Status_Solicitud,
+            this.idSolicitudVacacion,
+            this.idEmpleado,
+            this.fechaInicio,
+            this.fechaFin,
+            this.diasSolicitados,
+            this.idAprobacionVacacion,
             this.Seleccionar});
             this.dtg_Planilla.Location = new System.Drawing.Point(15, 32);
             this.dtg_Planilla.Name = "dtg_Planilla";
             this.dtg_Planilla.Size = new System.Drawing.Size(1027, 417);
             this.dtg_Planilla.TabIndex = 1;
             // 
-            // Column1
+            // idSolicitudVacacion
             // 
-            this.Column1.HeaderText = "Id Empleado";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 110;
+            this.idSolicitudVacacion.DataPropertyName = "idSolicitudVacacion";
+            this.idSolicitudVacacion.HeaderText = "Id Solicitud";
+            this.idSolicitudVacacion.Name = "idSolicitudVacacion";
+            this.idSolicitudVacacion.ReadOnly = true;
             // 
-            // Column2
+            // idEmpleado
             // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
+            this.idEmpleado.DataPropertyName = "idEmpleado";
+            this.idEmpleado.HeaderText = "Empleado";
+            this.idEmpleado.Name = "idEmpleado";
+            this.idEmpleado.ReadOnly = true;
             // 
-            // Column3
+            // fechaInicio
             // 
-            this.Column3.HeaderText = "Apellidos";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
+            this.fechaInicio.DataPropertyName = "fechaInicio";
+            this.fechaInicio.HeaderText = "Fecha Inicio";
+            this.fechaInicio.Name = "fechaInicio";
+            this.fechaInicio.ReadOnly = true;
             // 
-            // Column5
+            // fechaFin
             // 
-            this.Column5.HeaderText = "Puesto";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
+            this.fechaFin.DataPropertyName = "fechaFin";
+            this.fechaFin.HeaderText = "Fecha Fin";
+            this.fechaFin.Name = "fechaFin";
+            this.fechaFin.ReadOnly = true;
             // 
-            // Saldo_Vacaciones
+            // diasSolicitados
             // 
-            this.Saldo_Vacaciones.HeaderText = "Saldo Vacaciones";
-            this.Saldo_Vacaciones.Name = "Saldo_Vacaciones";
-            this.Saldo_Vacaciones.Width = 120;
+            this.diasSolicitados.DataPropertyName = "diasSolicitados";
+            this.diasSolicitados.HeaderText = "Dias Solicitados";
+            this.diasSolicitados.Name = "diasSolicitados";
+            this.diasSolicitados.ReadOnly = true;
             // 
-            // Status_Solicitud
+            // idAprobacionVacacion
             // 
-            this.Status_Solicitud.HeaderText = "Status Solicitud";
-            this.Status_Solicitud.Name = "Status_Solicitud";
-            this.Status_Solicitud.Width = 150;
+            this.idAprobacionVacacion.DataPropertyName = "idAprobacionVacacion";
+            this.idAprobacionVacacion.HeaderText = "Estatus Solicitud";
+            this.idAprobacionVacacion.Name = "idAprobacionVacacion";
+            this.idAprobacionVacacion.ReadOnly = true;
             // 
             // Seleccionar
             // 
@@ -147,12 +153,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dtg_Planilla;
         private System.Windows.Forms.Button btn_Cancelar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Saldo_Vacaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status_Solicitud;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSolicitudVacacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaFin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diasSolicitados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAprobacionVacacion;
         private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
     }
 }

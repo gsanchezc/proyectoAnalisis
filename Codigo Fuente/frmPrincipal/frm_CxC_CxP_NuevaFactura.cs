@@ -71,9 +71,9 @@ namespace frmPrincipal
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            if ((MessageBox.Show("Desea salir sin generar factura", "Volver al Menu Principal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+            if ((MessageBox.Show("Desea salir sin generar factura", "Volver al Menu Facturas", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                frm_0MenuPrincipal ventana = new frm_0MenuPrincipal(usuarioSistema);
+                frm_CxC_CxP_ControlFacturas ventana = new frm_CxC_CxP_ControlFacturas(usuarioSistema);
                 this.Hide();
                 ventana.Show();
             }
@@ -114,6 +114,8 @@ namespace frmPrincipal
                 if (objFacturas.insertar_factura(accion))
                 {
                     MessageBox.Show("Exito al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.actualizarTicketsRespuestaNuevaFactura();
+
                     frm_CxC_CxP_ControlFacturas ventana = new frm_CxC_CxP_ControlFacturas(usuarioSistema);
                     this.Hide();
                     ventana.Show();
@@ -165,6 +167,37 @@ namespace frmPrincipal
             {
                 this.cargaDataGridFacturasPorClientePorFecha();
                 this.cargaDataGridOrdenComprasParaFacturasPorFecha();
+            }
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private void actualizarTicketsRespuestaNuevaFactura()
+        {
+            int ultimoRegistro = 0;
+            try
+            {
+                DataSet ds;
+                ds = objFacturas.cargarUltimoRegistroFactura();
+                ultimoRegistro = Convert.ToInt32(ds.Tables[0].Rows[0]["idFactura"]);
+                MessageBox.Show("El numero de la factura creada es : "+ultimoRegistro, "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int cantidadRegistros = dtg_facturas.RowCount;
+            int ticketActualizar = 0;
+
+            for (int i = 0; i < cantidadRegistros; i++)
+            {
+                ticketActualizar = Convert.ToInt32(dtg_facturas.Rows[i].Cells["idTicket"].Value);
+                objTicket.idTicket = ticketActualizar;
+                objTicket.idFactura = ultimoRegistro;
+                objTicket.actualizarTicketsRespuestaNuevaFactura();
+                MessageBox.Show("El ticket "+ticketActualizar+" ha sido actualizado", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

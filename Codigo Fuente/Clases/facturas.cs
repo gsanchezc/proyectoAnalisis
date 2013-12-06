@@ -180,6 +180,22 @@ namespace Clases
             set { _num_error = value; }
         }
 
+        private string _nombreCliente;
+
+        public string nombreCliente
+        {
+            get { return _nombreCliente; }
+            set { _nombreCliente = value; }
+        }
+
+        private string _nombreEmpresa;
+
+        public string nombreEmpresa
+        {
+            get { return _nombreEmpresa; }
+            set { _nombreEmpresa = value; }
+        }
+
         #endregion
 
         #region variables privadas
@@ -314,6 +330,85 @@ namespace Clases
                 else
                 {
                     return ds;
+                }
+            }
+        }
+
+        public DataSet cargarUltimoRegistroFactura()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "stp_cargaIdFacturaRecienGuardado";
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public void cargaInfoFactura(int factura)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _mensaje = mensaje_error;
+            }
+            else
+            {
+                sql = "stp_cargaDatosFactura";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idFactura", SqlDbType.Int, factura);
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (ds == null)
+                {
+                    MessageBox.Show(mensaje_error, "Error al cargar Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    _mensaje = mensaje_error;
+                }
+                else
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        _idFactura = Convert.ToInt32(ds.Tables[0].Rows[0]["idFactura"]);
+                        _nombreCliente = ds.Tables[0].Rows[0]["idClienteUsuarioFinal"].ToString();
+                        _telefono = ds.Tables[0].Rows[0]["telefono"].ToString();
+                        _direccion = ds.Tables[0].Rows[0]["direccion"].ToString();
+                        _fechaFactura = ds.Tables[0].Rows[0]["fechaFactura"].ToString();
+                        _fechaDesde = ds.Tables[0].Rows[0]["fechaDesde"].ToString();
+                        _fechahasta = ds.Tables[0].Rows[0]["fechahasta"].ToString();
+                        _cantidadTickets = Convert.ToInt32(ds.Tables[0].Rows[0]["cantidadTickets"]);
+                        _cantidadOrdenes = Convert.ToInt32(ds.Tables[0].Rows[0]["cantidadOrdenes"]);
+                        _cargoPorTipoServicio = Convert.ToInt32(ds.Tables[0].Rows[0]["cargoPorTipoServicio"]);
+                        _cargoPorPrioridad = Convert.ToInt32(ds.Tables[0].Rows[0]["cargoPorPrioridad"]);
+                        _cargoPorPuntualidad = Convert.ToInt32(ds.Tables[0].Rows[0]["cargoPorPuntualidad"]);
+                        _montoTickets = Convert.ToInt32(ds.Tables[0].Rows[0]["montoTickets"]);
+                        _montoOrdenesCompra = Convert.ToInt32(ds.Tables[0].Rows[0]["montoOrdenesCompra"]);
+                        _subTotal = Convert.ToInt32(ds.Tables[0].Rows[0]["subTotal"]);
+                        _impuesto = Convert.ToInt32(ds.Tables[0].Rows[0]["impuesto"]);
+                        _total = Convert.ToInt32(ds.Tables[0].Rows[0]["total"]);
+                        _isCanceled = Convert.ToBoolean(ds.Tables[0].Rows[0]["isCanceled"]);
+                        _nombreEmpresa = ds.Tables[0].Rows[0]["nombreEmpresa"].ToString();
+                    }
+                    else
+                    {
+                        _mensaje = mensaje_error;
+                    }
                 }
             }
         }

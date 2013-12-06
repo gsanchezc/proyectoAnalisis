@@ -771,6 +771,39 @@ namespace Clases
             }
         }
 
+        public bool actualizarTicketsRespuestaNuevaFactura()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                sql = "stu_actualizarTicketsRespuestaNuevaFactura";
+
+                ParamStruct[] parametros = new ParamStruct[2];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idTicket", SqlDbType.VarChar, _idTicket);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@idFactura", SqlDbType.VarChar, _idFactura);
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
+                }
+            }
+        }
+
         #endregion
     }
 }

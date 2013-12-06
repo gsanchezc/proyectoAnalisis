@@ -122,5 +122,18 @@ namespace frmPrincipal
                 this.cargaDataGridFacturasPendientesPago();
             }
         }
+
+        private void dtg_facturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == ConsultarPagarImprimir.Index && e.RowIndex >= 0)
+            {
+                int factura = 0;
+                factura = Convert.ToInt32(dtg_facturas.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                frm_CxC_CxP_ConsultarImprimirFactura ventana = new frm_CxC_CxP_ConsultarImprimirFactura(usuarioSistema, factura);
+                this.Hide();
+                ventana.Show();
+            }
+        }
     }
 }

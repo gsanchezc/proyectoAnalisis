@@ -97,6 +97,7 @@
             this.dtg_facturas.Name = "dtg_facturas";
             this.dtg_facturas.Size = new System.Drawing.Size(1252, 410);
             this.dtg_facturas.TabIndex = 34;
+            this.dtg_facturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_facturas_CellContentClick);
             // 
             // idFactura
             // 

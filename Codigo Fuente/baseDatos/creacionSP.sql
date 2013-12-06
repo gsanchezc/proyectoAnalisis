@@ -1,52 +1,250 @@
 use db_soportic
 go
 
---Procedimientos almacenados para la tabla estadoFactura------------------------------------
-create procedure stp_insertaEstadoFactura
-(
-	@id int,
-	@descripcion varchar(50)
-)
-as
-	begin
-		insert into tbl_estatusFacturas(descripcion) 
-		values(@descripcion)
-	end
-go
-
-create procedure stp_modificarEstadosFactura
-(
-	@id int,
-	@descripcion varchar(50)
-)
-as
-	begin
-		update tbl_estatusFacturas
-		set descripcion = @descripcion
-		where idEstatus = @id
-	end
-go
-
-create procedure stp_traeInfoEstadosFactura
+----------------------------------------------------------------------------------------
+--------------------------------SP - DIEGO VENEGAS MONGE------------------------------------
+-----------------------------------------------------------------------------------------------
+-------------Procedure que realiza borrado logico de un Cliente proveedor de la tabla tbl_tipoClientesProveedores DVM------
+create procedure stp_borrarTipoClienteProveedor
 (
 	@id int
 )
 as
-	begin
-		select *
-		from tbl_estatusFacturas 
-		where idEstatus = @id
-	end
+begin
+	update db_soportic.dbo.tbl_tipoClientesProveedores set isDeleted = 1
+	where idTipoClienteProveedor = @id
+end
 go
 
-create procedure stp_traeListaEstadosFactura
+--------Procedure que trae/jala la informacion de la tabla tbl_tipoIdentificacion DVM--------
+create procedure stp_traeTipoIdentificacion
 as
-	begin
-		select idEstatus, 
-			   descripcion 
-		from tbl_estatusFacturas
-	end
+begin
+	select *
+	from tbl_tipoIdentificaciones where isDeleted=0
+end
 go
+
+----------Procedure de borrado---------
+create procedure stp_borrarTipoIdentificacion
+(
+   @id int
+)
+
+as
+begin
+	update db_soportic.dbo.tbl_tipoIdentificaciones set isDeleted = 1
+    where idTipoIdentificacion = @id
+end
+
+go
+
+-----------Procedure que trae el Estatus de Tickets-----------------------
+create procedure stp_traeEstatusTickets
+as
+begin
+	select idEstatusTickets, descripcion 
+	from tbl_estatusTickets where isDeleted=0
+end
+go
+
+---------------Procedure de borrado----------------------
+create procedure stp_borrarEstatusTickets
+(
+		@id int,
+		@descripcion varchar(50)
+)
+
+as
+begin
+	update db_soportic.dbo.tbl_estatusTickets set isDeleted = 1
+	where idEstatusTickets = @id
+end
+
+go
+
+---------------Procedure que inserta datos en la tabla tbl_tipoPrioridades-----------------------------
+create procedure stp_insertarTipoPrioridad
+(
+	@id int,
+	@descripcion varchar (50)
+)
+
+as
+begin
+		insert into db_soportic.dbo.tbl_tipoPrioridades(descripcion) 
+		values(@descripcion)
+end
+
+go
+
+----------------------Procedure que modifica y actualiza los datos tbl_tipoPrioridades-----------------------------
+create procedure stp_modificarTipoPrioridada
+(
+		@id int,
+		@descripcion varchar(50)
+)
+
+ as
+ begin
+	update db_soportic.dbo.tbl_tipoPrioridades set descripcion = @descripcion
+	where idPrioridad = @id
+ end
+
+go
+
+---------------------Procedure que trae/jala la informacion tbl_tipoPrioridades-------------------
+create procedure stp_traeInfoTipoPrioridad
+(
+    @id int
+)
+
+ as
+ begin
+	select *
+	from db_soportic.dbo.tbl_tipoPrioridades where idPrioridad = @id
+ end
+
+go
+
+-----------Procedure que trae tbl_tipoPrioridades-----------------------
+create procedure stp_traeTipoPrioridad
+as
+begin
+	select idPrioridad, descripcion 
+	from tbl_tipoPrioridades where isDeleted=0
+end
+go
+
+---------------Procedure de borrado de tipo de prioridad----------------------
+create procedure stp_borrarTipoPrioridad
+(
+		@id int
+)
+
+as
+begin
+	update db_soportic.dbo.tbl_tipoPrioridades set isDeleted = 1
+	where idPrioridad = @id
+end
+
+go
+---------------------------------------------------------------------------------------
+------------Store procedure para cargar todas las incapacidades--------
+create procedure stp_traeIncapacidades
+as
+begin
+	Select * from tbl_incapacidades where isDeleted=0
+end
+
+go
+
+-----------procedure para ingresar nuevo empleado-------------------
+create procedure stp_insertarNuevoEmpleado
+(
+	@nombre varchar(50),
+	@apellido varchar(50),
+	@idTipoIdentificacion int,
+	@identificacion varchar(15),
+	@fechaNacimiento datetime,
+	@correo varchar(50),
+	@direccion varchar(250),
+	@idDepartamento int,
+	@idPuesto int,
+	@telefono varchar(15),
+	@celular varchar(15),
+	@fechaIngreso datetime,
+	@idsalario int	
+)
+as
+begin
+	insert into db_soportic.dbo.tbl_empleados(nombre, apellido,idTipoIdentificacion,identificacion,fechaNacimiento,
+							correo,direccion,idDepartamento,idPuesto,telefono,celular,fechaIngreso,idSalario) 
+	values(@nombre,@apellido,@idTipoIdentificacion,@identificacion,@fechaNacimiento,@correo,@direccion,
+				@idDepartamento,@idPuesto,@telefono,@celular,@fechaIngreso,@idsalario)
+
+end
+
+go
+
+--------------Procedure que trae la Descripcion de Departamentos-----------------
+create procedure stp_traeDescripcionDepartamentos
+
+as
+begin
+	select idDepartamento, descripcion 
+	from tbl_Departamentos where isDeleted=0
+end
+
+go
+
+----------------procedue para traer salarios------------------------
+create procedure stp_traeSalarios
+as
+begin
+	select idSalario,monto from tbl_salarios where isDeleted=0
+end
+go
+
+---------------procedure para crear solicitud de vacaciones---------------------
+create procedure stp_SolicitudVaciones
+(
+	@idEmpleado int,
+	@fechaInicio datetime,
+	@fechaFin datetime,
+	@diasSolicitados int
+)
+as
+begin
+	insert into tbl_vacaciones (idEmpleado,fechaInicio,fechaFin,diasSolicitados)
+	values(@idEmpleado,@fechaInicio,@fechaFin,@diasSolicitados)
+end
+go
+
+---------------------procedure para cargar lista de empleados----------
+create procedure stp_traeListaEmpleados
+as
+begin
+	select idEmpleado,identificacion from tbl_empleados where isDeleted=0
+end
+go
+
+-------------------carga informacion de dais de vacaciones disponibles--
+create procedure stp_VacacionesDisponibles
+(
+	@identificacion int
+)
+as
+begin
+	select vacacionesDisponibles from tbl_empleados where identificacion=@identificacion
+end
+go
+
+----------------guarda nueva nomina----------------
+create procedure stp_insertNuevaNomina
+(
+	@idEmpleado int,
+	@mesNomina varchar(15),
+	@anioNomina int,
+	@horasLaboradas int,
+	@horasExtra int,
+	@salario float,
+	@salarioBruto float,
+	@rebajos float,
+	@salarioNeto float
+)
+as
+begin
+	insert into db_soportic.dbo.tbl_nomina (idEmpleado, mesNomina, anioNomina,horasLaboradas,horasExtra,salario,salarioBruto,rebajos,salarioNeto)
+	values(@idEmpleado,@mesNomina,@anioNomina,@horasLaboradas,@horasExtra,@salario,@salarioBruto,@rebajos,@salarioNeto)
+
+end
+go
+
+
+---------------------------------------------------------------------------------------
+---------------------------FIN SP DIEGO VENEGAS M--------------------------------------
+---------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------
 ---Procedimientos almacenados para la tabla Descripcion Roles----------------------------
 create procedure stp_insertarDescripcionRol
@@ -181,18 +379,6 @@ as
 	end
 go
 
-----------Procedure de borrado---------
-create procedure stp_borrarTipoIdentificacion
-(
-   @id int
-)
-as
-	begin
-		delete db_soportic.dbo.tbl_tipoIdentificaciones
-		where  idTipoIdentificacion = @id
-	end
-go
-
 ---------------Procedure que inserta datos en la tabla tbl_estatusTickets-----------------------------
 create procedure stp_insertarEstatusTickets
 (
@@ -233,32 +419,9 @@ as
 	end
 go
 
------------Procedure que trae el Estatus de Tickets-----------------------
-create procedure stp_traeEstatusTickets
-as
-	begin
-		select idEstatusTickets, 
-			   descripcion 
-		from tbl_estatusTickets
-	end
-go
-
 
 ---------------------------Procedure de almacenamiento para la tabla descripcionDepartamentos-------------
 ----------------------------------------------------------------------------------------------------------
-----------------Procedure que inserta datos en la tabla tbl_descripcionDepartamentos--------------------
-create procedure stp_insertarDescripcionDepartamentos
-(
-	@id int, 
-	@descripcion varchar(50)
-)
-as
-	begin
-		insert into db_soportic.dbo.tbl_descripcionDepartamentos(descripcion) 
-		values(@descripcion)
-	end
-go
-
 ------------------Procedure que modifica y actualiza datos en la tabla tbl_descripionDepartamentos----------
 create procedure stp_modificarDescripcionDepartamentos
 (
@@ -286,15 +449,20 @@ as
 	end
 go
 
----------------Procedure que trae la Descripcion de Departamentos-----------------
-create procedure [stp_traeDescripcionDepartamentos]
+----------------Procedure de borrado Descripcion Depatamentos DVM------------------------------
+create procedure stp_borrarDescripcionDepartamentos
+(
+		@id int
+)
+
 as
-	begin
-		select idDepartamento, 
-		       descripcion 
-		from dbo.tbl_Departamentos
-	end
+begin
+	update db_soportic.dbo.tbl_descripcionDepartamentos set isDeleted = 1
+	where idDepartamento  = @id
+end
+
 go
+
 ---------------------------Procedure de almacenamiento para la tabla datosAdjuntos--------------------
 ------------------------------------------------------------------------------------------------------
 ------------------Procedure que inserta datos en la tabla tbl_datosAdjuntos-------------------------
@@ -752,18 +920,6 @@ as
 		where idUsuarioSistema = @idUsuarioSistema
 	end
 go
------------------RAFAEL SEQUEIRA VARGAS-------------------
-------------------Procedure Carga Rol Usuario-------------------------
-create procedure [dbo].[spu_cargaRolUsuario]
-(
-	@nombreUsuario varchar(10)
-)
-as
-	begin
-		select idRol as Id_Rol from [db_soportic].[dbo].[tbl_usuariosSistema]
-		where nombreUsuarioSistema = @nombreUsuario
-	end
-GO
 
 -----------------RAFAEL SEQUEIRA VARGAS---------------------------------------------
 ------------------Procedure que inserta datos en la tabla tbl_tipoServicio-------------------------
