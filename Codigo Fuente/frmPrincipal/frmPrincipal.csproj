@@ -224,6 +224,12 @@
     <Compile Include="frm_RRHH_NuevaIncapacidad.Designer.cs">
       <DependentUpon>frm_RRHH_NuevaIncapacidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_RRHH_NuevaNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_RRHH_NuevaNomina.Designer.cs">
+      <DependentUpon>frm_RRHH_NuevaNomina.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Seguridad_AdministracionCuentasUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_RRHH_NuevaIncapacidad.resx">
       <DependentUpon>frm_RRHH_NuevaIncapacidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_RRHH_NuevaNomina.resx">
+      <DependentUpon>frm_RRHH_NuevaNomina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Seguridad_AdministracionCuentasUsuario.resx">
       <DependentUpon>frm_Seguridad_AdministracionCuentasUsuario.cs</DependentUpon>
