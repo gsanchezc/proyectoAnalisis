@@ -1,30 +1,12 @@
 USE master
 GO
 -------------------------------------------------------------------------
+
+
 ------------CREACION DE LA BASE DE DATOS---------------------------------
 CREATE DATABASE db_soportic
 GO
 USE [db_soportic]
-GO
------------------------LOGIN DB---------------------------------------------
-USE [master]
-GO
-CREATE LOGIN [udb_soportic] WITH PASSWORD=N'123', DEFAULT_DATABASE=[master], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
-GO
-USE [db_soportic]
-GO
-CREATE USER [udb_soportic] FOR LOGIN [udb_soportic]
-GO
-USE [db_soportic]
-GO
-ALTER USER [udb_soportic] WITH DEFAULT_SCHEMA=[dbo]
-GO
-USE [db_soportic]
-GO
-EXEC sp_addrolemember N'db_owner', N'udb_soportic'
-GO
-----------------------------CREACION DE LA ESTRUCTURAS DE DATOS---------------
-USE master
 GO
 
 -------TABLA TIPOS DE ID------------------------------------------------------
@@ -463,6 +445,26 @@ CREATE TABLE db_soportic.dbo.tbl_solicitudOrdenDeCompra
 )
 GO
 
+CREATE TABLE db_soportic.dbo.tbl_nomina
+(
+	idNomina int not null identity(1,1),
+	mesNomina varchar(15),
+	anioNomina int,
+	idEmpleado int,
+	horasLaboradas int,
+	horasExtra int,
+	salario float,
+	salarioBruto float,
+	rebajos float,
+	salarioNeto float
+
+	CONSTRAINT PK_idNomina PRIMARY KEY CLUSTERED
+	(
+		idNomina ASC
+	)
+)
+go
+
 --alter table estatus tickets
 alter table dbo.tbl_estatusTickets
 add tipoUsuario varchar(20)
@@ -483,6 +485,16 @@ go
 alter table dbo.tbl_empresasClientes
 add Direccion varchar(250)
 go
+
+--Creacion de llave foranea en la tabla nomina
+ALTER TABLE db_soportic.dbo.tbl_nomina
+WITH NOCHECK ADD CONSTRAINT fk_nomina_empleados
+FOREIGN KEY (idEmpleado)
+REFERENCES db_soportic.dbo.tbl_empleados(idEmpleado)
+GO
+ALTER TABLE db_soportic.dbo.tbl_nomina
+CHECK CONSTRAINT fk_nomina_empleados
+GO
 
 --Creacion de llave foranea en la tabla vacaciones
 ALTER TABLE db_soportic.dbo.tbl_vacaciones
