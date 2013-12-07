@@ -56,12 +56,6 @@
     <Compile Include="frm_CxC_CxP_ConsultarImprimirFactura.Designer.cs">
       <DependentUpon>frm_CxC_CxP_ConsultarImprimirFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_CxC_CxP_ControlEstadosDeCuenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_CxC_CxP_ControlEstadosDeCuenta.Designer.cs">
-      <DependentUpon>frm_CxC_CxP_ControlEstadosDeCuenta.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_CxC_CxP_ControlFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,9 +328,6 @@
     <EmbeddedResource Include="frm_CxC_CxP_ConsultarImprimirFactura.resx">
       <DependentUpon>frm_CxC_CxP_ConsultarImprimirFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_CxC_CxP_ControlEstadosDeCuenta.resx">
-      <DependentUpon>frm_CxC_CxP_ControlEstadosDeCuenta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_CxC_CxP_ControlFacturas.resx">
       <DependentUpon>frm_CxC_CxP_ControlFacturas.cs</DependentUpon>
     </EmbeddedResource>
@@ -476,7 +467,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

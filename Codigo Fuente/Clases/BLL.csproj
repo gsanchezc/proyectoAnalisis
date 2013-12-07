@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,6 +54,7 @@
     <Compile Include="estatusFactura.cs" />
     <Compile Include="EstatusTicket.cs" />
     <Compile Include="facturas.cs" />
+    <Compile Include="Imprimir.cs" />
     <Compile Include="Limpieza.cs" />
     <Compile Include="OrdenCompras.cs" />
     <Compile Include="RRHH_incapacidades.cs" />

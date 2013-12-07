@@ -492,7 +492,7 @@ namespace Clases
 
                         if (ds.Tables[0].Rows[0]["fechaAsignacion"] != System.DBNull.Value)
                         {
-                            _fechaAsignacion = ds.Tables[0].Rows[0]["fechaAsignacion"].ToString().Substring(0, 10);
+                            _fechaAsignacion = ds.Tables[0].Rows[0]["fechaAsignacion"].ToString();
                         }
                         else
                         {
@@ -501,7 +501,7 @@ namespace Clases
 
                         if (ds.Tables[0].Rows[0]["fechaInicio"] != System.DBNull.Value)
                         {
-                            _fechaInicio = ds.Tables[0].Rows[0]["fechaInicio"].ToString().Substring(0, 10);
+                            _fechaInicio = ds.Tables[0].Rows[0]["fechaInicio"].ToString();
                         }
                         else
                         {
@@ -510,7 +510,7 @@ namespace Clases
 
                         if (ds.Tables[0].Rows[0]["fechaEntrega"] != System.DBNull.Value)
                         {
-                            _fechaEntrega = ds.Tables[0].Rows[0]["fechaEntrega"].ToString().Substring(0, 10);
+                            _fechaEntrega = ds.Tables[0].Rows[0]["fechaEntrega"].ToString();
                         }
                         else
                         {
@@ -800,6 +800,35 @@ namespace Clases
                 {
                     cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
                     return true;
+                }
+            }
+        }
+
+        public DataSet cargaDataGridTicketsParaFacturasConIdFactura(int idFactura)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "spu_cargaDataGridTicketsParaFacturasConIdFactura";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idFactura", SqlDbType.Int, idFactura);
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
                 }
             }
         }

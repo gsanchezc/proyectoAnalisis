@@ -413,6 +413,100 @@ namespace Clases
             }
         }
 
+        public bool actualizarEstadoPagoFactura()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                sql = "spu_actualizaEstadoDePagoFactura";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idFactura", SqlDbType.VarChar, _idFactura);
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
+                }
+            }
+        }
+
+        public DataSet cargaFacturasParaEstadosDeCuenta(int idClienteUsuarioFinal, string fechaDesde, string fechaHasta)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "spu_cargaFacturasParaEstadosDeCuenta";
+
+                ParamStruct[] parametros = new ParamStruct[3];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idClienteUsuarioFinal", SqlDbType.Int, idClienteUsuarioFinal);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@fechaDesde", SqlDbType.Date, fechaDesde);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@fechahasta", SqlDbType.Date, fechaHasta);
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public DataSet cargaMontoEstadoDeCuenta(int idClienteUsuarioFinal, string fechaDesde, string fechaHasta)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "spu_cargaMontoTotalEstadoDeCuenta";
+
+                ParamStruct[] parametros = new ParamStruct[3];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idClienteUsuarioFinal", SqlDbType.Int, idClienteUsuarioFinal);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@fechaDesde", SqlDbType.Date, fechaDesde);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@fechahasta", SqlDbType.Date, fechaHasta);
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
         #endregion
     }
 }

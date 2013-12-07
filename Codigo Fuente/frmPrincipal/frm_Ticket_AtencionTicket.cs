@@ -652,6 +652,7 @@ namespace frmPrincipal
                 {
                     MessageBox.Show("Exito al guardar Bitacora", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.limpiezaDeCampos();
+                    pictureBox1.Visible = false;
                     txt_tiempoLaborado.Text = "0";
                 }
                 else
@@ -659,9 +660,7 @@ namespace frmPrincipal
                     MessageBox.Show("Error al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-            }
-
-              
+            } 
         }
 
         //METODO VALIDACION DE CAMPOS

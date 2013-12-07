@@ -1,8 +1,6 @@
 USE master
 GO
 -------------------------------------------------------------------------
-
-
 ------------CREACION DE LA BASE DE DATOS---------------------------------
 CREATE DATABASE db_soportic
 GO
