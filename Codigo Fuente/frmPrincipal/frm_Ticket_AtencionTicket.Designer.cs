@@ -35,6 +35,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btn_VerSolicitudes = new System.Windows.Forms.Button();
             this.btn_NuevaSolicitud = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_aceptar = new System.Windows.Forms.Button();
@@ -87,7 +88,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btn_VerSolicitudes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -160,6 +160,18 @@
             this.groupBox7.TabIndex = 51;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "En Caso de necesitar Orden de Compra";
+            // 
+            // btn_VerSolicitudes
+            // 
+            this.btn_VerSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_VerSolicitudes.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_VerSolicitudes.Location = new System.Drawing.Point(99, 72);
+            this.btn_VerSolicitudes.Name = "btn_VerSolicitudes";
+            this.btn_VerSolicitudes.Size = new System.Drawing.Size(246, 38);
+            this.btn_VerSolicitudes.TabIndex = 1;
+            this.btn_VerSolicitudes.Text = "Ver Solicitudes del Ticket";
+            this.btn_VerSolicitudes.UseVisualStyleBackColor = true;
+            this.btn_VerSolicitudes.Click += new System.EventHandler(this.btn_VerSolicitudes_Click);
             // 
             // btn_NuevaSolicitud
             // 
@@ -318,7 +330,7 @@
             this.btn_VerArchivoAdjuntoCliente.Location = new System.Drawing.Point(453, 188);
             this.btn_VerArchivoAdjuntoCliente.Name = "btn_VerArchivoAdjuntoCliente";
             this.btn_VerArchivoAdjuntoCliente.Size = new System.Drawing.Size(277, 30);
-            this.btn_VerArchivoAdjuntoCliente.TabIndex = 8;
+            this.btn_VerArchivoAdjuntoCliente.TabIndex = 0;
             this.btn_VerArchivoAdjuntoCliente.Text = "Ver Archivo Adjunto";
             this.btn_VerArchivoAdjuntoCliente.UseVisualStyleBackColor = true;
             this.btn_VerArchivoAdjuntoCliente.Click += new System.EventHandler(this.btn_VerArchivoAdjuntoCliente_Click);
@@ -504,7 +516,7 @@
             this.btn_GuardarArchivoTecnico.Location = new System.Drawing.Point(431, 178);
             this.btn_GuardarArchivoTecnico.Name = "btn_GuardarArchivoTecnico";
             this.btn_GuardarArchivoTecnico.Size = new System.Drawing.Size(146, 30);
-            this.btn_GuardarArchivoTecnico.TabIndex = 46;
+            this.btn_GuardarArchivoTecnico.TabIndex = 2;
             this.btn_GuardarArchivoTecnico.Text = "Guardar Archivo";
             this.btn_GuardarArchivoTecnico.UseVisualStyleBackColor = true;
             this.btn_GuardarArchivoTecnico.Click += new System.EventHandler(this.btn_GuardarArchivoTecnico_Click);
@@ -516,7 +528,7 @@
             this.btn_AdjuntarArchivoTecnico.Location = new System.Drawing.Point(376, 142);
             this.btn_AdjuntarArchivoTecnico.Name = "btn_AdjuntarArchivoTecnico";
             this.btn_AdjuntarArchivoTecnico.Size = new System.Drawing.Size(147, 30);
-            this.btn_AdjuntarArchivoTecnico.TabIndex = 3;
+            this.btn_AdjuntarArchivoTecnico.TabIndex = 1;
             this.btn_AdjuntarArchivoTecnico.Text = "Adjuntar Archivo";
             this.btn_AdjuntarArchivoTecnico.UseVisualStyleBackColor = true;
             this.btn_AdjuntarArchivoTecnico.Click += new System.EventHandler(this.btn_AdjuntarArchivoTecnico_Click);
@@ -542,7 +554,7 @@
             this.btn_VerBitacoraTicket.Location = new System.Drawing.Point(20, 79);
             this.btn_VerBitacoraTicket.Name = "btn_VerBitacoraTicket";
             this.btn_VerBitacoraTicket.Size = new System.Drawing.Size(145, 47);
-            this.btn_VerBitacoraTicket.TabIndex = 2;
+            this.btn_VerBitacoraTicket.TabIndex = 1;
             this.btn_VerBitacoraTicket.Text = "Ver Bitacoras de este Ticket";
             this.btn_VerBitacoraTicket.UseVisualStyleBackColor = true;
             this.btn_VerBitacoraTicket.Click += new System.EventHandler(this.btn_VerBitacoraTicket_Click);
@@ -566,7 +578,7 @@
             this.btn_verHistorial.Location = new System.Drawing.Point(20, 137);
             this.btn_verHistorial.Name = "btn_verHistorial";
             this.btn_verHistorial.Size = new System.Drawing.Size(145, 47);
-            this.btn_verHistorial.TabIndex = 1;
+            this.btn_verHistorial.TabIndex = 2;
             this.btn_verHistorial.Text = "Ver Historial General";
             this.btn_verHistorial.UseVisualStyleBackColor = true;
             this.btn_verHistorial.Click += new System.EventHandler(this.btn_ver_Click);
@@ -591,7 +603,7 @@
             this.txt_detalleBitacora.Name = "txt_detalleBitacora";
             this.txt_detalleBitacora.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_detalleBitacora.Size = new System.Drawing.Size(666, 63);
-            this.txt_detalleBitacora.TabIndex = 2;
+            this.txt_detalleBitacora.TabIndex = 0;
             // 
             // label7
             // 
@@ -772,18 +784,6 @@
             // 
             this.timer1.Interval = 60000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btn_VerSolicitudes
-            // 
-            this.btn_VerSolicitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_VerSolicitudes.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_VerSolicitudes.Location = new System.Drawing.Point(99, 72);
-            this.btn_VerSolicitudes.Name = "btn_VerSolicitudes";
-            this.btn_VerSolicitudes.Size = new System.Drawing.Size(246, 38);
-            this.btn_VerSolicitudes.TabIndex = 1;
-            this.btn_VerSolicitudes.Text = "Ver Solicitudes del Ticket";
-            this.btn_VerSolicitudes.UseVisualStyleBackColor = true;
-            this.btn_VerSolicitudes.Click += new System.EventHandler(this.btn_VerSolicitudes_Click);
             // 
             // frm_Ticket_AtencionTicket
             // 

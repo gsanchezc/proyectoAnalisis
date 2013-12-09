@@ -1457,8 +1457,8 @@ as
 		set @fechaHoy = GETDATE()
 		set @vencidos = 0
 		
-		if exists(select COUNT(*) as vencidos from dbo.tbl_tickets where fechaEntrega <= @fechaHoy)
-			select COUNT(*) as vencidos from dbo.tbl_tickets where fechaEntrega <= @fechaHoy
+		if exists(select COUNT(*) as vencidos from dbo.tbl_tickets where fechaEntrega < @fechaHoy)
+			select COUNT(*) as vencidos from dbo.tbl_tickets where fechaEntrega < @fechaHoy
 		else
 			begin
 				select @vencidos as vencidos
@@ -1481,11 +1481,11 @@ as
 		
 		if exists(select COUNT(*) as vencidos 
 			      from dbo.tbl_tickets 
-			      where fechaEntrega <= @fechaHoy and
+			      where fechaEntrega < @fechaHoy and
 			      idEmpleado = @idEmpleado)
 			select COUNT(*) as vencidos 
 			from dbo.tbl_tickets 
-			where fechaEntrega <= @fechaHoy and
+			where fechaEntrega < @fechaHoy and
 			      idEmpleado = @idEmpleado
 		else
 			begin
@@ -2230,5 +2230,43 @@ as
 		where idClienteUsuarioFinal = @idClienteUsuarioFinal and
 			  isCanceled = 1 and
 		      fechaFactura between @fechaDesde and @fechahasta
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+----------------Procedure Existe Alerta--------------
+create procedure [spu_existAlertaSobreReferencia]
+(
+	@Referencia int
+)
+as
+	begin
+		if exists(select * 
+				  from dbo.tbl_alertas
+				  where Referencia = @Referencia)
+			begin
+				select 1 as validacion
+			end
+		else
+			begin
+				select 0 as validacion
+			end
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [spu_TicketsVencidosParaAlertas]
+as
+	begin
+		declare @fechaHoy date
+		set @fechaHoy = GETDATE()
+	
+		select idTicket,
+			   idPrioridad,
+			   dbo.tbl_empleados.nombre +' '+ dbo.tbl_empleados.apellido as idEmpleado
+		from dbo.tbl_tickets
+		left outer join dbo.tbl_empleados on dbo.tbl_tickets.idEmpleado = dbo.tbl_empleados.idEmpleado
+		where fechaEntrega < @fechaHoy 		
 	end
 go

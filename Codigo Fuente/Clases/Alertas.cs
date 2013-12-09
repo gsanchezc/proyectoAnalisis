@@ -116,6 +116,14 @@ namespace Clases
             set { _num_error = value; }
         }
 
+        private bool _validacion;
+
+        public bool validacion
+        {
+            get { return _validacion; }
+            set { _validacion = value; }
+        }
+
         #endregion
 
         #region variables privadas
@@ -405,6 +413,68 @@ namespace Clases
                     _mensaje = mensaje_error;
                 }
                 else {}
+            }
+        }
+
+        public void existeAlertaSobreReferencia(int Referencia)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _mensaje = mensaje_error;
+            }
+            else
+            {
+                sql = "spu_existAlertaSobreReferencia";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@Referencia", SqlDbType.Int, Referencia);
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (ds == null)
+                {
+                    MessageBox.Show(mensaje_error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        _validacion = Convert.ToBoolean(ds.Tables[0].Rows[0]["validacion"]);
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje_error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        public DataSet TicketsVencidosParaAlertas()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "spu_TicketsVencidosParaAlertas";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
             }
         }
 

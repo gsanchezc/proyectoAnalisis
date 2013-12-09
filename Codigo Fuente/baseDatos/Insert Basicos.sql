@@ -39,7 +39,7 @@ values (CAST(350000.00 AS Decimal(18, 2)), 0),
 go
 
 insert into [db_soportic].[dbo].[tbl_TipoAlertas]
-values (N'Cedula Residencia', 0),
+values (N'Tickets', 0),
 		(N'RRHH', 0),
 		(N'Comunicados', 0)
 go

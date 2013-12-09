@@ -34,6 +34,18 @@ namespace frmPrincipal
             labelUsuario.Text = usuarioSistema;
         }
 
+        private void btn_SalirSistema_Click(object sender, EventArgs e)
+        {
+            if ((MessageBox.Show("Desea salir del Sistema", "Cierre del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+            {
+                Application.Exit();
+            }
+            else
+            {
+                return;
+            }
+        }
+
         private void frm_ReportesAlertas_MantenimientoAlertasNotificaciones_Load(object sender, EventArgs e)
         {
             this.cargaRolUsuario();
@@ -42,6 +54,7 @@ namespace frmPrincipal
             this.cargarCantidadAlertasEmpleado();
             this.cargarAlertas();
             this.iniciaTimer();
+            this.AlertasTicketsVencidos();
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
@@ -128,13 +141,16 @@ namespace frmPrincipal
         //RAFAEL ANGEL SEQUEIRA VARGAS
         private void TicketsVencidos()
         {
+            int ticketVencidos = 0;
+
             if (rolUsuario == 2)
             {
                 try
                 {
                     DataSet ds;
                     ds = objAlertas.cantidadTicketsVencidos();
-                    lb_TicketVencidos.Text = ds.Tables[0].Rows[0]["vencidos"].ToString();
+                    ticketVencidos = Convert.ToInt32(ds.Tables[0].Rows[0]["vencidos"]);
+                    lb_TicketVencidos.Text = ticketVencidos.ToString();
                 }
                 catch (Exception)
                 {
@@ -189,6 +205,7 @@ namespace frmPrincipal
             this.TicketsVencidos();
             this.cargarCantidadAlertasEmpleado();
             this.cargarAlertas();
+            this.AlertasTicketsVencidos();
 
             lb_MinutosTranscurridos.Text = contadorseg.ToString();
         }
@@ -209,14 +226,55 @@ namespace frmPrincipal
             lb_Numero.Text = IdEmpleado.ToString();
         }
 
-        private void btn_SalirSistema_Click(object sender, EventArgs e)
+        //METODO 
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private void AlertasTicketsVencidos()
         {
-            if ((MessageBox.Show("Desea salir del Sistema", "Cierre del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+            int cantidad = 0;
+            int Referencia = 0;
+            int empleado = 0;
+            try
             {
-                Application.Exit();
+                DataSet ds;
+                ds = objAlertas.TicketsVencidosParaAlertas();
+                cantidad = ds.Tables[0].Rows.Count;
+
+                for (int i = 0; i < cantidad; i++)
+                {
+                    Referencia = Convert.ToInt32(ds.Tables[0].Rows[i]["idTicket"]);
+                    empleado = Convert.ToInt32(ds.Tables[0].Rows[i]["idEmpleado"]);
+                    objAlertas.existeAlertaSobreReferencia(Referencia);
+
+                    if (objAlertas.validacion == false)
+                    {
+                        objAlertas.idTipoAlerta = 1;
+                        objAlertas.detalle = "Alerta de Ticket Por Ticket Vencido";
+                        objAlertas.idEmpleado = empleado;
+                        objAlertas.fechaFinalizacion = DateTime.Now.ToShortDateString();
+                        objAlertas.idPrioridad = 5;
+                        objAlertas.idEstatusAlertas = 1;
+                        objAlertas.isDeleted = false;
+                        objAlertas.Referencia = Referencia;
+
+                        string accion = String.Empty;
+                        accion = "Insertar";
+
+                        if (objAlertas.insertar_Alerta(accion))
+                        {
+                            MessageBox.Show("Se ha enviado una alerta por este Ticket "+Referencia, "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al enviar Alerta", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+                }
+                return;
             }
-            else
+            catch (Exception)
             {
+                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
