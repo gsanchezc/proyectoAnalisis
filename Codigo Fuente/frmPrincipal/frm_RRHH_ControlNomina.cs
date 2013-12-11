@@ -63,5 +63,13 @@ namespace frmPrincipal
                 return;
             }
         }
+
+        private void btn_Aceptar_Click(object sender, EventArgs e)
+        {
+            frm_RRHH_NuevaNomina ventanaNuevaNomina = new frm_RRHH_NuevaNomina();
+            this.Hide();
+            ventanaNuevaNomina.Show();
+        }
+
     }
 }

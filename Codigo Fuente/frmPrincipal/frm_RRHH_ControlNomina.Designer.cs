@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_RRHH_ControlNomina));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_verResumen = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
@@ -77,7 +77,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btn_verResumen);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox3.Location = new System.Drawing.Point(535, 21);
             this.groupBox3.Name = "groupBox3";
@@ -86,14 +86,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Consultar Nomina";
             // 
-            // button1
+            // btn_verResumen
             // 
-            this.button1.Location = new System.Drawing.Point(37, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "&Ver Resumen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_verResumen.Location = new System.Drawing.Point(37, 21);
+            this.btn_verResumen.Name = "btn_verResumen";
+            this.btn_verResumen.Size = new System.Drawing.Size(130, 23);
+            this.btn_verResumen.TabIndex = 13;
+            this.btn_verResumen.Text = "&Ver Resumen";
+            this.btn_verResumen.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -115,6 +115,7 @@
             this.btn_Aceptar.TabIndex = 12;
             this.btn_Aceptar.Text = "&Generar";
             this.btn_Aceptar.UseVisualStyleBackColor = true;
+            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
             // 
             // btn_Cancelar
             // 
@@ -280,7 +281,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_verResumen;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_Aceptar;
         private System.Windows.Forms.Button btn_Cancelar;

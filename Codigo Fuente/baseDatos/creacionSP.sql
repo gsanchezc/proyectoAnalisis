@@ -240,7 +240,16 @@ begin
 
 end
 go
-
+-------------------carga el salario del empleado solicitado--------
+create procedure stp_salarioEmpleado
+(
+	@idEmpleado int
+)
+as
+begin
+	select monto from db_soportic.dbo.tbl_salarios where idEmpleado=@idEmpleado
+end
+go
 
 ---------------------------------------------------------------------------------------
 ---------------------------FIN SP DIEGO VENEGAS M--------------------------------------
