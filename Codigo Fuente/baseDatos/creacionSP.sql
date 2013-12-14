@@ -129,15 +129,6 @@ begin
 end
 
 go
----------------------------------------------------------------------------------------
-------------Store procedure para cargar todas las incapacidades--------
-create procedure stp_traeIncapacidades
-as
-begin
-	Select * from tbl_incapacidades where isDeleted=0
-end
-
-go
 
 -----------procedure para ingresar nuevo empleado-------------------
 create procedure stp_insertarNuevoEmpleado
@@ -202,10 +193,10 @@ end
 go
 
 ---------------------procedure para cargar lista de empleados----------
-create procedure stp_traeListaEmpleados
+alter procedure stp_traeListaEmpleados
 as
 begin
-	select idEmpleado,identificacion from tbl_empleados where isDeleted=0
+	select idEmpleado,identificacion, nombre, apellido from tbl_empleados where isDeleted=0
 end
 go
 
@@ -240,8 +231,91 @@ begin
 
 end
 go
+-------------------carga el salario del empleado solicitado--------
+create procedure stp_salarioEmpleado
+(
+	@idEmpleado int
+)
+as
+begin
+	select monto from db_soportic.dbo.tbl_salarios where idEmpleado=@idEmpleado
+end
+go
 
+--------------buscar nomina ya creada de empleado, en mismo mes y mismo año----
+create procedure stp_nominaCreada
+(
+	@idEmpleado int,
+	@mes varchar(15),
+	@anio int
+)
+as
+begin
+	select * from db_soportic.dbo.tbl_nomina where(idEmpleado=@idEmpleado and mesNomina=@mes and anioNomina=@anio)
 
+end
+go
+
+--------------------------buscar nomina completa de un mes------------------
+create procedure [stp_buscarNomina]
+(
+	@mes varchar(15),
+	@anio int
+)
+as
+begin
+	select dbo.tbl_nomina.idEmpleado,
+			identificacion,
+			nombre,
+			apellido,
+			horasLaboradas,
+			horasExtra,
+			salarioBruto,
+			rebajos,
+			salarioNeto
+	from dbo.tbl_nomina
+		left outer join dbo.tbl_empleados on 
+		dbo.tbl_nomina.idEmpleado = dbo.tbl_empleados.idEmpleado
+	where (mesNomina=@mes and anioNomina=@anio)
+end
+go
+
+-------------------------control de vacaciones---------------------
+create procedure stp_controlVacaciones
+as
+begin
+	select idSolicitudVacacion,
+			dbo.tbl_empleados.nombre+''+dbo.tbl_empleados.apellido as idEmpleado,
+			fechaInicio,
+			fechaFin,
+			diasSolicitados,
+			dbo.tbl_empleados.vacacionesDisponibles,
+			idAprobacionVacacion
+	from dbo.tbl_vacaciones
+		left outer join dbo.tbl_empleados on
+		dbo.tbl_vacaciones.idEmpleado= dbo.tbl_empleados.idEmpleado
+	where dbo.tbl_vacaciones.isDeleted=0
+end
+go
+
+---------------------------------------------------------------------------------------
+------------Store procedure para cargar todas las incapacidades--------
+create procedure stp_traeIncapacidades
+as
+begin
+	Select idIncapacidad,
+			dbo.tbl_empleados.nombre+' '+
+			dbo.tbl_empleados.apellido as idEmpleado,
+			diaInicio,
+			diaFin,totalDias,
+			isApprove
+	from tbl_incapacidades 
+		left outer join dbo.tbl_empleados on
+		dbo.tbl_incapacidades.idEmpleado= dbo.tbl_empleados.idEmpleado
+	where dbo.tbl_incapacidades.isDeleted=0
+end
+
+go
 ---------------------------------------------------------------------------------------
 ---------------------------FIN SP DIEGO VENEGAS M--------------------------------------
 ---------------------------------------------------------------------------------------

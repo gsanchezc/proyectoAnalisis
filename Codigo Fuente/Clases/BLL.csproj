@@ -58,6 +58,7 @@
     <Compile Include="Limpieza.cs" />
     <Compile Include="OrdenCompras.cs" />
     <Compile Include="RRHH_incapacidades.cs" />
+    <Compile Include="RRHH_Nomina.cs" />
     <Compile Include="RRHH_NuevoEmpleado.cs" />
     <Compile Include="RRHH_SolicitudVacaciones.cs" />
     <Compile Include="Seguridad.cs" />
