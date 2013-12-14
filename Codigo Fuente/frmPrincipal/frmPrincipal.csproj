@@ -263,19 +263,25 @@
     <Compile Include="frm_RRHH_ControlIncapacidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_RRHH_ControlIncapacidades.Designer.cs">
+    <Compile Include="frm_RRHH_ControlIncapacidades.designer.cs">
       <DependentUpon>frm_RRHH_ControlIncapacidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_RRHH_ControlNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_RRHH_ControlNomina.designer.cs">
+      <DependentUpon>frm_RRHH_ControlNomina.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_RRHH_ControlVacaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_RRHH_ControlVacaciones.Designer.cs">
+    <Compile Include="frm_RRHH_ControlVacaciones.designer.cs">
       <DependentUpon>frm_RRHH_ControlVacaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_RRHH_NuevaIncapacidad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_RRHH_NuevaIncapacidad.Designer.cs">
+    <Compile Include="frm_RRHH_NuevaIncapacidad.designer.cs">
       <DependentUpon>frm_RRHH_NuevaIncapacidad.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_RRHH_NuevaNomina.cs">
@@ -283,6 +289,18 @@
     </Compile>
     <Compile Include="frm_RRHH_NuevaNomina.Designer.cs">
       <DependentUpon>frm_RRHH_NuevaNomina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_RRHH_NuevaSolicitudVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_RRHH_NuevaSolicitudVacaciones.designer.cs">
+      <DependentUpon>frm_RRHH_NuevaSolicitudVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_RRHH_NuevoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_RRHH_NuevoEmpleado.designer.cs">
+      <DependentUpon>frm_RRHH_NuevoEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Seguridad_AdministracionCuentasUsuario.cs">
       <SubType>Form</SubType>
@@ -332,12 +350,6 @@
     <Compile Include="frm_Ticket_AtencionTicket.Designer.cs">
       <DependentUpon>frm_Ticket_AtencionTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_RRHH_NuevoEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_RRHH_NuevoEmpleado.Designer.cs">
-      <DependentUpon>frm_RRHH_NuevoEmpleado.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Ticket_CatalogoSeleccionTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -349,12 +361,6 @@
     </Compile>
     <Compile Include="frm_CxC_CxP_NuevaFactura.Designer.cs">
       <DependentUpon>frm_CxC_CxP_NuevaFactura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_RRHH_ControlNomina.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_RRHH_ControlNomina.Designer.cs">
-      <DependentUpon>frm_RRHH_ControlNomina.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_0MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -373,12 +379,6 @@
     </Compile>
     <Compile Include="frm_Ticket_NuevoTicket.Designer.cs">
       <DependentUpon>frm_Ticket_NuevoTicket.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_RRHH_NuevaSolicitudVacaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_RRHH_NuevaSolicitudVacaciones.Designer.cs">
-      <DependentUpon>frm_RRHH_NuevaSolicitudVacaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_MantenimientoFactura.cs">
       <SubType>Form</SubType>
@@ -496,6 +496,9 @@
     <EmbeddedResource Include="frm_RRHH_ControlIncapacidades.resx">
       <DependentUpon>frm_RRHH_ControlIncapacidades.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_RRHH_ControlNomina.resx">
+      <DependentUpon>frm_RRHH_ControlNomina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_RRHH_ControlVacaciones.resx">
       <DependentUpon>frm_RRHH_ControlVacaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -504,6 +507,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_RRHH_NuevaNomina.resx">
       <DependentUpon>frm_RRHH_NuevaNomina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_RRHH_NuevaSolicitudVacaciones.resx">
+      <DependentUpon>frm_RRHH_NuevaSolicitudVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_RRHH_NuevoEmpleado.resx">
+      <DependentUpon>frm_RRHH_NuevoEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Seguridad_AdministracionCuentasUsuario.resx">
       <DependentUpon>frm_Seguridad_AdministracionCuentasUsuario.cs</DependentUpon>
@@ -529,17 +538,11 @@
     <EmbeddedResource Include="frm_Ticket_AtencionTicket.resx">
       <DependentUpon>frm_Ticket_AtencionTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_RRHH_NuevoEmpleado.resx">
-      <DependentUpon>frm_RRHH_NuevoEmpleado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Ticket_CatalogoSeleccionTicket.resx">
       <DependentUpon>frm_Ticket_CatalogoSeleccionTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_CxC_CxP_NuevaFactura.resx">
       <DependentUpon>frm_CxC_CxP_NuevaFactura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_RRHH_ControlNomina.resx">
-      <DependentUpon>frm_RRHH_ControlNomina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_0MenuPrincipal.resx">
       <DependentUpon>frm_0MenuPrincipal.cs</DependentUpon>
@@ -549,9 +552,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Ticket_NuevoTicket.resx">
       <DependentUpon>frm_Ticket_NuevoTicket.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_RRHH_NuevaSolicitudVacaciones.resx">
-      <DependentUpon>frm_RRHH_NuevaSolicitudVacaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MantenimientoFactura.resx">
       <DependentUpon>frm_MantenimientoFactura.cs</DependentUpon>
