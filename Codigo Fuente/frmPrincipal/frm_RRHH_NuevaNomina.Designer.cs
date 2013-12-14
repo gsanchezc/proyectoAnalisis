@@ -83,6 +83,8 @@
             // 
             this.cmb_anio.FormattingEnabled = true;
             this.cmb_anio.Items.AddRange(new object[] {
+            "2011",
+            "2012",
             "2013",
             "2014",
             "2015",
@@ -90,12 +92,7 @@
             "2017",
             "2018",
             "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"});
+            "2020"});
             this.cmb_anio.Location = new System.Drawing.Point(647, 23);
             this.cmb_anio.Name = "cmb_anio";
             this.cmb_anio.Size = new System.Drawing.Size(116, 23);

@@ -35,22 +35,21 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_Aceptar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmb_anioNomina = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_mesNomina = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtg_Planilla = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Extras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horasLaboradas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horasExtra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salarioBruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rebajos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salarioNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -61,9 +60,9 @@
             // 
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cmb_anioNomina);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmb_mesNomina);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtg_Planilla);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,6 +93,7 @@
             this.btn_verResumen.TabIndex = 13;
             this.btn_verResumen.Text = "&Ver Resumen";
             this.btn_verResumen.UseVisualStyleBackColor = true;
+            this.btn_verResumen.Click += new System.EventHandler(this.btn_verResumen_Click);
             // 
             // groupBox2
             // 
@@ -105,7 +105,7 @@
             this.groupBox2.Size = new System.Drawing.Size(305, 59);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Generar Nomina";
+            this.groupBox2.Text = "Generar Nomina Nueva";
             // 
             // btn_Aceptar
             // 
@@ -127,20 +127,24 @@
             this.btn_Cancelar.UseVisualStyleBackColor = true;
             this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
-            // comboBox2
+            // cmb_anioNomina
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "2010",
+            this.cmb_anioNomina.FormattingEnabled = true;
+            this.cmb_anioNomina.Items.AddRange(new object[] {
             "2011",
             "2012",
             "2013",
             "2014",
-            "2015"});
-            this.comboBox2.Location = new System.Drawing.Point(308, 46);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 17;
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020"});
+            this.cmb_anioNomina.Location = new System.Drawing.Point(308, 46);
+            this.cmb_anioNomina.Name = "cmb_anioNomina";
+            this.cmb_anioNomina.Size = new System.Drawing.Size(121, 24);
+            this.cmb_anioNomina.TabIndex = 17;
             // 
             // label2
             // 
@@ -151,10 +155,10 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Anio:";
             // 
-            // comboBox1
+            // cmb_mesNomina
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmb_mesNomina.FormattingEnabled = true;
+            this.cmb_mesNomina.Items.AddRange(new object[] {
             "Enero",
             "Febrero",
             "Marzo",
@@ -167,10 +171,10 @@
             "Octubre",
             "Noviembre",
             "Diciembre"});
-            this.comboBox1.Location = new System.Drawing.Point(123, 46);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 15;
+            this.cmb_mesNomina.Location = new System.Drawing.Point(123, 46);
+            this.cmb_mesNomina.Name = "cmb_mesNomina";
+            this.cmb_mesNomina.Size = new System.Drawing.Size(121, 24);
+            this.cmb_mesNomina.TabIndex = 15;
             // 
             // label1
             // 
@@ -185,76 +189,80 @@
             // 
             this.dtg_Planilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Planilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column4,
-            this.Column2,
-            this.Column3,
-            this.Column5,
-            this.Column6,
-            this.Extras,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
+            this.idEmpleado,
+            this.identificacion,
+            this.nombre,
+            this.apellido,
+            this.horasLaboradas,
+            this.horasExtra,
+            this.salario,
+            this.salarioBruto,
+            this.rebajos,
+            this.salarioNeto});
             this.dtg_Planilla.Location = new System.Drawing.Point(9, 97);
             this.dtg_Planilla.Name = "dtg_Planilla";
             this.dtg_Planilla.Size = new System.Drawing.Size(1225, 391);
             this.dtg_Planilla.TabIndex = 0;
             // 
-            // Column1
+            // idEmpleado
             // 
-            this.Column1.HeaderText = "IdEmpleado";
-            this.Column1.Name = "Column1";
+            this.idEmpleado.DataPropertyName = "idEmpleado";
+            this.idEmpleado.HeaderText = "IdEmpleado";
+            this.idEmpleado.Name = "idEmpleado";
             // 
-            // Column4
+            // identificacion
             // 
-            this.Column4.HeaderText = "Identificacion";
-            this.Column4.Name = "Column4";
+            this.identificacion.DataPropertyName = "identificacion";
+            this.identificacion.HeaderText = "Identificacion";
+            this.identificacion.Name = "identificacion";
             // 
-            // Column2
+            // nombre
             // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
             // 
-            // Column3
+            // apellido
             // 
-            this.Column3.HeaderText = "Apellidos";
-            this.Column3.Name = "Column3";
+            this.apellido.DataPropertyName = "apellido";
+            this.apellido.HeaderText = "Apellidos";
+            this.apellido.Name = "apellido";
             // 
-            // Column5
+            // horasLaboradas
             // 
-            this.Column5.HeaderText = "Puesto";
-            this.Column5.Name = "Column5";
+            this.horasLaboradas.DataPropertyName = "horasLaboradas";
+            this.horasLaboradas.HeaderText = "Horas Laboradas";
+            this.horasLaboradas.Name = "horasLaboradas";
             // 
-            // Column6
+            // horasExtra
             // 
-            this.Column6.HeaderText = "Horas Laboradas";
-            this.Column6.Name = "Column6";
+            this.horasExtra.DataPropertyName = "horasExtra";
+            this.horasExtra.HeaderText = "Extras";
+            this.horasExtra.Name = "horasExtra";
             // 
-            // Extras
+            // salario
             // 
-            this.Extras.HeaderText = "Extras";
-            this.Extras.Name = "Extras";
+            this.salario.DataPropertyName = "salario";
+            this.salario.HeaderText = "Salario Base";
+            this.salario.Name = "salario";
             // 
-            // Column7
+            // salarioBruto
             // 
-            this.Column7.HeaderText = "Salario Base";
-            this.Column7.Name = "Column7";
+            this.salarioBruto.DataPropertyName = "salarioBruto";
+            this.salarioBruto.HeaderText = "Salario Bruto";
+            this.salarioBruto.Name = "salarioBruto";
             // 
-            // Column8
+            // rebajos
             // 
-            this.Column8.HeaderText = "Salario Bruto";
-            this.Column8.Name = "Column8";
+            this.rebajos.DataPropertyName = "rebajos";
+            this.rebajos.HeaderText = "Rebajos";
+            this.rebajos.Name = "rebajos";
             // 
-            // Column9
+            // salarioNeto
             // 
-            this.Column9.HeaderText = "Rebajos";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Salario Neto";
-            this.Column10.Name = "Column10";
+            this.salarioNeto.DataPropertyName = "salarioNeto";
+            this.salarioNeto.HeaderText = "Salario Neto";
+            this.salarioNeto.Name = "salarioNeto";
             // 
             // frm_RRHH_ControlNomina
             // 
@@ -285,22 +293,21 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_Aceptar;
         private System.Windows.Forms.Button btn_Cancelar;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmb_anioNomina;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_mesNomina;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtg_Planilla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Extras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEmpleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn identificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horasLaboradas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horasExtra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salarioBruto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rebajos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salarioNeto;
 
     }
 }

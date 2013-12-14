@@ -37,8 +37,8 @@
             this.fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diasSolicitados = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vacacionesDisponibles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idAprobacionVacacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Planilla)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,7 @@
             // 
             // dtg_Planilla
             // 
+            this.dtg_Planilla.AllowUserToDeleteRows = false;
             this.dtg_Planilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Planilla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idSolicitudVacacion,
@@ -75,8 +76,8 @@
             this.fechaInicio,
             this.fechaFin,
             this.diasSolicitados,
-            this.idAprobacionVacacion,
-            this.Seleccionar});
+            this.vacacionesDisponibles,
+            this.idAprobacionVacacion});
             this.dtg_Planilla.Location = new System.Drawing.Point(15, 32);
             this.dtg_Planilla.Name = "dtg_Planilla";
             this.dtg_Planilla.Size = new System.Drawing.Size(1027, 417);
@@ -87,48 +88,49 @@
             this.idSolicitudVacacion.DataPropertyName = "idSolicitudVacacion";
             this.idSolicitudVacacion.HeaderText = "Id Solicitud";
             this.idSolicitudVacacion.Name = "idSolicitudVacacion";
-            this.idSolicitudVacacion.ReadOnly = true;
+            this.idSolicitudVacacion.Width = 120;
             // 
             // idEmpleado
             // 
             this.idEmpleado.DataPropertyName = "idEmpleado";
             this.idEmpleado.HeaderText = "Empleado";
             this.idEmpleado.Name = "idEmpleado";
-            this.idEmpleado.ReadOnly = true;
+            this.idEmpleado.Width = 120;
             // 
             // fechaInicio
             // 
             this.fechaInicio.DataPropertyName = "fechaInicio";
             this.fechaInicio.HeaderText = "Fecha Inicio";
             this.fechaInicio.Name = "fechaInicio";
-            this.fechaInicio.ReadOnly = true;
+            this.fechaInicio.Width = 120;
             // 
             // fechaFin
             // 
             this.fechaFin.DataPropertyName = "fechaFin";
             this.fechaFin.HeaderText = "Fecha Fin";
             this.fechaFin.Name = "fechaFin";
-            this.fechaFin.ReadOnly = true;
+            this.fechaFin.Width = 120;
             // 
             // diasSolicitados
             // 
             this.diasSolicitados.DataPropertyName = "diasSolicitados";
             this.diasSolicitados.HeaderText = "Dias Solicitados";
             this.diasSolicitados.Name = "diasSolicitados";
-            this.diasSolicitados.ReadOnly = true;
+            this.diasSolicitados.Width = 120;
+            // 
+            // vacacionesDisponibles
+            // 
+            this.vacacionesDisponibles.DataPropertyName = "vacacionesDisponibles";
+            this.vacacionesDisponibles.HeaderText = "Vacaciones Disponibles";
+            this.vacacionesDisponibles.Name = "vacacionesDisponibles";
+            this.vacacionesDisponibles.Width = 120;
             // 
             // idAprobacionVacacion
             // 
             this.idAprobacionVacacion.DataPropertyName = "idAprobacionVacacion";
             this.idAprobacionVacacion.HeaderText = "Estatus Solicitud";
             this.idAprobacionVacacion.Name = "idAprobacionVacacion";
-            this.idAprobacionVacacion.ReadOnly = true;
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Width = 120;
+            this.idAprobacionVacacion.Width = 120;
             // 
             // frm_RRHH_ControlVacaciones
             // 
@@ -158,7 +160,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaFin;
         private System.Windows.Forms.DataGridViewTextBoxColumn diasSolicitados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vacacionesDisponibles;
         private System.Windows.Forms.DataGridViewTextBoxColumn idAprobacionVacacion;
-        private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
     }
 }
