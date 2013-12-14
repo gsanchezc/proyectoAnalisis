@@ -67,6 +67,13 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _6659589_988935_ticket_icon {
+            get {
+                object obj = ResourceManager.GetObject("6659589-988935-ticket-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Accounting {
             get {
                 object obj = ResourceManager.GetObject("Accounting", resourceCulture);
@@ -144,6 +151,27 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap descarga {
+            get {
+                object obj = ResourceManager.GetObject("descarga", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap descarga__1_ {
+            get {
+                object obj = ResourceManager.GetObject("descarga (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap descarga__2_ {
+            get {
+                object obj = ResourceManager.GetObject("descarga (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -179,6 +207,13 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icono_consultoria {
+            get {
+                object obj = ResourceManager.GetObject("icono_consultoria", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap icono_de_alerta_roja_17_1215160546 {
             get {
                 object obj = ResourceManager.GetObject("icono-de-alerta-roja_17-1215160546", resourceCulture);
@@ -189,6 +224,20 @@ namespace frmPrincipal.Properties {
         internal static System.Drawing.Bitmap iconoestadodecuentas {
             get {
                 object obj = ResourceManager.GetObject("iconoestadodecuentas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap id_card {
+            get {
+                object obj = ResourceManager.GetObject("id_card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap image__2_ {
+            get {
+                object obj = ResourceManager.GetObject("image (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -235,6 +284,20 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap images3 {
+            get {
+                object obj = ResourceManager.GetObject("images3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap images4 {
+            get {
+                object obj = ResourceManager.GetObject("images4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ist2_8758228_support_service {
             get {
                 object obj = ResourceManager.GetObject("ist2_8758228-support-service", resourceCulture);
@@ -270,9 +333,23 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap organizar_prioridades {
+            get {
+                object obj = ResourceManager.GetObject("organizar-prioridades", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap pdfLogo {
             get {
                 object obj = ResourceManager.GetObject("pdfLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Puesto_de_Trabajo_ICON_02 {
+            get {
+                object obj = ResourceManager.GetObject("Puesto-de-Trabajo-ICON-02", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -301,6 +378,13 @@ namespace frmPrincipal.Properties {
         internal static System.Drawing.Bitmap RRHH {
             get {
                 object obj = ResourceManager.GetObject("RRHH", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Sin_título {
+            get {
+                object obj = ResourceManager.GetObject("Sin título", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

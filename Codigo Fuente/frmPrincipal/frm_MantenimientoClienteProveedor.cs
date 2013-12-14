@@ -71,6 +71,121 @@ namespace frmPrincipal
             e.Cancel = e.CloseReason == CloseReason.UserClosing;
         }
 
+        private void dtg_ClienteProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == Editar.Index && e.RowIndex >= 0)
+            {
+                idCliente = Convert.ToInt32(dtg_ClienteProveedor.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                if ((MessageBox.Show("Desea editar este cliente?", "Edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                {
+                    if (this.validacionDeCampos() == true)
+                    {
+                        this.updateClienteProveedor();
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else if (e.ColumnIndex == Eliminar.Index && e.RowIndex >= 0)
+            {
+                idCliente = Convert.ToInt32(dtg_ClienteProveedor.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                if ((MessageBox.Show("Desea eliminar este cliente?", "Edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                {
+                    this.eliminarClienteProveedor();    
+                }
+                else
+                {
+                    return;
+                }                
+            }
+            else { }
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private static bool validarSoloNumeros(Control mitextbox)
+        {
+            Regex regex = new Regex("^[0-9]*$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        private static bool validarSoloLetras(Control mitextbox)
+        {
+            Regex regex = new Regex("^[a-zA-Z]+$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        private static bool validarSoloLetrasConEspacios(Control mitextbox)
+        {
+            Regex regex = new Regex("^[a-zA-Z ]+$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        private static bool validarSoloLetrasYNumeros(Control mitextbox)
+        {
+            Regex regex = new Regex("^[a-zA-Z0-9]+$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void limpiarDatos()
+        {
+            Limpieza.limpiar(txt_identificacion);
+            Limpieza.limpiar(txt_direccion);
+            Limpieza.limpiar(txt_NombreProveedor);
+            Limpieza.limpiar(txt_telefono);
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void limiteCampos()
+        {
+            txt_identificacion.MaxLength = 15;
+            txt_NombreProveedor.MaxLength = 50;
+            txt_direccion.MaxLength = 250;
+            txt_telefono.MaxLength = 15;
+        }
+
+        //METODO CARGA COMBO BOX TIPO ID
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private void cargarComboBoxTipoID()
+        {
+            try
+            {
+                DataSet ds;
+                ds = objTipoId.cargarTipoIdenticacion();
+                cmb_TipoId.DataSource = ds.Tables[0];
+                cmb_TipoId.DisplayMember = ds.Tables[0].Columns["descripcion"].ColumnName.ToString();
+                cmb_TipoId.ValueMember = ds.Tables[0].Columns["idTipoIdentificacion"].ColumnName.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private void cargarListaClienteProveedor()
+        {
+            try
+            {
+                dtg_ClienteProveedor.AutoGenerateColumns = false;
+                dtg_ClienteProveedor.DataSource = objClienteProveedor.cargarDataGridProveedores().Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
         //METODO
         //RAFAEL ANGEL SEQUEIRA VARGAS
         public void insertarClienteProveedor()
@@ -189,119 +304,6 @@ namespace frmPrincipal
             {
                 return true;
             }
-        }
-
-        //METODO
-        //RAFAEL ANGEL SEQUEIRA VARGAS
-        public void limpiarDatos()
-        {
-            Limpieza.limpiar(txt_identificacion);
-            Limpieza.limpiar(txt_direccion);
-            Limpieza.limpiar(txt_NombreProveedor);
-            Limpieza.limpiar(txt_telefono);
-        }
-
-        //METODO
-        //RAFAEL ANGEL SEQUEIRA VARGAS
-        public void limiteCampos()
-        {
-            txt_identificacion.MaxLength = 15;
-            txt_NombreProveedor.MaxLength = 50;
-            txt_direccion.MaxLength = 250;
-            txt_telefono.MaxLength = 15;
-        }
-
-        //METODO CARGA COMBO BOX TIPO ID
-        //RAFAEL ANGEL SEQUEIRA VARGAS
-        private void cargarComboBoxTipoID()
-        {
-            try
-            {
-                DataSet ds;
-                ds = objTipoId.cargarTipoIdenticacion();
-                cmb_TipoId.DataSource = ds.Tables[0];
-                cmb_TipoId.DisplayMember = ds.Tables[0].Columns["descripcion"].ColumnName.ToString();
-                cmb_TipoId.ValueMember = ds.Tables[0].Columns["idTipoIdentificacion"].ColumnName.ToString();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Hubo un problema con la conexion a la base de datos", "Validacion de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
-        //METODO
-        //RAFAEL ANGEL SEQUEIRA VARGAS
-        private void cargarListaClienteProveedor()
-        {
-            try
-            {
-                dtg_ClienteProveedor.AutoGenerateColumns = false;
-                dtg_ClienteProveedor.DataSource = objClienteProveedor.cargarDataGridProveedores().Tables[0];
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-        }
-
-        private static bool validarSoloNumeros(Control mitextbox)
-        {
-            Regex regex = new Regex("^[0-9]*$");
-            return regex.IsMatch(mitextbox.Text);
-        }
-
-        private static bool validarSoloLetras(Control mitextbox)
-        {
-            Regex regex = new Regex("^[a-zA-Z]+$");
-            return regex.IsMatch(mitextbox.Text);
-        }
-
-        private static bool validarSoloLetrasConEspacios(Control mitextbox)
-        {
-            Regex regex = new Regex("^[a-zA-Z ]+$");
-            return regex.IsMatch(mitextbox.Text);
-        }
-
-        private static bool validarSoloLetrasYNumeros(Control mitextbox)
-        {
-            Regex regex = new Regex("^[a-zA-Z0-9]+$");
-            return regex.IsMatch(mitextbox.Text);
-        }
-
-        private void dtg_ClienteProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == Editar.Index && e.RowIndex >= 0)
-            {
-                idCliente = Convert.ToInt32(dtg_ClienteProveedor.Rows[e.RowIndex].Cells[0].Value.ToString());
-
-                if ((MessageBox.Show("Desea editar este cliente?", "Edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
-                {
-                    if (this.validacionDeCampos() == true)
-                    {
-                        this.updateClienteProveedor();
-                    }
-                }
-                else
-                {
-                    return;
-                }
-            }
-            else if (e.ColumnIndex == Eliminar.Index && e.RowIndex >= 0)
-            {
-                idCliente = Convert.ToInt32(dtg_ClienteProveedor.Rows[e.RowIndex].Cells[0].Value.ToString());
-
-                if ((MessageBox.Show("Desea eliminar este cliente?", "Edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
-                {
-                    this.eliminarClienteProveedor();    
-                }
-                else
-                {
-                    return;
-                }                
-            }
-            else { }
         }
     }
 }

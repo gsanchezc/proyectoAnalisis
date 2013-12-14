@@ -59,6 +59,18 @@
             // 
             this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Cancelar.Location = new System.Drawing.Point(808, 444);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(152, 23);
+            this.btn_Cancelar.TabIndex = 15;
+            this.btn_Cancelar.Text = "&Salir";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_Cancelar.Location = new System.Drawing.Point(1065, 415);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(152, 23);
@@ -79,7 +91,7 @@
             this.isApprove});
             this.dtg_Incapacidades.Location = new System.Drawing.Point(19, 32);
             this.dtg_Incapacidades.Name = "dtg_Incapacidades";
-            this.dtg_Incapacidades.Size = new System.Drawing.Size(1040, 419);
+            this.dtg_Incapacidades.Size = new System.Drawing.Size(1025, 419);
             this.dtg_Incapacidades.TabIndex = 1;
             // 
             // idIncapacidad
@@ -88,42 +100,40 @@
             this.idIncapacidad.HeaderText = "IdIcapacidad";
             this.idIncapacidad.Name = "idIncapacidad";
             this.idIncapacidad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.idIncapacidad.Width = 130;
             // 
             // idEmpleado
             // 
             this.idEmpleado.DataPropertyName = "idEmpleado";
-            this.idEmpleado.HeaderText = "Empleado";
+            this.idEmpleado.HeaderText = "IdEmpleado";
             this.idEmpleado.Name = "idEmpleado";
-            this.idEmpleado.Width = 220;
             // 
             // diaInicio
             // 
             this.diaInicio.DataPropertyName = "diaInicio";
             this.diaInicio.HeaderText = "Día Inicio";
             this.diaInicio.Name = "diaInicio";
-            this.diaInicio.Width = 150;
+            this.diaInicio.Width = 190;
             // 
             // diaFin
             // 
             this.diaFin.DataPropertyName = "diaFin";
             this.diaFin.HeaderText = "Día fin";
             this.diaFin.Name = "diaFin";
-            this.diaFin.Width = 150;
+            this.diaFin.Width = 190;
             // 
             // totalDias
             // 
             this.totalDias.DataPropertyName = "totalDias";
             this.totalDias.HeaderText = "Total Días";
             this.totalDias.Name = "totalDias";
-            this.totalDias.Width = 150;
+            this.totalDias.Width = 190;
             // 
             // isApprove
             // 
             this.isApprove.DataPropertyName = "isApprove";
             this.isApprove.HeaderText = "Status";
             this.isApprove.Name = "isApprove";
-            this.isApprove.Width = 150;
+            this.isApprove.Width = 190;
             // 
             // frm_RRHH_ControlIncapacidades
             // 

@@ -34,6 +34,14 @@
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtg_ClienteProveedor = new System.Windows.Forms.DataGridView();
+            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTipoIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmb_TipoId = new System.Windows.Forms.ComboBox();
             this.txt_telefono = new System.Windows.Forms.TextBox();
@@ -45,14 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idTipoIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_ClienteProveedor)).BeginInit();
@@ -75,7 +75,7 @@
             // btn_limpiar
             // 
             this.btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_limpiar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_limpiar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btn_limpiar.Location = new System.Drawing.Point(22, 113);
             this.btn_limpiar.Name = "btn_limpiar";
             this.btn_limpiar.Size = new System.Drawing.Size(193, 35);
@@ -87,7 +87,7 @@
             // btn_Cancelar
             // 
             this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btn_Cancelar.Location = new System.Drawing.Point(22, 168);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(193, 35);
@@ -99,7 +99,7 @@
             // btn_Guardar
             // 
             this.btn_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Guardar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_Guardar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btn_Guardar.Location = new System.Drawing.Point(22, 56);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(193, 35);
@@ -142,6 +142,66 @@
             this.dtg_ClienteProveedor.Size = new System.Drawing.Size(995, 338);
             this.dtg_ClienteProveedor.TabIndex = 0;
             this.dtg_ClienteProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_ClienteProveedor_CellContentClick);
+            // 
+            // idProveedor
+            // 
+            this.idProveedor.DataPropertyName = "idProveedor";
+            this.idProveedor.HeaderText = "Id Proveedor";
+            this.idProveedor.Name = "idProveedor";
+            this.idProveedor.ReadOnly = true;
+            // 
+            // idTipoIdentificacion
+            // 
+            this.idTipoIdentificacion.DataPropertyName = "idTipoIdentificacion";
+            this.idTipoIdentificacion.HeaderText = "Tipo Id";
+            this.idTipoIdentificacion.Name = "idTipoIdentificacion";
+            this.idTipoIdentificacion.ReadOnly = true;
+            this.idTipoIdentificacion.Width = 125;
+            // 
+            // identificacion
+            // 
+            this.identificacion.DataPropertyName = "identificacion";
+            this.identificacion.HeaderText = "Identificacion";
+            this.identificacion.Name = "identificacion";
+            this.identificacion.ReadOnly = true;
+            this.identificacion.Width = 125;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 125;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            this.direccion.Width = 175;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // groupBox3
             // 
@@ -246,66 +306,6 @@
             this.label1.Size = new System.Drawing.Size(136, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo Identificacion";
-            // 
-            // idProveedor
-            // 
-            this.idProveedor.DataPropertyName = "idProveedor";
-            this.idProveedor.HeaderText = "Id Proveedor";
-            this.idProveedor.Name = "idProveedor";
-            this.idProveedor.ReadOnly = true;
-            // 
-            // idTipoIdentificacion
-            // 
-            this.idTipoIdentificacion.DataPropertyName = "idTipoIdentificacion";
-            this.idTipoIdentificacion.HeaderText = "Tipo Id";
-            this.idTipoIdentificacion.Name = "idTipoIdentificacion";
-            this.idTipoIdentificacion.ReadOnly = true;
-            this.idTipoIdentificacion.Width = 125;
-            // 
-            // identificacion
-            // 
-            this.identificacion.DataPropertyName = "identificacion";
-            this.identificacion.HeaderText = "Identificacion";
-            this.identificacion.Name = "identificacion";
-            this.identificacion.ReadOnly = true;
-            this.identificacion.Width = 125;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 125;
-            // 
-            // direccion
-            // 
-            this.direccion.DataPropertyName = "direccion";
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            this.direccion.Width = 175;
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // frm_MantenimientoClienteProveedor
             // 

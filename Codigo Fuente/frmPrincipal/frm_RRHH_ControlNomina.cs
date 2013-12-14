@@ -14,7 +14,6 @@ namespace frmPrincipal
     {
         //DECLARACION DE INSTANCIAS DE LAS CLASES
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
-        RRHH_Nomina objNomina = new RRHH_Nomina();
 
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
@@ -64,38 +63,5 @@ namespace frmPrincipal
                 return;
             }
         }
-
-        private void btn_Aceptar_Click(object sender, EventArgs e)
-        {
-            frm_RRHH_NuevaNomina ventanaNuevaNomina = new frm_RRHH_NuevaNomina();
-            this.Hide();
-            ventanaNuevaNomina.Show();
-        }
-
-        private void btn_verResumen_Click(object sender, EventArgs e)
-        {
-            if (!Validaciones.validar(cmb_anioNomina))
-            {
-                MessageBox.Show("Por favor seleccione el año", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cmb_anioNomina.Focus();
-                return;
-            }
-            if (!Validaciones.validar(cmb_mesNomina))
-            {
-                MessageBox.Show("Por favor seleccione el mes", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cmb_mesNomina.Focus();
-                return;
-            }
-            else
-            {
-                objNomina.Mes = cmb_mesNomina.SelectedItem.ToString();
-                objNomina.Anio = Convert.ToInt32(cmb_anioNomina.SelectedItem.ToString());
-                DataSet ds;
-                dtg_Planilla.DataSource = objNomina.buscarNominaCompleta().Tables[0];
-
-            }
-        }
-
-
     }
 }

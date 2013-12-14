@@ -157,7 +157,7 @@ namespace frmPrincipal
             if (validarSoloLetrasYNumeros(txt_identificacion) == false)
             {
                 MessageBox.Show("Ingrese Unicamente Letras para el campo de Identificacion", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_Apellido.Focus();
+                txt_identificacion.Focus();
                 return;
             }
             if (validarSoloNumeros(txt_telefonoEmpresa) == false)

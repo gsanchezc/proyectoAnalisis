@@ -28,174 +28,215 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.b_editar = new System.Windows.Forms.Button();
-            this.btn_actualizar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
-            this.btn_cerrar = new System.Windows.Forms.Button();
-            this.dtg_ListaTipoPuesto = new System.Windows.Forms.DataGridView();
+            this.dtg_TipoPuestos = new System.Windows.Forms.DataGridView();
             this.idPuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_agregar = new System.Windows.Forms.Button();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_descripcion = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_limpiar = new System.Windows.Forms.Button();
+            this.btn_Cancelar = new System.Windows.Forms.Button();
+            this.btn_Guardar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_TipoPuestos)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtg_ListaTipoPuesto)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // dtg_TipoPuestos
             // 
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.btn_cerrar);
-            this.groupBox1.Controls.Add(this.dtg_ListaTipoPuesto);
-            this.groupBox1.Controls.Add(this.btn_agregar);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(975, 473);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tipo Puestos";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.b_editar);
-            this.groupBox2.Controls.Add(this.btn_actualizar);
-            this.groupBox2.Controls.Add(this.btn_eliminar);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.groupBox2.Location = new System.Drawing.Point(15, 366);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(718, 60);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Opciones de Lista";
-            // 
-            // b_editar
-            // 
-            this.b_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b_editar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.b_editar.Location = new System.Drawing.Point(24, 22);
-            this.b_editar.Name = "b_editar";
-            this.b_editar.Size = new System.Drawing.Size(187, 23);
-            this.b_editar.TabIndex = 5;
-            this.b_editar.Text = "E&ditar";
-            this.b_editar.UseVisualStyleBackColor = true;
-            this.b_editar.Click += new System.EventHandler(this.b_editar_Click);
-            // 
-            // btn_actualizar
-            // 
-            this.btn_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_actualizar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_actualizar.Location = new System.Drawing.Point(479, 22);
-            this.btn_actualizar.Name = "btn_actualizar";
-            this.btn_actualizar.Size = new System.Drawing.Size(187, 23);
-            this.btn_actualizar.TabIndex = 4;
-            this.btn_actualizar.Text = "&Actualizar Lista";
-            this.btn_actualizar.UseVisualStyleBackColor = true;
-            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eliminar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_eliminar.Location = new System.Drawing.Point(250, 22);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(187, 23);
-            this.btn_eliminar.TabIndex = 2;
-            this.btn_eliminar.Text = "&Eliminar";
-            this.btn_eliminar.UseVisualStyleBackColor = true;
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
-            // 
-            // btn_cerrar
-            // 
-            this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_cerrar.Location = new System.Drawing.Point(313, 432);
-            this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(187, 23);
-            this.btn_cerrar.TabIndex = 9;
-            this.btn_cerrar.Text = "&Cerrar";
-            this.btn_cerrar.UseVisualStyleBackColor = true;
-            this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
-            // 
-            // dtg_ListaTipoPuesto
-            // 
-            this.dtg_ListaTipoPuesto.AllowUserToAddRows = false;
-            this.dtg_ListaTipoPuesto.AllowUserToDeleteRows = false;
-            this.dtg_ListaTipoPuesto.AllowUserToOrderColumns = true;
-            this.dtg_ListaTipoPuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtg_ListaTipoPuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_ListaTipoPuesto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtg_TipoPuestos.AllowUserToAddRows = false;
+            this.dtg_TipoPuestos.AllowUserToDeleteRows = false;
+            this.dtg_TipoPuestos.AllowUserToOrderColumns = true;
+            this.dtg_TipoPuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_TipoPuestos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPuesto,
-            this.Descripcion});
-            this.dtg_ListaTipoPuesto.Location = new System.Drawing.Point(15, 33);
-            this.dtg_ListaTipoPuesto.Name = "dtg_ListaTipoPuesto";
-            this.dtg_ListaTipoPuesto.ReadOnly = true;
-            this.dtg_ListaTipoPuesto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_ListaTipoPuesto.Size = new System.Drawing.Size(954, 327);
-            this.dtg_ListaTipoPuesto.TabIndex = 0;
+            this.descripcion,
+            this.Editar,
+            this.Eliminar});
+            this.dtg_TipoPuestos.Location = new System.Drawing.Point(6, 20);
+            this.dtg_TipoPuestos.Name = "dtg_TipoPuestos";
+            this.dtg_TipoPuestos.ReadOnly = true;
+            this.dtg_TipoPuestos.Size = new System.Drawing.Size(594, 494);
+            this.dtg_TipoPuestos.TabIndex = 0;
+            this.dtg_TipoPuestos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_TipoPuestos_CellContentClick);
             // 
             // idPuesto
             // 
-            this.idPuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idPuesto.DataPropertyName = "idPuesto";
-            this.idPuesto.HeaderText = "ID Puesto";
+            this.idPuesto.HeaderText = "Id Puesto";
             this.idPuesto.Name = "idPuesto";
             this.idPuesto.ReadOnly = true;
             // 
-            // Descripcion
+            // descripcion
             // 
-            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descripcion.DataPropertyName = "descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 250;
             // 
-            // btn_agregar
+            // Editar
             // 
-            this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_agregar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btn_agregar.Location = new System.Drawing.Point(39, 432);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(249, 23);
-            this.btn_agregar.TabIndex = 7;
-            this.btn_agregar.Text = "&Nueva descripcion Tipo Puesto";
-            this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.dtg_TipoPuestos);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.groupBox1.Location = new System.Drawing.Point(-1, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1266, 514);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lista tipo Puestos";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.pictureBox1);
+            this.groupBox3.Controls.Add(this.txt_descripcion);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.groupBox3.Location = new System.Drawing.Point(621, 27);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(343, 490);
+            this.groupBox3.TabIndex = 10;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Datos Tipo Puesto";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::frmPrincipal.Properties.Resources.Puesto_de_Trabajo_ICON_02;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.InitialImage = global::frmPrincipal.Properties.Resources.roles3;
+            this.pictureBox1.Location = new System.Drawing.Point(38, 149);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(243, 271);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txt_descripcion
+            // 
+            this.txt_descripcion.Location = new System.Drawing.Point(19, 62);
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.Size = new System.Drawing.Size(277, 22);
+            this.txt_descripcion.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Descripcion";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btn_limpiar);
+            this.groupBox2.Controls.Add(this.btn_Cancelar);
+            this.groupBox2.Controls.Add(this.btn_Guardar);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.groupBox2.Location = new System.Drawing.Point(1005, 155);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(222, 240);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Opciones";
+            // 
+            // btn_limpiar
+            // 
+            this.btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpiar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_limpiar.Location = new System.Drawing.Point(22, 125);
+            this.btn_limpiar.Name = "btn_limpiar";
+            this.btn_limpiar.Size = new System.Drawing.Size(170, 35);
+            this.btn_limpiar.TabIndex = 9;
+            this.btn_limpiar.Text = "&Limpiar";
+            this.btn_limpiar.UseVisualStyleBackColor = true;
+            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
+            // 
+            // btn_Cancelar
+            // 
+            this.btn_Cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Cancelar.Location = new System.Drawing.Point(22, 191);
+            this.btn_Cancelar.Name = "btn_Cancelar";
+            this.btn_Cancelar.Size = new System.Drawing.Size(170, 35);
+            this.btn_Cancelar.TabIndex = 7;
+            this.btn_Cancelar.Text = "&Cancelar";
+            this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
+            // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Guardar.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_Guardar.Location = new System.Drawing.Point(22, 62);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(170, 35);
+            this.btn_Guardar.TabIndex = 6;
+            this.btn_Guardar.Text = "&Guardar";
+            this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // frm_MantenimientoTipoPuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 497);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(1264, 518);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "frm_MantenimientoTipoPuestos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Mantenimiento Tipo Puestos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_MantenimientoTipoPuestos_FormClosing);
             this.Load += new System.EventHandler(this.frm_MantenimientoTipoPuestos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_TipoPuestos)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtg_ListaTipoPuesto)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button b_editar;
-        private System.Windows.Forms.Button btn_actualizar;
-        private System.Windows.Forms.Button btn_eliminar;
-        private System.Windows.Forms.DataGridView dtg_ListaTipoPuesto;
-        private System.Windows.Forms.Button btn_cerrar;
-        private System.Windows.Forms.Button btn_agregar;
+        private System.Windows.Forms.DataGridView dtg_TipoPuestos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPuesto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txt_descripcion;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_limpiar;
+        private System.Windows.Forms.Button btn_Cancelar;
+        private System.Windows.Forms.Button btn_Guardar;
+
+
     }
 }

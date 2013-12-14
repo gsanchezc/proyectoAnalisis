@@ -110,11 +110,17 @@
     <Compile Include="frm_MantenimientoClienteProveedor.Designer.cs">
       <DependentUpon>frm_MantenimientoClienteProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_MantenimientoDescripcionDepartamento.cs">
+    <Compile Include="frm_MantenimientoClienteUsuarioFinal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_MantenimientoDescripcionDepartamento.Designer.cs">
-      <DependentUpon>frm_MantenimientoDescripcionDepartamento.cs</DependentUpon>
+    <Compile Include="frm_MantenimientoClienteUsuarioFinal.Designer.cs">
+      <DependentUpon>frm_MantenimientoClienteUsuarioFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoDepartamento.Designer.cs">
+      <DependentUpon>frm_MantenimientoDepartamento.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_MantenimientoDescripcionRoles.cs">
       <SubType>Form</SubType>
@@ -122,11 +128,71 @@
     <Compile Include="frm_MantenimientoDescripcionRoles.Designer.cs">
       <DependentUpon>frm_MantenimientoDescripcionRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_MantenimientoEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoEmpleados.Designer.cs">
+      <DependentUpon>frm_MantenimientoEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoEstatusAlertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoEstatusAlertas.Designer.cs">
+      <DependentUpon>frm_MantenimientoEstatusAlertas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoEmpresaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoEmpresaCliente.Designer.cs">
+      <DependentUpon>frm_MantenimientoEmpresaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_MantenimientoEstatusTickets.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_MantenimientoEstatusTickets.Designer.cs">
       <DependentUpon>frm_MantenimientoEstatusTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoIncapacidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoIncapacidades.Designer.cs">
+      <DependentUpon>frm_MantenimientoIncapacidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoNomina.Designer.cs">
+      <DependentUpon>frm_MantenimientoNomina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoOrdenCompra.Designer.cs">
+      <DependentUpon>frm_MantenimientoOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoSalario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoSalario.Designer.cs">
+      <DependentUpon>frm_MantenimientoSalario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoSolicitudOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoSolicitudOrdenCompra.Designer.cs">
+      <DependentUpon>frm_MantenimientoSolicitudOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoTickets.Designer.cs">
+      <DependentUpon>frm_MantenimientoTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoTipoAlerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoTipoAlerta.Designer.cs">
+      <DependentUpon>frm_MantenimientoTipoAlerta.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_MantenimientoTipoIdentificacion.cs">
       <SubType>Form</SubType>
@@ -140,17 +206,35 @@
     <Compile Include="frm_MantenimientoTipoPrioridad.Designer.cs">
       <DependentUpon>frm_MantenimientoTipoPrioridad.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_MantenimientoTipoPuestoNuevoEditar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_MantenimientoTipoPuestoNuevoEditar.Designer.cs">
-      <DependentUpon>frm_MantenimientoTipoPuestoNuevoEditar.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_MantenimientoTipoPuestos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_MantenimientoTipoPuestos.Designer.cs">
       <DependentUpon>frm_MantenimientoTipoPuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoTipoServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoTipoServicio.Designer.cs">
+      <DependentUpon>frm_MantenimientoTipoServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoUsuariosSistema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoUsuariosSistema.Designer.cs">
+      <DependentUpon>frm_MantenimientoUsuariosSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoVacaciones.Designer.cs">
+      <DependentUpon>frm_MantenimientoVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoVacacionesAprobadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoVacacionesAprobadas.Designer.cs">
+      <DependentUpon>frm_MantenimientoVacacionesAprobadas.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Mantenimiento_0Menu.cs">
       <SubType>Form</SubType>
@@ -158,23 +242,11 @@
     <Compile Include="frm_Mantenimiento_0Menu.Designer.cs">
       <DependentUpon>frm_Mantenimiento_0Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_MantenimientoEstadoFacturas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_MantenimientoEstadoFacturas.Designer.cs">
-      <DependentUpon>frm_MantenimientoEstadoFacturas.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_ReportesAlertas_MantenimientoComunicacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_ReportesAlertas_MantenimientoComunicacion.Designer.cs">
       <DependentUpon>frm_ReportesAlertas_MantenimientoComunicacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_ReportesAlertas_IngresarAlerta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_ReportesAlertas_IngresarAlerta.Designer.cs">
-      <DependentUpon>frm_ReportesAlertas_IngresarAlerta.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_ReportesAlertas_GenerarGrafico.cs">
       <SubType>Form</SubType>
@@ -308,11 +380,11 @@
     <Compile Include="frm_RRHH_NuevaSolicitudVacaciones.Designer.cs">
       <DependentUpon>frm_RRHH_NuevaSolicitudVacaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Mantenimiento_Nueva_Factura.cs">
+    <Compile Include="frm_MantenimientoFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Mantenimiento_Nueva_Factura.Designer.cs">
-      <DependentUpon>frm_Mantenimiento_Nueva_Factura.cs</DependentUpon>
+    <Compile Include="frm_MantenimientoFactura.Designer.cs">
+      <DependentUpon>frm_MantenimientoFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -346,14 +418,47 @@
     <EmbeddedResource Include="frm_MantenimientoClienteProveedor.resx">
       <DependentUpon>frm_MantenimientoClienteProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_MantenimientoDescripcionDepartamento.resx">
-      <DependentUpon>frm_MantenimientoDescripcionDepartamento.cs</DependentUpon>
+    <EmbeddedResource Include="frm_MantenimientoClienteUsuarioFinal.resx">
+      <DependentUpon>frm_MantenimientoClienteUsuarioFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoDepartamento.resx">
+      <DependentUpon>frm_MantenimientoDepartamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MantenimientoDescripcionRoles.resx">
       <DependentUpon>frm_MantenimientoDescripcionRoles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoEmpleados.resx">
+      <DependentUpon>frm_MantenimientoEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoEstatusAlertas.resx">
+      <DependentUpon>frm_MantenimientoEstatusAlertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoEmpresaCliente.resx">
+      <DependentUpon>frm_MantenimientoEmpresaCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_MantenimientoEstatusTickets.resx">
       <DependentUpon>frm_MantenimientoEstatusTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoIncapacidades.resx">
+      <DependentUpon>frm_MantenimientoIncapacidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoNomina.resx">
+      <DependentUpon>frm_MantenimientoNomina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoOrdenCompra.resx">
+      <DependentUpon>frm_MantenimientoOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoSalario.resx">
+      <DependentUpon>frm_MantenimientoSalario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoSolicitudOrdenCompra.resx">
+      <DependentUpon>frm_MantenimientoSolicitudOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoTickets.resx">
+      <DependentUpon>frm_MantenimientoTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoTipoAlerta.resx">
+      <DependentUpon>frm_MantenimientoTipoAlerta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MantenimientoTipoIdentificacion.resx">
       <DependentUpon>frm_MantenimientoTipoIdentificacion.cs</DependentUpon>
@@ -361,20 +466,23 @@
     <EmbeddedResource Include="frm_MantenimientoTipoPrioridad.resx">
       <DependentUpon>frm_MantenimientoTipoPrioridad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_MantenimientoTipoPuestoNuevoEditar.resx">
-      <DependentUpon>frm_MantenimientoTipoPuestoNuevoEditar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_MantenimientoTipoPuestos.resx">
       <DependentUpon>frm_MantenimientoTipoPuestos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoTipoServicio.resx">
+      <DependentUpon>frm_MantenimientoTipoServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoUsuariosSistema.resx">
+      <DependentUpon>frm_MantenimientoUsuariosSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoVacaciones.resx">
+      <DependentUpon>frm_MantenimientoVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoVacacionesAprobadas.resx">
+      <DependentUpon>frm_MantenimientoVacacionesAprobadas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Mantenimiento_0Menu.resx">
       <DependentUpon>frm_Mantenimiento_0Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_MantenimientoEstadoFacturas.resx">
-      <DependentUpon>frm_MantenimientoEstadoFacturas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_ReportesAlertas_IngresarAlerta.resx">
-      <DependentUpon>frm_ReportesAlertas_IngresarAlerta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ReportesAlertas_MantenimientoComunicacion.resx">
       <DependentUpon>frm_ReportesAlertas_MantenimientoComunicacion.cs</DependentUpon>
@@ -445,8 +553,8 @@
     <EmbeddedResource Include="frm_RRHH_NuevaSolicitudVacaciones.resx">
       <DependentUpon>frm_RRHH_NuevaSolicitudVacaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Mantenimiento_Nueva_Factura.resx">
-      <DependentUpon>frm_Mantenimiento_Nueva_Factura.cs</DependentUpon>
+    <EmbeddedResource Include="frm_MantenimientoFactura.resx">
+      <DependentUpon>frm_MantenimientoFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -458,9 +566,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -596,6 +702,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono_consultoria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6659589-988935-ticket-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\organizar-prioridades.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Puesto-de-Trabajo-ICON-02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sin título.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %282%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

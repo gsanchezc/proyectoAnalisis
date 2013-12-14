@@ -10,43 +10,67 @@ namespace Clases
 {
    public class descripcionRol
     {
-        #region propiedades
-        private int id;
+       #region propiedades
 
-        public int _id
+       private int _idRol;
+
+       public int idRol
         {
-            get { return id; }
-            set { id = value; }
+            get { return _idRol; }
+            set { _idRol = value; }
         }
 
-        private string descripcion;
+        private string _descripcion;
 
-        public string _descripcion
+        public string descripcion
         {
-            get { return descripcion; }
-            set { descripcion = value; }
+            get { return _descripcion; }
+            set { _descripcion = value; }
         }
 
+        private bool _isDeleted;
+
+        public bool isDeleted
+        {
+            get { return _isDeleted; }
+            set { _isDeleted = value; }
+        }
+
+        private string _mensaje;
+
+        public string mensaje
+        {
+            get { return _mensaje; }
+            set { _mensaje = value; }
+        }
+
+        private int _num_error;
+
+        public int num_error
+        {
+            get { return _num_error; }
+            set { _num_error = value; }
+        }
 
         #endregion
 
         #region variables privadas
+
         SqlConnection conexion;
         string sql;
         string mensaje_error;
         int numero_error;
         DataSet ds;
+
         #endregion
 
         #region metodos
 
-        //Metodo que trae la lista de descripcion rol de la base de datos
         public DataSet cargaListaDescripcionRol()
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
-
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
@@ -56,7 +80,6 @@ namespace Clases
                 ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
                 {
-
                     MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
                 }
@@ -68,7 +91,6 @@ namespace Clases
 
         }
 
-        //Metodo que trae la informacion de un unico descripcion rol
         public void cargaInfoDescripcionRol(int idRol)
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
@@ -122,9 +144,11 @@ namespace Clases
                 {
                     sql = "stp_modificarDescripcionRol";
                 }
-                ParamStruct[] parametros = new ParamStruct[2];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@id", SqlDbType.Int, _id);
+                ParamStruct[] parametros = new ParamStruct[3];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idRol", SqlDbType.Int, _idRol);
                 cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@descripcion", SqlDbType.VarChar, _descripcion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@isDeleted", SqlDbType.Bit, _isDeleted);
+
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -142,20 +166,19 @@ namespace Clases
         }
 
         //Metodo que elimina una descripcion de rol
-        public bool eliminarDescripcionRol(int id)
+        public bool eliminarDescripcionRol()
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
             if (conexion == null)
             {
-
                 MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else
             {
-                sql = "stp_eliminarDescripcionRol";
+                sql = "stu_deleteDescripcionRol";
                 ParamStruct[] parametros = new ParamStruct[1];
-                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@id", SqlDbType.Int, id);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idRol", SqlDbType.Int, _idRol);
                 cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
                 cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
                 if (numero_error != 0)
@@ -170,9 +193,6 @@ namespace Clases
             }
         }
 
-
         #endregion
-
-
     }
 }

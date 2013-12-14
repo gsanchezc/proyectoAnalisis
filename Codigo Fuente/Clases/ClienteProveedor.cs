@@ -88,11 +88,13 @@ namespace Clases
         #endregion
 
         #region variables
+
         SqlConnection conexion;
         string sql;
         string mensaje_error;
         int numero_error;
         DataSet ds;
+
         #endregion
 
         #region Metodos

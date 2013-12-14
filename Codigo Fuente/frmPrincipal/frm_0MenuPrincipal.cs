@@ -673,9 +673,7 @@ namespace frmPrincipal
 
         private void ingresarAlertaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_ReportesAlertas_IngresarAlerta ventana = new frm_ReportesAlertas_IngresarAlerta(usuarioSistema);
-            this.Hide();
-            ventana.Show();
+
         }
 
         private void controlFacturacionToolStripMenuItem_Click(object sender, EventArgs e)

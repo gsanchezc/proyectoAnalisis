@@ -356,6 +356,118 @@ namespace Clases
             }
         }
 
+        public bool eliminarEmpleado()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                sql = "stp_deleteEmpleados";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idEmpleado", SqlDbType.Int, _idEmpleado);
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al guardar o actualizar el cliente proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
+                }
+            }
+        }
+
+        public bool insertar_EmpleadosMantenimientos(string accion)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                if (accion.Equals("Insertar"))
+                {
+                    sql = "spu_insertaEmpleados";
+                }
+                else
+                {
+                    sql = "spu_updateEmpleados";
+                }
+
+                ParamStruct[] parametros = new ParamStruct[17];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idEmpleado", SqlDbType.Int, _idEmpleado);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@idUsuarioSistema", SqlDbType.Int, _idUsuarioSistema);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@nombre", SqlDbType.VarChar, _nombre);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@apellido", SqlDbType.VarChar, _apellido);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@idTipoIdentificacion", SqlDbType.Int, _idTipoIdentificacion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@identificacion", SqlDbType.VarChar, _identificacion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@fechaNacimiento", SqlDbType.DateTime, _fechaNacimiento);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@correo", SqlDbType.VarChar, _correo);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 8, "@direccion", SqlDbType.VarChar, _direccion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 9, "@idDepartamento", SqlDbType.Int, _idDepartamento);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 10, "@idPuesto", SqlDbType.Int, _idPuesto);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 11, "@telefono", SqlDbType.VarChar, _telefono);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 12, "@celular", SqlDbType.VarChar, _celular);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 13, "@fechaIngreso", SqlDbType.DateTime, _fechaIngreso);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 14, "@vacacionesDisponibles", SqlDbType.Int, _vacacionesDisponibles);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 15, "@idSalario", SqlDbType.Int, _idSalario);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 16, "@isDeleted", SqlDbType.Bit, _isdeleted);
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
+                }
+            }
+        }
+
+        public DataSet cargarListaEmpleadosCompleto()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "spu_cargaListaEmpleadosCompleto";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
         #endregion
     }
 }

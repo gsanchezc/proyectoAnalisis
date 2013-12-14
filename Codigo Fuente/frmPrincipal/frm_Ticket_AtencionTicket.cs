@@ -352,7 +352,7 @@ namespace frmPrincipal
             try
             {
                 DataSet ds;
-                ds = objEstatusTicket.cargarEstatusTicket();
+                ds = objEstatusTicket.cargaListaStatusTicket();
                 cmb_status.DataSource = ds.Tables[0];
                 cmb_status.DisplayMember = ds.Tables[0].Columns["descripcion"].ColumnName.ToString();
                 cmb_status.ValueMember = ds.Tables[0].Columns["idEstatusTickets"].ColumnName.ToString();

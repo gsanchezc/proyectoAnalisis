@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Clases;
+using System.Text.RegularExpressions;
 
 namespace frmPrincipal
 {
@@ -17,7 +18,8 @@ namespace frmPrincipal
         tipoPuestos objTipoPuesto = new tipoPuestos();
 
         //VARIABLES GLOBALES
-        private string usuarioSistema = string.Empty;  
+        private string usuarioSistema = string.Empty;
+        private int Id = 0;
 
         public frm_MantenimientoTipoPuestos()
         {
@@ -31,31 +33,68 @@ namespace frmPrincipal
 
         private void frm_MantenimientoTipoPuestos_Load(object sender, EventArgs e)
         {
-            this.carga_lista_EstatusFacturas();
+            this.cargar_ListaTipoPuestos();
+            this.limiteCampos();
         }
 
-        //Metodo que carga en el data grib view los campos que vienen desde la clase tipoPuesto
-        private void carga_lista_EstatusFacturas()
+        private void frm_MantenimientoTipoPuestos_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
+            e.Cancel = e.CloseReason == CloseReason.UserClosing;
+        }
+
+        private void dtg_TipoPuestos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == Editar.Index && e.RowIndex >= 0)
             {
-                dtg_ListaTipoPuesto.AutoGenerateColumns = false;
-                dtg_ListaTipoPuesto.DataSource = objTipoPuesto.cargaListaTipoPuesto().Tables[0];
+                Id = Convert.ToInt32(dtg_TipoPuestos.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                if ((MessageBox.Show("Desea editar este cliente?", "Edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                {
+                    if (this.validacionDeCampos() == true)
+                    {
+                        this.updateTipoPuesto();
+                    }
+                }
+                else
+                {
+                    return;
+                }
             }
-            catch (Exception)
+            else if (e.ColumnIndex == Eliminar.Index && e.RowIndex >= 0)
             {
-                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                Id = Convert.ToInt32(dtg_TipoPuestos.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                if ((MessageBox.Show("Desea eliminar este cliente?", "Edicion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                {
+                    this.eliminarTipoPuesto();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else { }
+        }
+
+        private void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            if (this.validacionDeCampos() == true)
+            {
+                this.insertarTipoPuesto();
             }
         }
 
-        private void btn_cerrar_Click(object sender, EventArgs e)
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            this.limpia();
+        }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             frm_Mantenimiento_0Menu ventana = new frm_Mantenimiento_0Menu(usuarioSistema);
-
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                this.Close();
+                this.Hide();
                 ventana.Show();
             }
             else
@@ -64,45 +103,153 @@ namespace frmPrincipal
             }
         }
 
-        private void btn_actualizar_Click(object sender, EventArgs e)
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void insertarTipoPuesto()
         {
-            this.carga_lista_EstatusFacturas();
-        }
-
-        private void b_editar_Click(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(dtg_ListaTipoPuesto.RowCount) == 0)
+            if (validarSoloLetras(txt_descripcion) == false)
             {
-                MessageBox.Show("No hay ningun estado de Factura en la lista", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese Unicamente Letras para el campo de descripcion", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_descripcion.Focus();
                 return;
             }
-            frm_MantenimientoTipoPuestoNuevoEditar ventanaNuevoEditarTipoPuesto = new frm_MantenimientoTipoPuestoNuevoEditar(usuarioSistema);
-            //ingresa en el campo id de la ventana ventanaNuevoEditarEstatusFactura el campo id que viene desde el data grid view
-            ventanaNuevoEditarTipoPuesto.id = Convert.ToInt32(dtg_ListaTipoPuesto.CurrentRow.Cells[0].Value.ToString());
-            ventanaNuevoEditarTipoPuesto.ShowDialog();
-        }
 
-        private void btn_agregar_Click(object sender, EventArgs e)
-        {
-            frm_MantenimientoTipoPuestoNuevoEditar ventanaNuevoEditarTipoPuesto = new frm_MantenimientoTipoPuestoNuevoEditar(usuarioSistema);
-            //cuenta la cantidad de estatus que hay en el data grid view y le suma 1 
-            ventanaNuevoEditarTipoPuesto.num = Convert.ToInt32(dtg_ListaTipoPuesto.RowCount + 1);
-            ventanaNuevoEditarTipoPuesto.ShowDialog();
-        }
+            objTipoPuesto.descripcion = txt_descripcion.Text;
+            objTipoPuesto.isDeleted = false;
 
-        private void btn_eliminar_Click(object sender, EventArgs e)
-        {
-            string idtipoPuesto = string.Empty;
-            idtipoPuesto = dtg_ListaTipoPuesto.CurrentRow.Cells[0].Value.ToString();
-            if (MessageBox.Show("Desea eliminar el tipo de puesto con el ID : " + idtipoPuesto, "Confirmacion de borrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            string accion = String.Empty;
+            accion = "Insertar";
+
+            if (objTipoPuesto.agregarActualizarTipoPuesto(accion))
             {
+                MessageBox.Show("Exito al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.cargar_ListaTipoPuestos();
+                this.limpia();
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
 
-                if (objTipoPuesto.eliminarTipoPuesto(Convert .ToInt32 (idtipoPuesto)))
-                {
-                    MessageBox.Show("El tipo de puesto se eliminó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.carga_lista_EstatusFacturas();
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void updateTipoPuesto()
+        {
+            if (validarSoloLetras(txt_descripcion) == false)
+            {
+                MessageBox.Show("Ingrese Unicamente Letras para el campo de descripcion", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_descripcion.Focus();
+                return;
+            }
 
-                }
+            objTipoPuesto.idPuesto = Id;
+            objTipoPuesto.descripcion = txt_descripcion.Text;
+            objTipoPuesto.isDeleted = false;
+
+            string accion = String.Empty;
+            accion = "Editar";
+
+            if (objTipoPuesto.agregarActualizarTipoPuesto(accion))
+            {
+                MessageBox.Show("Exito al actualizar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.cargar_ListaTipoPuestos();
+                this.limpia();
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void eliminarTipoPuesto()
+        {
+            objTipoPuesto.idPuesto = Id;
+            if (objTipoPuesto.eliminarTipoPuesto())
+            {
+                MessageBox.Show("Exito al eliminar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.cargar_ListaTipoPuestos();
+            }
+            else
+            {
+                MessageBox.Show("Error al eliminar datos", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private void cargar_ListaTipoPuestos()
+        {
+            try
+            {
+                dtg_TipoPuestos.AutoGenerateColumns = false;
+                dtg_TipoPuestos.DataSource = objTipoPuesto.cargaListaTipoPuesto().Tables[0];
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hubo un problema con la conexión a la base de datos", "Validación de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private void limpia()
+        {
+            Limpieza.limpiar(txt_descripcion);
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public void limiteCampos()
+        {
+            txt_descripcion.MaxLength = 50;
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        private static bool validarSoloNumeros(Control mitextbox)
+        {
+            Regex regex = new Regex("^[0-9]*$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        private static bool validarSoloLetras(Control mitextbox)
+        {
+            Regex regex = new Regex("^[a-zA-Z]+$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        private static bool validarSoloLetrasConEspacios(Control mitextbox)
+        {
+            Regex regex = new Regex("^[a-zA-Z ]+$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        private static bool validarSoloLetrasYNumeros(Control mitextbox)
+        {
+            Regex regex = new Regex("^[a-zA-Z0-9]+$");
+            return regex.IsMatch(mitextbox.Text);
+        }
+
+        //METODO
+        //RAFAEL ANGEL SEQUEIRA VARGAS
+        public bool validacionDeCampos()
+        {
+            if (!Validaciones.validar(txt_descripcion))
+            {
+                MessageBox.Show("No ingreso descripcion", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_descripcion.Focus();
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

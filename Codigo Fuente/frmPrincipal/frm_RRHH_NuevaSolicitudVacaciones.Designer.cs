@@ -52,7 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtp_FechaRegreso = new System.Windows.Forms.DateTimePicker();
             this.dtp_FechaSalida = new System.Windows.Forms.DateTimePicker();
-            this.btn_Validar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -121,7 +120,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.btn_Validar);
             this.groupBox4.Controls.Add(this.btn_Ingresar);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -134,7 +132,7 @@
             // 
             // btn_Ingresar
             // 
-            this.btn_Ingresar.Location = new System.Drawing.Point(156, 25);
+            this.btn_Ingresar.Location = new System.Drawing.Point(94, 25);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(118, 33);
             this.btn_Ingresar.TabIndex = 10;
@@ -295,16 +293,6 @@
             this.dtp_FechaSalida.Size = new System.Drawing.Size(370, 26);
             this.dtp_FechaSalida.TabIndex = 5;
             // 
-            // btn_Validar
-            // 
-            this.btn_Validar.Location = new System.Drawing.Point(18, 25);
-            this.btn_Validar.Name = "btn_Validar";
-            this.btn_Validar.Size = new System.Drawing.Size(118, 33);
-            this.btn_Validar.TabIndex = 11;
-            this.btn_Validar.Text = "&Validar";
-            this.btn_Validar.UseVisualStyleBackColor = true;
-            this.btn_Validar.Click += new System.EventHandler(this.btn_Validar_Click);
-            // 
             // frm_RRHH_NuevaSolicitudVacaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,7 +342,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtp_FechaRegreso;
         private System.Windows.Forms.DateTimePicker dtp_FechaSalida;
-        private System.Windows.Forms.Button btn_Validar;
 
     }
 }

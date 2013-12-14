@@ -33,14 +33,6 @@ namespace frmPrincipal
 
         }
 
-        private void btn_estatusFactura_Click(object sender, EventArgs e)
-        {
-            frm_Mantenimiento_estatusFacturas ventanaMantenimientoEstadoFacturas = new frm_Mantenimiento_estatusFacturas(usuarioSistema);
-            this.Hide();
-            ventanaMantenimientoEstadoFacturas.Show();
-
-        }
-
         private void btn_descripcionRoles_Click(object sender, EventArgs e)
         {
             frm_MantenimientoDescripcionRoles ventanaDescripcionRoles = new frm_MantenimientoDescripcionRoles(usuarioSistema);
@@ -71,7 +63,7 @@ namespace frmPrincipal
 
         private void btn_MantenimientoDescripcionDepartamento_Click(object sender, EventArgs e)
         {
-            frm_MantenimientoDescripcionDepartamento ventana = new frm_MantenimientoDescripcionDepartamento(usuarioSistema);
+            frm_MantenimientoDepartamento ventana = new frm_MantenimientoDepartamento(usuarioSistema);
             this.Hide();
             ventana.Show();
         }
@@ -103,6 +95,118 @@ namespace frmPrincipal
             {
                 return;
             }
+        }
+
+        private void btn_clienteUsuarioFinal_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoClienteUsuarioFinal ventana = new frm_MantenimientoClienteUsuarioFinal(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_EmpresasCliente_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoEmpresaCliente ventana = new frm_MantenimientoEmpresaCliente(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_StatusAlertas_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoEstatusAlertas ventana = new frm_MantenimientoEstatusAlertas(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_Empleados_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoEmpleados ventana = new frm_MantenimientoEmpleados(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_Facturas_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoFactura ventana = new frm_MantenimientoFactura(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_Incapacidades_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoIncapacidades ventana = new frm_MantenimientoIncapacidades(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_Nomina_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoNomina ventana = new frm_MantenimientoNomina(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_ordenesCompra_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoOrdenCompra ventana = new frm_MantenimientoOrdenCompra(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_Salarios_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoSalario ventana = new frm_MantenimientoSalario(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_solicitudOrdenes_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoSolicitudOrdenCompra ventana = new frm_MantenimientoSolicitudOrdenCompra(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_tickets_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoTickets ventana = new frm_MantenimientoTickets(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_tipoAlertas_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoTipoAlerta ventana = new frm_MantenimientoTipoAlerta(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_usuariosSistema_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoUsuariosSistema ventana = new frm_MantenimientoUsuariosSistema(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_vacaciones_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoVacaciones ventana = new frm_MantenimientoVacaciones(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_vacacionesAprobadas_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoVacacionesAprobadas ventana = new frm_MantenimientoVacacionesAprobadas(usuarioSistema);
+            this.Hide();
+            ventana.Show();
+        }
+
+        private void btn_tipoServicios_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoTipoServicio ventana = new frm_MantenimientoTipoServicio(usuarioSistema);
+            this.Hide();
+            ventana.Show();
         }
     }
 }

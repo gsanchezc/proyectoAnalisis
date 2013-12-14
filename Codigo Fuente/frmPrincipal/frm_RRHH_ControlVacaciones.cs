@@ -14,7 +14,6 @@ namespace frmPrincipal
     {
         //DECLARACION DE INSTANCIAS DE LAS CLASES
         UsuariosSistema objUsuariosSistema = new UsuariosSistema();
-        RRHH_SolicitudVacaciones objVacaciones = new RRHH_SolicitudVacaciones();
 
         //VARIABLES GLOBALES
         private string usuarioSistema = string.Empty;
@@ -34,7 +33,6 @@ namespace frmPrincipal
         {
             this.cargaRolUsuario();
             this.rolesUsuario();
-            this.cargarVacaciones();
         }
 
         //METODO PARA MANEJAR EL ACCESO POR ROLES
@@ -65,13 +63,5 @@ namespace frmPrincipal
                 return;
             }
         }
-
-        private void cargarVacaciones()
-        {
-            DataSet ds;
-            ds = objVacaciones.cargarVacacionesPendientes();
-            dtg_Planilla.DataSource = objVacaciones.cargarVacacionesPendientes().Tables[0];
-        }
-
     }
 }

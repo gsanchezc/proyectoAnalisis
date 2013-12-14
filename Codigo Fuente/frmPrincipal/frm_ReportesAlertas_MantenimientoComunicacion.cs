@@ -61,9 +61,7 @@ namespace frmPrincipal
 
         private void btn_NuevaAlerta_Click(object sender, EventArgs e)
         {
-            frm_ReportesAlertas_IngresarAlerta ventana = new frm_ReportesAlertas_IngresarAlerta(usuarioSistema);
-            this.Hide();
-            ventana.Show();
+
         }
 
         private void cargaAlertasActivas()

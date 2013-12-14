@@ -15,7 +15,7 @@ namespace Clases
 
         private int _idEmpresaCliente;
 
-        public int EmpresaCliente
+        public int idEmpresaCliente
         {
             get { return _idEmpresaCliente; }
             set { _idEmpresaCliente = value; }
@@ -158,6 +158,108 @@ namespace Clases
                     {
                         _mensaje = mensaje_error;
                     }
+                }
+            }
+        }
+
+        public DataSet cargarDataGridEmpresasClientes()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "spu_cargaListaEmpresasClientes";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public bool insertarEmpresaCliente(string accion)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                if (accion.Equals("Insertar"))
+                {
+                    sql = "spu_insertaEmpresaCliente";
+                }
+                else
+                {
+                    sql = "spu_updateEmpresaCliente";
+                }
+
+                ParamStruct[] parametros = new ParamStruct[7];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idEmpresaCliente", SqlDbType.Int, _idEmpresaCliente);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@nombre", SqlDbType.VarChar, _nombre);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@idTipoIdentificacion", SqlDbType.Int, _idTipoIdentificacion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@identificacion", SqlDbType.VarChar, _identificacion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@telefonoEmpresa", SqlDbType.VarChar, _telefonoEmpresa);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@isDeleted", SqlDbType.Bit, _isDeleted);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@Direccion", SqlDbType.VarChar, _Direccion);
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al guardar o actualizar el cliente proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
+                }
+            }
+        }
+
+        public bool eliminarEmpresaCliente()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                sql = "spu_eliminarEmpresaCliente";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idEmpresaCliente", SqlDbType.Int, _idEmpresaCliente);
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al guardar o actualizar el cliente proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
                 }
             }
         }

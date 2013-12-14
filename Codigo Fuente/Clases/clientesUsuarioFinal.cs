@@ -192,6 +192,53 @@ namespace Clases
             }
         }
 
+        public bool insertar_usuariosSistemaMantenimientos(string accion)
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                if (accion.Equals("Insertar"))
+                {
+                    sql = "spu_insertarNuevoClienteUsuarioFinalMantenimientos";
+                }
+                else
+                {
+                    sql = "spu_updateUsuarioFinalMantenimientos";
+                }
+
+                ParamStruct[] parametros = new ParamStruct[9];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idClienteUsuarioFinal", SqlDbType.Int, _idClienteUsuarioFinal);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 1, "@idUsuarioSistema", SqlDbType.Int, _idUsuarioSistema);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 2, "@nombre", SqlDbType.VarChar, _nombre);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 3, "@apellidos", SqlDbType.VarChar, _apellidos);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 4, "@idTipoIdentificacion", SqlDbType.Int, _idTipoIdentificacion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 5, "@identificacion", SqlDbType.VarChar, _identificacion);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 6, "@telefonoEmpresa", SqlDbType.VarChar, _telefonoEmpresa);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 7, "@idEmpresaCliente", SqlDbType.Int, _idEmpresaCliente);
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 8, "@isDeleted", SqlDbType.Bit, _isdeleted);
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
+                }
+            }
+        }
+
         public void cargaInfoCliente(int idClienteUsuarioFinal)
         {
             conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
@@ -330,6 +377,63 @@ namespace Clases
                 else
                 {
                     return ds;
+                }
+            }
+        }
+
+        public DataSet cargarListaClientesUsuarioFinalCompleto()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else
+            {
+                sql = "spu_cargaListaClientesCompleto";
+
+                ds = cls_DAL.ejecuta_dataset(conexion, sql, true, ref mensaje_error, ref numero_error);
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null;
+                }
+                else
+                {
+                    return ds;
+                }
+            }
+        }
+
+        public bool eliminarClienteUsuarioFinal()
+        {
+            conexion = cls_DAL.trae_conexion("Soportic", ref mensaje_error, ref numero_error);
+            if (conexion == null)
+            {
+                MessageBox.Show(mensaje_error, "Error al obtener cadena de conexion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                sql = "spu_deleteUsuarioFinalMantenimientos";
+
+                ParamStruct[] parametros = new ParamStruct[1];
+                cls_DAL.agregar_datos_estructura_parametros(ref parametros, 0, "@idClienteUsuarioFinal", SqlDbType.Int, _idClienteUsuarioFinal);
+
+                cls_DAL.conectar(conexion, ref mensaje_error, ref numero_error);
+                cls_DAL.ejecuta_sqlcommand(conexion, sql, true, parametros, ref mensaje_error, ref numero_error);
+
+                if (numero_error != 0)
+                {
+                    MessageBox.Show(mensaje_error, "Error al guardar o actualizar el cliente proveedor", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return false;
+                }
+                else
+                {
+                    cls_DAL.desconectar(conexion, ref mensaje_error, ref numero_error);
+                    return true;
                 }
             }
         }

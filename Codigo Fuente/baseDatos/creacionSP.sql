@@ -1,133 +1,80 @@
 use db_soportic
 go
 
-----------------------------------------------------------------------------------------
---------------------------------SP - DIEGO VENEGAS MONGE------------------------------------
------------------------------------------------------------------------------------------------
--------------Procedure que realiza borrado logico de un Cliente proveedor de la tabla tbl_tipoClientesProveedores DVM------
-create procedure stp_borrarTipoClienteProveedor
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stp_insertarTipoPrioridad]
 (
-	@id int
+	@idPrioridad int,
+	@descripcion varchar (50),
+	@isDeleted bit
 )
 as
-begin
-	update db_soportic.dbo.tbl_tipoClientesProveedores set isDeleted = 1
-	where idTipoClienteProveedor = @id
-end
+	begin
+		insert dbo.tbl_tipoPrioridades
+		values(@descripcion,
+			   @isDeleted)
+	end
 go
-
---------Procedure que trae/jala la informacion de la tabla tbl_tipoIdentificacion DVM--------
-create procedure stp_traeTipoIdentificacion
-as
-begin
-	select *
-	from tbl_tipoIdentificaciones where isDeleted=0
-end
-go
-
-----------Procedure de borrado---------
-create procedure stp_borrarTipoIdentificacion
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stp_UpdateTipoPrioridad]
 (
-   @id int
+		@idPrioridad int,
+		@descripcion varchar(50),
+		@isDeleted bit
 )
-
 as
-begin
-	update db_soportic.dbo.tbl_tipoIdentificaciones set isDeleted = 1
-    where idTipoIdentificacion = @id
-end
-
-go
-
------------Procedure que trae el Estatus de Tickets-----------------------
-create procedure stp_traeEstatusTickets
-as
-begin
-	select idEstatusTickets, descripcion 
-	from tbl_estatusTickets where isDeleted=0
-end
-go
-
----------------Procedure de borrado----------------------
-create procedure stp_borrarEstatusTickets
-(
-		@id int,
-		@descripcion varchar(50)
-)
-
-as
-begin
-	update db_soportic.dbo.tbl_estatusTickets set isDeleted = 1
-	where idEstatusTickets = @id
-end
-
-go
-
----------------Procedure que inserta datos en la tabla tbl_tipoPrioridades-----------------------------
-create procedure stp_insertarTipoPrioridad
-(
-	@id int,
-	@descripcion varchar (50)
-)
-
-as
-begin
-		insert into db_soportic.dbo.tbl_tipoPrioridades(descripcion) 
-		values(@descripcion)
-end
-
-go
-
-----------------------Procedure que modifica y actualiza los datos tbl_tipoPrioridades-----------------------------
-create procedure stp_modificarTipoPrioridada
-(
-		@id int,
-		@descripcion varchar(50)
-)
-
- as
- begin
-	update db_soportic.dbo.tbl_tipoPrioridades set descripcion = @descripcion
-	where idPrioridad = @id
- end
-
+	begin
+		update db_soportic.dbo.tbl_tipoPrioridades 
+		set descripcion = @descripcion,
+			isDeleted = @isDeleted
+		where idPrioridad = @idPrioridad
+	end
 go
 
 ---------------------Procedure que trae/jala la informacion tbl_tipoPrioridades-------------------
-create procedure stp_traeInfoTipoPrioridad
+create procedure [stp_traeInfoTipoPrioridad]
 (
     @id int
 )
-
- as
- begin
-	select *
-	from db_soportic.dbo.tbl_tipoPrioridades where idPrioridad = @id
- end
-
+as
+	begin
+		select *
+		from db_soportic.dbo.tbl_tipoPrioridades 
+		where idPrioridad = @id
+	end
 go
 
 -----------Procedure que trae tbl_tipoPrioridades-----------------------
-create procedure stp_traeTipoPrioridad
+create procedure [stp_traeTipoPrioridad]
 as
-begin
-	select idPrioridad, descripcion 
-	from tbl_tipoPrioridades where isDeleted=0
-end
+	begin
+		select idPrioridad, 
+			   descripcion 
+		from tbl_tipoPrioridades 
+	end
 go
 
 ---------------Procedure de borrado de tipo de prioridad----------------------
-create procedure stp_borrarTipoPrioridad
+create procedure [stp_borrarTipoPrioridad]
 (
-		@id int
+	@idPrioridad int
 )
-
 as
-begin
-	update db_soportic.dbo.tbl_tipoPrioridades set isDeleted = 1
-	where idPrioridad = @id
-end
-
+	begin
+		delete from dbo.tbl_tipoPrioridades
+		where idPrioridad = @idPrioridad
+	end
+go
+---------------------------------------------------------------------------------------
+------------Store procedure para cargar todas las incapacidades--------
+create procedure stp_traeIncapacidades
+as
+	begin
+		select * 
+		from tbl_incapacidades 
+	end
 go
 
 -----------procedure para ingresar nuevo empleado-------------------
@@ -155,26 +102,91 @@ begin
 				@idDepartamento,@idPuesto,@telefono,@celular,@fechaIngreso,@idsalario)
 
 end
-
 go
 
 --------------Procedure que trae la Descripcion de Departamentos-----------------
 create procedure stp_traeDescripcionDepartamentos
-
 as
-begin
-	select idDepartamento, descripcion 
-	from tbl_Departamentos where isDeleted=0
-end
+	begin
+		select idDepartamento, descripcion 
+		from tbl_Departamentos 
+		where isDeleted=0
+	end
+go
 
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-------------------------------------------------------------
+create procedure [stp_borrarDescripcionDepartamentos]
+(
+	@id int
+)
+as
+	begin
+		delete
+		from dbo.tbl_Departamentos
+		where idDepartamento = @id
+	end
 go
 
 ----------------procedue para traer salarios------------------------
 create procedure stp_traeSalarios
 as
 begin
-	select idSalario,monto from tbl_salarios where isDeleted=0
+	select idSalario,monto 
+	from tbl_salarios 
+	where isDeleted=0
 end
+go
+------------------RAFAEL SEQUEIRA VARGAS--------------------
+--------------------SALARIOS-----------------------------------
+create procedure [stp_listaSalarios]
+as
+	begin
+		select *
+		from dbo.tbl_salarios
+	end
+go
+------------------RAFAEL SEQUEIRA VARGAS--------------------
+--------------------SALARIOS-----------------------------------
+create procedure [stp_insertarSalario]
+(
+	@idSalario int,
+	@monto decimal(18,2),
+	@isDeleted bit
+)
+as
+	begin
+		insert dbo.tbl_salarios
+		values(@monto, @isDeleted)
+	end
+go
+------------------RAFAEL SEQUEIRA VARGAS--------------------
+--------------------SALARIOS-----------------------------------
+create procedure [stp_updateSalario]
+(
+	@idSalario int,
+	@monto decimal(18,2),
+	@isDeleted bit
+)
+as
+	begin
+		update dbo.tbl_salarios
+		set monto = @monto,
+			isDeleted = @isDeleted
+		where idSalario = @idSalario
+	end
+go
+------------------RAFAEL SEQUEIRA VARGAS--------------------
+--------------------SALARIOS-----------------------------------
+create procedure [stp_deleteSalario]
+(
+	@idSalario int
+)
+as
+	begin
+		delete from dbo.tbl_salarios
+		where idSalario =  @idSalario
+	end
 go
 
 ---------------procedure para crear solicitud de vacaciones---------------------
@@ -193,10 +205,12 @@ end
 go
 
 ---------------------procedure para cargar lista de empleados----------
-alter procedure stp_traeListaEmpleados
+create procedure stp_traeListaEmpleados
 as
 begin
-	select idEmpleado,identificacion, nombre, apellido from tbl_empleados where isDeleted=0
+	select idEmpleado,identificacion 
+	from tbl_empleados 
+	where isDeleted=0
 end
 go
 
@@ -207,7 +221,9 @@ create procedure stp_VacacionesDisponibles
 )
 as
 begin
-	select vacacionesDisponibles from tbl_empleados where identificacion=@identificacion
+	select vacacionesDisponibles 
+	from tbl_empleados 
+	where identificacion=@identificacion
 end
 go
 
@@ -231,118 +247,39 @@ begin
 
 end
 go
--------------------carga el salario del empleado solicitado--------
-create procedure stp_salarioEmpleado
-(
-	@idEmpleado int
-)
-as
-begin
-	select monto from db_soportic.dbo.tbl_salarios where idEmpleado=@idEmpleado
-end
-go
 
---------------buscar nomina ya creada de empleado, en mismo mes y mismo año----
-create procedure stp_nominaCreada
-(
-	@idEmpleado int,
-	@mes varchar(15),
-	@anio int
-)
-as
-begin
-	select * from db_soportic.dbo.tbl_nomina where(idEmpleado=@idEmpleado and mesNomina=@mes and anioNomina=@anio)
 
-end
-go
-
---------------------------buscar nomina completa de un mes------------------
-create procedure [stp_buscarNomina]
-(
-	@mes varchar(15),
-	@anio int
-)
-as
-begin
-	select dbo.tbl_nomina.idEmpleado,
-			identificacion,
-			nombre,
-			apellido,
-			horasLaboradas,
-			horasExtra,
-			salarioBruto,
-			rebajos,
-			salarioNeto
-	from dbo.tbl_nomina
-		left outer join dbo.tbl_empleados on 
-		dbo.tbl_nomina.idEmpleado = dbo.tbl_empleados.idEmpleado
-	where (mesNomina=@mes and anioNomina=@anio)
-end
-go
-
--------------------------control de vacaciones---------------------
-create procedure stp_controlVacaciones
-as
-begin
-	select idSolicitudVacacion,
-			dbo.tbl_empleados.nombre+''+dbo.tbl_empleados.apellido as idEmpleado,
-			fechaInicio,
-			fechaFin,
-			diasSolicitados,
-			dbo.tbl_empleados.vacacionesDisponibles,
-			idAprobacionVacacion
-	from dbo.tbl_vacaciones
-		left outer join dbo.tbl_empleados on
-		dbo.tbl_vacaciones.idEmpleado= dbo.tbl_empleados.idEmpleado
-	where dbo.tbl_vacaciones.isDeleted=0
-end
-go
-
----------------------------------------------------------------------------------------
-------------Store procedure para cargar todas las incapacidades--------
-create procedure stp_traeIncapacidades
-as
-begin
-	Select idIncapacidad,
-			dbo.tbl_empleados.nombre+' '+
-			dbo.tbl_empleados.apellido as idEmpleado,
-			diaInicio,
-			diaFin,totalDias,
-			isApprove
-	from tbl_incapacidades 
-		left outer join dbo.tbl_empleados on
-		dbo.tbl_incapacidades.idEmpleado= dbo.tbl_empleados.idEmpleado
-	where dbo.tbl_incapacidades.isDeleted=0
-end
-
-go
 ---------------------------------------------------------------------------------------
 ---------------------------FIN SP DIEGO VENEGAS M--------------------------------------
 ---------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------
 ---Procedimientos almacenados para la tabla Descripcion Roles----------------------------
-create procedure stp_insertarDescripcionRol
+create procedure [stp_insertarDescripcionRol]
 (
-	@id int,
-	@descripcion varchar(50)
+	@idRol int,
+	@descripcion varchar(50),
+	@isDeleted bit
 )
 as
 	begin
-		insert into tbl_descripcionRoles(descripcion) 
-		values(@descripcion)
+		insert dbo.tbl_descripcionRoles
+		values(@descripcion,
+			   @isDeleted)
 	end
 go
 
-create procedure stp_modificarDescripcionRol
+create procedure [stp_modificarDescripcionRol]
 (
-	@id int,
-	@descripcion varchar(50)
+	@idRol int,
+	@descripcion varchar(50),
+	@isDeleted bit
 )
 as
 	begin
 		update tbl_descripcionRoles
-		set descripcion = @descripcion
-		where idRol = @id
+		set descripcion = @descripcion,
+			isDeleted = @isDeleted
+		where idRol = @idRol
 	end
 go
 
@@ -366,33 +303,62 @@ as
 		from tbl_descripcionRoles
 	end
 go
-------------------------------------------------------------------------------------------
------Procedimientos almacenados para la tabla tipo Puestos---------------------------
-create procedure stp_insertarTipoPuestos
+
+create procedure [stu_deleteDescripcionRol]
 (
-	@id int,
-	@descripcion varchar(50)
+	@idRol int
 )
 as
 	begin
-		insert into tbl_tipoPuestos(descripcion) 
-		values(@descripcion)
+		delete from dbo.tbl_descripcionRoles
+		where idRol = @idRol
 	end
 go
 
-create procedure stp_modificarTipoPuestos
+------------------------------------------------------------------------------------------
+-----Procedimientos almacenados para la tabla tipo Puestos---------------------------
+create procedure [stp_insertarTipoPuestos]
+(	
+	@idPuesto int,
+	@descripcion varchar(50),
+	@isDeleted bit
+)
+as
+	begin
+		insert dbo.tbl_tipoPuestos
+		values(@descripcion, @isDeleted)
+	end
+go
+--------------RAFAEL SEQUEIRA VARGAS--------------------------------------------------
+------------------TIPO PUESTOS---------------------------------------------------------
+create procedure [stp_modificarTipoPuestos]
 (
-	@id int,
-	@descripcion varchar(50)
+	@idPuesto int,
+	@descripcion varchar(50),
+	@isDeleted bit
 )
 as
 	begin
 		update tbl_tipoPuestos
-		set descripcion = @descripcion
-		where idPuesto = @id
+		set descripcion = @descripcion,
+			isDeleted = @isDeleted
+		where idPuesto = @idPuesto
 	end
 go
-
+--------------RAFAEL SEQUEIRA VARGAS--------------------------------------------------
+------------------TIPO PUESTOS---------------------------------------------------------
+create procedure [stp_eliminarTipoPuestos]
+(
+	@idPuesto int
+)
+as
+	begin
+		delete from dbo.tbl_tipoPuestos
+		where idPuesto = @idPuesto
+	end
+go
+--------------RAFAEL SEQUEIRA VARGAS--------------------------------------------------
+------------------TIPO PUESTOS---------------------------------------------------------
 create procedure stp_traeInfoTipoPuestos
 (
 	@id int
@@ -404,12 +370,12 @@ as
 		where idPuesto = @id
 	end
 go
-
-create procedure stp_traeTipoPuestos
+--------------RAFAEL SEQUEIRA VARGAS--------------------------------------------------
+------------------TIPO PUESTOS---------------------------------------------------------
+create procedure [stp_traeTipoPuestos]
 as
 	begin
-		select idPuesto, 
-		       descripcion 
+		select * 
 		from tbl_tipoPuestos
 	end
 GO
@@ -417,26 +383,29 @@ GO
 ----------------------------------------------------------------------------------------
 create procedure stp_insertaTipoIdentificacion
 (
-	@id int,
-	@descripcion varchar(50)
+	@idTipoIdentificacion int,
+	@descripcion varchar(50),
+	@isDeleted bit
 )
 as
 	begin
-		insert into db_soportic.dbo.tbl_tipoIdentificaciones(descripcion) 
-		values(@descripcion)	
+		insert dbo.tbl_tipoIdentificaciones
+		values(@descripcion, @isDeleted)	
 	end
 go
 
 create procedure stp_modificarTipoIdentificacion
 (
-	@id int,
-	@descripcion varchar(50)
+	@idTipoIdentificacion int,
+	@descripcion varchar(50),
+	@isDeleted bit
 )
 as
 	begin
-		update db_soportic.dbo.tbl_tipoIdentificaciones 
-		set descripcion = @descripcion
-		where idTipoIdentificacion = @id
+		update dbo.tbl_tipoIdentificaciones
+		set descripcion = @descripcion,
+			isDeleted = @isDeleted
+		where idTipoIdentificacion = @idTipoIdentificacion
 	end
 go
 
@@ -453,33 +422,60 @@ as
 	end
 go
 
+----------------------------------------------------------------------------------------------------
+create procedure [stp_traeEstatusTickets]
+as
+	begin
+		select *
+		from dbo.tbl_estatusTickets
+	end
+go
+
 ---------------Procedure que inserta datos en la tabla tbl_estatusTickets-----------------------------
-create procedure stp_insertarEstatusTickets
+create procedure [stp_insertarEstatusTickets]
 (
-	@id int, 
-	@descripcion varchar (50)
+	@idEstatusTickets int, 
+	@descripcion varchar (50),
+	@isDeleted bit,
+	@tipoUsuario varchar (20)
 )
 as
 	begin
-		insert into db_soportic.dbo.tbl_estatusTickets(descripcion) 
-		values(@descripcion)
+		insert dbo.tbl_estatusTickets
+		values(@descripcion,
+			   @isDeleted,
+			   @tipoUsuario)
 	end
 go
 
 ----------------------Procedure que modifica y actualiza los datos-----------------------------
-create procedure stp_modificarEstatusTickets
+create procedure [stp_modificarEstatusTickets]
 (
-	@id int,
-	@descripcion int
+	@idEstatusTickets int, 
+	@descripcion varchar (50),
+	@isDeleted bit,
+	@tipoUsuario varchar (20)
 )
 as
 	begin
 		update db_soportic.dbo.tbl_estatusTickets 
-		set descripcion = @descripcion
-		where idEstatusTickets = @id
+		set descripcion = @descripcion,
+			isDeleted = @isDeleted,
+			tipoUsuario = @tipoUsuario
+		where idEstatusTickets = @idEstatusTickets
 	end
 go
 
+create procedure [stp_deleteEstatusTickets]
+(
+	@idEstatusTickets int		
+)
+as
+	begin
+		delete from dbo.tbl_estatusTickets
+		where idEstatusTickets = @idEstatusTickets
+	end
+go
 ---------------------Procedure que trae/jala la informacion-------------------
 create procedure stp_traeInfoEstatusTickets
 (
@@ -493,20 +489,35 @@ as
 	end
 go
 
-
----------------------------Procedure de almacenamiento para la tabla descripcionDepartamentos-------------
-----------------------------------------------------------------------------------------------------------
-------------------Procedure que modifica y actualiza datos en la tabla tbl_descripionDepartamentos----------
-create procedure stp_modificarDescripcionDepartamentos
+---------------------------RAFAEL SEQUEIRA VARGAS--------------------------------------------------
+---------------------------------------------------------------------------------------------------
+create procedure [stp_insertaDescrpcionDepartamentos]
 (
-	@id int,
-	@descripcion varchar(50)
+	@idDepartamento int,
+	@descripcion varchar(50),
+	@isDeleted bit
 )
 as
 	begin
-		update db_soportic.dbo.tbl_descripcionDepartamentos 
-		set descripcion = @descripcion
-		where idDepartamento  = @id
+		insert into dbo.tbl_Departamentos
+		values (@descripcion, @isDeleted)
+	end
+go
+
+---------------------------RAFAEL SEQUEIRA VARGAS--------------------------------------------------
+---------------------------------------------------------------------------------------------------
+create procedure [stp_modificarDescripcionDepartamentos]
+(
+	@idDepartamento int,
+	@descripcion varchar(50),
+	@isDeleted bit
+)
+as
+	begin
+		update dbo.tbl_Departamentos
+		set descripcion = @descripcion,
+		    isDeleted = @isDeleted
+		where idDepartamento  = @idDepartamento
 	end
 go
 
@@ -524,17 +535,16 @@ as
 go
 
 ----------------Procedure de borrado Descripcion Depatamentos DVM------------------------------
-create procedure stp_borrarDescripcionDepartamentos
+create procedure stp_deleteDepartamentos
 (
-		@id int
+	@id int		
 )
-
 as
-begin
-	update db_soportic.dbo.tbl_descripcionDepartamentos set isDeleted = 1
-	where idDepartamento  = @id
-end
-
+	begin
+		delete 
+		from dbo.tbl_Departamentos
+		where idDepartamento= @id
+	end
 go
 
 ---------------------------Procedure de almacenamiento para la tabla datosAdjuntos--------------------
@@ -730,13 +740,80 @@ as
 	end
 go
 
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+----------------USUARIOS FINALES
+create procedure [spu_insertarNuevoClienteUsuarioFinalMantenimientos]
+(
+	@idClienteUsuarioFinal int,
+	@idUsuarioSistema int,
+	@nombre varchar(50),
+	@apellidos varchar(50),
+	@idTipoIdentificacion int,
+	@identificacion varchar(15),
+	@telefonoEmpresa varchar(15),
+	@idEmpresaCliente int,
+	@isDeleted bit
+)
+as
+	begin		
+		insert into [db_soportic].[dbo].[tbl_clientesUsuarioFinal]
+		values (@idUsuarioSistema, 
+				@nombre, 
+				@apellidos, 
+				@idTipoIdentificacion, 
+				@identificacion, 
+				@telefonoEmpresa, 
+				@idEmpresaCliente, 
+				@isDeleted)
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+----------------USUARIOS FINALES
+create procedure [spu_updateUsuarioFinalMantenimientos]
+(
+	@idClienteUsuarioFinal int,
+	@idUsuarioSistema int,
+	@nombre varchar(50),
+	@apellidos varchar(50),
+	@idTipoIdentificacion int,
+	@identificacion varchar(15),
+	@telefonoEmpresa varchar(15),
+	@idEmpresaCliente int,
+	@isDeleted bit
+)
+as
+	begin		
+		update [db_soportic].[dbo].[tbl_clientesUsuarioFinal]
+		set idUsuarioSistema = @idUsuarioSistema, 
+			nombre = @nombre, 
+			apellidos = @apellidos, 
+			idTipoIdentificacion = @idTipoIdentificacion, 
+			identificacion = @identificacion, 
+			telefonoEmpresa = @telefonoEmpresa, 
+			idEmpresaCliente = @idEmpresaCliente, 
+			isDeleted = @isDeleted
+		where idClienteUsuarioFinal = @idClienteUsuarioFinal
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+----------------USUARIOS FINALES
+create procedure [spu_deleteUsuarioFinalMantenimientos]
+(
+	@idClienteUsuarioFinal int
+)
+as
+	delete from dbo.tbl_clientesUsuarioFinal
+	where idClienteUsuarioFinal = @idClienteUsuarioFinal
+go
+
 -----------------RAFAEL SEQUEIRA VARGAS---------------------------
 ----------------Procedure Cargar ComboBox Tipo ID-----------------
 create procedure [spu_cargaComboBoxTipoId]
 as
 	begin
-		select idTipoIdentificacion, 
-		       descripcion 
+		select *
 		from [db_soportic].[dbo].[tbl_tipoIdentificaciones]
 	end
 go
@@ -1040,12 +1117,11 @@ go
 --------RAFAEL SEQUEIRA VARGAS------------
 ----------------Procedure que trae los datos de la tabla tbl_tipoServicio--------------
 create procedure [stp_traeTipoServicio]
-
 as
-begin
-	select idtipoServicio, descripcion
-	from tbl_tipoServicio
-end
+	begin
+		select *
+		from tbl_tipoServicio
+	end
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
@@ -1683,7 +1759,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
---INSERTA ALERTA
+--------ALERTAS-----------------
 create procedure [spu_insertaAlerta]
 (
 	@idTipoAlerta int,
@@ -1714,7 +1790,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+--------ALERTAS-----------------
 create procedure [stu_actualizarAlertaPorPrioridad]
 (
 	@Referencia int
@@ -1731,7 +1807,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+--CLIENTES PROVEEDORES-----------
 create procedure [stu_CargaDataGridProveedores]
 as
 	begin
@@ -1741,7 +1817,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
---INSERTA PROVEEDOR
+--CLIENTES PROVEEDORES-----------
 create procedure [spu_insertaProveedor]
 (
 	@idTipoIdentificacion int,
@@ -1764,7 +1840,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
---EDITAR PROVEEDOR
+--CLIENTES PROVEEDORES-----------
 create procedure [spu_updateClienteProveedor]
 (
 	@idProveedor int,
@@ -1788,7 +1864,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
---ELIMINAR PROVEEDOR
+--CLIENTES PROVEEDORES-----------
 create procedure [spu_eliminarClienteProveedor]
 (
 	@idProveedor int
@@ -1801,7 +1877,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
---INSERTA ALERTA
+----------SOLICITUD ORDENES DE COMPRA------------------
 create procedure [spu_insertaSolicitudOrden]
 (
 	@idTicket int,
@@ -1822,7 +1898,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
---INSERTA ALERTA
+------------ORDENES DE COMPRA------------------
 create procedure [spu_insertaOrdenDeCompra]
 (
 	@idTicket int,
@@ -1847,7 +1923,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------SOLICITUD ORDENES DE COMPRA------------------
 create procedure [spu_cargaDataGridSolicitudesDeCompra]
 as
 	begin
@@ -1858,7 +1934,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------ORDENES DE COMPRA------------------
 create procedure [spu_cargaDataGridOrdenesDeCompra]
 as
 	begin
@@ -1874,7 +1950,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------SOLICITUD ORDENES DE COMPRA------------------
 create procedure [spu_cargaDataGridSolicitudesDeCompraDeTicketEspecifico]
 (
 	@idTicket int
@@ -1888,7 +1964,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------SOLICITUD ORDENES DE COMPRA------------------
 create procedure [spu_cargaIdTicketConIdSolicitud]
 (
 	@idSolicitud int
@@ -1902,7 +1978,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------ORDENES DE COMPRA------------------
 create procedure [spu_existeTicketParaOrdenCompra]
 (
 	@idTicket int
@@ -1924,7 +2000,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------ORDENES DE COMPRA------------------
 create procedure [spu_actualizarEstadoSolicitudDeCompra]
 (
 	@idSolicitud int
@@ -1938,7 +2014,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+---------CLIENTE USUARIO FINAL-------------
 create procedure [spu_cargaListaClientes]
 as
 	begin
@@ -1952,7 +2028,28 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+---------CLIENTE USUARIO FINAL COMPLETO
+create procedure [spu_cargaListaClientesCompleto]
+as
+	begin
+		select idClienteUsuarioFinal,
+			   dbo.tbl_usuariosSistema.idUsuarioSistema as idUsuarioSistema,
+			   dbo.tbl_clientesUsuarioFinal.nombre as nombre,
+			   apellidos,
+			   dbo.tbl_tipoIdentificaciones.descripcion as idTipoIdentificacion,
+			   dbo.tbl_clientesUsuarioFinal.identificacion,
+			   dbo.tbl_clientesUsuarioFinal.telefonoEmpresa,
+			   dbo.tbl_empresasClientes.nombre as idEmpresaCliente
+		from dbo.tbl_clientesUsuarioFinal
+		left outer join dbo.tbl_usuariosSistema on dbo.tbl_clientesUsuarioFinal.idUsuarioSistema = dbo.tbl_usuariosSistema.idUsuarioSistema
+		left outer join dbo.tbl_tipoIdentificaciones on dbo.tbl_clientesUsuarioFinal.idTipoIdentificacion = dbo.tbl_tipoIdentificaciones.idTipoIdentificacion
+		left outer join dbo.tbl_empresasClientes on dbo.tbl_clientesUsuarioFinal.idEmpresaCliente = tbl_empresasClientes.idEmpresaCliente
+		where dbo.tbl_clientesUsuarioFinal.isDeleted = 0
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+-------EMPRESAS CLIENTES-------------
 create procedure [spu_cargaInfoEmpresasClientes]
 (
 	@idEmpresaCliente int
@@ -1964,9 +2061,82 @@ as
 		where idEmpresaCliente = @idEmpresaCliente
 	end 
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+-------EMPRESAS CLIENTES-------------
+create procedure [spu_cargaListaEmpresasClientes]
+as
+	begin
+		select idEmpresaCliente,
+			   nombre,
+			   dbo.tbl_tipoIdentificaciones.descripcion as idTipoIdentificacion,
+			   identificacion,
+			   telefonoEmpresa,
+			   Direccion
+		from dbo.tbl_empresasClientes
+		left outer join dbo.tbl_tipoIdentificaciones on dbo.tbl_empresasClientes.idTipoIdentificacion = dbo.tbl_tipoIdentificaciones.idTipoIdentificacion
+	end 
+go
+--------RAFAEL SEQUEIRA VARGAS------------
+-------EMPRESAS CLIENTES-------------
+create procedure [spu_insertaEmpresaCliente]
+(
+	@idEmpresaCliente int,
+	@nombre varchar(50),
+	@idTipoIdentificacion int,
+	@identificacion varchar(15),
+	@telefonoEmpresa varchar(15),
+	@isDeleted bit,
+	@Direccion varchar(250)
+)
+as
+	begin
+		insert dbo.tbl_empresasClientes
+		values(@nombre,
+			   @idTipoIdentificacion,
+			   @identificacion,
+			   @telefonoEmpresa,
+			   @isDeleted,
+			   @Direccion)
+	end 
+go
+--------RAFAEL SEQUEIRA VARGAS------------
+-------EMPRESAS CLIENTES-------------
+create procedure [spu_updateEmpresaCliente]
+(
+	@idEmpresaCliente int,
+	@nombre varchar(50),
+	@idTipoIdentificacion int,
+	@identificacion varchar(15),
+	@telefonoEmpresa varchar(15),
+	@isDeleted bit,
+	@Direccion varchar(250)
+)
+as
+	begin
+		update dbo.tbl_empresasClientes
+		set nombre = @nombre,
+			idTipoIdentificacion = @idTipoIdentificacion,
+			identificacion = @identificacion,
+			telefonoEmpresa = @telefonoEmpresa,
+			isDeleted = @isDeleted,
+			Direccion = @Direccion
+		where idEmpresaCliente = @idEmpresaCliente
+	end 
+go
+--------RAFAEL SEQUEIRA VARGAS------------
+-------EMPRESAS CLIENTES-------------
+create procedure [spu_eliminarEmpresaCliente]
+(
+	@idEmpresaCliente int
+)
+as
+	begin
+		delete from dbo.tbl_empresasClientes
+		where idEmpresaCliente = @idEmpresaCliente
+	end 
+go
+--------RAFAEL SEQUEIRA VARGAS------------
+----------TICKET------------------
 create procedure [spu_cargaDataGridTicketsParaFacturas]
 (
 	@idClienteUsuarioFinal int
@@ -1989,9 +2159,8 @@ as
 			  idClienteUsuarioFinal = @idClienteUsuarioFinal
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------TICKET------------------
 create procedure [spu_cargaDataGridTicketsParaFacturasPorFechas]
 (
 	@idClienteUsuarioFinal int,
@@ -2017,9 +2186,8 @@ as
 		fechaEntrega between @fechaDesde and @fechahasta
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------ORDENES DE COMPRA------------------
 create procedure [spu_cargaDataGridOrdenesDeCompraPorFactura]
 (
 	@idClienteUsuarioFinal int
@@ -2041,9 +2209,8 @@ as
 								 idClienteUsuarioFinal = @idClienteUsuarioFinal)
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------TICKETS------------------
 create procedure [spu_cargaDataGridTicketsParaFacturasConIdFactura]
 (
 	@idFactura int
@@ -2064,9 +2231,8 @@ as
 		where idFactura = @idFactura
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------ORDENES DE COMPRA------------------
 create procedure [spu_cargaDataGridOrdenesDeCompraPorFacturaPorIdFactura]
 (
 	@idFactura int
@@ -2086,7 +2252,8 @@ as
 						   where idFactura = @idFactura)
 	end
 go
-
+--------RAFAEL SEQUEIRA VARGAS------------
+----------ORDENES DE COMPRA------------------
 create procedure [spu_cargaDataGridOrdenesDeCompraPorFacturaPorFecha]
 (
 	@idClienteUsuarioFinal int,
@@ -2111,9 +2278,8 @@ as
 								 fechaEntrega between @fechaDesde and @fechahasta)
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------USUARIO SISTEMA------------------
 create procedure [dbo].[spu_cargaRolUsuario]
 (
  @nombreUsuario varchar(10)
@@ -2125,9 +2291,8 @@ as
 		where nombreUsuarioSistema = @nombreUsuario
 	end
 GO
-
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+----------FACTURAS------------------
 create procedure [spu_insertaFactura]
 (
 	@idClienteUsuarioFinal int,
@@ -2170,9 +2335,8 @@ as
 			   )
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+-------------FACTURAS-----------------
 create procedure [spu_cargarDataGridFacturasTodas]
 as
 	begin
@@ -2190,9 +2354,8 @@ as
 		left outer join dbo.tbl_clientesUsuarioFinal on dbo.tbl_facturas.idClienteUsuarioFinal = dbo.tbl_clientesUsuarioFinal.idClienteUsuarioFinal
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+--------------FACTURAS------------------
 create procedure [spu_cargarDataGridFacturasPendientesPago]
 as
 	begin
@@ -2211,9 +2374,8 @@ as
 		where isCanceled = 0
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-------------------------------------------
+---------------FACTURAS---------------
 create procedure [spu_cargarDataGridFacturasCanceladas]
 as
 	begin
@@ -2232,9 +2394,8 @@ as
 		where isCanceled = 1
 	end
 go
-
 -----------------RAFAEL SEQUEIRA VARGAS-------------------
--------------------------------------------------------------
+------------------TICKETS------------------------
 create procedure [stu_actualizarTicketsRespuestaNuevaFactura]
 (
 	@idTicket int,
@@ -2248,9 +2409,8 @@ as
 		where idTicket = @idTicket
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-----------------Procedure -------------------------------------------------
+----------------FACTURAS -------------------------------------------------
 create procedure [stp_cargaIdFacturaRecienGuardado]
 as
 	begin
@@ -2259,9 +2419,8 @@ as
 		where idFactura = IDENT_CURRENT('dbo.tbl_facturas')
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-----------------Procedure -------------------------------------------------
+----------------FACTURAS -------------------------------------------------
 create procedure [stp_cargaDatosFactura]
 (
 	@idFactura int
@@ -2293,9 +2452,8 @@ as
 		where idFactura = @idFactura
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-----------------Procedure -------------------------------------------------
+----------------FACTURAS -------------------------------------------------
 create procedure [spu_actualizaEstadoDePagoFactura]
 (
 	@idFactura int
@@ -2307,9 +2465,8 @@ as
 		where idFactura = @idFactura
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-----------------Procedure -------------------------------------------------
+----------------FACTURAS -------------------------------------------------
 create procedure [spu_cargaFacturasParaEstadosDeCuenta]
 (
 	@idClienteUsuarioFinal int,
@@ -2325,9 +2482,8 @@ as
 		      fechaFactura between @fechaDesde and @fechahasta
 	end
 go
-
 --------RAFAEL SEQUEIRA VARGAS------------
-----------------Procedure -------------------------------------------------
+-----------------FACTURAS-------------------------------------
 create procedure [spu_cargaMontoTotalEstadoDeCuenta]
 (
 	@idClienteUsuarioFinal int,
@@ -2343,9 +2499,8 @@ as
 		      fechaFactura between @fechaDesde and @fechahasta
 	end
 go
-
 -----------------RAFAEL SEQUEIRA VARGAS-------------------
-----------------Procedure Existe Alerta--------------
+-----------------ALERTAS-------------------------------------
 create procedure [spu_existAlertaSobreReferencia]
 (
 	@Referencia int
@@ -2364,9 +2519,8 @@ as
 			end
 	end
 go
-
 -----------------RAFAEL SEQUEIRA VARGAS-------------------
--------------------------------------------------------------
+-----------------TICKET-------------------------------------
 create procedure [spu_TicketsVencidosParaAlertas]
 as
 	begin
@@ -2378,5 +2532,303 @@ as
 			   dbo.tbl_tickets.idEmpleado
 		from dbo.tbl_tickets
 		where fechaEntrega < @fechaHoy 		
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------USUARIOS SISTEMA-------------------------
+create procedure [spu_listaUsuariosSistema]
+as
+	begin
+		select *
+		from dbo.tbl_usuariosSistema
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------STATUS ALERTAS---------------------------
+create procedure [stp_cargaDataGridStatusAlertas]
+as
+	begin
+		select *
+		from dbo.tbl_estatusAlertas
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------STATUS ALERTAS---------------------------
+create procedure [stp_insertarStatusAlertas]
+(
+	@idEstatusAlertas int,
+	@descripcion varchar(50),
+	@isDeleted bit
+)
+as
+	begin
+		insert dbo.tbl_estatusAlertas
+		values(@descripcion,
+			   @isDeleted)
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------STATUS ALERTAS---------------------------
+create procedure [stp_updateStatusAlertas]
+(
+	@idEstatusAlertas int,
+	@descripcion varchar(50),
+	@isDeleted bit
+)
+as
+	begin
+		update dbo.tbl_estatusAlertas
+		set descripcion = @descripcion,
+			isDeleted = @isDeleted
+		where idEstatusAlertas = @idEstatusAlertas
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------STATUS ALERTAS---------------------------
+create procedure [stp_deleteStatusAlertas]
+(
+	@idEstatusAlertas int
+)
+as
+	begin
+		delete from dbo.tbl_estatusAlertas
+		where idEstatusAlertas = @idEstatusAlertas
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------EMPLEADOS---------------------------
+create procedure [stp_deleteEmpleados]
+(
+	@idEmpleado int
+)
+as
+	begin
+		delete from dbo.tbl_empleados
+		where idEmpleado = @idEmpleado
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------EMPLEADOS---------------------------
+create procedure [spu_cargaListaEmpleadosCompleto]
+as
+	begin
+		select dbo.tbl_empleados.idEmpleado,
+			   dbo.tbl_usuariosSistema.idUsuarioSistema as idUsuarioSistema,
+			   nombre,
+			   apellido,
+			   dbo.tbl_tipoIdentificaciones.idTipoIdentificacion as idTipoIdentificacion,
+			   identificacion,
+			   fechaNacimiento,
+			   correo,
+			   direccion,
+			   dbo.tbl_Departamentos.idDepartamento as idDepartamento,
+			   dbo.tbl_tipoPuestos.idPuesto as idPuesto,
+			   telefono,
+			   celular,
+			   fechaIngreso,
+			   vacacionesDisponibles,
+			   dbo.tbl_salarios.idSalario as idSalario,
+			   dbo.tbl_empleados.isDeleted
+		from dbo.tbl_empleados
+		left outer join dbo.tbl_usuariosSistema on dbo.tbl_empleados.idUsuarioSistema = dbo.tbl_usuariosSistema.idUsuarioSistema
+		left outer join dbo.tbl_tipoIdentificaciones on dbo.tbl_empleados.idTipoIdentificacion = dbo.tbl_tipoIdentificaciones.idTipoIdentificacion
+		left outer join dbo.tbl_Departamentos on dbo.tbl_empleados.idDepartamento = dbo.tbl_Departamentos.idDepartamento
+		left outer join dbo.tbl_tipoPuestos on dbo.tbl_empleados.idPuesto = dbo.tbl_tipoPuestos.idPuesto
+		left outer join dbo.tbl_salarios on dbo.tbl_empleados.idSalario = dbo.tbl_salarios.idSalario
+	end
+go
+
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------EMPLEADOS---------------------------
+create procedure [spu_insertaEmpleados]
+(
+	@idEmpleado int,
+	@idUsuarioSistema int,
+	@nombre varchar(50),
+	@apellido varchar(50),
+	@idTipoIdentificacion int,
+	@identificacion varchar(15),
+	@fechaNacimiento datetime,
+	@correo varchar(50),
+	@direccion varchar(250),
+	@idDepartamento int,
+	@idPuesto int,
+	@telefono varchar(15),
+	@celular varchar(15),
+	@fechaIngreso datetime,
+	@vacacionesDisponibles int,
+	@idSalario int,
+	@isDeleted bit
+)
+as
+	begin
+		insert dbo.tbl_empleados
+		values( @idUsuarioSistema,
+				@nombre,
+				@apellido,
+				@idTipoIdentificacion,
+				@identificacion,
+				@fechaNacimiento,
+				@correo,
+				@direccion,
+				@idDepartamento,
+				@idPuesto,
+				@telefono,
+				@celular,
+				@fechaIngreso,
+				@vacacionesDisponibles,
+				@idSalario,
+				@isDeleted )		
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------EMPLEADOS---------------------------
+create procedure [spu_updateEmpleados]
+(
+	@idEmpleado int,
+	@idUsuarioSistema int,
+	@nombre varchar(50),
+	@apellido varchar(50),
+	@idTipoIdentificacion int,
+	@identificacion varchar(15),
+	@fechaNacimiento datetime,
+	@correo varchar(50),
+	@direccion varchar(250),
+	@idDepartamento int,
+	@idPuesto int,
+	@telefono varchar(15),
+	@celular varchar(15),
+	@fechaIngreso datetime,
+	@vacacionesDisponibles int,
+	@idSalario int,
+	@isDeleted bit
+)
+as
+	begin
+		update dbo.tbl_empleados
+		    set idUsuarioSistema = @idUsuarioSistema,
+				nombre = @nombre,
+				apellido = @apellido,
+				idTipoIdentificacion = @idTipoIdentificacion,
+				identificacion = @identificacion,
+				fechaNacimiento = @fechaNacimiento,
+				correo = @correo,
+				direccion = @direccion,
+				idDepartamento= @idDepartamento,
+				idPuesto = @idPuesto,
+				telefono = @telefono,
+				celular = @celular,
+				fechaIngreso = @fechaIngreso,
+				vacacionesDisponibles = @vacacionesDisponibles,
+				idSalario = @idSalario,
+				isDeleted = @isDeleted
+		where idEmpleado = @idEmpleado		
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------TIPO SERVICIO----------------------------
+create procedure [deleteTipoServicio]
+(
+	@idTipoServicio int
+)
+as
+	begin
+		delete from dbo.tbl_tipoServicio
+		where idTipoServicio = @idTipoServicio
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------TIPO SERVICIO----------------------------
+create procedure [insertarTipoServicio]
+(
+	@idTipoServicio int,
+	@descripcion varchar(50),
+	@isDeleted bit
+)
+as
+	begin
+		insert dbo.tbl_tipoServicio
+		values(@descripcion, @isDeleted)
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------TIPO SERVICIO----------------------------
+create procedure [updateTipoServicio]
+(
+	@idTipoServicio int,
+	@descripcion varchar(50),
+	@isDeleted bit
+)
+as
+	begin
+		update dbo.tbl_tipoServicio
+		set descripcion = @descripcion, 
+			isDeleted = @isDeleted
+		where idTipoServicio = @idTipoServicio
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------TIPO SERVICIO----------------------------
+create procedure [stp_borrarTipoIdentificacion]
+(
+	@idTipoIdentificacion int
+)
+as
+	begin
+		delete from dbo.tbl_tipoIdentificaciones
+		where idTipoIdentificacion = @idTipoIdentificacion
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------TIPO ALERTA----------------------------
+create procedure [spu_cargaListaTipoAlertas]
+as
+	begin
+		select *
+		from dbo.tbl_TipoAlertas
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------TIPO ALERTA----------------------------
+create procedure [spu_insertarTipoAlertas]
+(
+	@idTipoAlerta int,
+	@descripcion varchar(50),
+	@isDeleted bit
+)
+as
+	begin
+		insert dbo.tbl_TipoAlertas
+		values(@descripcion, @isDeleted)
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------TIPO ALERTA----------------------------
+create procedure [spu_updateTipoAlertas]
+(
+	@idTipoAlerta int,
+	@descripcion varchar(50),
+	@isDeleted bit
+)
+as
+	begin
+		update dbo.tbl_TipoAlertas
+		set descripcion = @descripcion,
+			isDeleted = @isDeleted
+		where idTipoAlerta = @idTipoAlerta
+	end
+go
+-----------------RAFAEL SEQUEIRA VARGAS-------------------
+-----------------TIPO ALERTA----------------------------
+create procedure [spu_deleteTipoAlertas]
+(
+	@idTipoAlerta int
+)
+as
+	begin
+		delete from dbo.tbl_TipoAlertas
+		where idTipoAlerta = @idTipoAlerta
 	end
 go
