@@ -137,6 +137,13 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap departamento_de_finanzas_de_material_icono_del_vector_34_26959 {
+            get {
+                object obj = ResourceManager.GetObject("departamento-de-finanzas-de-material-icono-del-vector_34-26959", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -147,6 +154,13 @@ namespace frmPrincipal.Properties {
         internal static System.Drawing.Bitmap download__1_ {
             get {
                 object obj = ResourceManager.GetObject("download (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap download1 {
+            get {
+                object obj = ResourceManager.GetObject("download1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -214,6 +228,13 @@ namespace frmPrincipal.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap images2 {
+            get {
+                object obj = ResourceManager.GetObject("images2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ist2_8758228_support_service {
             get {
                 object obj = ResourceManager.GetObject("ist2_8758228-support-service", resourceCulture);
@@ -259,6 +280,20 @@ namespace frmPrincipal.Properties {
         internal static System.Drawing.Bitmap reports {
             get {
                 object obj = ResourceManager.GetObject("reports", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap roles3 {
+            get {
+                object obj = ResourceManager.GetObject("roles3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap roles31 {
+            get {
+                object obj = ResourceManager.GetObject("roles31", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -122,18 +122,6 @@
     <Compile Include="frm_MantenimientoDescripcionRoles.Designer.cs">
       <DependentUpon>frm_MantenimientoDescripcionRoles.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_MantenimientoDescripcionRolesNuevoEditar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_MantenimientoDescripcionRolesNuevoEditar.Designer.cs">
-      <DependentUpon>frm_MantenimientoDescripcionRolesNuevoEditar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_MantenimientoEstadoFacturaNuevoEditar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_MantenimientoEstadoFacturaNuevoEditar.Designer.cs">
-      <DependentUpon>frm_MantenimientoEstadoFacturaNuevoEditar.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_MantenimientoEstatusTickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +308,12 @@
     <Compile Include="frm_RRHH_NuevaSolicitudVacaciones.Designer.cs">
       <DependentUpon>frm_RRHH_NuevaSolicitudVacaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Mantenimiento_Nueva_Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Mantenimiento_Nueva_Factura.Designer.cs">
+      <DependentUpon>frm_Mantenimiento_Nueva_Factura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_CxC_CxP_CatalogoProveedores.resx">
@@ -357,12 +351,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MantenimientoDescripcionRoles.resx">
       <DependentUpon>frm_MantenimientoDescripcionRoles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_MantenimientoDescripcionRolesNuevoEditar.resx">
-      <DependentUpon>frm_MantenimientoDescripcionRolesNuevoEditar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_MantenimientoEstadoFacturaNuevoEditar.resx">
-      <DependentUpon>frm_MantenimientoEstadoFacturaNuevoEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MantenimientoEstatusTickets.resx">
       <DependentUpon>frm_MantenimientoEstatusTickets.cs</DependentUpon>
@@ -456,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_RRHH_NuevaSolicitudVacaciones.resx">
       <DependentUpon>frm_RRHH_NuevaSolicitudVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Mantenimiento_Nueva_Factura.resx">
+      <DependentUpon>frm_Mantenimiento_Nueva_Factura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -590,6 +581,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconoestadodecuentas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\departamento-de-finanzas-de-material-icono-del-vector_34-26959.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roles3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roles31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

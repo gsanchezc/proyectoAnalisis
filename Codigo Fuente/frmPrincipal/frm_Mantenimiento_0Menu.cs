@@ -37,7 +37,7 @@ namespace frmPrincipal
         {
             frm_Mantenimiento_estatusFacturas ventanaMantenimientoEstadoFacturas = new frm_Mantenimiento_estatusFacturas(usuarioSistema);
             this.Hide();
-            ventanaMantenimientoEstadoFacturas.ShowDialog();
+            ventanaMantenimientoEstadoFacturas.Show();
 
         }
 
@@ -45,49 +45,49 @@ namespace frmPrincipal
         {
             frm_MantenimientoDescripcionRoles ventanaDescripcionRoles = new frm_MantenimientoDescripcionRoles(usuarioSistema);
             this.Hide();
-            ventanaDescripcionRoles.ShowDialog();
+            ventanaDescripcionRoles.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             frm_MantenimientoTipoPuestos ventanaTipoPuesto = new frm_MantenimientoTipoPuestos(usuarioSistema);
             this.Hide();
-            ventanaTipoPuesto.ShowDialog();
+            ventanaTipoPuesto.Show();
         }
 
         private void btn_MantenimientoClienteProveedor_Click(object sender, EventArgs e)
         {
             frm_MantenimientoClienteProveedor ventana = new frm_MantenimientoClienteProveedor(usuarioSistema);
             this.Hide();
-            ventana.ShowDialog();
+            ventana.Show();
         }
 
         private void btn_ManteniminetoTipoIdentificacion_Click(object sender, EventArgs e)
         {
             frm_MantenimientoTipoIdentificacion ventana = new frm_MantenimientoTipoIdentificacion(usuarioSistema);
             this.Hide();
-            ventana.ShowDialog();
+            ventana.Show();
         }
 
         private void btn_MantenimientoDescripcionDepartamento_Click(object sender, EventArgs e)
         {
             frm_MantenimientoDescripcionDepartamento ventana = new frm_MantenimientoDescripcionDepartamento(usuarioSistema);
             this.Hide();
-            ventana.ShowDialog();
+            ventana.Show();
         }
 
         private void btn_MantenimientoEstatusTickets_Click(object sender, EventArgs e)
         {
             frm_MantenimientoEstatusTickets ventanaEstatusTickets = new frm_MantenimientoEstatusTickets(usuarioSistema);
             this.Hide();
-            ventanaEstatusTickets.ShowDialog();
+            ventanaEstatusTickets.Show();
         }
 
         private void btn_MantenimientoTipoPrioridades_Click(object sender, EventArgs e)
         {
             frm_MantenimientoTipoPrioridad ventana = new frm_MantenimientoTipoPrioridad(usuarioSistema);
             this.Hide();
-            ventana.ShowDialog();
+            ventana.Show();
         }
 
         private void btn_volver_Click(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace frmPrincipal
 
             if ((MessageBox.Show("Desea regresar al menu principal", "Volver al Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
             {
-                this.Close();
+                this.Hide();
                 ventana.Show();
             }
             else

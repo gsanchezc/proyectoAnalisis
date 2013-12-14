@@ -71,23 +71,12 @@ namespace frmPrincipal
 
         private void b_editar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(dtg_ListaDescripcionRol.RowCount) == 0)
-            {
-                MessageBox.Show("No hay ninguna descripcion en la lista", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            frm_MantenimientoDescripcionRolesNuevoEditar ventanaNuevoEditarDescripcionRol = new frm_MantenimientoDescripcionRolesNuevoEditar(usuarioSistema);
-            //ingresa en el campo id de la ventana frm_MantenimientoDescripcionRolesNuevoEditar el campo id que viene desde el data grid view de la ventana anterior
-            ventanaNuevoEditarDescripcionRol.id = Convert.ToInt32(dtg_ListaDescripcionRol.CurrentRow.Cells[0].Value.ToString());
-            ventanaNuevoEditarDescripcionRol.ShowDialog();
+
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            frm_MantenimientoDescripcionRolesNuevoEditar ventanaNuevoEditarDescripcionRol = new frm_MantenimientoDescripcionRolesNuevoEditar(usuarioSistema);
-            //cuenta la cantidad de descripciones que hay en el data grid view y le suma 1 
-            ventanaNuevoEditarDescripcionRol.num = Convert.ToInt32(dtg_ListaDescripcionRol.RowCount + 1);
-            ventanaNuevoEditarDescripcionRol.ShowDialog();
+
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
@@ -96,7 +85,6 @@ namespace frmPrincipal
             idDescripcion = dtg_ListaDescripcionRol.CurrentRow.Cells[0].Value.ToString();
             if (MessageBox.Show("Desea eliminar la descripcion con el ID : " + idDescripcion, "Confirmacion de borrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-
                 if (objDescripcionRol.eliminarDescripcionRol(Convert.ToInt32(idDescripcion)))
                 {
                     MessageBox.Show("La descripcion de rol se eliminó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -104,6 +92,11 @@ namespace frmPrincipal
 
                 }
             }
+        }
+
+        private void dtg_ClienteProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

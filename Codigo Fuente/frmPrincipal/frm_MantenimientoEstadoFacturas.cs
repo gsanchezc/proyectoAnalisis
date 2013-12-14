@@ -40,8 +40,7 @@ namespace frmPrincipal
         {
             try
             {
-                dtg_ListaEstadoFactura.AutoGenerateColumns = false;
-                dtg_ListaEstadoFactura.DataSource = objEstatusFactura.cargaListaEstadosFactura().Tables[0];
+
             }
             catch (Exception)
             {
@@ -72,39 +71,17 @@ namespace frmPrincipal
 
         private void b_editar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(dtg_ListaEstadoFactura.RowCount) == 0)
-            {
-                MessageBox.Show("No hay ningun estado de Factura en la lista", "Validacion de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            frm_MantenimientoEstadoFacturaNuevoEditar ventanaNuevoEditarEstatusFactura = new frm_MantenimientoEstadoFacturaNuevoEditar(usuarioSistema);
-            //ingresa en el campo id de la ventana ventanaNuevoEditarEstatusFactura el campo id que viene desde el data grid view
-            ventanaNuevoEditarEstatusFactura.id = Convert.ToInt32(dtg_ListaEstadoFactura.CurrentRow.Cells[0].Value.ToString());
-            ventanaNuevoEditarEstatusFactura.ShowDialog();
+
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            frm_MantenimientoEstadoFacturaNuevoEditar ventanaNuevoEditarEstatusFactura = new frm_MantenimientoEstadoFacturaNuevoEditar(usuarioSistema);
-            //cuenta la cantidad de estatus que hay en el data grid view y le suma 1 
-            ventanaNuevoEditarEstatusFactura.num = Convert.ToInt32(dtg_ListaEstadoFactura.RowCount + 1);
-            ventanaNuevoEditarEstatusFactura.ShowDialog();
+
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            string idEstado = string.Empty;
-            idEstado = dtg_ListaEstadoFactura.CurrentRow.Cells[0].Value.ToString();
-            if (MessageBox.Show("Desea eliminar el estatus con el ID : " + idEstado, "Confirmacion de borrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
 
-                if (objEstatusFactura.eliminarEstatusFactura(Convert.ToInt32(idEstado)))
-                {
-                    MessageBox.Show("El estatus de factura se eliminó con exito", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.carga_lista_EstatusFacturas();
-
-                }
-            }
         }
     }
 }

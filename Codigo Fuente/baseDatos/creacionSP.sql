@@ -1667,7 +1667,7 @@ as
 go
 
 --------RAFAEL SEQUEIRA VARGAS------------
---INSERTA ALERTA
+--INSERTA PROVEEDOR
 create procedure [spu_insertaProveedor]
 (
 	@idTipoIdentificacion int,
@@ -1686,6 +1686,43 @@ as
 				@direccion,
 				@telefono,
 				@isDeleted)
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+--EDITAR PROVEEDOR
+create procedure [spu_updateClienteProveedor]
+(
+	@idProveedor int,
+	@idTipoIdentificacion int,
+	@identificacion varchar(15),
+	@nombre varchar(50),
+	@direccion varchar(250),
+	@telefono varchar(15),
+	@isDeleted bit
+)
+as
+	begin
+		update dbo.tbl_clientesProveedores
+		set idTipoIdentificacion = @idTipoIdentificacion,
+			identificacion = @identificacion,
+			nombre = @nombre,
+			direccion = @direccion,
+			telefono = @telefono
+		where idProveedor = @idProveedor
+	end
+go
+
+--------RAFAEL SEQUEIRA VARGAS------------
+--ELIMINAR PROVEEDOR
+create procedure [spu_eliminarClienteProveedor]
+(
+	@idProveedor int
+)
+as
+	begin
+		delete from dbo.tbl_clientesProveedores
+		where idProveedor = @idProveedor
 	end
 go
 
@@ -2264,9 +2301,8 @@ as
 	
 		select idTicket,
 			   idPrioridad,
-			   dbo.tbl_empleados.nombre +' '+ dbo.tbl_empleados.apellido as idEmpleado
+			   dbo.tbl_tickets.idEmpleado
 		from dbo.tbl_tickets
-		left outer join dbo.tbl_empleados on dbo.tbl_tickets.idEmpleado = dbo.tbl_empleados.idEmpleado
 		where fechaEntrega < @fechaHoy 		
 	end
 go
